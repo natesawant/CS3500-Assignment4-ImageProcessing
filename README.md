@@ -1,1 +1,1 @@
-# CS3500-Assignment4-ImageProcessing
+# Image Processing Program for CS3500 - Object Oriented Design
