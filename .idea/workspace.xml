@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Added kernel application method.">
-      <change afterPath="$PROJECT_DIR$/test/SmallScaleOperationTest.java" afterDir="false" />
+    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="added outline for operations testing.">
+      <change afterPath="$PROJECT_DIR$/test/ModelMock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/PPMControllerTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/OperationsModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OperationsModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/OperationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/OperationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +36,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -219,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654542724109</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="added outline for operations testing.">
+      <created>1654544905375</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1654544905375</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,6 +254,7 @@
     <MESSAGE value="Added more documentation." />
     <MESSAGE value="Fixed everything basically." />
     <MESSAGE value="Added kernel application method." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added kernel application method." />
+    <MESSAGE value="added outline for operations testing." />
+    <option name="LAST_COMMIT_MESSAGE" value="added outline for operations testing." />
   </component>
 </project>
