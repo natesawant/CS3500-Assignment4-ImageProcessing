@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Added documentation and removed redundant code.">
+    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Added more documentation.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/ImageProcessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ImageProcessing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/ImageProcessingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ImageProcessingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/ImageProcessingControllerImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ImageProcessingControllerImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/OperationsModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OperationsModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/koala-bigblur.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-bigblur.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/koala-horizontal.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-horizontal.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/koala-smallblur.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-smallblur.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/koala-vertical.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-vertical.ppm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/OperationsModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OperationsModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ImageProcessingTextView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ImageProcessingTextView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/ImageUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +59,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.controller.ImageProcessing">
+  <component name="RunManager" selected="JUnit.TestFolder">
     <configuration name="ImageUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="util.ImageUtil" />
       <module name="Assignment4-ImageProcessing" />
@@ -82,6 +82,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OperationTests.testFlip" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assignment4-ImageProcessing" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="OperationTests" />
+      <option name="METHOD_NAME" value="testFlip" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OperationTests.testVHFlip" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assignment4-ImageProcessing" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="OperationTests" />
+      <option name="METHOD_NAME" value="testVHFlip" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestFolder" type="JUnit" factoryName="JUnit">
       <module name="Assignment4-ImageProcessing" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -96,9 +116,13 @@
       <item itemvalue="Application.controller.ImageProcessing" />
       <item itemvalue="Application.ImageUtil" />
       <item itemvalue="JUnit.TestFolder" />
+      <item itemvalue="JUnit.OperationTests.testFlip" />
+      <item itemvalue="JUnit.OperationTests.testVHFlip" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OperationTests.testFlip" />
+        <item itemvalue="JUnit.OperationTests.testVHFlip" />
         <item itemvalue="Application.ImageUtil" />
       </list>
     </recent_temporary>
@@ -113,7 +137,7 @@
       <updated>1654458663819</updated>
       <workItem from="1654458665054" duration="15393000" />
       <workItem from="1654485320688" duration="1838000" />
-      <workItem from="1654491545536" duration="4243000" />
+      <workItem from="1654491545536" duration="6077000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1654458999042</created>
@@ -164,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654495543761</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added more documentation.">
+      <created>1654496139039</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1654496139039</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +220,7 @@
     <MESSAGE value="Added blur because why not." />
     <MESSAGE value="Changed tests to more appropriately test the operations rather than the controller." />
     <MESSAGE value="Added documentation and removed redundant code." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added documentation and removed redundant code." />
+    <MESSAGE value="Added more documentation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added more documentation." />
   </component>
 </project>

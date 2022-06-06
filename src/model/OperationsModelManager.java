@@ -52,8 +52,8 @@ public final class OperationsModelManager implements OperationsModel {
             output.append(width + " " +height + " " + System.lineSeparator());
             output.append(max + " " + System.lineSeparator());
 
-            for (int x = 0; x < width; x++) {
-                for (int y = 0; y < height; y++) {
+            for (int y = 0; y < height; y++) {
+                for (int x = 0; x < width; x++) {
                     r = img.getPixel(x,y).getRed();
                     g = img.getPixel(x,y).getGreen();
                     b = img.getPixel(x,y).getBlue();
@@ -148,7 +148,7 @@ public final class OperationsModelManager implements OperationsModel {
 
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
-                pixels[x][height - y - 1] = img.getPixel(x,y);
+                pixels[width - x - 1][y] = img.getPixel(x,y);
             }
         }
 
@@ -173,7 +173,7 @@ public final class OperationsModelManager implements OperationsModel {
 
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
-                pixels[width - x - 1][y] = img.getPixel(x,y);
+                pixels[x][height - y - 1] = img.getPixel(x,y);
             }
         }
 

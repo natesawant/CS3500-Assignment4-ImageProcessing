@@ -56,8 +56,8 @@ public class ImageUtil {
 
     pixels = new Color[width][height];
 
-    for (int x=0;x<width;x++) {
-      for (int y=0;y<height;y++) {
+    for (int y=0;y<height;y++) {
+      for (int x=0;x<width;x++) {
         int r = sc.nextInt();
         int g = sc.nextInt();
         int b = sc.nextInt();
