@@ -2,6 +2,9 @@ package view;
 
 import java.io.IOException;
 
+/**
+ * The text view allows for messages to be rendered to an appendable object.
+ */
 public class ImageProcessingTextView implements ImageProcessingView {
   Appendable appendable;
 

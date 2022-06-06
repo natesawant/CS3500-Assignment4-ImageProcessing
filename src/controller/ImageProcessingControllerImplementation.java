@@ -12,6 +12,14 @@ public final class ImageProcessingControllerImplementation implements ImageProce
   protected Readable readable;
   protected ImageProcessingView view;
   protected OperationsModel manager;
+
+  /**
+   * The implementation of the controller that allows for text based input and output.
+   * @param directory the root directory that is being worked in.
+   * @param view
+   * @param readable
+   * @throws IllegalArgumentException
+   */
   public ImageProcessingControllerImplementation(String directory, ImageProcessingView view,
                                                  Readable readable) throws IllegalArgumentException {
     if (readable == null) {
@@ -27,7 +35,7 @@ public final class ImageProcessingControllerImplementation implements ImageProce
   }
 
   @Override
-  public void initializeProgram() {
+  public void initializeProgram() throws IllegalStateException {
     Scanner scan;
     String rawInput;
     String[] arguments;
@@ -45,7 +53,7 @@ public final class ImageProcessingControllerImplementation implements ImageProce
             case "load":
               try {
                 if (validNumArguments(3, arguments.length)) {
-                  manager.load(arguments[1], arguments[2]);
+                  manager.load(directory + arguments[1], arguments[2]);
                   view.renderMessage("Successfully loaded image." + System.lineSeparator());
                 }
               } catch (IllegalArgumentException ex) {
@@ -109,7 +117,7 @@ public final class ImageProcessingControllerImplementation implements ImageProce
             case "save":
               try {
                 if (validNumArguments(3, arguments.length)) {
-                  manager.save(arguments[1], arguments[2]);
+                  manager.save(directory + arguments[1], arguments[2]);
                   view.renderMessage("Successfully saved image." + System.lineSeparator());
                 }
               } catch (IllegalArgumentException ex) {
@@ -131,7 +139,14 @@ public final class ImageProcessingControllerImplementation implements ImageProce
     }
   }
 
-  private boolean validNumArguments(int exp, int act) {
+  /**
+   * Ensures that the number of inputs is the expected amount, shows a message if not.
+   * @param exp the expected number of arguments.
+   * @param act the actual number of arguments.
+   * @return if the expected is equal to the actual.
+   * @throws IllegalStateException if unable to transmit the message.
+   */
+  private boolean validNumArguments(int exp, int act) throws IllegalStateException {
     if (exp != act) {
       try {
         view.renderMessage("Must be only " + exp + " arguments. Actual: " + act + System.lineSeparator());

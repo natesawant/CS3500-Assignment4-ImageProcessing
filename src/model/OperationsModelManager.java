@@ -12,6 +12,9 @@ import java.util.Map;
 
 import util.ImageUtil;
 
+/**
+ * Implementation of the image processing operations.
+ */
 public final class OperationsModelManager implements OperationsModel {
     Map<String, Image> loaded;
 

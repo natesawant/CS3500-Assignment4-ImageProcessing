@@ -1,7 +1,7 @@
 package model;
 
 /**
- *
+ * An interface that represents the types of operations that can be performed on an image.
  */
 public interface OperationsModel {
   /**
