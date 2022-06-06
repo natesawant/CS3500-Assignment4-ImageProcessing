@@ -1,18 +1,50 @@
 import model.Image;
 import model.OperationsModel;
 import model.OperationsModelManager;
+import util.ImageUtil;
+import org.junit.Assert.*;
+
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class SmallScaleOperationTest {
 
   Image img;
+  OperationsModel m;
+  Image actual, expected;
+
+  @Before
+  public void setup() {
+    m = new OperationsModelManager();
+    m.load("images/TestImageOriginalExpected.ppm", "img");
+  }
+
+  @Test
+  public void testSave() {
+    m.save("images/TestImageOriginalActual.ppm","img");
+
+    actual = ImageUtil.convertPPM("images/TestImageOriginalActual.ppm");
+    expected = ImageUtil.convertPPM("images/TestImageOriginalExpected.ppm");
+
+    assertEquals(expected,actual);
+  }
+
+  @Test
+  public void testVerticalFlip() {
+    m.verticalFlip("img","img");
+    m.save("images/TestImageVerticalActual.ppm","img");
+
+    actual = ImageUtil.convertPPM("images/TestImageVerticalActual.ppm");
+    expected = ImageUtil.convertPPM("images/TestImageVerticalExpected.ppm");
+
+    assertEquals(expected,actual);
+  }
 
   @Test
   public void testConstructor() {
-
-    OperationsModel m = new OperationsModelManager();
-
+    m = new OperationsModelManager();
   }
 
   /*

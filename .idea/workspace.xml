@@ -4,10 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="added outline for operations testing.">
-      <change afterPath="$PROJECT_DIR$/test/ModelMock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/PPMControllerTests.java" afterDir="false" />
+    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Added kernel application method.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cat.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cat.ppm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cat2.ppm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cat2.ppm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/koala-bigblur.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-bigblur.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/koala-blue.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-blue.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/koala-bright.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-bright.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/koala-copy.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-copy.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/koala-dark.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-dark.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/koala-green.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-green.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/koala-horizontal.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-horizontal.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/koala-intensity.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-intensity.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/koala-luma.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-luma.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/koala-red.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-red.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/koala-smallblur.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-smallblur.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/koala-value.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-value.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/koala-vertical-horizontal.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-vertical-horizontal.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/koala-vertical.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-vertical.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/RGBImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/RGBImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/OperationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/OperationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/SmallScaleOperationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/SmallScaleOperationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,16 +53,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nates/OneDrive - Northeastern University/Classes/2022 Summer 1/CS3500 &amp; 3501 - Object Oriented Design &amp; Lab/Assignment4-ImageProcessing/test&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OperationTests.testSmallBlur">
+  <component name="RunManager" selected="JUnit.SmallScaleOperationTest">
     <configuration name="controller.ImageProcessing" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="controller.ImageProcessing" />
       <module name="Assignment4-ImageProcessing" />
@@ -63,16 +94,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="OperationTests" />
       <option name="METHOD_NAME" value="testBigBlur" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OperationTests.testCustomKernel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Assignment4-ImageProcessing" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="OperationTests" />
-      <option name="METHOD_NAME" value="testCustomKernel" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -108,6 +129,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SmallScaleOperationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assignment4-ImageProcessing" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SmallScaleOperationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestFolder" type="JUnit" factoryName="JUnit">
       <module name="Assignment4-ImageProcessing" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -121,19 +151,19 @@
     <list>
       <item itemvalue="Application.controller.ImageProcessing" />
       <item itemvalue="JUnit.TestFolder" />
+      <item itemvalue="JUnit.SmallScaleOperationTest" />
       <item itemvalue="JUnit.OperationTests.testBigBlur" />
-      <item itemvalue="JUnit.OperationTests.testCustomKernel" />
       <item itemvalue="JUnit.OperationTests.testGaussianBlue3x3" />
       <item itemvalue="JUnit.OperationTests.testRidgeDetection" />
       <item itemvalue="JUnit.OperationTests.testSmallBlur" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SmallScaleOperationTest" />
         <item itemvalue="JUnit.OperationTests.testSmallBlur" />
         <item itemvalue="JUnit.OperationTests.testBigBlur" />
         <item itemvalue="JUnit.OperationTests.testGaussianBlue3x3" />
         <item itemvalue="JUnit.OperationTests.testRidgeDetection" />
-        <item itemvalue="JUnit.OperationTests.testCustomKernel" />
       </list>
     </recent_temporary>
   </component>
@@ -219,14 +249,7 @@
       <option name="project" value="LOCAL" />
       <updated>1654542724109</updated>
     </task>
-    <task id="LOCAL-00011" summary="added outline for operations testing.">
-      <created>1654544905375</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1654544905375</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,7 +277,6 @@
     <MESSAGE value="Added more documentation." />
     <MESSAGE value="Fixed everything basically." />
     <MESSAGE value="Added kernel application method." />
-    <MESSAGE value="added outline for operations testing." />
-    <option name="LAST_COMMIT_MESSAGE" value="added outline for operations testing." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added kernel application method." />
   </component>
 </project>

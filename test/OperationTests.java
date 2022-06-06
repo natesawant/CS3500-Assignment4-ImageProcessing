@@ -1,11 +1,16 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import model.Image;
 import model.OperationsModel;
 import model.OperationsModelManager;
+import util.ImageUtil;
+
+import static org.junit.Assert.assertEquals;
 
 public class OperationTests {
   OperationsModel manager;
+  Image expected, actual;
   @Before
   public void setup() {
     manager = new OperationsModelManager();
@@ -16,6 +21,11 @@ public class OperationTests {
   public void testHFlip() {
     manager.horizontalFlip("koala","koala");
     manager.save("images/koala-horizontal.ppm", "koala");
+
+    actual = ImageUtil.convertPPM("images/koala-horizontal.ppm");
+    expected = ImageUtil.convertPPM("images/koala-horizontal-expected.ppm");
+
+    assertEquals(expected,actual);
   }
 
   @Test
@@ -128,10 +138,10 @@ public class OperationTests {
     manager.save("images/koala-gaussianblur3x3.ppm","koala");
   }
 
-  @Test
+/*  @Test
   public void testCat() {
     manager.load("images/catp3.ppm", "cat");
     manager.horizontalFlip("cat", "cat");
     manager.save("images/cat-flipped.ppm", "cat");
-  }
+  }*/
 }

@@ -13,4 +13,29 @@ public class RGBImage extends AbstractImage {
       this.maxValue = maxValue;
     }
   }
+
+  @Override
+  public boolean equals(Object other) {
+    if (this == other) {
+      return true;
+    } else if (other instanceof Image) {
+      Image img = (Image) other;
+      int width = img.getWidth();
+      int height = img.getHeight();
+
+      if (this.getWidth() != width || this.getHeight() != height) {
+        return false;
+      }
+      for (int x = 0; x < width; x++) {
+        for (int y = 0; y < height; y++) {
+          if (!this.getPixel(x,y).equals(img.getPixel(x,y))) {
+            return false;
+          }
+        }
+      }
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
