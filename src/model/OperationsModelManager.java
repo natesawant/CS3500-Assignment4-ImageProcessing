@@ -177,6 +177,7 @@ public final class OperationsModelManager implements OperationsModel {
             }
         }
 
+
         int max = img.getMaxValue();
         loaded.put(destName, new RGBImage(pixels, max));
     }

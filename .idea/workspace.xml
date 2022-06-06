@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Added more documentation.">
+    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Fixed everything basically.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/koala-bigblur.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-bigblur.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/koala-horizontal.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-horizontal.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/koala-smallblur.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-smallblur.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/koala-vertical.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-vertical.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/OperationsModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OperationsModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/ImageUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +131,7 @@
       <updated>1654458663819</updated>
       <workItem from="1654458665054" duration="15393000" />
       <workItem from="1654485320688" duration="1838000" />
-      <workItem from="1654491545536" duration="6077000" />
+      <workItem from="1654491545536" duration="6328000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1654458999042</created>
@@ -221,6 +215,7 @@
     <MESSAGE value="Changed tests to more appropriately test the operations rather than the controller." />
     <MESSAGE value="Added documentation and removed redundant code." />
     <MESSAGE value="Added more documentation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added more documentation." />
+    <MESSAGE value="Fixed everything basically." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed everything basically." />
   </component>
 </project>
