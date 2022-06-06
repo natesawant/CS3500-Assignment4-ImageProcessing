@@ -2,8 +2,8 @@ package controller;
 
 import java.io.IOException;
 import java.util.Scanner;
-import model.Operation;
-import model.OperationManager;
+import model.OperationsModel;
+import model.OperationsModelManager;
 import view.ImageProcessingView;
 
 public final class ImageProcessingControllerImplementation implements ImageProcessingController {
@@ -11,7 +11,7 @@ public final class ImageProcessingControllerImplementation implements ImageProce
   protected String directory;
   protected Readable readable;
   protected ImageProcessingView view;
-  protected Operation manager;
+  protected OperationsModel manager;
   public ImageProcessingControllerImplementation(String directory, ImageProcessingView view,
                                                  Readable readable) throws IllegalArgumentException {
     if (readable == null) {
@@ -22,7 +22,7 @@ public final class ImageProcessingControllerImplementation implements ImageProce
       this.directory = directory;
       this.readable = readable;
       this.view = view;
-      this.manager = new OperationManager();
+      this.manager = new OperationsModelManager();
     }
   }
 
@@ -56,6 +56,18 @@ public final class ImageProcessingControllerImplementation implements ImageProce
               if (validNumArguments(4, arguments.length)) {
                 try {
                   manager.brighten(Integer.parseInt(arguments[1]), arguments[2], arguments[3]);
+                  view.renderMessage("Successfully brightened image." + System.lineSeparator());
+                } catch (NumberFormatException ex) {
+                  view.renderMessage(ex.getMessage() + System.lineSeparator());
+                } catch (IllegalArgumentException ex) {
+                  view.renderMessage(ex.getMessage() + System.lineSeparator());
+                }
+              }
+              break;
+            case "blur":
+              if (validNumArguments(4, arguments.length)) {
+                try {
+                  manager.blur(Integer.parseInt(arguments[1]), arguments[2], arguments[3]);
                   view.renderMessage("Successfully brightened image." + System.lineSeparator());
                 } catch (NumberFormatException ex) {
                   view.renderMessage(ex.getMessage() + System.lineSeparator());

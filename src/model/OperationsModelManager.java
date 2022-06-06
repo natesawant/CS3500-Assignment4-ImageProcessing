@@ -5,15 +5,17 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import util.ImageUtil;
 
-public final class OperationManager implements Operation {
+public final class OperationsModelManager implements OperationsModel {
     Map<String, Image> loaded;
 
-    public OperationManager() {
+    public OperationsModelManager() {
         loaded = new HashMap<String, Image>();
     }
 
@@ -205,6 +207,57 @@ public final class OperationManager implements Operation {
                 r = Math.max(Math.min(newColor.getRed() + increment, max), 0);
                 g = Math.max(Math.min(newColor.getGreen() + increment, max), 0);
                 b = Math.max(Math.min(newColor.getBlue() + increment, max), 0);
+
+                pixels[x][y] = new Color(r,g,b);
+            }
+        }
+
+        int max = img.getMaxValue();
+        loaded.put(destName, new RGBImage(pixels, max));
+    }
+
+    @Override
+    public void blur(int radius, String name, String destName) throws IllegalArgumentException {
+        Image img;
+        Color[][] pixels;
+        int width;
+        int height;
+        if (!loaded.containsKey(name)) {
+            throw new IllegalArgumentException("Image not loaded.");
+        }
+
+        img = loaded.get(name);
+        width = img.getWidth();
+        height = img.getHeight();
+        pixels = new Color[width][height];
+
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                Color newColor;
+                List<Color> sample;
+                int max;
+                newColor = img.getPixel(x,y);
+                max = img.getMaxValue();
+                sample = new ArrayList<Color>();
+
+                for (int i = -radius; i <= radius; i++) {
+                    for (int j = -radius; j <= radius; j++) {
+                        if (x + i >= 0 && x + i < width && y + j >= 0 && y + j < height) {
+                            sample.add(img.getPixel(x + i, y + j));
+                        }
+                    }
+                }
+
+                int r = 0,g = 0,b = 0;
+
+                for (Color s : sample) {
+                    r += s.getRed();
+                    g += s.getGreen();
+                    b += s.getBlue();
+                }
+                r /= sample.size();
+                g /= sample.size();
+                b /= sample.size();
 
                 pixels[x][y] = new Color(r,g,b);
             }

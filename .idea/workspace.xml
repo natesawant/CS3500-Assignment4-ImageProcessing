@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Added basic interfaces and classes.">
-      <change afterPath="$PROJECT_DIR$/src/model/Operation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/OperationManager.java" afterDir="false" />
+    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="deleted tests folder">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/ImageProcessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ImageProcessing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/ImageProcessingControllerImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ImageProcessingControllerImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/AbstractImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/AbstractImage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Image.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/RGBImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/RGBImage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/ImageUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OperationsModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/OperationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OperationsModelManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +49,11 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.ImageProcessing">
     <configuration name="ImageProcessing" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="controller.ImageProcessing" />
@@ -97,6 +97,7 @@
       <updated>1654458663819</updated>
       <workItem from="1654458665054" duration="15393000" />
       <workItem from="1654485320688" duration="1838000" />
+      <workItem from="1654491545536" duration="1117000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1654458999042</created>
@@ -119,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654469120418</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="deleted tests folder">
+      <created>1654491461693</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1654491461693</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +148,7 @@
     <MESSAGE value="Init" />
     <MESSAGE value="Starter code" />
     <MESSAGE value="Added basic interfaces and classes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added basic interfaces and classes." />
+    <MESSAGE value="deleted tests folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleted tests folder" />
   </component>
 </project>

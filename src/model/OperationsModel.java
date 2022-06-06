@@ -3,7 +3,7 @@ package model;
 /**
  *
  */
-public interface Operation {
+public interface OperationsModel {
   /**
    * Load an image from the specified path and refer it to henceforth in the program by the
    * given image name.
@@ -60,4 +60,13 @@ public interface Operation {
    * @throws IllegalArgumentException name of the image is not valid.
    */
   void brighten(int increment, String name, String destName) throws IllegalArgumentException;
+
+  /**
+   *
+   * @param radius
+   * @param name
+   * @param destName
+   * @throws IllegalArgumentException
+   */
+  void blur(int radius, String name, String destName) throws IllegalArgumentException;
 }
