@@ -126,8 +126,6 @@ public final class OperationsModelManager implements OperationsModel {
 
         int max = img.getMaxValue();
         loaded.put(destName, new RGBImage(pixels, max));
-
-        //throw new IllegalArgumentException("Still in progress.");
     }
 
     @Override
@@ -169,8 +167,6 @@ public final class OperationsModelManager implements OperationsModel {
         width = img.getWidth();
         height = img.getHeight();
         pixels = new Color[width][height];
-
-        System.out.println("width: " + width + ", height: " + height);
 
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
@@ -233,11 +229,7 @@ public final class OperationsModelManager implements OperationsModel {
 
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
-                Color newColor;
                 List<Color> sample;
-                int max;
-                newColor = img.getPixel(x,y);
-                max = img.getMaxValue();
                 sample = new ArrayList<Color>();
 
                 for (int i = -radius; i <= radius; i++) {

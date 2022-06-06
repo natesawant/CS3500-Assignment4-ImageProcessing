@@ -18,7 +18,7 @@ public interface OperationsModel {
    * the file.
    * @param path the filepath to the image.
    * @param name the name of the image that will be saved.
-   * @throws IllegalArgumentException name of the image is not valid.
+   * @throws IllegalArgumentException if name of the image is not valid.
    */
   void save(String path, String name) throws IllegalArgumentException;
 
@@ -29,7 +29,7 @@ public interface OperationsModel {
    * @param component the component that will be used for the greyscale.
    * @param name the name of the image that processed.
    * @param destName the new name of the processed image.
-   * @throws IllegalArgumentException name of the image or component is not valid.
+   * @throws IllegalArgumentException if name of the image or component is not valid.
    */
   void valueComponent(String component, String name, String destName) throws IllegalArgumentException;
 
@@ -38,7 +38,7 @@ public interface OperationsModel {
    * destination name.
    * @param name the name of the image that processed.
    * @param destName the new name of the processed image.
-   * @throws IllegalArgumentException name of the image is not valid.
+   * @throws IllegalArgumentException if name of the image is not valid.
    */
   void horizontalFlip(String name, String destName) throws IllegalArgumentException;
 
@@ -47,7 +47,7 @@ public interface OperationsModel {
    * destination name.
    * @param name the name of the image that processed.
    * @param destName the new name of the processed image.
-   * @throws IllegalArgumentException name of the image is not valid.
+   * @throws IllegalArgumentException if name of the image is not valid.
    */
   void verticalFlip(String name, String destName) throws IllegalArgumentException;
 
@@ -57,16 +57,16 @@ public interface OperationsModel {
    * @param increment the amount to brighten or darken by.
    * @param name the name of the image that processed.
    * @param destName the new name of the processed image.
-   * @throws IllegalArgumentException name of the image is not valid.
+   * @throws IllegalArgumentException if name of the image is not valid.
    */
   void brighten(int increment, String name, String destName) throws IllegalArgumentException;
 
   /**
-   *
-   * @param radius
-   * @param name
-   * @param destName
-   * @throws IllegalArgumentException
+   * Blurs the image by sampling and average the nearby pixels.
+   * @param radius the number of pixels in each direction it samples.
+   * @param name the name of the image that processed.
+   * @param destName the new name of the processed image.
+   * @throws IllegalArgumentException if name of the image is not valid.
    */
   void blur(int radius, String name, String destName) throws IllegalArgumentException;
 }

@@ -14,6 +14,12 @@ import model.RGBImage;
  *  as required.
  */
 public class ImageUtil {
+  /**
+   * Converts a .ppm file to an Image object.
+   * @param filename the filepath of the .ppm file.
+   * @return an Image object.
+   * @throws IllegalArgumentException if the filepath is invalid.
+   */
   public static Image convertPPM(String filename) throws IllegalArgumentException {
     Image img;
     Color[][] pixels;
