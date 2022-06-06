@@ -6,6 +6,7 @@ public abstract class AbstractImage implements Image {
   protected Color[][] pixels;
   protected int width;
   protected int height;
+  protected int maxValue;
 
   @Override
   public Color getPixel(int x, int y) throws IllegalArgumentException {
@@ -27,5 +28,10 @@ public abstract class AbstractImage implements Image {
   @Override
   public int getHeight() {
     return height;
+  }
+
+  @Override
+  public int getMaxValue() {
+    return maxValue;
   }
 }

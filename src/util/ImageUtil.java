@@ -14,7 +14,7 @@ import model.RGBImage;
  *  as required.
  */
 public class ImageUtil {
-  public static Image convertPPM(String filename) {
+  public static Image convertPPM(String filename) throws IllegalArgumentException {
     Image img;
     Color[][] pixels;
 
@@ -53,17 +53,17 @@ public class ImageUtil {
 
     pixels = new Color[width][height];
 
-    for (int i=0;i<height;i++) {
-      for (int j=0;j<width;j++) {
+    for (int x=0;x<width;x++) {
+      for (int y=0;y<height;y++) {
         int r = sc.nextInt();
         int g = sc.nextInt();
         int b = sc.nextInt();
         Color color = new Color(r,g,b);
-        pixels[i][j] = color;
+        pixels[x][y] = color;
       }
     }
 
-    img = new RGBImage(pixels);
+    img = new RGBImage(pixels, maxValue);
 
     return img;
   }

@@ -23,4 +23,10 @@ public interface Image {
    * @return the height of the image.
    */
   public int getHeight();
+
+  /**
+   * Gets the max value of the image.
+   * @return the height of the image.
+   */
+  public int getMaxValue();
 }

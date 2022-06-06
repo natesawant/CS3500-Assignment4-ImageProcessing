@@ -20,7 +20,7 @@ public class ImageProcessing {
 
     readable = new InputStreamReader(System.in);
     appendable = System.out;
-    view = new ImageProcessingTextView(System.out);
+    view = new ImageProcessingTextView(appendable);
 
     if (args.length>0) {
       directory = args[0];
