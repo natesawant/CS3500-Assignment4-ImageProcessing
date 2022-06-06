@@ -68,32 +68,64 @@ public final class OperationManager implements Operation {
 
     @Override
     public void valueComponent(String component, String name, String destName) throws IllegalArgumentException {
-
-
-
-
-
+        Image img;
+        Color[][] pixels;
+        int width;
+        int height;
         if (!loaded.containsKey(name)) {
             throw new IllegalArgumentException("Image not loaded.");
         }
-        switch (component.toLowerCase()) {
-            case "red":
-                break;
-            case "green":
-                break;
-            case "blue":
-                break;
-            case "value":
-                break;
-            case "luma":
-                break;
-            case "intensity":
-                break;
-            default:
-                throw new IllegalArgumentException("Not supported component.");
+
+        img = loaded.get(name);
+        width = img.getWidth();
+        height = img.getHeight();
+        pixels = new Color[width][height];
+
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                int val;
+                Color newColor;
+                int r,g,b,max;
+                newColor = img.getPixel(x,y);
+                switch (component.toLowerCase()) {
+                    case "red":
+                        val = newColor.getRed();
+                        break;
+                    case "green":
+                        val = newColor.getGreen();
+                        break;
+                    case "blue":
+                        val = newColor.getBlue();
+                        break;
+                    case "value":
+                        val = Math.max(newColor.getBlue(), Math.max(newColor.getRed(),
+                                newColor.getGreen()));
+                        break;
+                    case "luma":
+                        val = (newColor.getBlue() + newColor.getRed() + newColor.getGreen()) / 3;
+                        break;
+                    case "intensity":
+                        val = (int)
+                                (0.2126 * newColor.getBlue() + 0.7152 * newColor.getRed() + 0.0722 * newColor.getGreen());
+                        break;
+                    default:
+                        throw new IllegalArgumentException("Not supported component.");
+                }
+                max = img.getMaxValue();
+
+                r = val;
+                g = val;
+                b = val;
+
+                pixels[x][y] = new Color(r,g,b);
+            }
         }
 
-        throw new IllegalArgumentException("Still in progress.");
+
+        int max = img.getMaxValue();
+        loaded.put(destName, new RGBImage(pixels, max));
+
+        //throw new IllegalArgumentException("Still in progress.");
     }
 
     @Override
@@ -113,7 +145,7 @@ public final class OperationManager implements Operation {
 
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
-                pixels[x][y] = img.getPixel(width - x - 1,y);
+                pixels[x][height - y - 1] = img.getPixel(x,y);
             }
         }
 
@@ -140,7 +172,7 @@ public final class OperationManager implements Operation {
 
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
-                pixels[x][y] = img.getPixel(x,height - y - 1);
+                pixels[width - x - 1][y] = img.getPixel(x,y);
             }
         }
 
