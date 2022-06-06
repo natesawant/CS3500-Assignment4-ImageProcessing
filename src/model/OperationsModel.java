@@ -68,5 +68,30 @@ public interface OperationsModel {
    * @param destName the new name of the processed image.
    * @throws IllegalArgumentException if name of the image is not valid.
    */
-  void blur(int radius, String name, String destName) throws IllegalArgumentException;
+  void boxBlur(int radius, String name, String destName) throws IllegalArgumentException;
+
+  /**
+   * Sharpens the image, enhances details.
+   * @param name the name of the image that processed.
+   * @param destName the new name of the processed image.
+   * @throws IllegalArgumentException if name of the image is not valid.
+   */
+  void sharpen(String name, String destName) throws IllegalArgumentException;
+
+  /**
+   * Detects and emphasizes the ridges of the image.
+   * @param name the name of the image that processed.
+   * @param destName the new name of the processed image.
+   * @throws IllegalArgumentException if name of the image is not valid.
+   */
+  void ridgeDetection(String name, String destName) throws IllegalArgumentException;
+
+  /**
+   * Applys the given kernel to the pixels of the image.
+   * @param kernel the kernel that is applied.
+   * @param name the name of the image that processed.
+   * @param destName the new name of the processed image.
+   * @throws IllegalArgumentException if name of the image or kernel is not valid.
+   */
+  void applyKernel(double[][] kernel, String name, String destName) throws IllegalArgumentException;
 }

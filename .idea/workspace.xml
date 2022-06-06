@@ -6,6 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Fixed everything basically.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cat.ppm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cat2.ppm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/koala-bigblur.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-bigblur.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/koala-smallblur.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-smallblur.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ImageProcessingControllerImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ImageProcessingControllerImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/OperationsModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OperationsModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/OperationsModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OperationsModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/OperationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/OperationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,15 +61,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestFolder">
-    <configuration name="ImageUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="util.ImageUtil" />
-      <module name="Assignment4-ImageProcessing" />
-      <option name="PROGRAM_PARAMETERS" value="images/Koala.ppm" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.OperationTests.testBigBlur">
     <configuration name="controller.ImageProcessing" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="controller.ImageProcessing" />
       <module name="Assignment4-ImageProcessing" />
@@ -76,21 +76,51 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OperationTests.testFlip" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OperationTests.testBigBlur" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment4-ImageProcessing" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="OperationTests" />
-      <option name="METHOD_NAME" value="testFlip" />
+      <option name="METHOD_NAME" value="testBigBlur" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OperationTests.testVHFlip" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OperationTests.testCustomKernel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment4-ImageProcessing" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="OperationTests" />
-      <option name="METHOD_NAME" value="testVHFlip" />
+      <option name="METHOD_NAME" value="testCustomKernel" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OperationTests.testGaussianBlue3x3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assignment4-ImageProcessing" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="OperationTests" />
+      <option name="METHOD_NAME" value="testGaussianBlue3x3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OperationTests.testRidgeDetection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assignment4-ImageProcessing" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="OperationTests" />
+      <option name="METHOD_NAME" value="testRidgeDetection" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OperationTests.testSmallBlur" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assignment4-ImageProcessing" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="OperationTests" />
+      <option name="METHOD_NAME" value="testSmallBlur" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -108,16 +138,20 @@
     </configuration>
     <list>
       <item itemvalue="Application.controller.ImageProcessing" />
-      <item itemvalue="Application.ImageUtil" />
       <item itemvalue="JUnit.TestFolder" />
-      <item itemvalue="JUnit.OperationTests.testFlip" />
-      <item itemvalue="JUnit.OperationTests.testVHFlip" />
+      <item itemvalue="JUnit.OperationTests.testBigBlur" />
+      <item itemvalue="JUnit.OperationTests.testCustomKernel" />
+      <item itemvalue="JUnit.OperationTests.testGaussianBlue3x3" />
+      <item itemvalue="JUnit.OperationTests.testRidgeDetection" />
+      <item itemvalue="JUnit.OperationTests.testSmallBlur" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.OperationTests.testFlip" />
-        <item itemvalue="JUnit.OperationTests.testVHFlip" />
-        <item itemvalue="Application.ImageUtil" />
+        <item itemvalue="JUnit.OperationTests.testBigBlur" />
+        <item itemvalue="JUnit.OperationTests.testSmallBlur" />
+        <item itemvalue="JUnit.OperationTests.testGaussianBlue3x3" />
+        <item itemvalue="JUnit.OperationTests.testRidgeDetection" />
+        <item itemvalue="JUnit.OperationTests.testCustomKernel" />
       </list>
     </recent_temporary>
   </component>
@@ -131,7 +165,7 @@
       <updated>1654458663819</updated>
       <workItem from="1654458665054" duration="15393000" />
       <workItem from="1654485320688" duration="1838000" />
-      <workItem from="1654491545536" duration="6328000" />
+      <workItem from="1654491545536" duration="14360000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1654458999042</created>
@@ -189,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654496139039</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fixed everything basically.">
+      <created>1654533657298</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1654533657298</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

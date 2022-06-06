@@ -1,16 +1,8 @@
-import controller.ImageProcessing;
-import controller.ImageProcessingController;
-import controller.ImageProcessingControllerImplementation;
-
 import org.junit.Before;
 import org.junit.Test;
 
 import model.OperationsModel;
 import model.OperationsModelManager;
-import view.ImageProcessingTextView;
-import view.ImageProcessingView;
-
-import java.io.StringReader;
 
 public class OperationTests {
   OperationsModel manager;
@@ -89,18 +81,50 @@ public class OperationTests {
 
   @Test
   public void testSmallBlur() {
-    manager.blur(3,"koala","koala");
+    manager.boxBlur(2,"koala","koala");
     manager.save("images/koala-smallblur.ppm", "koala");
   }
 
   @Test
   public void testBigBlur() {
-    manager.blur(10,"koala","koala");
+    manager.boxBlur(5,"koala","koala");
     manager.save("images/koala-bigblur.ppm", "koala");
+  }
+
+  @Test
+  public void testSharpen() {
+    manager.sharpen("koala","koala");
+    manager.save("images/koala-sharpen.ppm", "koala");
+  }
+
+  @Test
+  public void testRidgeDetection() {
+    manager.ridgeDetection("koala","koala");
+    manager.save("images/koala-ridge.ppm", "koala");
   }
 
   @Test
   public void testCopy() {
     manager.save("images/koala-copy.ppm", "koala");
+  }
+
+  @Test
+  public void testEmboss() {
+    double[][] kernel =
+            {{-2,-1, 0},
+                    {-1, 1, 1},
+                    { 0, 1, 2}};
+    manager.applyKernel(kernel,"koala","koala");
+    manager.save("images/koala-emboss.ppm","koala");
+  }
+
+  @Test
+  public void testGaussianBlue3x3() {
+    double[][] kernel =
+            {{1.0/16.0, 2.0/16.0, 1.0/16.0},
+                    {2.0/16.0, 4.0/16.0, 2.0/16.0},
+                    { 1.0/16.0, 2.0/16.0, 1.0/16.0}};
+    manager.applyKernel(kernel,"koala","koala");
+    manager.save("images/koala-gaussianblur3x3.ppm","koala");
   }
 }

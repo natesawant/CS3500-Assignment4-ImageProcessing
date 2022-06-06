@@ -5,9 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import util.ImageUtil;
@@ -17,6 +15,11 @@ import util.ImageUtil;
  */
 public final class OperationsModelManager implements OperationsModel {
     Map<String, Image> loaded;
+    Image img;
+    int width, height, r, g, b, max;
+    Color[][] pixels;
+    Color newColor;
+    double[][] kernel;
 
     public OperationsModelManager() {
         loaded = new HashMap<String, Image>();
@@ -25,7 +28,7 @@ public final class OperationsModelManager implements OperationsModel {
     @Override
     public void load(String path, String name) throws IllegalArgumentException {
         try {
-            Image img = ImageUtil.convertPPM(path);
+            img = ImageUtil.convertPPM(path);
             loaded.put(name, img);
         } catch (IllegalArgumentException ex) {
             throw new IllegalArgumentException("Filepath not valid.");
@@ -35,8 +38,6 @@ public final class OperationsModelManager implements OperationsModel {
     @Override
     public void save(String path, String name) throws IllegalArgumentException {
         Writer output;
-        Image img;
-        int width, height,r,g,b,max;
         if (!loaded.containsKey(name)) {
             throw new IllegalArgumentException("Image not loaded.");
         }
@@ -73,10 +74,6 @@ public final class OperationsModelManager implements OperationsModel {
 
     @Override
     public void valueComponent(String component, String name, String destName) throws IllegalArgumentException {
-        Image img;
-        Color[][] pixels;
-        int width;
-        int height;
         if (!loaded.containsKey(name)) {
             throw new IllegalArgumentException("Image not loaded.");
         }
@@ -89,8 +86,6 @@ public final class OperationsModelManager implements OperationsModel {
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
                 int val;
-                Color newColor;
-                int r,g,b,max;
                 newColor = img.getPixel(x,y);
                 switch (component.toLowerCase()) {
                     case "red":
@@ -116,27 +111,18 @@ public final class OperationsModelManager implements OperationsModel {
                     default:
                         throw new IllegalArgumentException("Not supported component.");
                 }
-                max = img.getMaxValue();
 
-                r = val;
-                g = val;
-                b = val;
-
-                pixels[x][y] = new Color(r,g,b);
+                pixels[x][y] = new Color(val,val,val);
             }
         }
 
 
-        int max = img.getMaxValue();
+        max = img.getMaxValue();
         loaded.put(destName, new RGBImage(pixels, max));
     }
 
     @Override
     public void horizontalFlip(String name, String destName) throws IllegalArgumentException {
-        Image img;
-        Color[][] pixels;
-        int width;
-        int height;
         if (!loaded.containsKey(name)) {
             throw new IllegalArgumentException("Image not loaded.");
         }
@@ -152,16 +138,12 @@ public final class OperationsModelManager implements OperationsModel {
             }
         }
 
-        int max = img.getMaxValue();
+        max = img.getMaxValue();
         loaded.put(destName, new RGBImage(pixels, max));
     }
 
     @Override
     public void verticalFlip(String name, String destName) throws IllegalArgumentException {
-        Image img;
-        Color[][] pixels;
-        int width;
-        int height;
         if (!loaded.containsKey(name)) {
             throw new IllegalArgumentException("Image not loaded.");
         }
@@ -178,16 +160,12 @@ public final class OperationsModelManager implements OperationsModel {
         }
 
 
-        int max = img.getMaxValue();
+        max = img.getMaxValue();
         loaded.put(destName, new RGBImage(pixels, max));
     }
 
     @Override
     public void brighten(int increment, String name, String destName) throws IllegalArgumentException {
-        Image img;
-        Color[][] pixels;
-        int width;
-        int height;
         if (!loaded.containsKey(name)) {
             throw new IllegalArgumentException("Image not loaded.");
         }
@@ -199,8 +177,6 @@ public final class OperationsModelManager implements OperationsModel {
 
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
-                Color newColor;
-                int r,g,b,max;
                 newColor = img.getPixel(x,y);
                 max = img.getMaxValue();
 
@@ -212,54 +188,95 @@ public final class OperationsModelManager implements OperationsModel {
             }
         }
 
-        int max = img.getMaxValue();
+        max = img.getMaxValue();
         loaded.put(destName, new RGBImage(pixels, max));
     }
 
     @Override
-    public void blur(int radius, String name, String destName) throws IllegalArgumentException {
-        Image img;
-        Color[][] pixels;
-        int width;
-        int height;
+    public void boxBlur(int radius, String name, String destName) throws IllegalArgumentException {
+        kernel = new double[2 * radius + 1][2 * radius + 1];
+        for (int i = 0; i < kernel.length; i++) {
+            for (int j = 0; j < kernel[0].length; j++) {
+                kernel[i][j] = 1.0 / (Math.pow((double) kernel.length, 2));
+            }
+        }
+
+        applyKernel(kernel,name,destName);
+    }
+
+    @Override
+    public void sharpen(String name, String destName) throws IllegalArgumentException {
+        kernel =
+                new double[][]{{ 0,-1, 0},
+                        {-1, 5,-1},
+                        { 0,-1, 0}};
+        applyKernel(kernel,name,destName);
+    }
+
+    @Override
+    public void ridgeDetection(String name, String destName) throws IllegalArgumentException {
+        kernel =
+                        new double[][]{{-1,-1,-1},
+                        {-1, 8,-1},
+                        {-1,-1,-1}};
+        applyKernel(kernel,name,destName);
+    }
+
+    @Override
+    public void applyKernel(double[][] kernel, String name, String destName) throws IllegalArgumentException {
         if (!loaded.containsKey(name)) {
             throw new IllegalArgumentException("Image not loaded.");
+        } else if (kernel.length % 2 == 0 || kernel[0].length % 2 == 0) {
+            throw new IllegalArgumentException("Kernel dimensions must be odd.");
         }
 
         img = loaded.get(name);
         width = img.getWidth();
         height = img.getHeight();
         pixels = new Color[width][height];
+        max = img.getMaxValue();
+
+        int halfWidth = (int) Math.floor(kernel.length / 2);
+        int halfHeight = (int) Math.floor(kernel[0].length / 2);
 
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
-                List<Color> sample;
-                sample = new ArrayList<Color>();
+                Color[][] sample = new Color[kernel.length][kernel[0].length];
 
-                for (int i = -radius; i <= radius; i++) {
-                    for (int j = -radius; j <= radius; j++) {
+
+                for (int i = -halfWidth; i <= halfWidth; i++) {
+                    for (int j = -halfHeight; j <= halfHeight; j++) {
                         if (x + i >= 0 && x + i < width && y + j >= 0 && y + j < height) {
-                            sample.add(img.getPixel(x + i, y + j));
+                            sample[i + halfWidth][j + halfHeight] = img.getPixel(x + i, y + j);
+                        } else {
+                            sample[i + halfWidth][j + halfHeight] = img.getPixel(x, y);
                         }
                     }
                 }
 
-                int r = 0,g = 0,b = 0;
+                r = 0;
+                g = 0;
+                b = 0;
 
-                for (Color s : sample) {
-                    r += s.getRed();
-                    g += s.getGreen();
-                    b += s.getBlue();
+                for (int i = 0; i < sample.length; i++) {
+                    for (int j = 0; j < sample[0].length; j++) {
+                        if (sample[i][j] != null) {
+                            r += kernel[i][j] * sample[i][j].getRed();
+                            g += kernel[i][j] * sample[i][j].getGreen();
+                            b += kernel[i][j] * sample[i][j].getBlue();
+                        }
+                    }
                 }
-                r /= sample.size();
-                g /= sample.size();
-                b /= sample.size();
+
+                r = Math.max(Math.min(r, max), 0);
+                g = Math.max(Math.min(g , max), 0);
+                b = Math.max(Math.min(b, max), 0);
 
                 pixels[x][y] = new Color(r,g,b);
             }
         }
 
-        int max = img.getMaxValue();
+        max = img.getMaxValue();
         loaded.put(destName, new RGBImage(pixels, max));
     }
 }

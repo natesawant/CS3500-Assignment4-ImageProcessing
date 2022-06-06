@@ -75,7 +75,7 @@ public final class ImageProcessingControllerImplementation implements ImageProce
             case "blur":
               if (validNumArguments(4, arguments.length)) {
                 try {
-                  manager.blur(Integer.parseInt(arguments[1]), arguments[2], arguments[3]);
+                  manager.boxBlur(Integer.parseInt(arguments[1]), arguments[2], arguments[3]);
                   view.renderMessage("Successfully brightened image." + System.lineSeparator());
                 } catch (NumberFormatException ex) {
                   view.renderMessage(ex.getMessage() + System.lineSeparator());
