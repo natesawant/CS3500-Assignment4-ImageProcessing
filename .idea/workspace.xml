@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Added kernel application method.">
+      <change afterPath="$PROJECT_DIR$/test/SmallScaleOperationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cat.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cat2.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/koala-bigblur.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-bigblur.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/koala-smallblur.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-smallblur.ppm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/OperationsModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OperationsModelManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/OperationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/OperationTests.java" afterDir="false" />
     </list>
@@ -38,22 +35,9 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/nates/OneDrive - Northeastern University/Classes/2022 Summer 1/CS3500 & 3501 - Object Oriented Design & Lab/Assignment4-ImageProcessing/test",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />

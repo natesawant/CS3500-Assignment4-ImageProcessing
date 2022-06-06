@@ -47,11 +47,10 @@ public final class OperationsModelManager implements OperationsModel {
         max = img.getMaxValue();
         try {
             output = new FileWriter(path);
-            output.append("P3 " + System.lineSeparator());
-            output.append("# Created by an image processing program by Nathaniel Sawant and Aiden" +
-                    " Cahill for CS3500 at Northeastern University." + System.lineSeparator());
-            output.append(width + " " +height + " " + System.lineSeparator());
-            output.append(max + " " + System.lineSeparator());
+            output.append("P3 ").append(System.lineSeparator());
+            output.append("# Created by an image processing program by Nathaniel Sawant and Aiden Cahill for CS3500 at Northeastern University.\n");
+            output.append(String.valueOf(width)).append(" ").append(String.valueOf(height)).append(" \n");
+            output.append(String.valueOf(max)).append(" \n");
 
             for (int y = 0; y < height; y++) {
                 for (int x = 0; x < width; x++) {

@@ -127,4 +127,11 @@ public class OperationTests {
     manager.applyKernel(kernel,"koala","koala");
     manager.save("images/koala-gaussianblur3x3.ppm","koala");
   }
+
+  @Test
+  public void testCat() {
+    manager.load("images/catp3.ppm", "cat");
+    manager.horizontalFlip("cat", "cat");
+    manager.save("images/cat-flipped.ppm", "cat");
+  }
 }
