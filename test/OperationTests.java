@@ -81,13 +81,13 @@ public class OperationTests {
 
   @Test
   public void testSmallBlur() {
-    manager.boxBlur(2,"koala","koala");
+    manager.boxBlur(1,"koala","koala");
     manager.save("images/koala-smallblur.ppm", "koala");
   }
 
   @Test
   public void testBigBlur() {
-    manager.boxBlur(5,"koala","koala");
+    manager.boxBlur(3,"koala","koala");
     manager.save("images/koala-bigblur.ppm", "koala");
   }
 

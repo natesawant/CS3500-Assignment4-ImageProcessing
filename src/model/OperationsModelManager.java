@@ -248,6 +248,10 @@ public final class OperationsModelManager implements OperationsModel {
                     for (int j = -halfHeight; j <= halfHeight; j++) {
                         if (x + i >= 0 && x + i < width && y + j >= 0 && y + j < height) {
                             sample[i + halfWidth][j + halfHeight] = img.getPixel(x + i, y + j);
+                        } else if (x + i >= 0 && x + i < width) {
+                            sample[i + halfWidth][j + halfHeight] = img.getPixel(x + i, y);
+                        } else if (y + j >= 0 && y + j < height) {
+                            sample[i + halfWidth][j + halfHeight] = img.getPixel(x, y + j);
                         } else {
                             sample[i + halfWidth][j + halfHeight] = img.getPixel(x, y);
                         }
