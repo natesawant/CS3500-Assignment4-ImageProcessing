@@ -51,7 +51,7 @@ public class ModelMock implements OperationsModel {
 
   @Override
   public void boxBlur(int radius, String name, String destName) throws IllegalArgumentException {
-    this.log.append("Attempt to apply box blur or radius: ").append(radius)
+    this.log.append("Attempt to apply box blur of radius: ").append(radius)
             .append("\nTo image: ").append(name)
             .append("\nTo output: ").append(destName);
   }
@@ -65,7 +65,7 @@ public class ModelMock implements OperationsModel {
 
   @Override
   public void ridgeDetection(String name, String destName) throws IllegalArgumentException {
-    this.log.append("Attempt to apply ridge detection.")
+    this.log.append("Attempt to apply ridge-detection.")
             .append("\nTo image: ").append(name)
             .append("\nTo output: ").append(destName);
   }
