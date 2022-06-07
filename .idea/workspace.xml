@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Added kernel application method.">
+    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Added some small scale tests and small scale images.">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_6_2022_5_04_PM_[Changes]/koala-bigblur.ppm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_6_2022_5_04_PM_[Changes]/koala-smallblur.ppm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_6_2022_5_04_PM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_6_2022_5_04_PM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Koala-gimp-copy.ppm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/TestImageHorizontalExpected.ppm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/TestImageOriginal.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/TestImageOriginalActual.ppm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/TestImageOriginalExpected.ppm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/TestImageRedChannelExpected.ppm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/TestImageVerticalActual.ppm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/TestImageVerticalExpected.ppm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/TestImageVerticalHorizontalExpected.ppm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/koala-emboss.ppm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/koala-gaussianblur3x3.ppm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/koala-horizontal-expected.ppm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/koala-ridge.ppm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/koala-sharpen.ppm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/images/cat.JPG" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/images/cat.ppm" beforeDir="false" />
@@ -249,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654542724109</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added some small scale tests and small scale images.">
+      <created>1654557595692</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1654557595692</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,6 +302,7 @@
     <MESSAGE value="Added more documentation." />
     <MESSAGE value="Fixed everything basically." />
     <MESSAGE value="Added kernel application method." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added kernel application method." />
+    <MESSAGE value="Added some small scale tests and small scale images." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some small scale tests and small scale images." />
   </component>
 </project>
