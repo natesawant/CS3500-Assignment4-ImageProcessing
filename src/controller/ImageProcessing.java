@@ -2,6 +2,7 @@ package controller;
 
 import java.io.InputStreamReader;
 
+import model.OperationsModelManager;
 import view.ImageProcessingTextView;
 import view.ImageProcessingView;
 
@@ -22,7 +23,7 @@ public class ImageProcessing {
 
     readable = new InputStreamReader(System.in);
     appendable = System.out;
-    view = new ImageProcessingTextView(appendable);
+    view = new ImageProcessingTextView(new OperationsModelManager(), appendable);
 
     if (args.length>0) {
       directory = args[0];

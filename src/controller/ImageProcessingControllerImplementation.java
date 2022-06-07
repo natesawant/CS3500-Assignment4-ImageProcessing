@@ -34,6 +34,16 @@ public final class ImageProcessingControllerImplementation implements ImageProce
     }
   }
 
+  public ImageProcessingControllerImplementation(String director, ImageProcessingView view, OperationsModel model, Readable readable) throws IllegalArgumentException {
+    if (view == null || model == null || readable == null) {
+      throw new IllegalArgumentException("Arguments cannot be null!");
+    }
+    this.directory = director;
+    this.view = view;
+    this.manager = model;
+    this.readable = readable;
+  }
+
   @Override
   public void initializeProgram() throws IllegalStateException {
     Scanner scan;

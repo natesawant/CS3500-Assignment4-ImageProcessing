@@ -2,19 +2,32 @@ package view;
 
 import java.io.IOException;
 
+import model.OperationsModel;
+
 /**
  * The text view allows for messages to be rendered to an appendable object.
  */
 public class ImageProcessingTextView implements ImageProcessingView {
-  Appendable appendable;
+  protected final OperationsModel model;
+  protected final Appendable appendable;
+
+  public ImageProcessingTextView(OperationsModel model) {
+    this.model = model;
+    this.appendable = System.out;
+  }
 
   /**
    * Alternative constructor with option for different appendable object.
    *
    * @param app   A non-null Appendable object.
    */
-  public ImageProcessingTextView(Appendable app) {
-    verifyStateAppend(app);
+  public ImageProcessingTextView(OperationsModel model, Appendable app) {
+    if (app == null) {
+      throw new IllegalArgumentException("Appendable cannot be null");
+    }
+    this.model = model;
+    this.appendable = app;
+//    verifyStateAppend(app);
   }
 
   /**
@@ -25,7 +38,7 @@ public class ImageProcessingTextView implements ImageProcessingView {
     if (app == null) {
       throw new IllegalArgumentException("Appendable is null");
     } else {
-      this.appendable = app;
+//      this.appendable = app;
     }
   }
 
