@@ -46,7 +46,8 @@ public class ViewTests {
 
   @Test (expected = IllegalArgumentException.class)
   public void nullMessageThrows() {
-    ImageProcessingView v = new ImageProcessingTextView(new OperationsModelManager(), new StringBuilder());
+    ImageProcessingView v
+            = new ImageProcessingTextView(new OperationsModelManager(), new StringBuilder());
     try {
       v.renderMessage(null);
     } catch (IOException e) {
@@ -56,7 +57,8 @@ public class ViewTests {
 
   @Test (expected = IllegalArgumentException.class)
   public void badAppendableThrows() {
-    ImageProcessingView v = new ImageProcessingTextView(new OperationsModelManager(), new CorruptAppendable());
+    ImageProcessingView v
+            = new ImageProcessingTextView(new OperationsModelManager(), new CorruptAppendable());
     try {
       v.renderMessage("This will fail.");
     } catch (IOException e) {

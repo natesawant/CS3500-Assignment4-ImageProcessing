@@ -26,7 +26,8 @@ public class ImageProcessingTextView implements ImageProcessingView {
    *
    * @param app   A non-null Appendable object.
    */
-  public ImageProcessingTextView(OperationsModel model, Appendable app) throws IllegalArgumentException {
+  public ImageProcessingTextView(OperationsModel model, Appendable app)
+          throws IllegalArgumentException {
     if (app == null || model == null) {
       throw new IllegalArgumentException("Arguments cannot be null");
     }

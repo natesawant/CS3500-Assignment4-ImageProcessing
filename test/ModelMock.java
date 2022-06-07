@@ -1,10 +1,17 @@
 import model.OperationsModel;
 
-
+/**
+ * This class is a mock of the model of this programing, recording the inputs that get sent to
+ * it for testing purposes.
+ */
 public class ModelMock implements OperationsModel {
 
   StringBuilder log;
 
+  /**
+   * Constructs a mock OperationsModel.
+   * @param log the desired log to output to.
+   */
   public ModelMock(StringBuilder log) {
     this.log = log;
   }

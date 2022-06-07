@@ -2,6 +2,9 @@ package model;
 
 import java.awt.*;
 
+/**
+ * This interface represents an image.
+ */
 public interface Image {
   /**
    *

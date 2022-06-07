@@ -2,7 +2,17 @@ package model;
 
 import java.awt.*;
 
+/**
+ * This class represents an image made up of RGB pixels.
+ */
 public class RGBImage extends AbstractImage {
+
+  /**
+   * Constructs a new RGB image based off an array of pixels.
+   * @param pixels The array of pixels that make up the image.
+   * @param maxValue The maximum value any color value can have.
+   * @throws IllegalArgumentException if the array of pixels is null.
+   */
   public RGBImage(Color[][] pixels, int maxValue) throws IllegalArgumentException {
     if (pixels == null) {
       throw new IllegalArgumentException("Pixels array cannot be null.");

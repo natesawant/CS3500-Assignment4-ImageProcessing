@@ -5,14 +5,15 @@ import java.io.StringReader;
 
 import controller.ImageProcessingController;
 import controller.ImageProcessingControllerImplementation;
-import model.Image;
 import model.OperationsModel;
-import model.OperationsModelManager;
 import view.ImageProcessingTextView;
 import view.ImageProcessingView;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * This class tests the functionality of the controller of this program.
+ */
 public class PPMControllerTests {
 
   OperationsModel model;
@@ -37,22 +38,27 @@ public class PPMControllerTests {
 
   @Test (expected = IllegalArgumentException.class)
   public void nullReadable() {
-    ImageProcessingController c = new ImageProcessingControllerImplementation("", view, null);
+    ImageProcessingController c
+            = new ImageProcessingControllerImplementation("", view, null);
   }
 
   @Test (expected = IllegalArgumentException.class)
   public void nullView() {
-    ImageProcessingController c = new ImageProcessingControllerImplementation("", null, new StringReader(""));
+    ImageProcessingController c
+            = new ImageProcessingControllerImplementation("", null, new StringReader(""));
   }
 
   @Test (expected = IllegalArgumentException.class)
   public void nullViewAndReadable() {
-    ImageProcessingController c = new ImageProcessingControllerImplementation("", null, null);
+    ImageProcessingController c
+            = new ImageProcessingControllerImplementation("", null, null);
   }
 
   @Test
   public void loadSendsCorrectArguments() {
-    ImageProcessingController c = new ImageProcessingControllerImplementation("images", view, model, new StringReader("load /testPicture test\nq"));
+    ImageProcessingController c
+            = new ImageProcessingControllerImplementation("images",
+                view, model, new StringReader("load /testPicture test\nq"));
     c.initializeProgram();
 
     String[] output = mockLog.toString().split("\n");
@@ -63,7 +69,9 @@ public class PPMControllerTests {
 
   @Test
   public void saveSendsCorrectArguments() {
-    ImageProcessingController c = new ImageProcessingControllerImplementation("images", view, model, new StringReader("save /testPicture test\nq"));
+    ImageProcessingController c
+            = new ImageProcessingControllerImplementation("images",
+                view, model, new StringReader("save /testPicture test\nq"));
     c.initializeProgram();
 
     String[] output = mockLog.toString().split("\n");
@@ -74,7 +82,11 @@ public class PPMControllerTests {
 
   @Test
   public void valueSendsCorrectArguments() {
-    ImageProcessingController c = new ImageProcessingControllerImplementation("images", view, model, new StringReader("value-component red images/testPicture redPicture\nq"));
+    ImageProcessingController c
+            = new ImageProcessingControllerImplementation("images",
+                view,
+                model,
+                new StringReader("value-component red images/testPicture redPicture\nq"));
     c.initializeProgram();
 
     String[] output = mockLog.toString().split("\n");
@@ -85,7 +97,9 @@ public class PPMControllerTests {
 
   @Test
   public void hFlipSendsCorrectArguments() {
-    ImageProcessingController c = new ImageProcessingControllerImplementation("images", view, model, new StringReader("horizontal-flip images/testPicture testFlip\nq"));
+    ImageProcessingController c
+            = new ImageProcessingControllerImplementation("images",
+                view, model, new StringReader("horizontal-flip images/testPicture testFlip\nq"));
     c.initializeProgram();
 
     String[] output = mockLog.toString().split("\n");
@@ -95,7 +109,9 @@ public class PPMControllerTests {
 
   @Test
   public void vFlipSendsCorrectArguments() {
-    ImageProcessingController c = new ImageProcessingControllerImplementation("images", view, model, new StringReader("vertical-flip images/testPicture testFlip\nq"));
+    ImageProcessingController c
+            = new ImageProcessingControllerImplementation("images",
+                view, model, new StringReader("vertical-flip images/testPicture testFlip\nq"));
     c.initializeProgram();
 
     String[] output = mockLog.toString().split("\n");
@@ -105,7 +121,9 @@ public class PPMControllerTests {
 
   @Test
   public void testBrightenSendsCorrectArguments() {
-    ImageProcessingController c = new ImageProcessingControllerImplementation("image", view, model, new StringReader("brighten 1000 images/testPicture outPic\nq"));
+    ImageProcessingController c
+            = new ImageProcessingControllerImplementation("image",
+                view, model, new StringReader("brighten 1000 images/testPicture outPic\nq"));
     c.initializeProgram();
 
     String[] output = mockLog.toString().split("\n");
@@ -116,7 +134,9 @@ public class PPMControllerTests {
 
   @Test
   public void testBlurSendsCorrectArguments() {
-    ImageProcessingController c = new ImageProcessingControllerImplementation("image", view, model, new StringReader("blur 5 images/testPicture blurredPic\nq"));
+    ImageProcessingController c
+            = new ImageProcessingControllerImplementation("image",
+                view, model, new StringReader("blur 5 images/testPicture blurredPic\nq"));
     c.initializeProgram();
 
     String[] output = mockLog.toString().split("\n");

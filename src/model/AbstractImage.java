@@ -2,6 +2,9 @@ package model;
 
 import java.awt.*;
 
+/**
+ * This class represents an image as an array of pixels.
+ */
 public abstract class AbstractImage implements Image {
   protected Color[][] pixels;
   protected int width;

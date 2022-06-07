@@ -1,10 +1,5 @@
 package controller;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import model.Image;
-
 /**
  * The controller that allows for input to process the images using specific operations.
  */

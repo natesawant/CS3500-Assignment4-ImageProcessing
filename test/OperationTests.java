@@ -8,9 +8,14 @@ import util.ImageUtil;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * This class tests the functionality of different operations that can be applied to images.
+ */
 public class OperationTests {
+
   OperationsModel manager;
   Image expected, actual;
+
   @Before
   public void setup() {
     manager = new OperationsModelManager();

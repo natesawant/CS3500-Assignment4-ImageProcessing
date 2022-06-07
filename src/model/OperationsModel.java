@@ -87,7 +87,7 @@ public interface OperationsModel {
   void ridgeDetection(String name, String destName) throws IllegalArgumentException;
 
   /**
-   * Applys the given kernel to the pixels of the image.
+   * Applies the given kernel to the pixels of the image.
    * @param kernel the kernel that is applied.
    * @param name the name of the image that processed.
    * @param destName the new name of the processed image.

@@ -2,7 +2,11 @@ package view;
 
 import java.io.IOException;
 
+/**
+ * This interface represents a view of this image processing program.
+ */
 public interface ImageProcessingView {
+
   /**
    * Render a specific message to the provided data destination.
    *

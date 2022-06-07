@@ -6,6 +6,9 @@ import model.OperationsModel;
 import model.OperationsModelManager;
 import view.ImageProcessingView;
 
+/**
+ * This class represents an implementation of a controller for an image processing program.
+ */
 public final class ImageProcessingControllerImplementation implements ImageProcessingController {
 
   protected String directory;
@@ -16,12 +19,14 @@ public final class ImageProcessingControllerImplementation implements ImageProce
   /**
    * The implementation of the controller that allows for text based input and output.
    * @param directory the root directory that is being worked in.
-   * @param view
-   * @param readable
-   * @throws IllegalArgumentException
+   * @param view where the controller should output to.
+   * @param readable Where the input of the program is coming from.
+   * @throws IllegalArgumentException if any of the arguments are null.
    */
-  public ImageProcessingControllerImplementation(String directory, ImageProcessingView view,
-                                                 Readable readable) throws IllegalArgumentException {
+  public ImageProcessingControllerImplementation(String directory,
+                                                 ImageProcessingView view,
+                                                 Readable readable)
+          throws IllegalArgumentException {
     if (readable == null) {
       throw new IllegalArgumentException("Readable is null");
     } else if (view == null) {
@@ -34,11 +39,23 @@ public final class ImageProcessingControllerImplementation implements ImageProce
     }
   }
 
-  public ImageProcessingControllerImplementation(String director, ImageProcessingView view, OperationsModel model, Readable readable) throws IllegalArgumentException {
+  /**
+   * The implementation of the controller that allows for text based input and output.
+   * @param directory the root directory that is being worked in.
+   * @param view where the controller should output to.
+   * @param model the model that this controller should control.
+   * @param readable Where the input of the program is coming from.
+   * @throws IllegalArgumentException if any of the arguments are null.
+   */
+  public ImageProcessingControllerImplementation(String directory,
+                                                 ImageProcessingView view,
+                                                 OperationsModel model,
+                                                 Readable readable)
+          throws IllegalArgumentException {
     if (view == null || model == null || readable == null) {
       throw new IllegalArgumentException("Arguments cannot be null!");
     }
-    this.directory = director;
+    this.directory = directory;
     this.view = view;
     this.manager = model;
     this.readable = readable;
@@ -98,7 +115,7 @@ public final class ImageProcessingControllerImplementation implements ImageProce
               try {
                 if (validNumArguments(3, arguments.length)) {
                   manager.verticalFlip(arguments[1], arguments[2]);
-                  view.renderMessage("Successfully flipped image vertically." + System.lineSeparator());
+                  view.renderMessage("Successfully flipped image vertically.\n");
                 }
               } catch (IllegalArgumentException ex) {
                 view.renderMessage(ex.getMessage() + System.lineSeparator());
@@ -108,7 +125,7 @@ public final class ImageProcessingControllerImplementation implements ImageProce
               try {
                 if (validNumArguments(3, arguments.length)) {
                   manager.horizontalFlip(arguments[1], arguments[2]);
-                  view.renderMessage("Successfully flipped image horizontally." + System.lineSeparator());
+                  view.renderMessage("Successfully flipped image horizontally.\n");
                 }
               } catch (IllegalArgumentException ex) {
                 view.renderMessage(ex.getMessage() + System.lineSeparator());
@@ -118,7 +135,7 @@ public final class ImageProcessingControllerImplementation implements ImageProce
               try {
                 if (validNumArguments(4, arguments.length)) {
                   manager.valueComponent(arguments[1], arguments[2], arguments[3]);
-                  view.renderMessage("Successfully converted to component greyscale." + System.lineSeparator());
+                  view.renderMessage("Successfully converted to component greyscale.\n");
                 }
               } catch (IllegalArgumentException ex) {
                 view.renderMessage(ex.getMessage() + System.lineSeparator());
@@ -145,7 +162,7 @@ public final class ImageProcessingControllerImplementation implements ImageProce
         }
       }
     } catch (Exception ex) {
-      throw new IllegalStateException("Cannot read or write. " + ex.getMessage() + System.lineSeparator());
+      throw new IllegalStateException("Cannot read or write. " + ex.getMessage() + "\n");
     }
   }
 
@@ -159,7 +176,7 @@ public final class ImageProcessingControllerImplementation implements ImageProce
   private boolean validNumArguments(int exp, int act) throws IllegalStateException {
     if (exp != act) {
       try {
-        view.renderMessage("Must be only " + exp + " arguments. Actual: " + act + System.lineSeparator());
+        view.renderMessage("Must be only " + exp + " arguments. Actual: " + act + "\n");
         return false;
       } catch (IOException ex) {
         throw new IllegalStateException(ex.getMessage() + System.lineSeparator());

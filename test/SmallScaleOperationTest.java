@@ -2,13 +2,15 @@ import model.Image;
 import model.OperationsModel;
 import model.OperationsModelManager;
 import util.ImageUtil;
-import org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * This class tests the functionality of the operations that can be used to alter images.
+ */
 public class SmallScaleOperationTest {
 
   Image img;
@@ -94,12 +96,17 @@ public class SmallScaleOperationTest {
 
   @Test (expected = IllegalArgumentException.class)
   public void kernelUnloadedThrows() {
-    m.applyKernel(new double[][]{new double[]{0, 0, 0}, new double[]{1, 1, 1}, new double[]{2, 2, 2}}, "normal-koala", "kernel-koala");
+    m.applyKernel(new double[][]{
+            new double[]{0, 0, 0},
+            new double[]{1, 1, 1},
+            new double[]{2, 2, 2}}, "normal-koala", "kernel-koala");
   }
 
   @Test (expected = IllegalArgumentException.class)
   public void kernelEvenWidthOddHeightThrows() {
-    m.applyKernel(new double[][]{new double[]{0, 0, 0}, new double[]{1, 1, 1}}, "normal-koala", "kernel-koala");
+    m.applyKernel(new double[][]{
+            new double[]{0, 0, 0},
+            new double[]{1, 1, 1}}, "normal-koala", "kernel-koala");
   }
 
   @Test (expected = IllegalArgumentException.class)
@@ -109,7 +116,9 @@ public class SmallScaleOperationTest {
 
   @Test (expected = IllegalArgumentException.class)
   public void kernelEvenWidthEvenHeightThrows() {
-    m.applyKernel(new double[][]{new double[]{0, 0}, new double[]{1, 1}}, "normal-koala", "kernel-koala");
+    m.applyKernel(new double[][]{
+            new double[]{0, 0},
+            new double[]{1, 1}}, "normal-koala", "kernel-koala");
   }
 
   /*

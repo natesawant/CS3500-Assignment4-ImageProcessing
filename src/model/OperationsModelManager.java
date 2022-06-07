@@ -14,6 +14,7 @@ import util.ImageUtil;
  * Implementation of the image processing operations.
  */
 public final class OperationsModelManager implements OperationsModel {
+
     Map<String, Image> loaded;
     Image img;
     int width, height, r, g, b, max;
@@ -21,6 +22,9 @@ public final class OperationsModelManager implements OperationsModel {
     Color newColor;
     double[][] kernel;
 
+    /**
+     * Constructs a default model that allows different operations to be applied to images.
+     */
     public OperationsModelManager() {
         loaded = new HashMap<String, Image>();
     }
@@ -48,8 +52,12 @@ public final class OperationsModelManager implements OperationsModel {
         try {
             output = new FileWriter(path);
             output.append("P3 ").append(System.lineSeparator());
-            output.append("# Created by an image processing program by Nathaniel Sawant and Aiden Cahill for CS3500 at Northeastern University.\n");
-            output.append(String.valueOf(width)).append(" ").append(String.valueOf(height)).append(" \n");
+            output.append("# Created by an image processing program by Nathaniel Sawant "
+                    + "and Aiden Cahill for CS3500 at Northeastern University.\n");
+            output.append(String.valueOf(width))
+                    .append(" ")
+                    .append(String.valueOf(height))
+                    .append(" \n");
             output.append(String.valueOf(max)).append(" \n");
 
             for (int y = 0; y < height; y++) {
@@ -72,7 +80,8 @@ public final class OperationsModelManager implements OperationsModel {
     }
 
     @Override
-    public void valueComponent(String component, String name, String destName) throws IllegalArgumentException {
+    public void valueComponent(String component, String name, String destName)
+            throws IllegalArgumentException {
         if (!loaded.containsKey(name)) {
             throw new IllegalArgumentException("Image not loaded.");
         }
@@ -101,11 +110,14 @@ public final class OperationsModelManager implements OperationsModel {
                                 newColor.getGreen()));
                         break;
                     case "luma":
-                        val = (newColor.getBlue() + newColor.getRed() + newColor.getGreen()) / 3;
+                        val = (newColor.getBlue()
+                                + newColor.getRed()
+                                + newColor.getGreen()) / 3;
                         break;
                     case "intensity":
-                        val = (int)
-                                (0.2126 * newColor.getBlue() + 0.7152 * newColor.getRed() + 0.0722 * newColor.getGreen());
+                        val = (int) (0.2126 * newColor.getBlue()
+                                    + 0.7152 * newColor.getRed()
+                                    + 0.0722 * newColor.getGreen());
                         break;
                     default:
                         throw new IllegalArgumentException("Not supported component.");
@@ -164,7 +176,8 @@ public final class OperationsModelManager implements OperationsModel {
     }
 
     @Override
-    public void brighten(int increment, String name, String destName) throws IllegalArgumentException {
+    public void brighten(int increment, String name, String destName)
+            throws IllegalArgumentException {
         if (!loaded.containsKey(name)) {
             throw new IllegalArgumentException("Image not loaded.");
         }
@@ -222,7 +235,8 @@ public final class OperationsModelManager implements OperationsModel {
     }
 
     @Override
-    public void applyKernel(double[][] kernel, String name, String destName) throws IllegalArgumentException {
+    public void applyKernel(double[][] kernel, String name, String destName)
+            throws IllegalArgumentException {
         if (!loaded.containsKey(name)) {
             throw new IllegalArgumentException("Image not loaded.");
         } else if (kernel.length % 2 == 0 || kernel[0].length % 2 == 0) {

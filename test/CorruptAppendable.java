@@ -1,5 +1,9 @@
 import java.io.IOException;
 
+/**
+ * This class represents a corrupt appendable object that throws an exception when
+ * something is appended to it.
+ */
 public class CorruptAppendable implements Appendable {
 
 
