@@ -47,27 +47,92 @@ public class SmallScaleOperationTest {
     m = new OperationsModelManager();
   }
 
+  @Test (expected = IllegalArgumentException.class)
+  public void invalidFilepathThrows() {
+    m.load("taco/invalid/picture", "doesnt-exist");
+  }
+
+  @Test (expected = IllegalArgumentException.class)
+  public void savingUnloadedThrows() {
+    m.save("images/Koala.ppm", "cool-koala");
+  }
+
+  @Test (expected = IllegalArgumentException.class)
+  public void savingInvalidFilePathThrows() {
+    m.save("taco/invalid/picture", "newPicture");
+  }
+
+  @Test (expected = IllegalArgumentException.class)
+  public void savingToBadWriterThrows() {
+    // TODO make corrupt writer class
+  }
+
+  @Test (expected = IllegalArgumentException.class)
+  public void componentOfUnloadedThrows() {
+    m.valueComponent("red", "normal-koala", "red-koala");
+  }
+
+  @Test (expected = IllegalArgumentException.class)
+  public void componentNotRGBThrows() {
+    m.valueComponent("black", "normal-koala", "black-koala");
+  }
+
+  @Test (expected = IllegalArgumentException.class)
+  public void hFlipUnloadedThrows() {
+    m.horizontalFlip("normal-koala", "flipped-koala");
+  }
+
+  @Test (expected = IllegalArgumentException.class)
+  public void vFlipUnloadedThrows() {
+    m.verticalFlip("normal-koala", "flipped-koala");
+  }
+
+  @Test (expected = IllegalArgumentException.class)
+  public void brightenUnloadedThrows() {
+    m.brighten(39, "normal-koala", "bright-koala");
+  }
+
+  @Test (expected = IllegalArgumentException.class)
+  public void kernelUnloadedThrows() {
+    m.applyKernel(new double[][]{new double[]{0, 0, 0}, new double[]{1, 1, 1}, new double[]{2, 2, 2}}, "normal-koala", "kernel-koala");
+  }
+
+  @Test (expected = IllegalArgumentException.class)
+  public void kernelEvenWidthOddHeightThrows() {
+    m.applyKernel(new double[][]{new double[]{0, 0, 0}, new double[]{1, 1, 1}}, "normal-koala", "kernel-koala");
+  }
+
+  @Test (expected = IllegalArgumentException.class)
+  public void kernelOddWidthEvenHeightThrows() {
+    m.applyKernel(new double[][]{new double[]{0, 0}}, "normal-koala", "kernel-koala");
+  }
+
+  @Test (expected = IllegalArgumentException.class)
+  public void kernelEvenWidthEvenHeightThrows() {
+    m.applyKernel(new double[][]{new double[]{0, 0}, new double[]{1, 1}}, "normal-koala", "kernel-koala");
+  }
+
   /*
   Tests to do:
 
   Exceptions:
-  load throws when the filepath is not valid
+  load throws when the filepath is not valid <>
 
-  save throws when the provided image has not yet been loaded
-  save throws when the filepath is not valid
+  save throws when the provided image has not yet been loaded <>
+  save throws when the filepath is not valid <>
   save throws when unable to append to Writer -- make corrupt
 
-  valueComponent throws when image has not yet been loaded
-  valueComponent throws when provided value is not supported
+  valueComponent throws when image has not yet been loaded <>
+  valueComponent throws when provided value is not supported <>
 
-  horizontalFlip throws when provided image has not yet been loaded
+  horizontalFlip throws when provided image has not yet been loaded <>
 
-  verticalFlip throws when provided image has not yet been loaded
+  verticalFlip throws when provided image has not yet been loaded <>
 
-  brighten throws when provided image has not yet been loaded
+  brighten throws when provided image has not yet been loaded <>
 
-  applyKernel throws when provided image has not yet been loaded
-  applyKernel throws when provided dimensions are not odd
+  applyKernel throws when provided image has not yet been loaded <>
+  applyKernel throws when provided dimensions are not odd <>
 
   Tests:
   load ->
