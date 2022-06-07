@@ -11,7 +11,12 @@ public class ImageProcessingTextView implements ImageProcessingView {
   protected final OperationsModel model;
   protected final Appendable appendable;
 
-  public ImageProcessingTextView(OperationsModel model) {
+  public ImageProcessingTextView(OperationsModel model) throws IllegalArgumentException {
+
+    if (model == null) {
+      throw new IllegalArgumentException("Model cannot be null!");
+    }
+
     this.model = model;
     this.appendable = System.out;
   }
@@ -21,9 +26,9 @@ public class ImageProcessingTextView implements ImageProcessingView {
    *
    * @param app   A non-null Appendable object.
    */
-  public ImageProcessingTextView(OperationsModel model, Appendable app) {
-    if (app == null) {
-      throw new IllegalArgumentException("Appendable cannot be null");
+  public ImageProcessingTextView(OperationsModel model, Appendable app) throws IllegalArgumentException {
+    if (app == null || model == null) {
+      throw new IllegalArgumentException("Arguments cannot be null");
     }
     this.model = model;
     this.appendable = app;
@@ -47,14 +52,14 @@ public class ImageProcessingTextView implements ImageProcessingView {
    * @param message the message to be transmitted.
    * @throws IOException if unable to append the message or message is null.
    */
-  public void renderMessage(String message) throws IOException {
+  public void renderMessage(String message) throws IllegalArgumentException {
     if (message == null) {
       throw new IllegalArgumentException("Message cannot be null.");
     } else {
       try {
         appendable.append(message);
-      } catch (Exception ex) {
-        throw new IOException("Cannot append message.");
+      } catch (IOException ex) {
+        throw new IllegalArgumentException("Cannot append message.");
       }
     }
   }
