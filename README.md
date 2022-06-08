@@ -6,7 +6,7 @@
 1. About
 2. Design
 3. Instructions
-   - [Commands](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#valid-commands))](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#valid-commands)
+   - [Commands](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#valid-commands)
 
 
 
