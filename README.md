@@ -5,7 +5,11 @@
 ## Contents
 1. [About](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#about)
 2. [Design](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#design)
-3. [Instructions](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#instructions)
+   - [Controllers](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#controllers)
+   - [Models](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#models)
+   - [Views](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#views)
+   - [Utils](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#utils)
+4. [Instructions](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#instructions)
    - [Valid Commands](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#valid-commands)
 
 
