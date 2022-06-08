@@ -39,11 +39,16 @@
 #### Brightens (or darkens if negative) the image _name_ by an _increment_ and stores it as _destName_.
 `brighten increment name destName`
 
-###### Example:
-> `brighten 10 igm igm-bright`
+###### Examples:
+> `brighten 100 igm igm-bright`
 
 ![igm-bright](https://user-images.githubusercontent.com/74106957/172696781-9da33406-1373-4019-b9b8-2e13a0e20a03.jpg)
- 
+
+
+> `brighten -100 igm igm-dark`
+
+ ![igm-dark](https://user-images.githubusercontent.com/74106957/172697312-55dfbd30-c2d9-43ce-bf1c-951ed5239f57.jpg)
+
 #### Vertical Flip
 #### Flips the image _name_ vertically and stores it as _destName_.
 `vertical-flip name destName`
@@ -66,9 +71,34 @@
 #### Isolates the _component_ (red, green, blue, value, luma, intensity) of the image _name_ and stores it as _destName_.
 `value-component component name destName`
 
-###### Example:
-> `value-component luma igm igm-luma`
+###### Examples:
+> `value-component red igm igm-red`
 
 ![igmred](https://user-images.githubusercontent.com/74106957/172696985-f3d0ad02-3016-4b71-9a85-ac0d3966051a.jpg)
+
+
+> `value-component green igm igm-green`
+
+![igmgreen](https://user-images.githubusercontent.com/74106957/172697551-9f2a91c2-e785-4695-8b19-e5325671c1cd.jpg)
+
+
+> `value-component blue igm igm-blue`
+
+![igmblue](https://user-images.githubusercontent.com/74106957/172697579-fe1d7b16-1288-40bd-8f71-57c52905c459.jpg)
+
+
+> `value-component luma igm igm-luma`
+
+![igmluma](https://user-images.githubusercontent.com/74106957/172697594-ff1192d0-a7e2-4394-a5d5-2e0756a8e0e5.jpg)
+
+
+> `value-component luma igm igm-intensity`
+
+![igmintensity](https://user-images.githubusercontent.com/74106957/172697622-d458f8d9-c68e-4b7e-a140-ed2de4376466.jpg)
+
+
+> `value-component luma igm igm-value`
+
+![igmvalue](https://user-images.githubusercontent.com/74106957/172697654-7c771bf8-864c-4556-a798-6cda2294bca1.jpg)
 
 #### Box Blur
