@@ -23,25 +23,43 @@
 
 #### Interfaces
 
+1. ImageProcessingController
+
 #### Classes
+
+1. ImageProcessingControllerImplementation
+2. Image Processing
 
 ### Models
 
 #### Interfaces
 
+1. Image
+2. OperationsModel
+
 #### Classes
+
+1. AbstractImage
+2. RGBImage
+3. OperationsModelManager
 
 ### Views
 
 #### Interfaces
 
+1. ImageProcessingView
+
 #### Classes
+
+1. ImageProcessingTextView
 
 ### Utils
 
 #### Interfaces
 
 #### Classes
+
+1. ImageUtil
 
 ## Instructions
 
