@@ -168,10 +168,22 @@ and more to come!
 `apply-kernel kernel name destName`
 
 ###### Examples:
+> `double[][] blur = new double[][]{
+> {1/9, 1/9, 1/9},
+> {1/9, 1/9, 1/9},
+> {1/9, 1/9, 1/9}
+> }`
+
 > `apply-kernel blur igm igm-blur`
 
 ![igmblur](https://user-images.githubusercontent.com/74106957/172703956-c6cf1751-5a91-428a-96af-587a866e6a48.jpg)
 
+
+> `double[][] blur = new double[][]{
+> { 0, -1,  0},
+> {-1,  8, -1},
+> { 0, -1,  0}
+> }`
 
 > `apply-kernel sharpen igm igm-sharp`
 
