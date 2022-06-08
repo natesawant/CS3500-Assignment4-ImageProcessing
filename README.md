@@ -162,4 +162,16 @@ and more to come!
 
 ![igmvalue](https://user-images.githubusercontent.com/74106957/172697654-7c771bf8-864c-4556-a798-6cda2294bca1.jpg)
 
-#### Box Blur
+#### Apply Kernel
+#### Applies the _kernel_ to each pixel of image _name_ and stores it as _destName_.
+`apply-kernel kernel name destName`
+
+###### Examples:
+> `apply-kernel blur igm igm-blur`
+
+![igmblur](https://user-images.githubusercontent.com/74106957/172703956-c6cf1751-5a91-428a-96af-587a866e6a48.jpg)
+
+
+> `apply-kernel sharpen igm igm-sharp`
+
+![igmsharp](https://user-images.githubusercontent.com/74106957/172704022-22e18136-cd6e-4c29-a14d-f0483abf90bd.jpg)
