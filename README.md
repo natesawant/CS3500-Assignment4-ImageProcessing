@@ -171,6 +171,7 @@ and more to come!
 
 > `apply-kernel blur igm igm-blur`
 
+Box Blur Kernel (3x3)
 | 1/9 	| 1/9 	| 1/9 	|
 |-----	|-----	|-----	|
 | 1/9 	| 1/9 	| 1/9 	|
@@ -181,6 +182,7 @@ and more to come!
 
 > `apply-kernel sharpen igm igm-sharp`
 
+Sharpen Kernel (3x3)
 | 0  	| -1 	| 0  	|
 |----	|----	|----	|
 | -1 	| 8  	| -1 	|
