@@ -1,12 +1,16 @@
 import model.Image;
 import model.OperationsModel;
 import model.OperationsModelManager;
+import model.RGBImage;
 import util.ImageUtil;
 
 import org.junit.Before;
 import org.junit.Test;
 
+import java.awt.*;
+
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 /**
  * This class tests the functionality of the operations that can be used to alter images.
@@ -21,16 +25,6 @@ public class SmallScaleOperationTest {
   public void setup() {
     m = new OperationsModelManager();
     m.load("images/TestImageOriginalExpected.ppm", "img");
-  }
-
-  @Test
-  public void testSave() {
-    m.save("images/TestImageOriginalActual.ppm","img");
-
-    actual = ImageUtil.convertPPM("images/TestImageOriginalActual.ppm");
-    expected = ImageUtil.convertPPM("images/TestImageOriginalExpected.ppm");
-
-    assertEquals(expected,actual);
   }
 
   @Test
@@ -62,6 +56,11 @@ public class SmallScaleOperationTest {
   @Test (expected = IllegalArgumentException.class)
   public void savingInvalidFilePathThrows() {
     m.save("taco/invalid/picture", "newPicture");
+  }
+
+  @Test (expected = IllegalArgumentException.class)
+  public void testLoadSizeZeroThrows() {
+    m.load("images/test0x0.ppm", "sizeZero");
   }
 
   @Test (expected = IllegalArgumentException.class)
@@ -145,29 +144,117 @@ public class SmallScaleOperationTest {
 
   Tests:
   load ->
-    provided image is present in loaded after call
+    provided image is present in loaded after call (shouldn't throw when trying to save) <>
   save ->
     must input writer , ensure it contains the first correct lines
     spot check pixels for correctness
     try with:
-      size 0 image
-      square image
-      rectangular image
+      size 0 image should throw <>
+      square image <>
+      rectangular image <>
   valueComponent ->
     will need to first load image, edit it, then save for each iteration
       use for loop to go through each variation
-      spot check one to two pixels per variation
+      spot check one to two pixels per variation <>
   horizontalFlip ->
     will need to first load image, edit, then save and check with output
-      might be easier to try with a 1 x 2 picture , ensure they swap places
+      might be easier to try with a 1 x 2 picture , ensure they swap places <>
   verticalFlip ->
-    same as above, but try with a 2 x 1 picture , ensure the two pixels swap
+    same as above, but try with a 2 x 1 picture , ensure the two pixels swap <>
   brighten ->
     can try with a one pixel image | should also try with a larger
     attempt with both positive and negative values and check delta of each color
   rest : Nate
 
-
    */
+
+  @Test
+  public void testLoad() {
+    m.load("images/test2x2.ppm", "test");
+
+    try {
+      m.save("images/test2x2.ppm", "test");
+    } catch (IllegalArgumentException e) {
+      fail();
+    }
+  }
+
+  @Test
+  public void testSaveRectangle() {
+    m.save("images/TestImageOriginalActual.ppm","img");
+
+    actual = ImageUtil.convertPPM("images/TestImageOriginalActual.ppm");
+    expected = ImageUtil.convertPPM("images/TestImageOriginalExpected.ppm");
+
+    assertEquals(expected,actual);
+  }
+
+  @Test
+  public void testSaveSquare() {
+    m.load("images/test2x2.ppm", "test");
+    m.save("images/test2x2.ppm", "test");
+
+    actual = ImageUtil.convertPPM("images/test2x2.ppm");
+    expected = new RGBImage(new Color[][]{{Color.RED, Color.BLUE}, {Color.GREEN, Color.WHITE}}, 255);
+
+    assertEquals(expected, actual);
+  }
+
+  @Test
+  public void testValueComponent() {
+
+    m.load("images/test2x2.ppm", "test");
+    String[] types = new String[]{"red", "green", "blue", "value", "luma", "intensity"};
+    // of test2x2.ppm , values output calculating given types value:
+
+    Image red = new RGBImage(new Color[][]{{Color.WHITE, Color.BLACK}, {Color.BLACK, Color.WHITE}}, 255);
+    Image green = new RGBImage(new Color[][]{{Color.BLACK, Color.BLACK}, {Color.WHITE, Color.WHITE}}, 255);
+    Image blue = new RGBImage(new Color[][]{{Color.BLACK, Color.WHITE}, {Color.BLACK, Color.WHITE}}, 255);
+    Image value = new RGBImage(new Color[][]{{Color.WHITE, Color.WHITE}, {Color.WHITE, Color.WHITE}}, 255);
+    Image luma = new RGBImage(new Color[][]{{new Color(85, 85, 85), new Color(85, 85, 85)}, {new Color(85, 85, 85), new Color(255, 255,  255)}}, 255);
+    Image intensity = new RGBImage(new Color[][]{{new Color(182, 182, 182), new Color(54, 54, 54)}, {new Color(18, 18, 18), new Color(254, 254, 254)}}, 255);
+
+    Image[] expected = new Image[]{red, green, blue, value, luma, intensity};
+
+    for (int i = 0; i < 6; i++) {
+      String currentType = types[i];
+      m.valueComponent(currentType, "test", types[i]);
+
+      m.save(types[i] + ".ppm", types[i]);
+      actual = ImageUtil.convertPPM(types[i] + ".ppm");
+      assertEquals(expected[i], actual);
+    }
+
+  }
+
+  @Test
+  public void testHFlip() {
+
+    m.load("images/test2x1.ppm", "test");
+
+    m.horizontalFlip("test", "test");
+    m.save("hflip.ppm", "test");
+
+    actual = ImageUtil.convertPPM("hflip.ppm");
+    expected = new RGBImage(new Color[][]{{Color.GREEN}, {Color.RED}}, 255);
+
+    assertEquals(expected, actual);
+  }
+
+  @Test
+  public void testVFlip() {
+
+    m.load("images/test1x2.ppm", "test");
+
+    m.verticalFlip("test", "test");
+    m.save("vflip.ppm", "test");
+
+    actual = ImageUtil.convertPPM("vflip.ppm");
+    expected = new RGBImage(new Color[][]{{Color.GREEN, Color.RED}}, 255);
+
+    assertEquals(expected, actual);
+
+  }
+
 
 }

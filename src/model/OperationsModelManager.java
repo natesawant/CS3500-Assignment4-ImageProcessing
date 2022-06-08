@@ -15,12 +15,12 @@ import util.ImageUtil;
  */
 public final class OperationsModelManager implements OperationsModel {
 
-    Map<String, Image> loaded;
-    Image img;
-    int width, height, r, g, b, max;
-    Color[][] pixels;
-    Color newColor;
-    double[][] kernel;
+    private Map<String, Image> loaded;
+    private Image img;
+    private int width, height, r, g, b, max;
+    private Color[][] pixels;
+    private Color newColor;
+    private double[][] kernel;
 
     /**
      * Constructs a default model that allows different operations to be applied to images.
@@ -35,7 +35,7 @@ public final class OperationsModelManager implements OperationsModel {
             img = ImageUtil.convertPPM(path);
             loaded.put(name, img);
         } catch (IllegalArgumentException ex) {
-            throw new IllegalArgumentException("Filepath not valid.");
+            throw new IllegalArgumentException(ex.getMessage());
         }
     }
 

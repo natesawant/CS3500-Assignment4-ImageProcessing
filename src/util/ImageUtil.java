@@ -54,6 +54,10 @@ public class ImageUtil {
     int height = sc.nextInt();
     int maxValue = sc.nextInt();
 
+    if (width == 0 || height == 0) {
+      throw new IllegalArgumentException("Image must be at least 1 pixel by 1 pixel!");
+    }
+
     pixels = new Color[width][height];
 
     for (int y=0;y<height;y++) {
