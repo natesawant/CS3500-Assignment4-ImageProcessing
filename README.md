@@ -36,21 +36,21 @@
 `brighten increment name destName`
 
 ###### Example:
-> `brighten 10 koala-bright`
+> `brighten 10 koala koala-bright`
  
 #### Vertical Flip
 #### Flips the image _name_ vertically and stores it as _destName_.
 `vertical-flip name destName`
 
 ###### Example:
-> `vertical-flip koala-vertical`
+> `vertical-flip koala koala-vertical`
 
 #### Horizontal Flip
 #### Flips the image _name_ horizontally and stores it as _destName_.
 `horizontal-flip name destName`
 
 ###### Example:
-> `horizontal-flip koala kaoal-horizontal`
+> `horizontal-flip koala kaola-horizontal`
 
 #### Value Component
 #### Isolates the _component_ (red, green, blue, value, luma, intensity) of the image _name_ and stores it as _destName_.
