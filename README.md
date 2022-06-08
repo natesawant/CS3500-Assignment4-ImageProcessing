@@ -17,6 +17,8 @@
 
 ## About
 
+This project is a basic image processing program. Currently, the program is only able to work with P3 .ppm files, an ASCII based image file. The program is capable of loading and saving the files as this format, however, it will likely support other files in the future. The program can perform basic image manipulations, such as flipping the image, setting the image to greyscale, and applying kernels. 
+
 ## Design
 
 ### Controllers
