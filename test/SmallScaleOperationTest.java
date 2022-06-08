@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.awt.*;
+import java.util.Random;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
@@ -163,7 +164,7 @@ public class SmallScaleOperationTest {
     same as above, but try with a 2 x 1 picture , ensure the two pixels swap <>
   brighten ->
     can try with a one pixel image | should also try with a larger
-    attempt with both positive and negative values and check delta of each color
+    attempt with both positive and negative values and check delta of each color <>
   rest : Nate
 
    */
@@ -254,6 +255,33 @@ public class SmallScaleOperationTest {
 
     assertEquals(expected, actual);
 
+  }
+
+  @Test
+  public void testBrighten() {
+
+    Random r = new Random();
+    m.load("images/test1x1.ppm", "test");
+
+    int delta = r.nextInt(1020) - 510;
+    int expectedVal;
+
+    if (delta < -100) {
+      expectedVal = 0;
+    } else if (delta > 155) {
+      expectedVal = 255;
+    } else {
+      expectedVal = delta + 100;
+    }
+
+    expected = new RGBImage(new Color[][]{{new Color(expectedVal, expectedVal, expectedVal)}}, 255);
+
+    m.brighten(delta, "test", "test");
+    m.save("bright.ppm", "test");
+
+    actual = ImageUtil.convertPPM("bright.ppm");
+
+    assertEquals(expected, actual);
   }
 
 
