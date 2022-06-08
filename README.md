@@ -28,6 +28,8 @@
 
 ## Instructions
 
+### Running The Program
+
 ### Valid Commands
 
 1. [Load](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#load)
