@@ -32,6 +32,7 @@
 4. [Vertical Flip](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#vertical-flip)
 5. [Horizontal Flip](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#horizontal-flip)
 6. [Value Component](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#value-component)
+
 and more to come!
 
 #### Load
