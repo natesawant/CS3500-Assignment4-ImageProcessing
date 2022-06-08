@@ -2,7 +2,13 @@
 ## For CS3500 - Object Oriented Design
 ### By Nathaniel Sawant and Aiden Cahill
 
-## What is it?
+## Contents
+1. About
+2. Design
+3. Instructions
+   - [Commands](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing/edit/master/README.md#valid-commands)
+
+## About?
 
 ## Design
 
@@ -14,7 +20,7 @@
 
 ### Utils
 
-## How To Use
+## Instructions
 
 ### Valid Commands
 #### Load
