@@ -164,7 +164,7 @@ and more to come!
 ![igmvalue](https://user-images.githubusercontent.com/74106957/172697654-7c771bf8-864c-4556-a798-6cda2294bca1.jpg)
 
 #### Apply Kernel
-#### Applies the _kernel_ to each pixel of image _name_ and stores it as _destName_.
+#### Applies the custom _kernel_ (an odd dimensioned matrix that samples surrounding pixels) to image _name_ and stores it as _destName_.
 `apply-kernel kernel name destName`
 
 ###### Examples:
