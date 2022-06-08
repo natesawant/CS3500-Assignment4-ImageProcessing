@@ -3,9 +3,9 @@
 ### By Nathaniel Sawant and Aiden Cahill
 
 ## Contents
-1. About
-2. Design
-3. Instructions
+1. [About](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#about)
+2. [Design](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#design)
+3. [Instructions](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#instructions)
    - [Valid Commands](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#valid-commands)
 
 
