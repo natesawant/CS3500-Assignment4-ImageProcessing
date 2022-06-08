@@ -6,7 +6,7 @@
 1. About
 2. Design
 3. Instructions
-   - [Commands](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#valid-commands)
+   - [Valid Commands](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#valid-commands)
 
 
 
@@ -25,6 +25,15 @@
 ## Instructions
 
 ### Valid Commands
+
+1. [Load](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#load)
+2. [Save](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#save)
+3. [Brighten](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#brighten)
+4. [Vertical Flip](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#vertical-flip)
+5. [Horizontal Flip](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#horizontal-flip)
+6. [Value Component](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#value-component)
+and more to come!
+
 #### Load
 ##### Loads an image from _filepath_ into memory, which can be accessed with _name_.
 `load filename name`
