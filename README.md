@@ -21,11 +21,27 @@
 
 ### Controllers
 
+#### Interfaces
+
+#### Classes
+
 ### Models
+
+#### Interfaces
+
+#### Classes
 
 ### Views
 
+#### Interfaces
+
+#### Classes
+
 ### Utils
+
+#### Interfaces
+
+#### Classes
 
 ## Instructions
 
