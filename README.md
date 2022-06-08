@@ -10,6 +10,7 @@
    - [Views](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#views)
    - [Utils](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#utils)
 4. [Instructions](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#instructions)
+   - [Running The Program](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#running-the-program)
    - [Valid Commands](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#valid-commands)
 
 
