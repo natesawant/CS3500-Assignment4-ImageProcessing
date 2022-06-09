@@ -101,12 +101,15 @@ This project is a basic image processing program. Currently, the program is only
 ## Instructions
 
 ### Running The Program
-#### To compile, open terminal or the commandline in the _Assignment4-ImageProcessing_ directory. To do so, run the following: `javac src/controller/ImageProcessing.java`. To run the program to allow free image processing, start it by running the following: `java src/controller/ImageProcessing`. This takes in the optional argument of the working directory, with the slash at the end.
-`java src/controller/ImageProcessing.java` or `java src/controller/ImageProcessing.java images/`
+#### To compile, open terminal or the commandline in the _src_ directory. To do so, run the following: `javac controller/ImageProcessing.java`. To run the program to allow free image processing, start it by running the following: `java controller/ImageProcessing`. This takes in the optional argument of the working directory, with the slash at the end.
+`java controller/ImageProcessing.java` or `java controller/ImageProcessing.java ../images/`
 
 ### Script To Apply All Processes
-#### The file `ApplyAllScripts.java` takes in the _directory_ without the slash at the end and the _filename_ with the .ppm extension. It then applies all the available processes to the image and saves them with the process at the end in the same directory.
-`java src/controller/ApplyAllScripts.java directory filename` or `java src/controller/ApplyAllScripts.java filename`
+#### To compile, open terminal or the commandline in the _src_ directory. To do so, run the following: `javac controller/ApplyAllProcesses.java`. The file `ApplyAllProcesses.java` takes in the _directory_ without the slash at the end and the _filename_ with the .ppm extension. It then applies all the available processes to the image and saves them with the process at the end in the same directory.
+`java controller/ApplyAllProcesses directory filename` or `java controller/ApplyAllProcesses filename`
+
+###### Example:
+> `java controller/ApplyAllScripts.java ../images/ igm`
 
 ###### Example:
 > `ApplyAllScripts.java images igm`
