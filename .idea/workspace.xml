@@ -5,46 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Added some small scale tests and small scale images.">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_6_2022_5_04_PM_[Changes]/koala-bigblur.ppm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_6_2022_5_04_PM_[Changes]/koala-smallblur.ppm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_6_2022_5_04_PM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_6_2022_5_04_PM__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Koala-gimp-copy.ppm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/TestImageHorizontalExpected.ppm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/TestImageOriginal.xcf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/TestImageOriginalActual.ppm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/TestImageOriginalExpected.ppm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/TestImageRedChannelExpected.ppm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/TestImageVerticalActual.ppm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/TestImageVerticalExpected.ppm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/TestImageVerticalHorizontalExpected.ppm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/koala-emboss.ppm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/koala-gaussianblur3x3.ppm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/koala-horizontal-expected.ppm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/koala-ridge.ppm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/koala-sharpen.ppm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cat.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cat.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cat2.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cat2.ppm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/koala-bigblur.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-bigblur.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/koala-blue.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-blue.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/koala-bright.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-bright.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/koala-copy.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-copy.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/koala-dark.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-dark.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/koala-green.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-green.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/koala-horizontal.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-horizontal.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/koala-intensity.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-intensity.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/koala-luma.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-luma.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/koala-red.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-red.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/koala-smallblur.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-smallblur.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/koala-value.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-value.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/koala-vertical-horizontal.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-vertical-horizontal.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/koala-vertical.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/koala-vertical.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/RGBImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/RGBImage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/OperationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/OperationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/SmallScaleOperationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/SmallScaleOperationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment4-ImageProcessing.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment4-ImageProcessing.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ImageProcessingControllerImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ImageProcessingControllerImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/OperationsModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OperationsModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +19,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin Interface" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -84,6 +50,9 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
 }</component>
@@ -92,7 +61,14 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SmallScaleOperationTest">
+  <component name="RunManager" selected="Application.controller.ImageProcessing">
+    <configuration name="OutputAll" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="OutputAll" />
+      <module name="Assignment4-ImageProcessing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="controller.ImageProcessing" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="controller.ImageProcessing" />
       <module name="Assignment4-ImageProcessing" />
@@ -122,16 +98,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="OperationTests" />
       <option name="METHOD_NAME" value="testGaussianBlue3x3" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OperationTests.testRidgeDetection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Assignment4-ImageProcessing" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="OperationTests" />
-      <option name="METHOD_NAME" value="testRidgeDetection" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -168,20 +134,20 @@
     </configuration>
     <list>
       <item itemvalue="Application.controller.ImageProcessing" />
+      <item itemvalue="Application.OutputAll" />
       <item itemvalue="JUnit.TestFolder" />
       <item itemvalue="JUnit.SmallScaleOperationTest" />
       <item itemvalue="JUnit.OperationTests.testBigBlur" />
       <item itemvalue="JUnit.OperationTests.testGaussianBlue3x3" />
-      <item itemvalue="JUnit.OperationTests.testRidgeDetection" />
       <item itemvalue="JUnit.OperationTests.testSmallBlur" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.OutputAll" />
         <item itemvalue="JUnit.SmallScaleOperationTest" />
         <item itemvalue="JUnit.OperationTests.testSmallBlur" />
         <item itemvalue="JUnit.OperationTests.testBigBlur" />
         <item itemvalue="JUnit.OperationTests.testGaussianBlue3x3" />
-        <item itemvalue="JUnit.OperationTests.testRidgeDetection" />
       </list>
     </recent_temporary>
   </component>
@@ -196,6 +162,10 @@
       <workItem from="1654458665054" duration="15393000" />
       <workItem from="1654485320688" duration="1838000" />
       <workItem from="1654491545536" duration="14728000" />
+      <workItem from="1654574751307" duration="595000" />
+      <workItem from="1654622567147" duration="594000" />
+      <workItem from="1654706057781" duration="5332000" />
+      <workItem from="1654747824236" duration="6835000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1654458999042</created>
@@ -274,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654557595692</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added some small scale tests and small scale images.">
+      <created>1654565238050</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1654565238050</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

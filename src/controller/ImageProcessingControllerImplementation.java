@@ -1,9 +1,26 @@
 package controller;
 
 import java.io.IOException;
+import java.lang.reflect.Parameter;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.function.Function;
+
 import model.OperationsModel;
 import model.OperationsModelManager;
+import processes.BoxBlur;
+import processes.Brighten;
+import processes.Emboss;
+import processes.GaussianBlur;
+import processes.HorizontalFlip;
+import processes.Load;
+import processes.Process;
+import processes.RidgeDetection;
+import processes.Save;
+import processes.Sharpen;
+import processes.ValueComponent;
+import processes.VerticalFlip;
 import view.ImageProcessingView;
 
 /**
@@ -15,6 +32,8 @@ public final class ImageProcessingControllerImplementation implements ImageProce
   protected Readable readable;
   protected ImageProcessingView view;
   protected OperationsModel manager;
+
+  protected Map<String, Function<Scanner, Process>> validCommands;
 
   /**
    * The implementation of the controller that allows for text based input and output.
@@ -36,7 +55,27 @@ public final class ImageProcessingControllerImplementation implements ImageProce
       this.readable = readable;
       this.view = view;
       this.manager = new OperationsModelManager();
+      initValidCommands();
     }
+  }
+
+  private void initValidCommands() {
+    validCommands = new HashMap<String, Function<Scanner, Process>>();
+
+    Map<String, Process> map = new HashMap<>();
+
+
+    validCommands.put("load", s->new Load(s.next(), s.next()));
+    validCommands.put("save", s->new Save(s.next(), s.next()));
+    validCommands.put("horizontal-flip", s->new HorizontalFlip(s.next(), s.next()));
+    validCommands.put("vertical-flip", s->new VerticalFlip(s.next(), s.next()));
+    validCommands.put("brighten", s->new Brighten(s.nextInt(), s.next(), s.next()));
+    validCommands.put("value-component", s->new ValueComponent(s.next(), s.next(), s.next()));
+    validCommands.put("box-blur", s->new BoxBlur(s.next(), s.next()));
+    validCommands.put("emboss", s->new Emboss(s.next(), s.next()));
+    validCommands.put("gaussian-blur", s->new GaussianBlur(s.next(), s.next()));
+    validCommands.put("ridge-detection", s->new RidgeDetection(s.next(), s.next()));
+    validCommands.put("sharpen", s->new Sharpen(s.next(), s.next()));
   }
 
   /**
@@ -70,94 +109,33 @@ public final class ImageProcessingControllerImplementation implements ImageProce
       scan = new Scanner(readable);
 
       while (true) {
-        view.renderMessage("Enter operation." + System.lineSeparator());
+        view.renderMessage("Enter operation or 'help' to see commands." + System.lineSeparator());
 
-        rawInput = scan.nextLine();
-        arguments = rawInput.split(" ");
-
-        if (arguments.length > 0) {
-          switch (arguments[0].toLowerCase()) {
-            case "load":
+        while(scan.hasNext()) {
+          Process process;
+          String in = scan.next();
+          if (in.equalsIgnoreCase("q") || in.equalsIgnoreCase("quit")) {
+            view.renderMessage("Quitting program." + System.lineSeparator());
+            return;
+          } else if (in.equalsIgnoreCase("help")) {
+            for (String key : validCommands.keySet()) {
+              view.renderMessage(key + System.lineSeparator());
+            }
+          } else {
+            Function<Scanner, Process> cmd =
+                    validCommands.getOrDefault(in, null);
+            if (cmd == null) {
+              view.renderMessage("Invalid command." + System.lineSeparator());
+            } else {
+              view.renderMessage("Processing..." + System.lineSeparator());
+              process = cmd.apply(scan);
               try {
-                if (validNumArguments(3, arguments.length)) {
-                  manager.load(directory + arguments[1], arguments[2]);
-                  view.renderMessage("Successfully loaded image." + System.lineSeparator());
-                }
+                process.go(manager);
+                view.renderMessage("Process complete." + System.lineSeparator());
               } catch (IllegalArgumentException ex) {
-                view.renderMessage(ex.getMessage() + System.lineSeparator());
+                view.renderMessage("Error: " + ex.getMessage() + System.lineSeparator());
               }
-              break;
-            case "brighten":
-              if (validNumArguments(4, arguments.length)) {
-                try {
-                  manager.brighten(Integer.parseInt(arguments[1]), arguments[2], arguments[3]);
-                  view.renderMessage("Successfully brightened image." + System.lineSeparator());
-                } catch (NumberFormatException ex) {
-                  view.renderMessage(ex.getMessage() + System.lineSeparator());
-                } catch (IllegalArgumentException ex) {
-                  view.renderMessage(ex.getMessage() + System.lineSeparator());
-                }
-              }
-              break;
-            case "blur":
-              if (validNumArguments(4, arguments.length)) {
-                try {
-                  manager.boxBlur(Integer.parseInt(arguments[1]), arguments[2], arguments[3]);
-                  view.renderMessage("Successfully brightened image." + System.lineSeparator());
-                } catch (NumberFormatException ex) {
-                  view.renderMessage(ex.getMessage() + System.lineSeparator());
-                } catch (IllegalArgumentException ex) {
-                  view.renderMessage(ex.getMessage() + System.lineSeparator());
-                }
-              }
-              break;
-            case "vertical-flip":
-              try {
-                if (validNumArguments(3, arguments.length)) {
-                  manager.verticalFlip(arguments[1], arguments[2]);
-                  view.renderMessage("Successfully flipped image vertically.\n");
-                }
-              } catch (IllegalArgumentException ex) {
-                view.renderMessage(ex.getMessage() + System.lineSeparator());
-              }
-              break;
-            case "horizontal-flip":
-              try {
-                if (validNumArguments(3, arguments.length)) {
-                  manager.horizontalFlip(arguments[1], arguments[2]);
-                  view.renderMessage("Successfully flipped image horizontally.\n");
-                }
-              } catch (IllegalArgumentException ex) {
-                view.renderMessage(ex.getMessage() + System.lineSeparator());
-              }
-              break;
-            case "value-component":
-              try {
-                if (validNumArguments(4, arguments.length)) {
-                  manager.valueComponent(arguments[1], arguments[2], arguments[3]);
-                  view.renderMessage("Successfully converted to component greyscale.\n");
-                }
-              } catch (IllegalArgumentException ex) {
-                view.renderMessage(ex.getMessage() + System.lineSeparator());
-              }
-              break;
-            case "save":
-              try {
-                if (validNumArguments(3, arguments.length)) {
-                  manager.save(directory + arguments[1], arguments[2]);
-                  view.renderMessage("Successfully saved image." + System.lineSeparator());
-                }
-              } catch (IllegalArgumentException ex) {
-                view.renderMessage(ex.getMessage() + System.lineSeparator());
-              }
-              break;
-            case "q":
-            case "quit":
-              view.renderMessage("Quitting program." + System.lineSeparator());
-              return;
-            default:
-              view.renderMessage("Non-valid operation." + System.lineSeparator());
-              break;
+            }
           }
         }
       }
