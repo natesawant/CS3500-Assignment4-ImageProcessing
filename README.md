@@ -197,9 +197,9 @@ Box Blur Kernel (3x3)\
 > `sharpen igm igm-sharp`
 
 Sharpen Kernel (3x3)\
-| 0  	| -1 	| 0  	|\
-|----	|----	|----	|\
-| -1 	| 8  	| -1 	|\
+| 0  	| -1 	| 0  	|
+|----	|----	|----	|
+| -1 	| 8  	| -1 	|
 | 0  	| -1 	| 0  	|
 
 ![igmsharp](https://user-images.githubusercontent.com/74106957/172704022-22e18136-cd6e-4c29-a14d-f0483abf90bd.jpg)
