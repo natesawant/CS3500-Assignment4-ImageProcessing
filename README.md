@@ -179,7 +179,7 @@ _Disclaimer: This photo was taken by Nathaniel Sawant and is authorized for use 
 
 > `box-blur igm igm-boxblur`
 
-Box Blur Kernel (3x3)\
+Box Blur Kernel (3x3)
 | 1/9 	| 1/9 	| 1/9 	|
 |-----	|-----	|-----	|
 | 1/9 	| 1/9 	| 1/9 	|
@@ -196,7 +196,7 @@ Box Blur Kernel (3x3)\
 
 > `sharpen igm igm-sharp`
 
-Sharpen Kernel (3x3)\
+Sharpen Kernel (3x3)
 | 0  	| -1 	| 0  	|
 |----	|----	|----	|
 | -1 	| 8  	| -1 	|
@@ -206,5 +206,7 @@ Sharpen Kernel (3x3)\
 
 #### Quitting the program
 #### Q or QUIT (case-insensitive)
+> `q` or `quit`
+
 Terminates the program. Any unsaved work will be lost.\
 Cannot be done whilst in the middle of inputting a command.
