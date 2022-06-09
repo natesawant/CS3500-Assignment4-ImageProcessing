@@ -26,7 +26,7 @@ This project is a basic image processing program. Currently, the program is only
 #### Interfaces
 
 1. ImageProcessingController
-   1. Provides the initializeProgram() method, which serves as a starting point to the program.
+   1. Provides the `initializeProgram()` method, which serves as a starting point to the program.
 
 #### Classes
 
@@ -34,7 +34,7 @@ This project is a basic image processing program. Currently, the program is only
    1. Allows the user to interact with the program, sending inputted commands to the model, and 
       outputting the results to the view.
 2. Image Processing
-   1. Provides a main(String[] args) method to serve as the entry point to the program.
+   1. Provides a `main(String[] args)` method to serve as the entry point to the program.
 
 ### Models
 
