@@ -79,6 +79,8 @@ This project is a basic image processing program. Currently, the program is only
 
 and more to come!
 
+_Disclaimer: This photo was taken by Nathaniel Sawant and is authorized for use in this project._
+
 #### Load
 ##### Loads an image from _filepath_ into memory, which can be accessed with _name_.
 `load filename name`
