@@ -66,7 +66,7 @@ public class PPMControllerTests {
   public void quitImmediately() {
     ImageProcessingController c = new ImageProcessingControllerImplementation("images", view, model, new StringReader("q"));
     c.initializeProgram();
-    String[] output = log.toString().split("\n");
+    String[] output = log.toString().split(System.lineSeparator());
     assertEquals("Quitting program.", output[1]);
   }
 
@@ -79,8 +79,8 @@ public class PPMControllerTests {
   @Test
   public void loadSendsCorrectArguments() {
     ImageProcessingController c
-            = new ImageProcessingControllerImplementation("images",
-            mockView, mockModel, new StringReader("load images/testPicture test\nq"));
+            = new ImageProcessingControllerImplementation("images/",
+            mockView, mockModel, new StringReader("load testPicture test\nq"));
     c.initializeProgram();
 
     String[] output = mockLog.toString().split("\n");
@@ -92,8 +92,8 @@ public class PPMControllerTests {
   @Test
   public void saveSendsCorrectArguments() {
     ImageProcessingController c
-            = new ImageProcessingControllerImplementation("images",
-            mockView, mockModel, new StringReader("save images/testPicture test\nq"));
+            = new ImageProcessingControllerImplementation("images/",
+            mockView, mockModel, new StringReader("save testPicture test\nq"));
     c.initializeProgram();
 
     String[] output = mockLog.toString().split("\n");

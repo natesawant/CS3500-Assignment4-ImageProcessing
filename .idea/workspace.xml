@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Added script to apply all processes to an image.">
+    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Added time to process info.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/test2x2.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/test2x2.ppm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/ImageProcessingControllerImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ImageProcessingControllerImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/PPMControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PPMControllerTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +60,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.controller.ImageProcessing">
+  <component name="RunManager" selected="JUnit.TestFolder">
     <configuration name="controller.ApplyAllProcesses" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="controller.ApplyAllProcesses" />
       <module name="Assignment4-ImageProcessing" />
@@ -91,22 +93,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OperationTests.testGaussianBlue3x3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Assignment4-ImageProcessing" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="OperationTests" />
-      <option name="METHOD_NAME" value="testGaussianBlue3x3" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="OperationTests.testSmallBlur" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment4-ImageProcessing" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="OperationTests" />
       <option name="METHOD_NAME" value="testSmallBlur" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PPMControllerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assignment4-ImageProcessing" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PPMControllerTests" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <dir value="$PROJECT_DIR$/test" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -134,18 +137,18 @@
       <item itemvalue="Application.controller.ImageProcessing" />
       <item itemvalue="Application.controller.ApplyAllProcesses" />
       <item itemvalue="JUnit.TestFolder" />
+      <item itemvalue="JUnit.PPMControllerTests" />
       <item itemvalue="JUnit.SmallScaleOperationTest" />
       <item itemvalue="JUnit.OperationTests.testBigBlur" />
-      <item itemvalue="JUnit.OperationTests.testGaussianBlue3x3" />
       <item itemvalue="JUnit.OperationTests.testSmallBlur" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PPMControllerTests" />
         <item itemvalue="Application.controller.ApplyAllProcesses" />
         <item itemvalue="JUnit.SmallScaleOperationTest" />
         <item itemvalue="JUnit.OperationTests.testSmallBlur" />
         <item itemvalue="JUnit.OperationTests.testBigBlur" />
-        <item itemvalue="JUnit.OperationTests.testGaussianBlue3x3" />
       </list>
     </recent_temporary>
   </component>
@@ -163,7 +166,7 @@
       <workItem from="1654574751307" duration="595000" />
       <workItem from="1654622567147" duration="594000" />
       <workItem from="1654706057781" duration="5332000" />
-      <workItem from="1654747824236" duration="14395000" />
+      <workItem from="1654747824236" duration="15582000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1654458999042</created>
@@ -270,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654793217735</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Added time to process info.">
+      <created>1654801188377</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1654801188377</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,6 +311,7 @@
     <MESSAGE value="Added some small scale tests and small scale images." />
     <MESSAGE value="Converted to command design pattern." />
     <MESSAGE value="Added script to apply all processes to an image." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added script to apply all processes to an image." />
+    <MESSAGE value="Added time to process info." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added time to process info." />
   </component>
 </project>

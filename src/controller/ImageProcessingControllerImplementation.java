@@ -95,6 +95,7 @@ public final class ImageProcessingControllerImplementation implements ImageProce
     this.view = view;
     this.manager = model;
     this.readable = readable;
+    initValidCommands();
   }
 
   @Override
