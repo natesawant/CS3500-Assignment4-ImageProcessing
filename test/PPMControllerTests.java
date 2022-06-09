@@ -44,7 +44,7 @@ public class PPMControllerTests {
             = new ImageProcessingControllerImplementation("", mockView, null);
   }
 
-  @Test (expected = IllegalArgumentException.class)
+  @Test(expected = IllegalArgumentException.class)
   public void nullView() {
     ImageProcessingController c
             = new ImageProcessingControllerImplementation("", null, new StringReader(""));
@@ -124,7 +124,8 @@ public class PPMControllerTests {
   public void hFlipSendsCorrectArguments() {
     ImageProcessingController c
             = new ImageProcessingControllerImplementation("images",
-            mockView, mockModel, new StringReader("horizontal-flip images/testPicture testFlip\nq"));
+            mockView, mockModel, new StringReader("horizontal-flip images/testPicture " +
+            "testFlip\nq"));
     c.initializeProgram();
 
     String[] output = mockLog.toString().split("\n");
@@ -189,7 +190,8 @@ public class PPMControllerTests {
   public void ridgeDetectionSendsCorrectArguments() {
     ImageProcessingController c
             = new ImageProcessingControllerImplementation("image",
-            mockView, mockModel, new StringReader("ridge-detection images/testPicture ridgePic\nq"));
+            mockView, mockModel, new StringReader("ridge-detection images/testPicture " +
+            "ridgePic\nq"));
     c.initializeProgram();
 
     String[] output = mockLog.toString().split("\n");

@@ -18,7 +18,7 @@ public class Emboss extends ApplyKernel {
   @Override
   public void initKernel() {
     kernel = new double[][] {{-2, -1, 0},
-                    {-1, 1, 1},
-                    {0, 1, 2}};
+                            {-1, 1, 1},
+                            {0, 1, 2}};
   }
 }

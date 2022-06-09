@@ -19,8 +19,8 @@ public class RidgeDetection extends ApplyKernel {
   public void initKernel() {
     kernel =
             new double[][]
-                    {{-1, -1, -1},
-                    {-1, 8, -1},
-                    {-1, -1, -1}};
+            {{-1, -1, -1},
+              {-1, 8, -1},
+              {-1, -1, -1}};
   }
 }
