@@ -94,7 +94,7 @@ This project is a basic image processing program. Currently, the program is only
 9. [Emboss](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#emboss)
 10. [Sharpen](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#sharpen)
 11. [Ridge Detection](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#ridge-detection)
-13. [Quit](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#quit)
+13. [Quit](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#quitting-the-program)
 
 and more to come!
 
