@@ -67,8 +67,7 @@ public interface OperationsModel {
    * @param kernel the kernel that is applied.
    * @param name the name of the image that processed.
    * @param destName the new name of the processed image.
-   * @throws IllegalArgumentException if name of the image or kernel (not odd dimensions) is not
-   * valid.
+   * @throws IllegalArgumentException if name of the image or kernel (even dimensions) is not valid.
    */
   void applyKernel(double[][] kernel, String name, String destName) throws IllegalArgumentException;
 }

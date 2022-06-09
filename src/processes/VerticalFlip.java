@@ -20,7 +20,7 @@ public class VerticalFlip implements Process {
   }
 
   @Override
-  public void go(OperationsModel m) {
+  public void start(OperationsModel m) {
     m.verticalFlip(this.name, this.destName);
   }
 }

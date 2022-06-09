@@ -20,7 +20,7 @@ public class HorizontalFlip implements Process {
   }
 
   @Override
-  public void go(OperationsModel m) {
+  public void start(OperationsModel m) {
     m.horizontalFlip(this.name, this.destName);
   }
 }

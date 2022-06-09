@@ -34,7 +34,7 @@ public class ApplyAllProcesses {
     String op;
     Process p;
 
-    if (args.length>1) {
+    if (args.length > 1) {
       base = args[1];
       path = args[0] + "/" + base;
     }
@@ -46,124 +46,124 @@ public class ApplyAllProcesses {
     }
 
     p = new Load(path + ext, base);
-    p.go(m);
+    p.start(m);
 
 
     p = new Save(path + "-copy" + ext, base);
-    p.go(m);
+    p.start(m);
 
     op = "vertical";
     p = new VerticalFlip(base, base + op);
-    p.go(m);
+    p.start(m);
     p = new Save(path + op + ext, base + op);
-    p.go(m);
+    p.start(m);
     System.out.println("Done with " + op);
 
     op = "horizontal";
     p = new VerticalFlip(base, base + op);
-    p.go(m);
+    p.start(m);
     p = new Save(path + op + ext, base + op);
-    p.go(m);
+    p.start(m);
     System.out.println("Done with " + op);
 
     op = "horizontalvertical";
     p = new HorizontalFlip(base, base + op);
-    p.go(m);
+    p.start(m);
     p = new VerticalFlip(base + op, base + op);
-    p.go(m);
+    p.start(m);
     p = new Save(path + op + ext, base + op);
-    p.go(m);
+    p.start(m);
     System.out.println("Done with " + op);
 
     op = "bright";
     p = new Brighten(100, base, base + op);
-    p.go(m);
+    p.start(m);
     p = new Save(path + op + ext, base + op);
-    p.go(m);
+    p.start(m);
     System.out.println("Done with " + op);
 
     op = "dark";
     p = new Brighten(-100, base, base + op);
-    p.go(m);
+    p.start(m);
     p = new Save(path + op + ext, base + op);
-    p.go(m);
+    p.start(m);
     System.out.println("Done with " + op);
 
     op = "red";
     p = new ValueComponent(op, base, base + op);
-    p.go(m);
+    p.start(m);
     p = new Save(path + op + ext, base + op);
-    p.go(m);
+    p.start(m);
     System.out.println("Done with " + op);
 
     op = "green";
     p = new ValueComponent(op, base, base + op);
-    p.go(m);
+    p.start(m);
     p = new Save(path + op + ext, base + op);
-    p.go(m);
+    p.start(m);
     System.out.println("Done with " + op);
 
     op = "blue";
     p = new ValueComponent(op, base, base + op);
-    p.go(m);
+    p.start(m);
     p = new Save(path + op + ext, base + op);
-    p.go(m);
+    p.start(m);
     System.out.println("Done with " + op);
 
     op = "intensity";
     p = new ValueComponent(op, base, base + op);
-    p.go(m);
+    p.start(m);
     p = new Save(path + op + ext, base + op);
-    p.go(m);
+    p.start(m);
     System.out.println("Done with " + op);
 
     op = "luma";
     p = new ValueComponent(op, base, base + op);
-    p.go(m);
+    p.start(m);
     p = new Save(path + op + ext, base + op);
-    p.go(m);
+    p.start(m);
     System.out.println("Done with " + op);
 
     op = "value";
     p = new ValueComponent(op, base, base + op);
-    p.go(m);
+    p.start(m);
     p = new Save(path + op + ext, base + op);
-    p.go(m);
+    p.start(m);
     System.out.println("Done with " + op);
 
     op = "ridge";
     p = new RidgeDetection(base, base + op);
-    p.go(m);
+    p.start(m);
     p = new Save(path + op + ext, base + op);
-    p.go(m);
+    p.start(m);
     System.out.println("Done with " + op);
 
     op = "sharp";
     p = new Sharpen(base, base + op);
-    p.go(m);
+    p.start(m);
     p = new Save(path + op + ext, base + op);
-    p.go(m);
+    p.start(m);
     System.out.println("Done with " + op);
 
     op = "box";
     p = new BoxBlur(base, base + op);
-    p.go(m);
+    p.start(m);
     p = new Save(path + op + ext, base + op);
-    p.go(m);
+    p.start(m);
     System.out.println("Done with " + op);
 
     op = "gaussian";
     p = new GaussianBlur(base, base + op);
-    p.go(m);
+    p.start(m);
     p = new Save(path + op + ext, base + op);
-    p.go(m);
+    p.start(m);
     System.out.println("Done with " + op);
 
     op = "emboss";
     p = new Emboss(base, base + op);
-    p.go(m);
+    p.start(m);
     p = new Save(path + op + ext, base + op);
-    p.go(m);
+    p.start(m);
     System.out.println("Done with " + op);
 
     System.out.println("Completed processing.");

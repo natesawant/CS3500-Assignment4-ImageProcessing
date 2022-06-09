@@ -23,7 +23,7 @@ public class ValueComponent implements Process {
   }
 
   @Override
-  public void go(OperationsModel m) {
+  public void start(OperationsModel m) {
     m.valueComponent(this.value, this.name, this.destName);
   }
 }

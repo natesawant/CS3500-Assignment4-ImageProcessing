@@ -21,7 +21,7 @@ public abstract class ApplyKernel implements Process {
   }
 
   @Override
-  public void go(OperationsModel m) {
+  public void start(OperationsModel m) {
     initKernel();
     m.applyKernel(this.kernel, this.name, this.destName);
   }

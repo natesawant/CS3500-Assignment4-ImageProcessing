@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.lang.reflect.Parameter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -129,7 +128,7 @@ public final class ImageProcessingControllerImplementation implements ImageProce
               process = cmd.apply(scan);
               try {
                 long deltaTime = System.currentTimeMillis();
-                process.go(manager);
+                process.start(manager);
                 view.renderMessage("Process complete." + System.lineSeparator());
                 deltaTime = System.currentTimeMillis() - deltaTime;
                 view.renderMessage("Took " + deltaTime + " milliseconds." + System.lineSeparator());

@@ -24,7 +24,7 @@ public class Brighten implements Process {
   }
 
   @Override
-  public void go(OperationsModel m) {
+  public void start(OperationsModel m) {
     m.brighten(this.increment, this.name, this.destName);
   }
 }

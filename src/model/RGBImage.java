@@ -48,4 +48,15 @@ public class RGBImage extends AbstractImage {
       return false;
     }
   }
+
+  @Override
+  public int hashCode() {
+    int code = 0;
+    for (int i = 0; i < width; i++) {
+      for (int j = 0; j < height; j++) {
+        code += pixels[i][j].hashCode() / (width * height);
+      }
+    }
+    return code;
+  }
 }

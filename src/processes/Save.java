@@ -20,7 +20,7 @@ public class Save implements Process {
   }
 
   @Override
-  public void go(OperationsModel m) {
+  public void start(OperationsModel m) {
     m.save(this.path, this.destName);
   }
 }

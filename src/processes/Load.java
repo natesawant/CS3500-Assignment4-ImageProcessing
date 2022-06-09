@@ -20,7 +20,7 @@ public class Load implements Process {
   }
 
   @Override
-  public void go(OperationsModel m) {
+  public void start(OperationsModel m) {
     m.load(this.path, this.destName);
   }
 }

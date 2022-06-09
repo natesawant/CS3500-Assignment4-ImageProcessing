@@ -4,9 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Added output">
+    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Fixed formatting in OperationsModelManager">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/OperationsModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OperationsModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ApplyAllProcesses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ApplyAllProcesses.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ImageProcessingControllerImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ImageProcessingControllerImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Image.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/OperationsModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OperationsModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/RGBImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/RGBImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/ApplyKernel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/ApplyKernel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/Brighten.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/Brighten.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/HorizontalFlip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/HorizontalFlip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/Load.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/Load.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/Process.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/Process.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/Save.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/Save.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/ValueComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/ValueComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/VerticalFlip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/VerticalFlip.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +177,7 @@
       <workItem from="1654622567147" duration="594000" />
       <workItem from="1654706057781" duration="5332000" />
       <workItem from="1654747824236" duration="16687000" />
-      <workItem from="1654808474512" duration="1236000" />
+      <workItem from="1654808474512" duration="1713000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1654458999042</created>
@@ -300,7 +312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654808612814</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Fixed formatting in OperationsModelManager">
+      <created>1654809791649</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1654809791649</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,6 +354,7 @@
     <MESSAGE value="Fixed tests." />
     <MESSAGE value="Deleted some processes" />
     <MESSAGE value="Added output" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added output" />
+    <MESSAGE value="Fixed formatting in OperationsModelManager" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed formatting in OperationsModelManager" />
   </component>
 </project>
