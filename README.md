@@ -171,7 +171,7 @@ _Disclaimer: This photo was taken by Nathaniel Sawant and is authorized for use 
 ![igmvalue](https://user-images.githubusercontent.com/74106957/172697654-7c771bf8-864c-4556-a798-6cda2294bca1.jpg)
 
 #### Box Blur
-#### Averages all the adjacent pixels of the image _name_ and stores it as _destName_.
+#### Blurs all the adjacent pixels of the image _name_ in a square method and stores it as _destName_.
 `box-blur name destName`
 
 Box Blur Kernel (3x3)
@@ -188,7 +188,7 @@ Box Blur Kernel (3x3)
 
 
 #### Gaussian Blur
-#### Averages all the adjacent pixels of the image _name_ and stores it as _destName_.
+#### Blurs all the adjacent pixels of the image _name_ in a circular method and stores it as _destName_.
 `gaussian-blur name destName`
 
 Gaussian Blur Kernel (3x3)
@@ -199,13 +199,13 @@ Gaussian Blur Kernel (3x3)
 
 ###### Examples:
 
-> `gaussian-blur igm igm-boxblur`
+> `gaussian-blur igm igm-gaussianblur`
 
 ![igmblur](https://user-images.githubusercontent.com/74106957/172703956-c6cf1751-5a91-428a-96af-587a866e6a48.jpg)
 
 
 #### Emboss
-#### Sharpens the pixels of the image _name_ by emphasizing contrast and stores it as _destName_.
+#### Appears to raise the pixels of the image _name_ by emphasizing contrast and stores it as _destName_.
 `emboss name destName`
 
 Emboss Kernel (3x3)
@@ -216,7 +216,7 @@ Emboss Kernel (3x3)
 
 ###### Examples:
 
-> `emboss igm igm-sharp`
+> `emboss igm igm-emboss`
 
 ![igmsharp](https://user-images.githubusercontent.com/74106957/172704022-22e18136-cd6e-4c29-a14d-f0483abf90bd.jpg)
 
@@ -239,7 +239,7 @@ Sharpen Kernel (3x3)
 
 
 #### Ridge Detection
-#### Sharpens the pixels of the image _name_ by emphasizing contrast and stores it as _destName_.
+#### Detects the edges (high contrast) of the image _name_ and stores it as _destName_.
 `ridge-detection name destName`
 
 Ridge Detection Kernel (3x3)
@@ -255,8 +255,6 @@ Ridge Detection Kernel (3x3)
 ![igmsharp](https://user-images.githubusercontent.com/74106957/172704022-22e18136-cd6e-4c29-a14d-f0483abf90bd.jpg)
 
 #### Quitting the program
-#### Q or QUIT (case-insensitive)
-`q` or `quit`
+#### Terminates the program. Any unsaved work will be lost. Cannot be done whilst in the middle of inputting a command.
 
-Terminates the program. Any unsaved work will be lost.\
-Cannot be done whilst in the middle of inputting a command.
+`q` or `quit`
