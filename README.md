@@ -180,9 +180,9 @@ _Disclaimer: This photo was taken by Nathaniel Sawant and is authorized for use 
 > `box-blur igm igm-boxblur`
 
 Box Blur Kernel (3x3)\
-| 1/9 	| 1/9 	| 1/9 	|\
-|-----	|-----	|-----	|\
-| 1/9 	| 1/9 	| 1/9 	|\
+| 1/9 	| 1/9 	| 1/9 	|
+|-----	|-----	|-----	|
+| 1/9 	| 1/9 	| 1/9 	|
 | 1/9 	| 1/9 	| 1/9 	|
 
 ![igmblur](https://user-images.githubusercontent.com/74106957/172703956-c6cf1751-5a91-428a-96af-587a866e6a48.jpg)
