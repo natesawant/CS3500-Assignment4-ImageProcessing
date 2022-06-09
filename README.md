@@ -188,6 +188,40 @@ Box Blur Kernel (3x3)
 ![igmblur](https://user-images.githubusercontent.com/74106957/172703956-c6cf1751-5a91-428a-96af-587a866e6a48.jpg)
 
 
+#### Gaussian Blur
+#### Averages all the adjacent pixels of the image _name_ and stores it as _destName_.
+`gaussian-blur name destName`
+
+###### Examples:
+
+> `gaussian-blur igm igm-boxblur`
+
+Gaussian Blur Kernel (3x3)
+| 1/16	| 2/16	| 1/16	|
+|-----	|-----	|-----	|
+| 2/16	| 4/16	| 2/16	|
+| 1/16	| 2/16	| 1/16	|
+
+![igmblur](https://user-images.githubusercontent.com/74106957/172703956-c6cf1751-5a91-428a-96af-587a866e6a48.jpg)
+
+
+#### Emboss
+#### Sharpens the pixels of the image _name_ by emphasizing contrast and stores it as _destName_.
+`emboss name destName`
+
+###### Examples:
+
+> `emboss igm igm-sharp`
+
+Emboss Kernel (3x3)
+| -2 	| -1 	| 0  	|
+|----	|----	|----	|
+| -1 	|  1 	|  1 	|
+| 0  	|  1 	|  2 	|
+
+![igmsharp](https://user-images.githubusercontent.com/74106957/172704022-22e18136-cd6e-4c29-a14d-f0483abf90bd.jpg)
+
+
 #### Sharpen
 #### Sharpens the pixels of the image _name_ by emphasizing contrast and stores it as _destName_.
 `sharpen name destName`
@@ -204,9 +238,26 @@ Sharpen Kernel (3x3)
 
 ![igmsharp](https://user-images.githubusercontent.com/74106957/172704022-22e18136-cd6e-4c29-a14d-f0483abf90bd.jpg)
 
+
+#### Ridge Detection
+#### Sharpens the pixels of the image _name_ by emphasizing contrast and stores it as _destName_.
+`ridge-detection name destName`
+
+###### Examples:
+
+> `ridge-detection igm igm-ridge`
+
+Ridge Detection Kernel (3x3)
+| -1 	| -1 	| -1 	|
+|----	|----	|----	|
+| -1 	| 8  	| -1 	|
+| -1 	| -1 	| -1 	|
+
+![igmsharp](https://user-images.githubusercontent.com/74106957/172704022-22e18136-cd6e-4c29-a14d-f0483abf90bd.jpg)
+
 #### Quitting the program
 #### Q or QUIT (case-insensitive)
-> `q` or `quit`
+`q` or `quit`
 
 Terminates the program. Any unsaved work will be lost.\
 Cannot be done whilst in the middle of inputting a command.
