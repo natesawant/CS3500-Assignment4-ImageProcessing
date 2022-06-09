@@ -213,36 +213,6 @@ public final class OperationsModelManager implements OperationsModel {
     }
 
     @Override
-    public void boxBlur(int radius, String name, String destName) throws IllegalArgumentException {
-        kernel = new double[2 * radius + 1][2 * radius + 1];
-        for (int i = 0; i < kernel.length; i++) {
-            for (int j = 0; j < kernel[0].length; j++) {
-                kernel[i][j] = 1.0 / (Math.pow((double) kernel.length, 2));
-            }
-        }
-
-        applyKernel(kernel, name, destName);
-    }
-
-    @Override
-    public void sharpen(String name, String destName) throws IllegalArgumentException {
-        kernel =
-                new double[][]{{ 0,-1, 0},
-                        {-1, 5,-1},
-                        { 0,-1, 0}};
-        applyKernel(kernel, name, destName);
-    }
-
-    @Override
-    public void ridgeDetection(String name, String destName) throws IllegalArgumentException {
-        kernel =
-                        new double[][]{{-1,-1,-1},
-                        {-1, 8,-1},
-                        {-1,-1,-1}};
-        applyKernel(kernel, name, destName);
-    }
-
-    @Override
     public void applyKernel(double[][] kernel, String name, String destName)
             throws IllegalArgumentException {
         if (!loaded.containsKey(name)) {

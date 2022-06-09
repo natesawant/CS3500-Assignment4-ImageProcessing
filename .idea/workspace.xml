@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Added time to process info.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/test2x2.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/images/test2x2.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/ImageProcessingControllerImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ImageProcessingControllerImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/PPMControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PPMControllerTests.java" afterDir="false" />
-    </list>
+    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Fixed tests." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,7 +55,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestFolder">
+  <component name="RunManager" selected="JUnit.SmallScaleOperationTest">
     <configuration name="controller.ApplyAllProcesses" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="controller.ApplyAllProcesses" />
       <module name="Assignment4-ImageProcessing" />
@@ -144,9 +139,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SmallScaleOperationTest" />
         <item itemvalue="JUnit.PPMControllerTests" />
         <item itemvalue="Application.controller.ApplyAllProcesses" />
-        <item itemvalue="JUnit.SmallScaleOperationTest" />
         <item itemvalue="JUnit.OperationTests.testSmallBlur" />
         <item itemvalue="JUnit.OperationTests.testBigBlur" />
       </list>
@@ -166,7 +161,7 @@
       <workItem from="1654574751307" duration="595000" />
       <workItem from="1654622567147" duration="594000" />
       <workItem from="1654706057781" duration="5332000" />
-      <workItem from="1654747824236" duration="15582000" />
+      <workItem from="1654747824236" duration="16229000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1654458999042</created>
@@ -280,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654801188377</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Fixed tests.">
+      <created>1654807543243</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1654807543243</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,6 +314,7 @@
     <MESSAGE value="Converted to command design pattern." />
     <MESSAGE value="Added script to apply all processes to an image." />
     <MESSAGE value="Added time to process info." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added time to process info." />
+    <MESSAGE value="Fixed tests." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed tests." />
   </component>
 </project>

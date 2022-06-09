@@ -63,31 +63,6 @@ public interface OperationsModel {
   void brighten(int increment, String name, String destName) throws IllegalArgumentException;
 
   /**
-   * Blurs the image by sampling and average the nearby pixels.
-   * @param radius the number of pixels in each direction it samples.
-   * @param name the name of the image that processed.
-   * @param destName the new name of the processed image.
-   * @throws IllegalArgumentException if name of the image is not valid.
-   */
-  void boxBlur(int radius, String name, String destName) throws IllegalArgumentException;
-
-  /**
-   * Sharpens the image, enhances details.
-   * @param name the name of the image that processed.
-   * @param destName the new name of the processed image.
-   * @throws IllegalArgumentException if name of the image is not valid.
-   */
-  void sharpen(String name, String destName) throws IllegalArgumentException;
-
-  /**
-   * Detects and emphasizes the ridges of the image.
-   * @param name the name of the image that processed.
-   * @param destName the new name of the processed image.
-   * @throws IllegalArgumentException if name of the image is not valid.
-   */
-  void ridgeDetection(String name, String destName) throws IllegalArgumentException;
-
-  /**
    * Applies the given kernel to the pixels of the image.
    * @param kernel the kernel that is applied.
    * @param name the name of the image that processed.
