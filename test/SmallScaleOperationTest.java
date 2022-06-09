@@ -203,12 +203,24 @@ public class SmallScaleOperationTest {
     String[] types = new String[]{"red", "green", "blue", "value", "luma", "intensity"};
     // of test2x2.ppm , values output calculating given types value:
 
-    Image red = new RGBImage(new Color[][]{{Color.WHITE, Color.BLACK}, {Color.BLACK, Color.WHITE}}, 255);
-    Image green = new RGBImage(new Color[][]{{Color.BLACK, Color.BLACK}, {Color.WHITE, Color.WHITE}}, 255);
-    Image blue = new RGBImage(new Color[][]{{Color.BLACK, Color.WHITE}, {Color.BLACK, Color.WHITE}}, 255);
-    Image value = new RGBImage(new Color[][]{{Color.WHITE, Color.WHITE}, {Color.WHITE, Color.WHITE}}, 255);
-    Image luma = new RGBImage(new Color[][]{{new Color(85, 85, 85), new Color(85, 85, 85)}, {new Color(85, 85, 85), new Color(255, 255,  255)}}, 255);
-    Image intensity = new RGBImage(new Color[][]{{new Color(182, 182, 182), new Color(54, 54, 54)}, {new Color(18, 18, 18), new Color(254, 254, 254)}}, 255);
+    Image red = new RGBImage(new Color[][]{
+            {Color.WHITE, Color.BLACK},
+            {Color.BLACK, Color.WHITE}}, 255);
+    Image green = new RGBImage(new Color[][]{
+            {Color.BLACK, Color.BLACK},
+            {Color.WHITE, Color.WHITE}}, 255);
+    Image blue = new RGBImage(new Color[][]{
+            {Color.BLACK, Color.WHITE},
+            {Color.BLACK, Color.WHITE}}, 255);
+    Image value = new RGBImage(new Color[][]{
+            {Color.WHITE, Color.WHITE},
+            {Color.WHITE, Color.WHITE}}, 255);
+    Image luma = new RGBImage(new Color[][]{
+            {new Color(85, 85, 85), new Color(85, 85, 85)},
+            {new Color(85, 85, 85), new Color(255, 255,  255)}}, 255);
+    Image intensity = new RGBImage(new Color[][]{
+            {new Color(182, 182, 182), new Color(54, 54, 54)},
+            {new Color(18, 18, 18), new Color(254, 254, 254)}}, 255);
 
     Image[] expected = new Image[]{red, green, blue, value, luma, intensity};
 
@@ -298,7 +310,9 @@ public class SmallScaleOperationTest {
     m.save("images/blur-test.ppm", "blur-test");
 
     actual = ImageUtil.convertPPM("images/blur-test.ppm");
-    expected = new RGBImage(new Color[][]{{new Color(140, 84, 84), new Color(112, 84, 168)}, {new Color(112, 168, 84), new Color(140, 168, 168)}}, 255);
+    expected = new RGBImage(new Color[][]{
+            {new Color(140, 84, 84), new Color(112, 84, 168)},
+            {new Color(112, 168, 84), new Color(140, 168, 168)}}, 255);
 
     assertEquals(expected, actual);
   }
@@ -314,7 +328,9 @@ public class SmallScaleOperationTest {
     m.save("images/emboss-test.ppm", "emboss-test");
 
     actual = ImageUtil.convertPPM("images/emboss-test.ppm");
-    expected = new RGBImage(new Color[][]{{new Color(0, 255, 255), new Color(0, 255, 255)}, {new Color(0, 255, 255), new Color(255, 255, 255)}}, 255);
+    expected = new RGBImage(new Color[][]{
+            {new Color(0, 255, 255), new Color(0, 255, 255)},
+            {new Color(0, 255, 255), new Color(255, 255, 255)}}, 255);
 
     assertEquals(expected, actual);
 
@@ -331,7 +347,9 @@ public class SmallScaleOperationTest {
     m.save("images/gauss-test.ppm", "gauss-test");
 
     actual = ImageUtil.convertPPM("images/gauss-test.ppm");
-    expected = new RGBImage(new Color[][]{{new Color(155, 61, 61), new Color(92, 61, 186)}, {new Color(92, 186, 61), new Color(155, 186, 186)}}, 255);
+    expected = new RGBImage(new Color[][]{
+            {new Color(155, 61, 61), new Color(92, 61, 186)},
+            {new Color(92, 186, 61), new Color(155, 186, 186)}}, 255);
 
     assertEquals(expected, actual);
   }

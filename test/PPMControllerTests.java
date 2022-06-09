@@ -149,7 +149,8 @@ public class PPMControllerTests {
   @Test
   public void testSharpenSendsCorrectArguments() {
     ImageProcessingController c
-            = new ImageProcessingControllerImplementation("image", view, model, new StringReader("sharpen images/testPicture sharpPic\nq"));
+            = new ImageProcessingControllerImplementation("image",
+                view, model, new StringReader("sharpen images/testPicture sharpPic\nq"));
     c.initializeProgram();
 
     String[] output = mockLog.toString().split("\n");
@@ -161,7 +162,8 @@ public class PPMControllerTests {
   @Test
   public void ridgeDetectionSendsCorrectArguments() {
     ImageProcessingController c
-            = new ImageProcessingControllerImplementation("image", view, model, new StringReader("ridge-detection images/testPicture ridgePic\nq"));
+            = new ImageProcessingControllerImplementation("image",
+                view, model, new StringReader("ridge-detection images/testPicture ridgePic\nq"));
     c.initializeProgram();
 
     String[] output = mockLog.toString().split("\n");
@@ -173,7 +175,8 @@ public class PPMControllerTests {
   @Test
   public void applyKernelSendsCorrectArguments() {
     ImageProcessingController c
-            = new ImageProcessingControllerImplementation("image", view, model, new StringReader("emboss images/testPicture embossedPic\nq"));
+            = new ImageProcessingControllerImplementation("image",
+                view, model, new StringReader("emboss images/testPicture embossedPic\nq"));
     c.initializeProgram();
 
     String[] output = mockLog.toString().split("\n");
@@ -185,7 +188,8 @@ public class PPMControllerTests {
   @Test
   public void gaussianSendsCorrectArguments() {
     ImageProcessingController c
-            = new ImageProcessingControllerImplementation("image", view, model, new StringReader("gaussian-blur images/testPicture gaussian\nq"));
+            = new ImageProcessingControllerImplementation("image",
+                view, model, new StringReader("gaussian-blur images/testPicture gaussian\nq"));
     c.initializeProgram();
 
     String[] output = mockLog.toString().split("\n");
