@@ -62,8 +62,8 @@ public final class ImageProcessingControllerImplementation implements ImageProce
   private void initValidCommands() {
     validCommands = new HashMap<String, Function<Scanner, Process>>();
 
-    validCommands.put("load", s->new Load(s.next(), s.next()));
-    validCommands.put("save", s->new Save(s.next(), s.next()));
+    validCommands.put("load", s->new Load(directory + s.next(), s.next()));
+    validCommands.put("save", s->new Save(directory + s.next(), s.next()));
     validCommands.put("horizontal-flip", s->new HorizontalFlip(s.next(), s.next()));
     validCommands.put("vertical-flip", s->new VerticalFlip(s.next(), s.next()));
     validCommands.put("brighten", s->new Brighten(s.nextInt(), s.next(), s.next()));
@@ -127,8 +127,11 @@ public final class ImageProcessingControllerImplementation implements ImageProce
               view.renderMessage("Processing..." + System.lineSeparator());
               process = cmd.apply(scan);
               try {
+                long deltaTime = System.currentTimeMillis();
                 process.go(manager);
                 view.renderMessage("Process complete." + System.lineSeparator());
+                deltaTime = System.currentTimeMillis() - deltaTime;
+                view.renderMessage("Took " + deltaTime + " milliseconds." + System.lineSeparator());
               } catch (IllegalArgumentException ex) {
                 view.renderMessage("Error: " + ex.getMessage() + System.lineSeparator());
               }

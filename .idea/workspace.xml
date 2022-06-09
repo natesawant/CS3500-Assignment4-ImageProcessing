@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Added script to apply all processes to an image." />
+    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Added script to apply all processes to an image.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ImageProcessingControllerImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ImageProcessingControllerImplementation.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,7 +58,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.controller.ApplyAllProcesses">
+  <component name="RunManager" selected="Application.controller.ImageProcessing">
     <configuration name="controller.ApplyAllProcesses" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="controller.ApplyAllProcesses" />
       <module name="Assignment4-ImageProcessing" />
@@ -160,7 +163,7 @@
       <workItem from="1654574751307" duration="595000" />
       <workItem from="1654622567147" duration="594000" />
       <workItem from="1654706057781" duration="5332000" />
-      <workItem from="1654747824236" duration="11082000" />
+      <workItem from="1654747824236" duration="14395000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1654458999042</created>
@@ -260,7 +263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654793115935</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added script to apply all processes to an image.">
+      <created>1654793217735</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1654793217735</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
