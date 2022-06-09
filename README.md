@@ -200,7 +200,6 @@ Box Blur Kernel (3x3)
 
 ![igmblur](https://user-images.githubusercontent.com/74106957/172703956-c6cf1751-5a91-428a-96af-587a866e6a48.jpg)
 
-
 #### Gaussian Blur
 #### Blurs all the adjacent pixels of the image _name_ in a circular method and stores it as _destName_.
 `gaussian-blur name destName`
@@ -215,8 +214,7 @@ Gaussian Blur Kernel (3x3)
 
 > `gaussian-blur igm igm-gaussianblur`
 
-![igmblur](https://user-images.githubusercontent.com/74106957/172703956-c6cf1751-5a91-428a-96af-587a866e6a48.jpg)
-
+![igmgaussian](https://user-images.githubusercontent.com/74106957/172895502-c59e2b8b-0f73-4d80-9d82-3bf2029f3dd7.jpg)
 
 #### Emboss
 #### Appears to raise the pixels of the image _name_ by emphasizing contrast and stores it as _destName_.
@@ -232,8 +230,7 @@ Emboss Kernel (3x3)
 
 > `emboss igm igm-emboss`
 
-![igmsharp](https://user-images.githubusercontent.com/74106957/172704022-22e18136-cd6e-4c29-a14d-f0483abf90bd.jpg)
-
+![igmemboss](https://user-images.githubusercontent.com/74106957/172895470-cabaea02-0538-41b7-9e70-3505ba98a9c1.jpg)
 
 #### Sharpen
 #### Sharpens the pixels of the image _name_ by emphasizing contrast and stores it as _destName_.
@@ -249,8 +246,7 @@ Sharpen Kernel (3x3)
 
 > `sharpen igm igm-sharp`
 
-![igmsharp](https://user-images.githubusercontent.com/74106957/172704022-22e18136-cd6e-4c29-a14d-f0483abf90bd.jpg)
-
+![igmsharp](https://user-images.githubusercontent.com/74106957/172895429-137dfc78-c0e7-45c8-ae39-159174b5182e.jpg)
 
 #### Ridge Detection
 #### Detects the edges (high contrast) of the image _name_ and stores it as _destName_.
@@ -266,7 +262,7 @@ Ridge Detection Kernel (3x3)
 
 > `ridge-detection igm igm-ridge`
 
-![igmsharp](https://user-images.githubusercontent.com/74106957/172704022-22e18136-cd6e-4c29-a14d-f0483abf90bd.jpg)
+![igmridge](https://user-images.githubusercontent.com/74106957/172895394-b63f6578-dcbe-414d-91a5-79fc8267f87f.jpg)
 
 #### Quitting the program
 #### Terminates the program. Any unsaved work will be lost. Cannot be done whilst in the middle of inputting a command.
