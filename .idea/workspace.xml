@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Fixed tests.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/ImageUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/flipped.ppm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/jpgs/JPEG/igm-copy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/jpgs/JPEG/igmblue.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/jpgs/JPEG/igmgreen.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/jpgs/JPEG/igmintensity.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/jpgs/JPEG/igmluma.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/jpgs/JPEG/igmred.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/jpgs/JPEG/igmridge.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/jpgs/JPEG/igmsharp.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/jpgs/JPEG/igmvalue.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
