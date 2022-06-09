@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Fixed tests." />
+    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Added output">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/OperationsModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OperationsModelManager.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -161,7 +164,8 @@
       <workItem from="1654574751307" duration="595000" />
       <workItem from="1654622567147" duration="594000" />
       <workItem from="1654706057781" duration="5332000" />
-      <workItem from="1654747824236" duration="16229000" />
+      <workItem from="1654747824236" duration="16687000" />
+      <workItem from="1654808474512" duration="1236000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1654458999042</created>
@@ -282,7 +286,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654807543243</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Deleted some processes">
+      <created>1654808171917</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1654808171917</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Added output">
+      <created>1654808612814</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1654808612814</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,6 +333,8 @@
     <MESSAGE value="Added script to apply all processes to an image." />
     <MESSAGE value="Added time to process info." />
     <MESSAGE value="Fixed tests." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed tests." />
+    <MESSAGE value="Deleted some processes" />
+    <MESSAGE value="Added output" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added output" />
   </component>
 </project>
