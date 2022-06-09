@@ -65,11 +65,6 @@ public class SmallScaleOperationTest {
   }
 
   @Test (expected = IllegalArgumentException.class)
-  public void savingToBadWriterThrows() {
-    // TODO make corrupt writer class
-  }
-
-  @Test (expected = IllegalArgumentException.class)
   public void componentOfUnloadedThrows() {
     m.valueComponent("red", "normal-koala", "red-koala");
   }

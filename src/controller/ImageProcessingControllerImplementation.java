@@ -59,25 +59,6 @@ public final class ImageProcessingControllerImplementation implements ImageProce
     }
   }
 
-  private void initValidCommands() {
-    validCommands = new HashMap<String, Function<Scanner, Process>>();
-
-    Map<String, Process> map = new HashMap<>();
-
-
-    validCommands.put("load", s->new Load(s.next(), s.next()));
-    validCommands.put("save", s->new Save(s.next(), s.next()));
-    validCommands.put("horizontal-flip", s->new HorizontalFlip(s.next(), s.next()));
-    validCommands.put("vertical-flip", s->new VerticalFlip(s.next(), s.next()));
-    validCommands.put("brighten", s->new Brighten(s.nextInt(), s.next(), s.next()));
-    validCommands.put("value-component", s->new ValueComponent(s.next(), s.next(), s.next()));
-    validCommands.put("box-blur", s->new BoxBlur(s.next(), s.next()));
-    validCommands.put("emboss", s->new Emboss(s.next(), s.next()));
-    validCommands.put("gaussian-blur", s->new GaussianBlur(s.next(), s.next()));
-    validCommands.put("ridge-detection", s->new RidgeDetection(s.next(), s.next()));
-    validCommands.put("sharpen", s->new Sharpen(s.next(), s.next()));
-  }
-
   /**
    * The implementation of the controller that allows for text based input and output.
    * @param directory the root directory that is being worked in.
@@ -98,6 +79,26 @@ public final class ImageProcessingControllerImplementation implements ImageProce
     this.view = view;
     this.manager = model;
     this.readable = readable;
+    initValidCommands();
+  }
+
+  private void initValidCommands() {
+    validCommands = new HashMap<String, Function<Scanner, Process>>();
+
+    Map<String, Process> map = new HashMap<>();
+
+
+    validCommands.put("load", s->new Load(s.next(), s.next()));
+    validCommands.put("save", s->new Save(s.next(), s.next()));
+    validCommands.put("horizontal-flip", s->new HorizontalFlip(s.next(), s.next()));
+    validCommands.put("vertical-flip", s->new VerticalFlip(s.next(), s.next()));
+    validCommands.put("brighten", s->new Brighten(s.nextInt(), s.next(), s.next()));
+    validCommands.put("value-component", s->new ValueComponent(s.next(), s.next(), s.next()));
+    validCommands.put("box-blur", s->new BoxBlur(s.next(), s.next()));
+    validCommands.put("emboss", s->new Emboss(s.next(), s.next()));
+    validCommands.put("gaussian-blur", s->new GaussianBlur(s.next(), s.next()));
+    validCommands.put("ridge-detection", s->new RidgeDetection(s.next(), s.next()));
+    validCommands.put("sharpen", s->new Sharpen(s.next(), s.next()));
   }
 
   @Override
