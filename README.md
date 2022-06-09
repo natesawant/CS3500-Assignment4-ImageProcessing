@@ -102,7 +102,7 @@ This project is a basic image processing program. Currently, the program is only
 
 ### Running The Program
 #### To compile, open terminal or the commandline in the _src_ directory. To do so, run the following: `javac controller/ImageProcessing.java`. To run the program to allow free image processing, start it by running the following: `java controller/ImageProcessing`. This takes in the optional argument of the working _directory_, with the slash at the end.
-`java controller/ImageProcessing.java` or `java controller/ImageProcessing.java directory`
+`java controller/ImageProcessing` or `java controller/ImageProcessing directory`
 
 ###### Example:
 > `java controller/ImageProcessing.java ../images`
