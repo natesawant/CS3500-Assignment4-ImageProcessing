@@ -81,6 +81,7 @@ This project is a basic image processing program. Currently, the program is only
 10. Sharpen
 11. Ridge Detection
 12. [Apply Kernel](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#apply-kernel)
+13. Quit
 
 and more to come!
 
@@ -196,3 +197,8 @@ Sharpen Kernel (3x3)\
 | 0  	| -1 	| 0  	|
 
 ![igmsharp](https://user-images.githubusercontent.com/74106957/172704022-22e18136-cd6e-4c29-a14d-f0483abf90bd.jpg)
+
+#### Quitting the program
+#### Q or QUIT (case-insensitive)
+Terminates the program. Any unsaved work will be lost.\
+Cannot be done whilst in the middle of inputting a command.
