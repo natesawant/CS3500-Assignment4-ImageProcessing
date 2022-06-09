@@ -11,7 +11,7 @@
    - [Utils](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#utils)
 4. [Instructions](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#instructions)
    - [Running The Program](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#running-the-program)
-   - [Valid Commands](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#valid-commands)
+   - [Valid Commands](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#quitting-the-program)
 
 
 
@@ -89,13 +89,12 @@ This project is a basic image processing program. Currently, the program is only
 4. [Vertical Flip](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#vertical-flip)
 5. [Horizontal Flip](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#horizontal-flip)
 6. [Value Component](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#value-component)
-7. Box Blur
-8. Gaussian Blur
-9. Emboss
-10. Sharpen
-11. Ridge Detection
-12. [Apply Kernel](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#apply-kernel)
-13. Quit
+7. [Box Blur](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#box-blur)
+8. [Gaussian Blur](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#gaussian-blur)
+9. [Emboss](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#emboss)
+10. [Sharpen](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#sharpen)
+11. [Ridge Detection](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#ridge-detection)
+13. [Quit](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#quit)
 
 and more to come!
 
@@ -185,34 +184,91 @@ _Disclaimer: This photo was taken by Nathaniel Sawant and is authorized for use 
 
 ![igmvalue](https://user-images.githubusercontent.com/74106957/172697654-7c771bf8-864c-4556-a798-6cda2294bca1.jpg)
 
-#### Apply Kernel
-#### Applies the custom _kernel_ (an odd dimensioned matrix that samples surrounding pixels) to image _name_ and stores it as _destName_.
-`apply-kernel kernel name destName`
+#### Box Blur
+#### Blurs all the adjacent pixels of the image _name_ in a square method and stores it as _destName_.
+`box-blur name destName`
+
+Box Blur Kernel (3x3)
+| 1/9 	| 1/9 	| 1/9 	|
+|-----	|-----	|-----	|
+| 1/9 	| 1/9 	| 1/9 	|
+| 1/9 	| 1/9 	| 1/9 	|
 
 ###### Examples:
 
-> `apply-kernel blur igm igm-blur`
-
-Box Blur Kernel (3x3)\
-| 1/9 	| 1/9 	| 1/9 	|\
-|-----	|-----	|-----	|\
-| 1/9 	| 1/9 	| 1/9 	|\
-| 1/9 	| 1/9 	| 1/9 	|
+> `box-blur igm igm-boxblur`
 
 ![igmblur](https://user-images.githubusercontent.com/74106957/172703956-c6cf1751-5a91-428a-96af-587a866e6a48.jpg)
 
 
-> `apply-kernel sharpen igm igm-sharp`
+#### Gaussian Blur
+#### Blurs all the adjacent pixels of the image _name_ in a circular method and stores it as _destName_.
+`gaussian-blur name destName`
 
-Sharpen Kernel (3x3)\
-| 0  	| -1 	| 0  	|\
-|----	|----	|----	|\
-| -1 	| 8  	| -1 	|\
+Gaussian Blur Kernel (3x3)
+| 1/16	| 2/16	| 1/16	|
+|-----	|-----	|-----	|
+| 2/16	| 4/16	| 2/16	|
+| 1/16	| 2/16	| 1/16	|
+
+###### Examples:
+
+> `gaussian-blur igm igm-gaussianblur`
+
+![igmblur](https://user-images.githubusercontent.com/74106957/172703956-c6cf1751-5a91-428a-96af-587a866e6a48.jpg)
+
+
+#### Emboss
+#### Appears to raise the pixels of the image _name_ by emphasizing contrast and stores it as _destName_.
+`emboss name destName`
+
+Emboss Kernel (3x3)
+| -2 	| -1 	| 0  	|
+|----	|----	|----	|
+| -1 	|  1 	|  1 	|
+| 0  	|  1 	|  2 	|
+
+###### Examples:
+
+> `emboss igm igm-emboss`
+
+![igmsharp](https://user-images.githubusercontent.com/74106957/172704022-22e18136-cd6e-4c29-a14d-f0483abf90bd.jpg)
+
+
+#### Sharpen
+#### Sharpens the pixels of the image _name_ by emphasizing contrast and stores it as _destName_.
+`sharpen name destName`
+
+Sharpen Kernel (3x3)
 | 0  	| -1 	| 0  	|
+|----	|----	|----	|
+| -1 	| 8  	| -1 	|
+| 0  	| -1 	| 0  	|
+
+###### Examples:
+
+> `sharpen igm igm-sharp`
+
+![igmsharp](https://user-images.githubusercontent.com/74106957/172704022-22e18136-cd6e-4c29-a14d-f0483abf90bd.jpg)
+
+
+#### Ridge Detection
+#### Detects the edges (high contrast) of the image _name_ and stores it as _destName_.
+`ridge-detection name destName`
+
+Ridge Detection Kernel (3x3)
+| -1 	| -1 	| -1 	|
+|----	|----	|----	|
+| -1 	| 8  	| -1 	|
+| -1 	| -1 	| -1 	|
+
+###### Examples:
+
+> `ridge-detection igm igm-ridge`
 
 ![igmsharp](https://user-images.githubusercontent.com/74106957/172704022-22e18136-cd6e-4c29-a14d-f0483abf90bd.jpg)
 
 #### Quitting the program
-#### Q or QUIT (case-insensitive)
-Terminates the program. Any unsaved work will be lost.\
-Cannot be done whilst in the middle of inputting a command.
+#### Terminates the program. Any unsaved work will be lost. Cannot be done whilst in the middle of inputting a command.
+
+`q` or `quit`
