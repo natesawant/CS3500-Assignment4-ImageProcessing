@@ -4,12 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Added some small scale tests and small scale images.">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
+    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Converted to command design pattern.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment4-ImageProcessing.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment4-ImageProcessing.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/igm-bright.ppm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/igm-dark.ppm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/igm-horizontal.ppm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/igm-vertical.ppm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/igmblur.ppm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/jpgs/JPEG/igm-bright.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/jpgs/JPEG/igm-copy.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/res/jpgs/JPEG/igm-copy.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/jpgs/JPEG/igm-dark.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/jpgs/JPEG/igm-horizontal.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/jpgs/JPEG/igm-vertical.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/jpgs/JPEG/igm.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/jpgs/JPEG/igmblue.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/res/jpgs/JPEG/igmblue.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/jpgs/JPEG/igmblur.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/jpgs/JPEG/igmgreen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/res/jpgs/JPEG/igmgreen.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/jpgs/JPEG/igmintensity.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/res/jpgs/JPEG/igmintensity.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/jpgs/JPEG/igmluma.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/res/jpgs/JPEG/igmluma.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/jpgs/JPEG/igmred.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/res/jpgs/JPEG/igmred.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/jpgs/JPEG/igmridge.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/res/jpgs/JPEG/igmridge.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/jpgs/JPEG/igmsharp.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/res/jpgs/JPEG/igmsharp.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/jpgs/JPEG/igmvalue.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/res/jpgs/JPEG/igmvalue.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/ImageProcessingControllerImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ImageProcessingControllerImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/OperationsModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OperationsModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/OutputAll.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/OutputAll.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,10 +79,11 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.controller.ImageProcessing">
-    <configuration name="OutputAll" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="OutputAll" />
+  <component name="RunManager" selected="Application.controller.ApplyAllProcesses">
+    <configuration name="controller.ApplyAllProcesses" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="controller.ApplyAllProcesses" />
       <module name="Assignment4-ImageProcessing" />
+      <option name="PROGRAM_PARAMETERS" value="res igm" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -134,7 +153,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.controller.ImageProcessing" />
-      <item itemvalue="Application.OutputAll" />
+      <item itemvalue="Application.controller.ApplyAllProcesses" />
       <item itemvalue="JUnit.TestFolder" />
       <item itemvalue="JUnit.SmallScaleOperationTest" />
       <item itemvalue="JUnit.OperationTests.testBigBlur" />
@@ -143,7 +162,7 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.OutputAll" />
+        <item itemvalue="Application.controller.ApplyAllProcesses" />
         <item itemvalue="JUnit.SmallScaleOperationTest" />
         <item itemvalue="JUnit.OperationTests.testSmallBlur" />
         <item itemvalue="JUnit.OperationTests.testBigBlur" />
@@ -165,7 +184,7 @@
       <workItem from="1654574751307" duration="595000" />
       <workItem from="1654622567147" duration="594000" />
       <workItem from="1654706057781" duration="5332000" />
-      <workItem from="1654747824236" duration="6835000" />
+      <workItem from="1654747824236" duration="10722000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1654458999042</created>
@@ -251,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654565238050</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Converted to command design pattern.">
+      <created>1654754975983</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1654754975983</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,6 +306,7 @@
     <MESSAGE value="Fixed everything basically." />
     <MESSAGE value="Added kernel application method." />
     <MESSAGE value="Added some small scale tests and small scale images." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some small scale tests and small scale images." />
+    <MESSAGE value="Converted to command design pattern." />
+    <option name="LAST_COMMIT_MESSAGE" value="Converted to command design pattern." />
   </component>
 </project>

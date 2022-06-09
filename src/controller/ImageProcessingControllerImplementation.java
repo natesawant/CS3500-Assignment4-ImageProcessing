@@ -62,9 +62,6 @@ public final class ImageProcessingControllerImplementation implements ImageProce
   private void initValidCommands() {
     validCommands = new HashMap<String, Function<Scanner, Process>>();
 
-    Map<String, Process> map = new HashMap<>();
-
-
     validCommands.put("load", s->new Load(s.next(), s.next()));
     validCommands.put("save", s->new Save(s.next(), s.next()));
     validCommands.put("horizontal-flip", s->new HorizontalFlip(s.next(), s.next()));
