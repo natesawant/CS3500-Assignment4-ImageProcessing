@@ -1,6 +1,6 @@
 package model;
 
-import java.awt.*;
+import java.awt.Color;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -17,7 +17,12 @@ public final class OperationsModelManager implements OperationsModel {
 
     private Map<String, Image> loaded;
     private Image img;
-    private int width, height, r, g, b, max;
+    private int width;
+    private int height;
+    private int r;
+    private int g;
+    private int b;
+    private int max;
     private Color[][] pixels;
     private Color newColor;
     private double[][] kernel;
@@ -62,13 +67,16 @@ public final class OperationsModelManager implements OperationsModel {
 
             for (int y = 0; y < height; y++) {
                 for (int x = 0; x < width; x++) {
-                    r = img.getPixel(x,y).getRed();
-                    g = img.getPixel(x,y).getGreen();
-                    b = img.getPixel(x,y).getBlue();
+                    r = img.getPixel(x, y).getRed();
+                    g = img.getPixel(x, y).getGreen();
+                    b = img.getPixel(x, y).getBlue();
 
-                    output.append(r + " " + System.lineSeparator());
-                    output.append(g + " " + System.lineSeparator());
-                    output.append(b + " " + System.lineSeparator());
+                    output.append(String.valueOf(r))
+                            .append(" ").append(System.lineSeparator());
+                    output.append(String.valueOf(g))
+                            .append(" ").append(System.lineSeparator());
+                    output.append(String.valueOf(b))
+                            .append(" ").append(System.lineSeparator());
                 }
             }
             output.close();
@@ -94,7 +102,7 @@ public final class OperationsModelManager implements OperationsModel {
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
                 int val;
-                newColor = img.getPixel(x,y);
+                newColor = img.getPixel(x, y);
                 switch (component.toLowerCase()) {
                     case "red":
                         val = newColor.getRed();
@@ -123,7 +131,7 @@ public final class OperationsModelManager implements OperationsModel {
                         throw new IllegalArgumentException("Not supported component.");
                 }
 
-                pixels[x][y] = new Color(val,val,val);
+                pixels[x][y] = new Color(val, val, val);
             }
         }
 
@@ -145,7 +153,7 @@ public final class OperationsModelManager implements OperationsModel {
 
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
-                pixels[width - x - 1][y] = img.getPixel(x,y);
+                pixels[width - x - 1][y] = img.getPixel(x, y);
             }
         }
 
@@ -166,7 +174,7 @@ public final class OperationsModelManager implements OperationsModel {
 
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
-                pixels[x][height - y - 1] = img.getPixel(x,y);
+                pixels[x][height - y - 1] = img.getPixel(x, y);
             }
         }
 
@@ -189,14 +197,14 @@ public final class OperationsModelManager implements OperationsModel {
 
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
-                newColor = img.getPixel(x,y);
+                newColor = img.getPixel(x, y);
                 max = img.getMaxValue();
 
                 r = Math.max(Math.min(newColor.getRed() + increment, max), 0);
                 g = Math.max(Math.min(newColor.getGreen() + increment, max), 0);
                 b = Math.max(Math.min(newColor.getBlue() + increment, max), 0);
 
-                pixels[x][y] = new Color(r,g,b);
+                pixels[x][y] = new Color(r, g, b);
             }
         }
 
@@ -213,7 +221,7 @@ public final class OperationsModelManager implements OperationsModel {
             }
         }
 
-        applyKernel(kernel,name,destName);
+        applyKernel(kernel, name, destName);
     }
 
     @Override
@@ -222,7 +230,7 @@ public final class OperationsModelManager implements OperationsModel {
                 new double[][]{{ 0,-1, 0},
                         {-1, 5,-1},
                         { 0,-1, 0}};
-        applyKernel(kernel,name,destName);
+        applyKernel(kernel, name, destName);
     }
 
     @Override
@@ -231,7 +239,7 @@ public final class OperationsModelManager implements OperationsModel {
                         new double[][]{{-1,-1,-1},
                         {-1, 8,-1},
                         {-1,-1,-1}};
-        applyKernel(kernel,name,destName);
+        applyKernel(kernel, name, destName);
     }
 
     @Override
@@ -289,7 +297,7 @@ public final class OperationsModelManager implements OperationsModel {
                 g = Math.max(Math.min(g , max), 0);
                 b = Math.max(Math.min(b, max), 0);
 
-                pixels[x][y] = new Color(r,g,b);
+                pixels[x][y] = new Color(r, g, b);
             }
         }
 

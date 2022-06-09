@@ -46,6 +46,27 @@ This project is a basic image processing program. Currently, the program is only
 2. OperationsModel
    1. Provides various operations that can be used to load, modify, and save images. The full
       details of each method is detailed below.
+   2. Operations available:
+      1. Load : loads a specified image into the program's filesystem
+      2. Save : saves a modified image into the program's filesystem
+      3. ApplyKernel : applies a custom kernel matrix to an image
+      4. BoxBlur : performs a box blur of a specified radius on an image
+      5. Brighten : adjusts the brightness of an image by a given delta
+         1. Negative values will darken the image
+      6. Emboss : embosses the specified image
+      7. GaussianBlur : performs a gaussian blur on a specified image
+      8. HorizontalFlip : flips the specified image horizontally
+      9. VerticalFlip : flips the specified image vertically
+      10. RidgeDetection : produces an image consisting of all edges in the given image
+      11. Sharpen : adds a sharpening filter on a specified image
+      12. ValueComponent : creates an image based on one of the following components of each pixel:
+          1. Red-pixel value
+          2. Green-pixel value
+          3. Blue-pixel value
+          4. The strongest color value in each pixel
+          5. The luma value of each pixel
+          6. The intensity of each pixel
+   
 
 #### Classes
 
@@ -80,6 +101,15 @@ This project is a basic image processing program. Currently, the program is only
 ## Instructions
 
 ### Running The Program
+#### To compile, open terminal or the commandline in the _src/_ directory. To do so, run the following: `javac controller/ImageProcessing.java`. To run the program to allow free image processing, start it by running the following: `java controller/ImageProcessing`. This takes in the optional argument of the working directory, with the slash at the end.
+`java src/controller/ImageProcessing.java` or `java src/controller/ImageProcessing.java images/`
+
+### Script To Apply All Processes
+#### The file `ApplyAllScripts.java` takes in the _directory_ without the slash at the end and the _filename_ with the .ppm extension. It then applies all the available processes to the image and saves them with the process at the end in the same directory.
+`java src/controller/ApplyAllScripts.java directory filename` or `java src/controller/ApplyAllScripts.java filename`
+
+###### Example:
+> `ApplyAllScripts.java images igm`
 
 ### Valid Commands
 
