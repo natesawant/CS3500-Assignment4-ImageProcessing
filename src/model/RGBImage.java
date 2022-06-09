@@ -1,6 +1,6 @@
 package model;
 
-import java.awt.*;
+import java.awt.Color;
 
 /**
  * This class represents an image made up of RGB pixels.
