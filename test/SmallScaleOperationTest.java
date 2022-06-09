@@ -301,9 +301,9 @@ public class SmallScaleOperationTest {
     m.load("images/test2x2.ppm", "test");
 
     m.applyKernel(new double[][]
-            {{1.0 / 9.0, 1.0 / 9.0, 1.0 / 9.0},
-            {1.0 / 9.0, 1.0 / 9.0, 1.0 / 9.0},
-            {1.0 / 9.0, 1.0 / 9.0, 1.0 / 9.0}}, "test", "blur-test");
+        {{1.0 / 9.0, 1.0 / 9.0, 1.0 / 9.0},
+        {1.0 / 9.0, 1.0 / 9.0, 1.0 / 9.0},
+        {1.0 / 9.0, 1.0 / 9.0, 1.0 / 9.0}}, "test", "blur-test");
     m.save("images/blur-test.ppm", "blur-test");
 
     actual = ImageUtil.convertPPM("images/blur-test.ppm");
@@ -319,9 +319,9 @@ public class SmallScaleOperationTest {
     m.load("images/test2x2.ppm", "test");
 
     m.applyKernel(new double[][]
-            {{-2,-1, 0},
-            {-1, 1, 1},
-            {0, 1, 2}}, "test", "emboss-test");
+        {{-2,-1, 0},
+        {-1, 1, 1},
+        {0, 1, 2}}, "test", "emboss-test");
     m.save("images/emboss-test.ppm", "emboss-test");
 
     actual = ImageUtil.convertPPM("images/emboss-test.ppm");
@@ -338,9 +338,9 @@ public class SmallScaleOperationTest {
     m.load("images/test2x2.ppm", "test");
 
     m.applyKernel(new double[][]
-            {{1.0 / 16.0, 2.0 / 16.0, 1.0 / 16.0},
-            {2.0 / 16.0, 4.0 / 16.0, 2.0 / 16.0},
-            { 1.0 / 16.0, 2.0 / 16.0, 1.0 / 16.0}}, "test", "gauss-test");
+        {{1.0 / 16.0, 2.0 / 16.0, 1.0 / 16.0},
+        {2.0 / 16.0, 4.0 / 16.0, 2.0 / 16.0},
+        { 1.0 / 16.0, 2.0 / 16.0, 1.0 / 16.0}}, "test", "gauss-test");
     m.save("images/gauss-test.ppm", "gauss-test");
 
     actual = ImageUtil.convertPPM("images/gauss-test.ppm");
