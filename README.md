@@ -21,6 +21,10 @@ This project is a basic image processing program. Currently, the program is only
 
 ## Design
 
+### Class diagram
+
+<img width="1152" alt="Screen Shot 2022-06-09 at 5 09 09 PM" src="https://user-images.githubusercontent.com/91565279/172945028-1f206364-48c4-428e-a3f4-2c6292e65b96.png">
+
 ### Controllers
 
 #### Interfaces
