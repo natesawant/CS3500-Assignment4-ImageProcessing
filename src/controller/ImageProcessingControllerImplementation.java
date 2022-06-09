@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.lang.reflect.Parameter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -28,12 +27,12 @@ import view.ImageProcessingView;
  */
 public final class ImageProcessingControllerImplementation implements ImageProcessingController {
 
-  protected String directory;
-  protected Readable readable;
-  protected ImageProcessingView view;
-  protected OperationsModel manager;
+  private final String directory;
+  private final Readable readable;
+  private final ImageProcessingView view;
+  private final OperationsModel manager;
 
-  protected Map<String, Function<Scanner, Process>> validCommands;
+  private Map<String, Function<Scanner, Process>> validCommands;
 
   /**
    * The implementation of the controller that allows for text based input and output.
@@ -46,6 +45,7 @@ public final class ImageProcessingControllerImplementation implements ImageProce
                                                  ImageProcessingView view,
                                                  Readable readable)
           throws IllegalArgumentException {
+
     if (readable == null) {
       throw new IllegalArgumentException("Readable is null");
     } else if (view == null) {
@@ -57,22 +57,7 @@ public final class ImageProcessingControllerImplementation implements ImageProce
       this.manager = new OperationsModelManager();
       initValidCommands();
     }
-  }
 
-  private void initValidCommands() {
-    validCommands = new HashMap<String, Function<Scanner, Process>>();
-
-    validCommands.put("load", s->new Load(s.next(), s.next()));
-    validCommands.put("save", s->new Save(s.next(), s.next()));
-    validCommands.put("horizontal-flip", s->new HorizontalFlip(s.next(), s.next()));
-    validCommands.put("vertical-flip", s->new VerticalFlip(s.next(), s.next()));
-    validCommands.put("brighten", s->new Brighten(s.nextInt(), s.next(), s.next()));
-    validCommands.put("value-component", s->new ValueComponent(s.next(), s.next(), s.next()));
-    validCommands.put("box-blur", s->new BoxBlur(s.next(), s.next()));
-    validCommands.put("emboss", s->new Emboss(s.next(), s.next()));
-    validCommands.put("gaussian-blur", s->new GaussianBlur(s.next(), s.next()));
-    validCommands.put("ridge-detection", s->new RidgeDetection(s.next(), s.next()));
-    validCommands.put("sharpen", s->new Sharpen(s.next(), s.next()));
   }
 
   /**
@@ -97,11 +82,30 @@ public final class ImageProcessingControllerImplementation implements ImageProce
     this.readable = readable;
   }
 
+  /**
+   * Adds all valid command operations to the validCommands hashmap.
+   */
+  private void initValidCommands() {
+    validCommands = new HashMap<String, Function<Scanner, Process>>();
+
+    validCommands.put("load", s->new Load(s.next(), s.next()));
+    validCommands.put("save", s->new Save(s.next(), s.next()));
+    validCommands.put("horizontal-flip", s->new HorizontalFlip(s.next(), s.next()));
+    validCommands.put("vertical-flip", s->new VerticalFlip(s.next(), s.next()));
+    validCommands.put("brighten", s->new Brighten(s.nextInt(), s.next(), s.next()));
+    validCommands.put("value-component", s->new ValueComponent(s.next(), s.next(), s.next()));
+    validCommands.put("box-blur", s->new BoxBlur(s.next(), s.next()));
+    validCommands.put("emboss", s->new Emboss(s.next(), s.next()));
+    validCommands.put("gaussian-blur", s->new GaussianBlur(s.next(), s.next()));
+    validCommands.put("ridge-detection", s->new RidgeDetection(s.next(), s.next()));
+    validCommands.put("sharpen", s->new Sharpen(s.next(), s.next()));
+  }
+
   @Override
   public void initializeProgram() throws IllegalStateException {
+
     Scanner scan;
-    String rawInput;
-    String[] arguments;
+
     try {
       scan = new Scanner(readable);
 

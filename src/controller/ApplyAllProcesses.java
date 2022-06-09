@@ -19,12 +19,14 @@ import processes.VerticalFlip;
  * Processes an image and saves all the available image processes.
  */
 public class ApplyAllProcesses {
+
   /**
    * Processes an image and saves all the available image processes.
    * @param args the last arg must be the file name without .ppm. Optionally, the first argument
    *             can be the directory that the file is stored in. Ex: res igm.
    */
   public static void main(String[] args) {
+
     OperationsModel m = new OperationsModelManager();
     String path;
     String ext = ".ppm";

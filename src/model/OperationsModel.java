@@ -31,7 +31,8 @@ public interface OperationsModel {
    * @param destName the new name of the processed image.
    * @throws IllegalArgumentException if name of the image or component is not valid.
    */
-  void valueComponent(String component, String name, String destName) throws IllegalArgumentException;
+  void valueComponent(String component, String name, String destName)
+          throws IllegalArgumentException;
 
   /**
    * Flip an image horizontally to create a new image, referred to henceforth by the given

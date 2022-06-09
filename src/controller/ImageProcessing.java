@@ -10,6 +10,7 @@ import view.ImageProcessingView;
  * Class that allows for image processing through text input.
  */
 public class ImageProcessing {
+
   /**
    * Main method to start the ImageProcessing program.
    * @param args optional argument to set the directory that the root is.
@@ -25,10 +26,9 @@ public class ImageProcessing {
     appendable = System.out;
     view = new ImageProcessingTextView(new OperationsModelManager(), appendable);
 
-    if (args.length>0) {
+    if (args.length > 0) {
       directory = args[0];
-    }
-    else {
+    } else {
       directory = "";
     }
 

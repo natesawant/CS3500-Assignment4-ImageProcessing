@@ -38,7 +38,7 @@ public class RGBImage extends AbstractImage {
       }
       for (int x = 0; x < width; x++) {
         for (int y = 0; y < height; y++) {
-          if (!this.getPixel(x,y).equals(img.getPixel(x,y))) {
+          if (!this.getPixel(x, y).equals(img.getPixel(x, y))) {
             return false;
           }
         }
