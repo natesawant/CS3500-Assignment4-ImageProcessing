@@ -75,13 +75,12 @@ This project is a basic image processing program. Currently, the program is only
 4. [Vertical Flip](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#vertical-flip)
 5. [Horizontal Flip](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#horizontal-flip)
 6. [Value Component](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#value-component)
-7. Box Blur
-8. Gaussian Blur
-9. Emboss
-10. Sharpen
-11. Ridge Detection
-12. [Apply Kernel](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#apply-kernel)
-13. Quit
+7. [Box Blur](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#box-blur)
+8. [Gaussian Blur](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#gaussian-blur)
+9. [Emboss](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#emboss)
+10. [Sharpen](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#sharpen)
+11. [Ridge Detection](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#ridge-detection)
+13. [Quit](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#quit)
 
 and more to come!
 
