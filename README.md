@@ -171,13 +171,13 @@ _Disclaimer: This photo was taken by Nathaniel Sawant and is authorized for use 
 
 ![igmvalue](https://user-images.githubusercontent.com/74106957/172697654-7c771bf8-864c-4556-a798-6cda2294bca1.jpg)
 
-#### Apply Kernel
-#### Applies the custom _kernel_ (an odd dimensioned matrix that samples surrounding pixels) to image _name_ and stores it as _destName_.
-`apply-kernel kernel name destName`
+#### Box Blur
+#### Averages all the adjacent pixels of the image _name_ and stores it as _destName_.
+`box-blur name destName`
 
 ###### Examples:
 
-> `apply-kernel blur igm igm-blur`
+> `box-blur igm igm-boxblur`
 
 Box Blur Kernel (3x3)\
 | 1/9 	| 1/9 	| 1/9 	|\
@@ -188,7 +188,13 @@ Box Blur Kernel (3x3)\
 ![igmblur](https://user-images.githubusercontent.com/74106957/172703956-c6cf1751-5a91-428a-96af-587a866e6a48.jpg)
 
 
-> `apply-kernel sharpen igm igm-sharp`
+#### Sharpen
+#### Sharpens the pixels of the image _name_ by emphasizing contrast and stores it as _destName_.
+`sharpen name destName`
+
+###### Examples:
+
+> `sharpen igm igm-sharp`
 
 Sharpen Kernel (3x3)\
 | 0  	| -1 	| 0  	|\
