@@ -26,34 +26,47 @@ This project is a basic image processing program. Currently, the program is only
 #### Interfaces
 
 1. ImageProcessingController
+   1. Provides the initializeProgram() method, which serves as a starting point to the program.
 
 #### Classes
 
-1. ImageProcessingControllerImplementation
+1. ImageProcessingControllerImplementation | implements ImageProcessingController
+   1. Allows the user to interact with the program, sending inputted commands to the model, and 
+      outputting the results to the view.
 2. Image Processing
+   1. Provides a main(String[] args) method to serve as the entry point to the program.
 
 ### Models
 
 #### Interfaces
 
 1. Image
+   1. Represents a general image, provides method that allow for the obtainment of specific pixels,
+      the width, height, and max value of any color in an image.
 2. OperationsModel
+   1. Provides various operations that can be used to load, modify, and save images. The full
+      details of each method is detailed below.
 
 #### Classes
 
-1. AbstractImage
-2. RGBImage
-3. OperationsModelManager
+1. AbstractImage | implements Image
+   1. Stores fields that any image should contain, regardless of type.
+2. RGBImage | extends AbstractImage
+   1. Represents a slightly more specific image, where each pixel is made up of an RGB value.
+3. OperationsModelManager | implements OperationsModel
+   1. Contains the implementation and execution of the different operations and modifications that 
+      can be used on an Image.
 
 ### Views
 
 #### Interfaces
 
 1. ImageProcessingView
+   1. Represents a general text view that can render String messages.
 
 #### Classes
 
-1. ImageProcessingTextView
+1. ImageProcessingTextView | implements ImageProcessingView
 
 ### Utils
 
@@ -62,6 +75,7 @@ This project is a basic image processing program. Currently, the program is only
 #### Classes
 
 1. ImageUtil
+   1. Allows for the conversion and reading of .ppm image files in the program's current filesystem.
 
 ## Instructions
 
