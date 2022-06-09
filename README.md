@@ -11,7 +11,7 @@
    - [Utils](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#utils)
 4. [Instructions](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#instructions)
    - [Running The Program](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#running-the-program)
-   - [Valid Commands](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#valid-commands)
+   - [Valid Commands](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#quitting-the-program)
 
 
 
@@ -174,15 +174,15 @@ _Disclaimer: This photo was taken by Nathaniel Sawant and is authorized for use 
 #### Averages all the adjacent pixels of the image _name_ and stores it as _destName_.
 `box-blur name destName`
 
-###### Examples:
-
-> `box-blur igm igm-boxblur`
-
 Box Blur Kernel (3x3)
 | 1/9 	| 1/9 	| 1/9 	|
 |-----	|-----	|-----	|
 | 1/9 	| 1/9 	| 1/9 	|
 | 1/9 	| 1/9 	| 1/9 	|
+
+###### Examples:
+
+> `box-blur igm igm-boxblur`
 
 ![igmblur](https://user-images.githubusercontent.com/74106957/172703956-c6cf1751-5a91-428a-96af-587a866e6a48.jpg)
 
@@ -191,15 +191,15 @@ Box Blur Kernel (3x3)
 #### Averages all the adjacent pixels of the image _name_ and stores it as _destName_.
 `gaussian-blur name destName`
 
-###### Examples:
-
-> `gaussian-blur igm igm-boxblur`
-
 Gaussian Blur Kernel (3x3)
 | 1/16	| 2/16	| 1/16	|
 |-----	|-----	|-----	|
 | 2/16	| 4/16	| 2/16	|
 | 1/16	| 2/16	| 1/16	|
+
+###### Examples:
+
+> `gaussian-blur igm igm-boxblur`
 
 ![igmblur](https://user-images.githubusercontent.com/74106957/172703956-c6cf1751-5a91-428a-96af-587a866e6a48.jpg)
 
@@ -208,15 +208,15 @@ Gaussian Blur Kernel (3x3)
 #### Sharpens the pixels of the image _name_ by emphasizing contrast and stores it as _destName_.
 `emboss name destName`
 
-###### Examples:
-
-> `emboss igm igm-sharp`
-
 Emboss Kernel (3x3)
 | -2 	| -1 	| 0  	|
 |----	|----	|----	|
 | -1 	|  1 	|  1 	|
 | 0  	|  1 	|  2 	|
+
+###### Examples:
+
+> `emboss igm igm-sharp`
 
 ![igmsharp](https://user-images.githubusercontent.com/74106957/172704022-22e18136-cd6e-4c29-a14d-f0483abf90bd.jpg)
 
@@ -225,15 +225,15 @@ Emboss Kernel (3x3)
 #### Sharpens the pixels of the image _name_ by emphasizing contrast and stores it as _destName_.
 `sharpen name destName`
 
-###### Examples:
-
-> `sharpen igm igm-sharp`
-
 Sharpen Kernel (3x3)
 | 0  	| -1 	| 0  	|
 |----	|----	|----	|
 | -1 	| 8  	| -1 	|
 | 0  	| -1 	| 0  	|
+
+###### Examples:
+
+> `sharpen igm igm-sharp`
 
 ![igmsharp](https://user-images.githubusercontent.com/74106957/172704022-22e18136-cd6e-4c29-a14d-f0483abf90bd.jpg)
 
@@ -242,15 +242,15 @@ Sharpen Kernel (3x3)
 #### Sharpens the pixels of the image _name_ by emphasizing contrast and stores it as _destName_.
 `ridge-detection name destName`
 
-###### Examples:
-
-> `ridge-detection igm igm-ridge`
-
 Ridge Detection Kernel (3x3)
 | -1 	| -1 	| -1 	|
 |----	|----	|----	|
 | -1 	| 8  	| -1 	|
 | -1 	| -1 	| -1 	|
+
+###### Examples:
+
+> `ridge-detection igm igm-ridge`
 
 ![igmsharp](https://user-images.githubusercontent.com/74106957/172704022-22e18136-cd6e-4c29-a14d-f0483abf90bd.jpg)
 
