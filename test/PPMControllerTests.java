@@ -70,6 +70,12 @@ public class PPMControllerTests {
     assertEquals("Quitting program.", output[1]);
   }
 
+  @Test (expected = IllegalStateException.class)
+  public void quitDuringCommandThrows() {
+    ImageProcessingController c = new ImageProcessingControllerImplementation("images", view, model, new StringReader("load q"));
+    c.initializeProgram();
+  }
+
   @Test
   public void loadSendsCorrectArguments() {
     ImageProcessingController c
