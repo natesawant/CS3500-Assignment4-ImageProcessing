@@ -51,7 +51,7 @@ public class SmallScaleOperationTest {
 
   @Test (expected = IllegalArgumentException.class)
   public void savingUnloadedThrows() {
-    m.save("images/Koala.ppm", "cool-koala");
+    m.save("images/test2x2.ppm", "cool-koala");
   }
 
   @Test (expected = IllegalArgumentException.class)
