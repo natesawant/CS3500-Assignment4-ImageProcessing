@@ -7,7 +7,8 @@ public class RidgeDetection extends ApplyKernel {
 
   /**
    * Constructs a kernel that will create an image with ridge detection applied.
-   * @param name the name of the source image.
+   *
+   * @param name     the name of the source image.
    * @param destName the name of the image output.
    */
   public RidgeDetection(String name, String destName) {
@@ -17,8 +18,9 @@ public class RidgeDetection extends ApplyKernel {
   @Override
   public void initKernel() {
     kernel =
-            new double[][]{{-1,-1,-1},
-                    {-1, 8,-1},
-                    {-1,-1,-1}};
+            new double[][]
+                    {{-1, -1, -1},
+                    {-1, 8, -1},
+                    {-1, -1, -1}};
   }
 }
