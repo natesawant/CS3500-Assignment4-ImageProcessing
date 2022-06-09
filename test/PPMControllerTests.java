@@ -58,13 +58,15 @@ public class PPMControllerTests {
 
   @Test (expected = IllegalStateException.class)
   public void incompleteInputThrows() {
-    ImageProcessingController c = new ImageProcessingControllerImplementation("", mockView, mockModel, new StringReader("load images/test.ppm"));
+    ImageProcessingController c = new ImageProcessingControllerImplementation("",
+            mockView, mockModel, new StringReader("load images/test.ppm"));
     c.initializeProgram();
   }
 
   @Test
   public void quitImmediately() {
-    ImageProcessingController c = new ImageProcessingControllerImplementation("images", view, model, new StringReader("q"));
+    ImageProcessingController c = new ImageProcessingControllerImplementation("images",
+            view, model, new StringReader("q"));
     c.initializeProgram();
     String[] output = log.toString().split(System.lineSeparator());
     assertEquals("Quitting program.", output[1]);
@@ -72,7 +74,8 @@ public class PPMControllerTests {
 
   @Test (expected = IllegalStateException.class)
   public void quitDuringCommandThrows() {
-    ImageProcessingController c = new ImageProcessingControllerImplementation("images", view, model, new StringReader("load q"));
+    ImageProcessingController c = new ImageProcessingControllerImplementation("images",
+            view, model, new StringReader("load q"));
     c.initializeProgram();
   }
 

@@ -7,7 +7,7 @@ import util.ImageUtil;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.Random;
 
 import static org.junit.Assert.assertEquals;
@@ -20,7 +20,8 @@ public class SmallScaleOperationTest {
 
   Image img;
   OperationsModel m;
-  Image actual, expected;
+  Image actual;
+  Image expected;
 
   @Before
   public void setup() {
@@ -37,11 +38,6 @@ public class SmallScaleOperationTest {
     expected = ImageUtil.convertPPM("images/TestImageVerticalExpected.ppm");
 
     assertEquals(expected,actual);
-  }
-
-  @Test
-  public void testConstructor() {
-    m = new OperationsModelManager();
   }
 
   @Test (expected = IllegalArgumentException.class)
@@ -92,16 +88,16 @@ public class SmallScaleOperationTest {
   @Test (expected = IllegalArgumentException.class)
   public void kernelUnloadedThrows() {
     m.applyKernel(new double[][]{
-            new double[]{0, 0, 0},
-            new double[]{1, 1, 1},
-            new double[]{2, 2, 2}}, "normal-koala", "kernel-koala");
+        new double[]{0, 0, 0},
+        new double[]{1, 1, 1},
+        new double[]{2, 2, 2}}, "normal-koala", "kernel-koala");
   }
 
   @Test (expected = IllegalArgumentException.class)
   public void kernelEvenWidthOddHeightThrows() {
     m.applyKernel(new double[][]{
-            new double[]{0, 0, 0},
-            new double[]{1, 1, 1}}, "normal-koala", "kernel-koala");
+        new double[]{0, 0, 0},
+        new double[]{1, 1, 1}}, "normal-koala", "kernel-koala");
   }
 
   @Test (expected = IllegalArgumentException.class)
@@ -112,8 +108,8 @@ public class SmallScaleOperationTest {
   @Test (expected = IllegalArgumentException.class)
   public void kernelEvenWidthEvenHeightThrows() {
     m.applyKernel(new double[][]{
-            new double[]{0, 0},
-            new double[]{1, 1}}, "normal-koala", "kernel-koala");
+        new double[]{0, 0},
+        new double[]{1, 1}}, "normal-koala", "kernel-koala");
   }
 
   /*
@@ -191,7 +187,8 @@ public class SmallScaleOperationTest {
     m.save("images/test2x2.ppm", "test");
 
     actual = ImageUtil.convertPPM("images/test2x2.ppm");
-    expected = new RGBImage(new Color[][]{{Color.RED, Color.BLUE}, {Color.GREEN, Color.WHITE}}, 255);
+    expected = new RGBImage(new Color[][]{
+        {Color.RED, Color.BLUE}, {Color.GREEN, Color.WHITE}}, 255);
 
     assertEquals(expected, actual);
   }
@@ -304,9 +301,9 @@ public class SmallScaleOperationTest {
     m.load("images/test2x2.ppm", "test");
 
     m.applyKernel(new double[][]
-            {{1.0/9.0,1.0/9.0,1.0/9.0},
-                    {1.0/9.0,1.0/9.0,1.0/9.0},
-                    {1.0/9.0,1.0/9.0,1.0/9.0}}, "test", "blur-test");
+            {{1.0 / 9.0, 1.0 / 9.0, 1.0 / 9.0},
+            {1.0 / 9.0, 1.0 / 9.0, 1.0 / 9.0},
+            {1.0 / 9.0, 1.0 / 9.0, 1.0 / 9.0}}, "test", "blur-test");
     m.save("images/blur-test.ppm", "blur-test");
 
     actual = ImageUtil.convertPPM("images/blur-test.ppm");
@@ -323,8 +320,8 @@ public class SmallScaleOperationTest {
 
     m.applyKernel(new double[][]
             {{-2,-1, 0},
-                    {-1, 1, 1},
-                    { 0, 1, 2}}, "test", "emboss-test");
+            {-1, 1, 1},
+            {0, 1, 2}}, "test", "emboss-test");
     m.save("images/emboss-test.ppm", "emboss-test");
 
     actual = ImageUtil.convertPPM("images/emboss-test.ppm");
@@ -341,9 +338,9 @@ public class SmallScaleOperationTest {
     m.load("images/test2x2.ppm", "test");
 
     m.applyKernel(new double[][]
-            {{1.0/16.0, 2.0/16.0, 1.0/16.0},
-                    {2.0/16.0, 4.0/16.0, 2.0/16.0},
-                    { 1.0/16.0, 2.0/16.0, 1.0/16.0}}, "test", "gauss-test");
+            {{1.0 / 16.0, 2.0 / 16.0, 1.0 / 16.0},
+            {2.0 / 16.0, 4.0 / 16.0, 2.0 / 16.0},
+            { 1.0 / 16.0, 2.0 / 16.0, 1.0 / 16.0}}, "test", "gauss-test");
     m.save("images/gauss-test.ppm", "gauss-test");
 
     actual = ImageUtil.convertPPM("images/gauss-test.ppm");
@@ -360,8 +357,8 @@ public class SmallScaleOperationTest {
     m.load("images/test-flip.ppm", "test");
 
     m.applyKernel(new double[][]{{-1,-1,-1},
-            {-1, 8,-1},
-            {-1,-1,-1}}, "test", "ridge-test");
+        {-1, 8,-1},
+        {-1,-1,-1}}, "test", "ridge-test");
     m.save("images/ridge-test.ppm", "ridge-test");
 
     actual = ImageUtil.convertPPM("images/ridge-test.ppm");

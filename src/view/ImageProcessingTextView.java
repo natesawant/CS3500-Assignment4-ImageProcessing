@@ -11,6 +11,11 @@ public class ImageProcessingTextView implements ImageProcessingView {
   protected final OperationsModel model;
   protected final Appendable appendable;
 
+  /**
+   * Constructs a text view based off of a provided model.
+   * @param model the given model to connect with the view.
+   * @throws IllegalArgumentException if the model is null.
+   */
   public ImageProcessingTextView(OperationsModel model) throws IllegalArgumentException {
 
     if (model == null) {
@@ -33,7 +38,6 @@ public class ImageProcessingTextView implements ImageProcessingView {
     }
     this.model = model;
     this.appendable = app;
-//    verifyStateAppend(app);
   }
 
   /**
@@ -43,8 +47,6 @@ public class ImageProcessingTextView implements ImageProcessingView {
   protected void verifyStateAppend(Appendable app) throws IllegalArgumentException {
     if (app == null) {
       throw new IllegalArgumentException("Appendable is null");
-    } else {
-//      this.appendable = app;
     }
   }
 

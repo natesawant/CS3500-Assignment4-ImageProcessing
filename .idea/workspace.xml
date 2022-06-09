@@ -4,21 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Fixed formatting in OperationsModelManager">
+    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Fixed tests.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/ApplyAllProcesses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ApplyAllProcesses.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/ImageProcessingControllerImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ImageProcessingControllerImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Image.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/OperationsModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OperationsModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/RGBImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/RGBImage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/ApplyKernel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/ApplyKernel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/Brighten.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/Brighten.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/HorizontalFlip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/HorizontalFlip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/Load.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/Load.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/Process.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/Process.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/Save.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/Save.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/ValueComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/ValueComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/VerticalFlip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/VerticalFlip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/ImageUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,25 +34,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/nates/OneDrive - Northeastern University/Classes/2022 Summer 1/CS3500 &amp; 3501 - Object Oriented Design &amp; Lab/Assignment4-ImageProcessing/test&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
-  }
-}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -176,8 +145,7 @@
       <workItem from="1654574751307" duration="595000" />
       <workItem from="1654622567147" duration="594000" />
       <workItem from="1654706057781" duration="5332000" />
-      <workItem from="1654747824236" duration="16687000" />
-      <workItem from="1654808474512" duration="1713000" />
+      <workItem from="1654747824236" duration="16229000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1654458999042</created>
@@ -298,28 +266,7 @@
       <option name="project" value="LOCAL" />
       <updated>1654807543243</updated>
     </task>
-    <task id="LOCAL-00018" summary="Deleted some processes">
-      <created>1654808171917</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1654808171917</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Added output">
-      <created>1654808612814</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1654808612814</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Fixed formatting in OperationsModelManager">
-      <created>1654809791649</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1654809791649</updated>
-    </task>
-    <option name="localTasksCounter" value="21" />
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -352,9 +299,6 @@
     <MESSAGE value="Added script to apply all processes to an image." />
     <MESSAGE value="Added time to process info." />
     <MESSAGE value="Fixed tests." />
-    <MESSAGE value="Deleted some processes" />
-    <MESSAGE value="Added output" />
-    <MESSAGE value="Fixed formatting in OperationsModelManager" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed formatting in OperationsModelManager" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed tests." />
   </component>
 </project>

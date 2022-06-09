@@ -1,6 +1,6 @@
 package util;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.FileInputStream;
@@ -30,13 +30,13 @@ public class ImageUtil {
       sc = new Scanner(new FileInputStream(filename));
     }
     catch (FileNotFoundException e) {
-      throw new IllegalArgumentException("File "+filename+ " not found!");
+      throw new IllegalArgumentException("File " + filename + " not found!");
     }
     StringBuilder builder = new StringBuilder();
     //read the file line by line, and populate a string. This will throw away any comment lines
     while (sc.hasNextLine()) {
       String s = sc.nextLine();
-      if (s.charAt(0)!='#') {
+      if (s.charAt(0) != '#') {
         builder.append(s+System.lineSeparator());
       }
     }
@@ -60,12 +60,12 @@ public class ImageUtil {
 
     pixels = new Color[width][height];
 
-    for (int y=0;y<height;y++) {
-      for (int x=0;x<width;x++) {
+    for (int y = 0; y < height; y++) {
+      for (int x = 0; x < width; x++) {
         int r = sc.nextInt();
         int g = sc.nextInt();
         int b = sc.nextInt();
-        Color color = new Color(r,g,b);
+        Color color = new Color(r, g, b);
         pixels[x][y] = color;
       }
     }
@@ -85,19 +85,19 @@ public class ImageUtil {
     Scanner sc;
     
     try {
-        sc = new Scanner(new FileInputStream(filename));
+      sc = new Scanner(new FileInputStream(filename));
     }
     catch (FileNotFoundException e) {
-        System.out.println("File "+filename+ " not found!");
-        return;
+      System.out.println("File " + filename + " not found!");
+      return;
     }
     StringBuilder builder = new StringBuilder();
     //read the file line by line, and populate a string. This will throw away any comment lines
     while (sc.hasNextLine()) {
-        String s = sc.nextLine();
-        if (s.charAt(0)!='#') {
-            builder.append(s+System.lineSeparator());
-        }
+      String s = sc.nextLine();
+      if (s.charAt(0) != '#') {
+        builder.append(s + System.lineSeparator());
+      }
     }
     
     //now set up the scanner to read from the string we just built
@@ -107,7 +107,7 @@ public class ImageUtil {
 
     token = sc.next();
     if (!token.equals("P3")) {
-        System.out.println("Invalid PPM file: plain RAW file should begin with P3");
+      System.out.println("Invalid PPM file: plain RAW file should begin with P3");
     }
     int width = sc.nextInt();
     System.out.println("Width of image: "+width);
@@ -117,27 +117,27 @@ public class ImageUtil {
     System.out.println("Maximum value of a color in this file (usually 255): "+maxValue);
     
     for (int i=0;i<height;i++) {
-        for (int j=0;j<width;j++) {
-            int r = sc.nextInt();
-            int g = sc.nextInt();
-            int b = sc.nextInt();
-            System.out.println("Color of pixel ("+j+","+i+"): "+ r+","+g+","+b);
-        }
+      for (int j=0;j<width;j++) {
+        int r = sc.nextInt();
+        int g = sc.nextInt();
+        int b = sc.nextInt();
+        System.out.println("Color of pixel ("+j+","+i+"): "+ r+","+g+","+b);
+      }
     }
   }
 
   //demo main
   public static void main(String []args) {
-      String filename;
-      
-      if (args.length>0) {
-          filename = args[0];
-      }
-      else {
-          filename = "sample.ppm";
-      }
-      
-      ImageUtil.readPPM(filename);
+    String filename;
+
+    if (args.length>0) {
+      filename = args[0];
+    }
+    else {
+      filename = "sample.ppm";
+    }
+
+    ImageUtil.readPPM(filename);
   }
 }
 
