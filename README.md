@@ -26,7 +26,7 @@ This project is a basic image processing program. Currently, the program is only
 #### Interfaces
 
 1. ImageProcessingController
-   1. Provides the initializeProgram() method, which serves as a starting point to the program.
+   1. Provides the `initializeProgram()` method, which serves as a starting point to the program.
 
 #### Classes
 
@@ -34,7 +34,7 @@ This project is a basic image processing program. Currently, the program is only
    1. Allows the user to interact with the program, sending inputted commands to the model, and 
       outputting the results to the view.
 2. Image Processing
-   1. Provides a main(String[] args) method to serve as the entry point to the program.
+   1. Provides a `main(String[] args)` method to serve as the entry point to the program.
 
 ### Models
 
@@ -101,7 +101,7 @@ This project is a basic image processing program. Currently, the program is only
 ## Instructions
 
 ### Running The Program
-#### To compile, open terminal or the commandline in the _src/_ directory. To do so, run the following: `javac controller/ImageProcessing.java`. To run the program to allow free image processing, start it by running the following: `java controller/ImageProcessing`. This takes in the optional argument of the working directory, with the slash at the end.
+#### To compile, open terminal or the commandline in the _Assignment4-ImageProcessing_ directory. To do so, run the following: `javac src/controller/ImageProcessing.java`. To run the program to allow free image processing, start it by running the following: `java src/controller/ImageProcessing`. This takes in the optional argument of the working directory, with the slash at the end.
 `java src/controller/ImageProcessing.java` or `java src/controller/ImageProcessing.java images/`
 
 ### Script To Apply All Processes
