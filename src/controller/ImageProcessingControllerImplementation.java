@@ -49,7 +49,7 @@ public final class ImageProcessingControllerImplementation implements ImageProce
       throw new IllegalArgumentException("Readable is null");
     } else if (view == null) {
       throw new IllegalArgumentException("View is null");
-    }else {
+    } else {
       this.directory = directory;
       this.readable = readable;
       this.view = view;
@@ -61,17 +61,17 @@ public final class ImageProcessingControllerImplementation implements ImageProce
   private void initValidCommands() {
     validCommands = new HashMap<String, Function<Scanner, Process>>();
 
-    validCommands.put("load", s->new Load(directory + s.next(), s.next()));
-    validCommands.put("save", s->new Save(directory + s.next(), s.next()));
-    validCommands.put("horizontal-flip", s->new HorizontalFlip(s.next(), s.next()));
-    validCommands.put("vertical-flip", s->new VerticalFlip(s.next(), s.next()));
-    validCommands.put("brighten", s->new Brighten(s.nextInt(), s.next(), s.next()));
-    validCommands.put("value-component", s->new ValueComponent(s.next(), s.next(), s.next()));
-    validCommands.put("box-blur", s->new BoxBlur(s.next(), s.next()));
-    validCommands.put("emboss", s->new Emboss(s.next(), s.next()));
-    validCommands.put("gaussian-blur", s->new GaussianBlur(s.next(), s.next()));
-    validCommands.put("ridge-detection", s->new RidgeDetection(s.next(), s.next()));
-    validCommands.put("sharpen", s->new Sharpen(s.next(), s.next()));
+    validCommands.put("load", s -> new Load(directory + s.next(), s.next()));
+    validCommands.put("save", s -> new Save(directory + s.next(), s.next()));
+    validCommands.put("horizontal-flip", s -> new HorizontalFlip(s.next(), s.next()));
+    validCommands.put("vertical-flip", s -> new VerticalFlip(s.next(), s.next()));
+    validCommands.put("brighten", s -> new Brighten(s.nextInt(), s.next(), s.next()));
+    validCommands.put("value-component", s -> new ValueComponent(s.next(), s.next(), s.next()));
+    validCommands.put("box-blur", s -> new BoxBlur(s.next(), s.next()));
+    validCommands.put("emboss", s -> new Emboss(s.next(), s.next()));
+    validCommands.put("gaussian-blur", s -> new GaussianBlur(s.next(), s.next()));
+    validCommands.put("ridge-detection", s -> new RidgeDetection(s.next(), s.next()));
+    validCommands.put("sharpen", s -> new Sharpen(s.next(), s.next()));
   }
 
   /**
@@ -108,7 +108,7 @@ public final class ImageProcessingControllerImplementation implements ImageProce
       while (true) {
         view.renderMessage("Enter operation or 'help' to see commands." + System.lineSeparator());
 
-        while(scan.hasNext()) {
+        while (scan.hasNext()) {
           Process process;
           String in = scan.next();
           if (in.equalsIgnoreCase("q") || in.equalsIgnoreCase("quit")) {
