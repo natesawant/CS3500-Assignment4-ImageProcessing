@@ -26,34 +26,47 @@ This project is a basic image processing program. Currently, the program is only
 #### Interfaces
 
 1. ImageProcessingController
+   1. Provides the initializeProgram() method, which serves as a starting point to the program.
 
 #### Classes
 
-1. ImageProcessingControllerImplementation
+1. ImageProcessingControllerImplementation | implements ImageProcessingController
+   1. Allows the user to interact with the program, sending inputted commands to the model, and 
+      outputting the results to the view.
 2. Image Processing
+   1. Provides a main(String[] args) method to serve as the entry point to the program.
 
 ### Models
 
 #### Interfaces
 
 1. Image
+   1. Represents a general image, provides method that allow for the obtainment of specific pixels,
+      the width, height, and max value of any color in an image.
 2. OperationsModel
+   1. Provides various operations that can be used to load, modify, and save images. The full
+      details of each method is detailed below.
 
 #### Classes
 
-1. AbstractImage
-2. RGBImage
-3. OperationsModelManager
+1. AbstractImage | implements Image
+   1. Stores fields that any image should contain, regardless of type.
+2. RGBImage | extends AbstractImage
+   1. Represents a slightly more specific image, where each pixel is made up of an RGB value.
+3. OperationsModelManager | implements OperationsModel
+   1. Contains the implementation and execution of the different operations and modifications that 
+      can be used on an Image.
 
 ### Views
 
 #### Interfaces
 
 1. ImageProcessingView
+   1. Represents a general text view that can render String messages.
 
 #### Classes
 
-1. ImageProcessingTextView
+1. ImageProcessingTextView | implements ImageProcessingView
 
 ### Utils
 
@@ -62,6 +75,7 @@ This project is a basic image processing program. Currently, the program is only
 #### Classes
 
 1. ImageUtil
+   1. Allows for the conversion and reading of .ppm image files in the program's current filesystem.
 
 ## Instructions
 
@@ -75,7 +89,12 @@ This project is a basic image processing program. Currently, the program is only
 4. [Vertical Flip](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#vertical-flip)
 5. [Horizontal Flip](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#horizontal-flip)
 6. [Value Component](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#value-component)
-7. [Apply Kernel](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#apply-kernel)
+7. [Box Blur](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#box-blur)
+8. [Gaussian Blur](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#gaussian-blur)
+9. [Emboss](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#emboss)
+10. [Sharpen](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#sharpen)
+11. [Ridge Detection](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#ridge-detection)
+13. [Quit](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#quitting-the-program)
 
 and more to come!
 
@@ -165,13 +184,9 @@ _Disclaimer: This photo was taken by Nathaniel Sawant and is authorized for use 
 
 ![igmvalue](https://user-images.githubusercontent.com/74106957/172697654-7c771bf8-864c-4556-a798-6cda2294bca1.jpg)
 
-#### Apply Kernel
-#### Applies the custom _kernel_ (an odd dimensioned matrix that samples surrounding pixels) to image _name_ and stores it as _destName_.
-`apply-kernel kernel name destName`
-
-###### Examples:
-
-> `apply-kernel blur igm igm-blur`
+#### Box Blur
+#### Blurs all the adjacent pixels of the image _name_ in a square method and stores it as _destName_.
+`box-blur name destName`
 
 Box Blur Kernel (3x3)
 | 1/9 	| 1/9 	| 1/9 	|
@@ -179,10 +194,47 @@ Box Blur Kernel (3x3)
 | 1/9 	| 1/9 	| 1/9 	|
 | 1/9 	| 1/9 	| 1/9 	|
 
+###### Examples:
+
+> `box-blur igm igm-boxblur`
+
 ![igmblur](https://user-images.githubusercontent.com/74106957/172703956-c6cf1751-5a91-428a-96af-587a866e6a48.jpg)
 
+#### Gaussian Blur
+#### Blurs all the adjacent pixels of the image _name_ in a circular method and stores it as _destName_.
+`gaussian-blur name destName`
 
-> `apply-kernel sharpen igm igm-sharp`
+Gaussian Blur Kernel (3x3)
+| 1/16	| 2/16	| 1/16	|
+|-----	|-----	|-----	|
+| 2/16	| 4/16	| 2/16	|
+| 1/16	| 2/16	| 1/16	|
+
+###### Examples:
+
+> `gaussian-blur igm igm-gaussianblur`
+
+![igmgaussian](https://user-images.githubusercontent.com/74106957/172895502-c59e2b8b-0f73-4d80-9d82-3bf2029f3dd7.jpg)
+
+#### Emboss
+#### Appears to raise the pixels of the image _name_ by emphasizing contrast and stores it as _destName_.
+`emboss name destName`
+
+Emboss Kernel (3x3)
+| -2 	| -1 	| 0  	|
+|----	|----	|----	|
+| -1 	|  1 	|  1 	|
+| 0  	|  1 	|  2 	|
+
+###### Examples:
+
+> `emboss igm igm-emboss`
+
+![igmemboss](https://user-images.githubusercontent.com/74106957/172895470-cabaea02-0538-41b7-9e70-3505ba98a9c1.jpg)
+
+#### Sharpen
+#### Sharpens the pixels of the image _name_ by emphasizing contrast and stores it as _destName_.
+`sharpen name destName`
 
 Sharpen Kernel (3x3)
 | 0  	| -1 	| 0  	|
@@ -190,4 +242,29 @@ Sharpen Kernel (3x3)
 | -1 	| 8  	| -1 	|
 | 0  	| -1 	| 0  	|
 
-![igmsharp](https://user-images.githubusercontent.com/74106957/172704022-22e18136-cd6e-4c29-a14d-f0483abf90bd.jpg)
+###### Examples:
+
+> `sharpen igm igm-sharp`
+
+![igmsharp](https://user-images.githubusercontent.com/74106957/172895429-137dfc78-c0e7-45c8-ae39-159174b5182e.jpg)
+
+#### Ridge Detection
+#### Detects the edges (high contrast) of the image _name_ and stores it as _destName_.
+`ridge-detection name destName`
+
+Ridge Detection Kernel (3x3)
+| -1 	| -1 	| -1 	|
+|----	|----	|----	|
+| -1 	| 8  	| -1 	|
+| -1 	| -1 	| -1 	|
+
+###### Examples:
+
+> `ridge-detection igm igm-ridge`
+
+![igmridge](https://user-images.githubusercontent.com/74106957/172895394-b63f6578-dcbe-414d-91a5-79fc8267f87f.jpg)
+
+#### Quitting the program
+#### Terminates the program. Any unsaved work will be lost. Cannot be done whilst in the middle of inputting a command.
+
+`q` or `quit`

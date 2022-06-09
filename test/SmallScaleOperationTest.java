@@ -65,11 +65,6 @@ public class SmallScaleOperationTest {
   }
 
   @Test (expected = IllegalArgumentException.class)
-  public void savingToBadWriterThrows() {
-    // TODO make corrupt writer class
-  }
-
-  @Test (expected = IllegalArgumentException.class)
   public void componentOfUnloadedThrows() {
     m.valueComponent("red", "normal-koala", "red-koala");
   }
@@ -208,12 +203,24 @@ public class SmallScaleOperationTest {
     String[] types = new String[]{"red", "green", "blue", "value", "luma", "intensity"};
     // of test2x2.ppm , values output calculating given types value:
 
-    Image red = new RGBImage(new Color[][]{{Color.WHITE, Color.BLACK}, {Color.BLACK, Color.WHITE}}, 255);
-    Image green = new RGBImage(new Color[][]{{Color.BLACK, Color.BLACK}, {Color.WHITE, Color.WHITE}}, 255);
-    Image blue = new RGBImage(new Color[][]{{Color.BLACK, Color.WHITE}, {Color.BLACK, Color.WHITE}}, 255);
-    Image value = new RGBImage(new Color[][]{{Color.WHITE, Color.WHITE}, {Color.WHITE, Color.WHITE}}, 255);
-    Image luma = new RGBImage(new Color[][]{{new Color(85, 85, 85), new Color(85, 85, 85)}, {new Color(85, 85, 85), new Color(255, 255,  255)}}, 255);
-    Image intensity = new RGBImage(new Color[][]{{new Color(182, 182, 182), new Color(54, 54, 54)}, {new Color(18, 18, 18), new Color(254, 254, 254)}}, 255);
+    Image red = new RGBImage(new Color[][]{
+            {Color.WHITE, Color.BLACK},
+            {Color.BLACK, Color.WHITE}}, 255);
+    Image green = new RGBImage(new Color[][]{
+            {Color.BLACK, Color.BLACK},
+            {Color.WHITE, Color.WHITE}}, 255);
+    Image blue = new RGBImage(new Color[][]{
+            {Color.BLACK, Color.WHITE},
+            {Color.BLACK, Color.WHITE}}, 255);
+    Image value = new RGBImage(new Color[][]{
+            {Color.WHITE, Color.WHITE},
+            {Color.WHITE, Color.WHITE}}, 255);
+    Image luma = new RGBImage(new Color[][]{
+            {new Color(85, 85, 85), new Color(85, 85, 85)},
+            {new Color(85, 85, 85), new Color(255, 255,  255)}}, 255);
+    Image intensity = new RGBImage(new Color[][]{
+            {new Color(182, 182, 182), new Color(54, 54, 54)},
+            {new Color(18, 18, 18), new Color(254, 254, 254)}}, 255);
 
     Image[] expected = new Image[]{red, green, blue, value, luma, intensity};
 
@@ -284,5 +291,86 @@ public class SmallScaleOperationTest {
     assertEquals(expected, actual);
   }
 
+  /*
+  still needed:
+  box blur
+  emboss
+  gaussian blur
+  ridge detection
+   */
+
+  @Test
+  public void testBoxBlur() {
+    m.load("images/test2x2.ppm", "test");
+
+    m.applyKernel(new double[][]
+            {{1.0/9.0,1.0/9.0,1.0/9.0},
+                    {1.0/9.0,1.0/9.0,1.0/9.0},
+                    {1.0/9.0,1.0/9.0,1.0/9.0}}, "test", "blur-test");
+    m.save("images/blur-test.ppm", "blur-test");
+
+    actual = ImageUtil.convertPPM("images/blur-test.ppm");
+    expected = new RGBImage(new Color[][]{
+            {new Color(140, 84, 84), new Color(112, 84, 168)},
+            {new Color(112, 168, 84), new Color(140, 168, 168)}}, 255);
+
+    assertEquals(expected, actual);
+  }
+
+  @Test
+  public void testEmboss() {
+    m.load("images/test2x2.ppm", "test");
+
+    m.applyKernel(new double[][]
+            {{-2,-1, 0},
+                    {-1, 1, 1},
+                    { 0, 1, 2}}, "test", "emboss-test");
+    m.save("images/emboss-test.ppm", "emboss-test");
+
+    actual = ImageUtil.convertPPM("images/emboss-test.ppm");
+    expected = new RGBImage(new Color[][]{
+            {new Color(0, 255, 255), new Color(0, 255, 255)},
+            {new Color(0, 255, 255), new Color(255, 255, 255)}}, 255);
+
+    assertEquals(expected, actual);
+
+  }
+
+  @Test
+  public void testGaussian() {
+    m.load("images/test2x2.ppm", "test");
+
+    m.applyKernel(new double[][]
+            {{1.0/16.0, 2.0/16.0, 1.0/16.0},
+                    {2.0/16.0, 4.0/16.0, 2.0/16.0},
+                    { 1.0/16.0, 2.0/16.0, 1.0/16.0}}, "test", "gauss-test");
+    m.save("images/gauss-test.ppm", "gauss-test");
+
+    actual = ImageUtil.convertPPM("images/gauss-test.ppm");
+    expected = new RGBImage(new Color[][]{
+            {new Color(155, 61, 61), new Color(92, 61, 186)},
+            {new Color(92, 186, 61), new Color(155, 186, 186)}}, 255);
+
+    assertEquals(expected, actual);
+  }
+
+  @Test
+  public void testRidge() {
+
+    m.load("images/test-flip.ppm", "test");
+
+    m.applyKernel(new double[][]{{-1,-1,-1},
+            {-1, 8,-1},
+            {-1,-1,-1}}, "test", "ridge-test");
+    m.save("images/ridge-test.ppm", "ridge-test");
+
+    actual = ImageUtil.convertPPM("images/ridge-test.ppm");
+    expected = new RGBImage(new Color[][]{
+            {new Color(255, 0, 0), new Color(0, 16, 0), new Color(0, 0, 0)},
+            {new Color(0, 9, 41), new Color(0, 0, 0), new Color(255, 0, 0)},
+            {new Color(255, 255, 255), new Color(0, 0, 0), new Color(255, 255, 255)}}, 255);
+
+    assertEquals(expected, actual);
+  }
 
 }
