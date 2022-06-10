@@ -13,10 +13,10 @@ import processes.Brighten;
 import processes.Emboss;
 import processes.GaussianBlur;
 import processes.HorizontalFlip;
-import processes.Load;
+import processes.LoadFile;
 import processes.Process;
 import processes.RidgeDetection;
-import processes.Save;
+import processes.SaveFile;
 import processes.SepiaTone;
 import processes.Sharpen;
 import processes.ValueComponent;
@@ -62,8 +62,8 @@ public final class ImageProcessingControllerImplementation implements ImageProce
   private void initValidCommands() {
     validCommands = new HashMap<String, Function<Scanner, Process>>();
 
-    validCommands.put("load", s -> new Load(directory + s.next(), s.next()));
-    validCommands.put("save", s -> new Save(directory + s.next(), s.next()));
+    validCommands.put("load", s -> new LoadFile(directory + s.next(), s.next()));
+    validCommands.put("save", s -> new SaveFile(directory + s.next(), s.next()));
     validCommands.put("horizontal-flip", s -> new HorizontalFlip(s.next(), s.next()));
     validCommands.put("vertical-flip", s -> new VerticalFlip(s.next(), s.next()));
     validCommands.put("brighten", s -> new Brighten(s.nextInt(), s.next(), s.next()));

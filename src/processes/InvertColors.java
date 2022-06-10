@@ -2,7 +2,7 @@ package processes;
 
 import java.awt.*;
 
-public class Green extends ApplyFilter {
+public class InvertColors extends ApplyFilter {
 
   /**
    * Constructs a new filter to apply to an image.
@@ -10,16 +10,15 @@ public class Green extends ApplyFilter {
    * @param name     The name of the inputted image.
    * @param destName The name of the output image.
    */
-  public Green(String name, String destName) {
+  public InvertColors(String name, String destName) {
     super(name, destName);
   }
 
   @Override
   public double[][] initFilter(Color rgb) {
-    double[][] filter = new double[][]
-            {{0.0, 1.0, 0.0},
-                    {0.0, 1.0, 0.0},
-                    {0.0, 1.0, 0.0}};
+    double[][] filter = {{(double) (255 - rgb.getRed()) / rgb.getRed(), 0, 0},
+      {0, (double) (255 - rgb.getGreen()) / rgb.getGreen(), 0},
+      {0,0,(double) (255 - rgb.getBlue()) / rgb.getBlue()}};
 
     return filter;
   }

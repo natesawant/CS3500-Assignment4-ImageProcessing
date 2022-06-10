@@ -2,7 +2,7 @@ package processes;
 
 import java.awt.*;
 
-public class Value extends ApplyFilter {
+public class ValueGrayscale extends ApplyFilter {
 
   /**
    * Constructs a new filter to apply to an image.
@@ -10,7 +10,7 @@ public class Value extends ApplyFilter {
    * @param name     The name of the inputted image.
    * @param destName The name of the output image.
    */
-  public Value(String name, String destName) {
+  public ValueGrayscale(String name, String destName) {
     super(name, destName);
   }
 

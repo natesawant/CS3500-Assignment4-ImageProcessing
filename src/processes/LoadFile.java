@@ -5,7 +5,7 @@ import model.OperationsModel;
 /**
  * This class allows the user to load an image into the program.
  */
-public class Load implements Process {
+public class LoadFile implements Process {
   String path;
   String destName;
 
@@ -14,7 +14,7 @@ public class Load implements Process {
    * @param path the path of the desired image to load.
    * @param destName the new, internal name of the image.
    */
-  public Load(String path, String destName) {
+  public LoadFile(String path, String destName) {
     this.path = path;
     this.destName = destName;
   }

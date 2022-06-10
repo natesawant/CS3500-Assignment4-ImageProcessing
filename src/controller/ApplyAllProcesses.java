@@ -2,16 +2,18 @@ package controller;
 
 import model.OperationsModel;
 import model.OperationsModelManager;
+import processes.AdjustGreen;
+import processes.AdjustRed;
 import processes.BoxBlur;
 import processes.Brighten;
 import processes.Emboss;
 import processes.GaussianBlur;
 import processes.HorizontalFlip;
-import processes.Load;
+import processes.LoadFile;
 import processes.Process;
 import processes.InvertColors;
 import processes.RidgeDetection;
-import processes.Save;
+import processes.SaveFile;
 import processes.SepiaTone;
 import processes.Sharpen;
 import processes.ValueComponent;
@@ -47,24 +49,24 @@ public class ApplyAllProcesses {
       throw new IllegalArgumentException("Must provide at least the file name (without .ppm)");
     }
 
-    p = new Load(path + ext, base);
+    p = new LoadFile(path + ext, base);
     p.start(m);
 
 
-    p = new Save(path + "-copy" + ext, base);
+    p = new SaveFile(path + "-copy" + ext, base);
     p.start(m);
 
     op = "vertical";
     p = new VerticalFlip(base, base + op);
     p.start(m);
-    p = new Save(path + op + ext, base + op);
+    p = new SaveFile(path + op + ext, base + op);
     p.start(m);
     System.out.println("Done with " + op);
 
     op = "horizontal";
     p = new VerticalFlip(base, base + op);
     p.start(m);
-    p = new Save(path + op + ext, base + op);
+    p = new SaveFile(path + op + ext, base + op);
     p.start(m);
     System.out.println("Done with " + op);
 
@@ -73,112 +75,121 @@ public class ApplyAllProcesses {
     p.start(m);
     p = new VerticalFlip(base + op, base + op);
     p.start(m);
-    p = new Save(path + op + ext, base + op);
+    p = new SaveFile(path + op + ext, base + op);
     p.start(m);
     System.out.println("Done with " + op);
 
     op = "bright";
     p = new Brighten(100, base, base + op);
     p.start(m);
-    p = new Save(path + op + ext, base + op);
+    p = new SaveFile(path + op + ext, base + op);
     p.start(m);
     System.out.println("Done with " + op);
 
     op = "dark";
     p = new Brighten(-100, base, base + op);
     p.start(m);
-    p = new Save(path + op + ext, base + op);
+    p = new SaveFile(path + op + ext, base + op);
     p.start(m);
     System.out.println("Done with " + op);
 
     op = "red";
     p = new ValueComponent(op, base, base + op);
     p.start(m);
-    p = new Save(path + op + ext, base + op);
+    p = new SaveFile(path + op + ext, base + op);
     p.start(m);
     System.out.println("Done with " + op);
 
     op = "green";
     p = new ValueComponent(op, base, base + op);
     p.start(m);
-    p = new Save(path + op + ext, base + op);
+    p = new SaveFile(path + op + ext, base + op);
     p.start(m);
     System.out.println("Done with " + op);
 
     op = "blue";
     p = new ValueComponent(op, base, base + op);
     p.start(m);
-    p = new Save(path + op + ext, base + op);
+    p = new SaveFile(path + op + ext, base + op);
     p.start(m);
     System.out.println("Done with " + op);
 
     op = "intensity";
     p = new ValueComponent(op, base, base + op);
     p.start(m);
-    p = new Save(path + op + ext, base + op);
+    p = new SaveFile(path + op + ext, base + op);
     p.start(m);
     System.out.println("Done with " + op);
 
     op = "luma";
     p = new ValueComponent(op, base, base + op);
     p.start(m);
-    p = new Save(path + op + ext, base + op);
+    p = new SaveFile(path + op + ext, base + op);
     p.start(m);
     System.out.println("Done with " + op);
 
     op = "value";
     p = new ValueComponent(op, base, base + op);
     p.start(m);
-    p = new Save(path + op + ext, base + op);
+    p = new SaveFile(path + op + ext, base + op);
     p.start(m);
     System.out.println("Done with " + op);
 
     op = "ridge";
     p = new RidgeDetection(base, base + op);
     p.start(m);
-    p = new Save(path + op + ext, base + op);
+    p = new SaveFile(path + op + ext, base + op);
     p.start(m);
     System.out.println("Done with " + op);
 
     op = "sharp";
     p = new Sharpen(base, base + op);
     p.start(m);
-    p = new Save(path + op + ext, base + op);
+    p = new SaveFile(path + op + ext, base + op);
     p.start(m);
     System.out.println("Done with " + op);
 
     op = "box";
     p = new BoxBlur(base, base + op);
     p.start(m);
-    p = new Save(path + op + ext, base + op);
+    p = new SaveFile(path + op + ext, base + op);
     p.start(m);
     System.out.println("Done with " + op);
 
     op = "gaussian";
     p = new GaussianBlur(base, base + op);
     p.start(m);
-    p = new Save(path + op + ext, base + op);
+    p = new SaveFile(path + op + ext, base + op);
     p.start(m);
     System.out.println("Done with " + op);
 
     op = "emboss";
     p = new Emboss(base, base + op);
     p.start(m);
-    p = new Save(path + op + ext, base + op);
+    p = new SaveFile(path + op + ext, base + op);
     p.start(m);
     System.out.println("Done with " + op);
 
     op = "sepia";
     p = new SepiaTone(base, base + op);
     p.start(m);
-    p = new Save(path + op + ext, base + op);
+    p = new SaveFile(path + op + ext, base + op);
     p.start(m);
     System.out.println("Done with " + op);
 
-    op = "testrandomfilter2";
+    op = "inverted";
     p = new InvertColors(base, base + op);
     p.start(m);
-    p = new Save(path + op + ext, base + op);
+    p = new SaveFile(path + op + ext, base + op);
+    p.start(m);
+    System.out.println("Done with " + op);
+
+    op = "blueisolate";
+    p = new AdjustRed(-255,base, base + op);
+    p.start(m);
+    p = new AdjustGreen(-255,base + op, base + op);
+    p.start(m);
+    p = new SaveFile(path + op + ext, base + op);
     p.start(m);
     System.out.println("Done with " + op);
 

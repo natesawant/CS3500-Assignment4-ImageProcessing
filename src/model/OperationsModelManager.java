@@ -1,23 +1,19 @@
 package model;
 
 import java.awt.Color;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
-import processes.Blue;
+import processes.BlueGrayscale;
 import processes.Brighten;
-import processes.Green;
-import processes.Intensity;
-import processes.Luma;
+import processes.GreenGrayscale;
+import processes.IntensityGrayscale;
+import processes.LumaGrayscale;
 import processes.Process;
-import processes.Red;
-import processes.Value;
-import processes.ValueComponent;
+import processes.RedGrayscale;
+import processes.ValueGrayscale;
 import util.ImageUtil;
 
 /**
@@ -107,32 +103,32 @@ public final class OperationsModelManager implements OperationsModel {
     Process process;
     switch (component.toLowerCase()) {
       case "red":
-        process = new Red(name, destName);
+        process = new RedGrayscale(name, destName);
         process.start(this);
 
         break;
       case "green":
-        process = new Green(name, destName);
+        process = new GreenGrayscale(name, destName);
         process.start(this);
 
         break;
       case "blue":
-        process = new Blue(name, destName);
+        process = new BlueGrayscale(name, destName);
         process.start(this);
 
         break;
       case "value":
-        process = new Value(name, destName);
+        process = new ValueGrayscale(name, destName);
         process.start(this);
 
         break;
       case "luma":
-        process = new Luma(name, destName);
+        process = new LumaGrayscale(name, destName);
         process.start(this);
 
         break;
       case "intensity":
-        process = new Intensity(name, destName);
+        process = new IntensityGrayscale(name, destName);
         process.start(this);
 
         break;

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Added applyFilter function and switched existing methods to use it.">
+    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Added color inversion.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/igmbright.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/igmbright.ppm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/igmdark.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/igmdark.ppm" afterDir="false" />
@@ -13,6 +13,15 @@
       <change beforePath="$PROJECT_DIR$/res/igmvalue.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/igmvalue.ppm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/ApplyAllProcesses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ApplyAllProcesses.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/ImageProcessingControllerImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ImageProcessingControllerImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/OperationsModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OperationsModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/Blue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/BlueGrayscale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/Green.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/GreenGrayscale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/Intensity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/IntensityGrayscale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/Load.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/LoadFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/Luma.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/LumaGrayscale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/Red.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/RedGrayscale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/Save.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/SaveFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/Value.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/ValueGrayscale.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +170,7 @@
       <workItem from="1654622567147" duration="594000" />
       <workItem from="1654706057781" duration="5332000" />
       <workItem from="1654747824236" duration="16229000" />
-      <workItem from="1654874037090" duration="14061000" />
+      <workItem from="1654874037090" duration="14675000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1654458999042</created>
@@ -317,7 +326,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654890455933</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Added color inversion.">
+      <created>1654891495002</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1654891495002</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,6 +370,7 @@
     <MESSAGE value="Formatted." />
     <MESSAGE value="Implemented reading and writing for .png, .jpg, .jpeg." />
     <MESSAGE value="Added applyFilter function and switched existing methods to use it." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added applyFilter function and switched existing methods to use it." />
+    <MESSAGE value="Added color inversion." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added color inversion." />
   </component>
 </project>
