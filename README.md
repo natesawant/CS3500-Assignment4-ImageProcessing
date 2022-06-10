@@ -181,7 +181,6 @@ _Disclaimer: This photo was taken by Nathaniel Sawant and is authorized for use 
 
 Brightness Filter (3x3)
 | (r+i)/r	| 0	| 0	|
-|-----	|-----	|-----	|
 | 0	| (g+i)/g	| 0	|
 | 0	| 0	| (b+i)/g	|
 
