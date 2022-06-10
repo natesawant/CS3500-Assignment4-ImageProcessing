@@ -17,6 +17,7 @@ import processes.Load;
 import processes.Process;
 import processes.RidgeDetection;
 import processes.Save;
+import processes.SepiaTone;
 import processes.Sharpen;
 import processes.ValueComponent;
 import processes.VerticalFlip;
@@ -72,6 +73,7 @@ public final class ImageProcessingControllerImplementation implements ImageProce
     validCommands.put("gaussian-blur", s -> new GaussianBlur(s.next(), s.next()));
     validCommands.put("ridge-detection", s -> new RidgeDetection(s.next(), s.next()));
     validCommands.put("sharpen", s -> new Sharpen(s.next(), s.next()));
+    validCommands.put("sepia-tone", s -> new SepiaTone(s.next(), s.next()));
   }
 
   /**

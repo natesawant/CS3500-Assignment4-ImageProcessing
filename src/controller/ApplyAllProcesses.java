@@ -9,6 +9,7 @@ import processes.GaussianBlur;
 import processes.HorizontalFlip;
 import processes.Load;
 import processes.Process;
+import processes.InvertColors;
 import processes.RidgeDetection;
 import processes.Save;
 import processes.SepiaTone;
@@ -169,6 +170,13 @@ public class ApplyAllProcesses {
 
     op = "sepia";
     p = new SepiaTone(base, base + op);
+    p.start(m);
+    p = new Save(path + op + ext, base + op);
+    p.start(m);
+    System.out.println("Done with " + op);
+
+    op = "testrandomfilter2";
+    p = new InvertColors(base, base + op);
     p.start(m);
     p = new Save(path + op + ext, base + op);
     p.start(m);

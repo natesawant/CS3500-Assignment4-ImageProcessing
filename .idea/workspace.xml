@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Implemented reading and writing for .png, .jpg, .jpeg.">
+    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Added applyFilter function and switched existing methods to use it.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/igmbright.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/igmbright.ppm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/igmdark.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/igmdark.ppm" afterDir="false" />
@@ -12,12 +12,7 @@
       <change beforePath="$PROJECT_DIR$/res/igmluma.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/igmluma.ppm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/igmvalue.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/igmvalue.ppm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/ApplyAllProcesses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ApplyAllProcesses.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/OperationsModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OperationsModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/OperationsModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OperationsModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/Brighten.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/Brighten.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/ValueComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/ValueComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/ModelMock.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ModelMock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/SmallScaleOperationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/SmallScaleOperationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ImageProcessingControllerImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ImageProcessingControllerImplementation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +54,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SmallScaleOperationTest">
+  <component name="RunManager" selected="Application.controller.ApplyAllProcesses">
     <configuration name="controller.ApplyAllProcesses" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="controller.ApplyAllProcesses" />
       <module name="Assignment4-ImageProcessing" />
@@ -143,8 +138,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SmallScaleOperationTest" />
         <item itemvalue="Application.controller.ApplyAllProcesses" />
+        <item itemvalue="JUnit.SmallScaleOperationTest" />
         <item itemvalue="JUnit.PPMControllerTests" />
         <item itemvalue="JUnit.OperationTests.testSmallBlur" />
         <item itemvalue="JUnit.OperationTests.testBigBlur" />
@@ -166,7 +161,7 @@
       <workItem from="1654622567147" duration="594000" />
       <workItem from="1654706057781" duration="5332000" />
       <workItem from="1654747824236" duration="16229000" />
-      <workItem from="1654874037090" duration="12826000" />
+      <workItem from="1654874037090" duration="14061000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1654458999042</created>
@@ -315,7 +310,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654878740842</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Added applyFilter function and switched existing methods to use it.">
+      <created>1654890455933</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1654890455933</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,6 +353,7 @@
     <MESSAGE value="Deleted extra images." />
     <MESSAGE value="Formatted." />
     <MESSAGE value="Implemented reading and writing for .png, .jpg, .jpeg." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented reading and writing for .png, .jpg, .jpeg." />
+    <MESSAGE value="Added applyFilter function and switched existing methods to use it." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added applyFilter function and switched existing methods to use it." />
   </component>
 </project>
