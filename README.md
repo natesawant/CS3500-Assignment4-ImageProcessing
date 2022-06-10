@@ -206,7 +206,7 @@ Invert Filter (3x3)
 | 0	| 0	| (255-b)/g	|
 
 ###### Examples:
-> `invert igm igm-bright`
+> `invert igm igm-invert`
 
 ![igminverted](https://user-images.githubusercontent.com/74106957/173146965-570df912-c6d5-4979-8cb3-d6cfdb35ba92.png)
 
