@@ -204,6 +204,12 @@ _Disclaimer: This photo was taken by Nathaniel Sawant and is authorized for use 
 ###### Examples:
 > `value-component red igm igm-red`
 
+Gaussian Blur Kernel (3x3)
+| 1	| 0	| 0	|
+|----	|----	|----	|
+| 1	| 0	| 0	|
+| 1	| 0	| 0	|
+
 ![igmred](https://user-images.githubusercontent.com/74106957/172696985-f3d0ad02-3016-4b71-9a85-ac0d3966051a.jpg)
 
 
