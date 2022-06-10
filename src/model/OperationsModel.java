@@ -1,5 +1,8 @@
 package model;
 
+import java.awt.*;
+import java.util.function.Function;
+
 /**
  * An interface that represents the types of operations that can be performed on an image.
  */
@@ -70,4 +73,15 @@ public interface OperationsModel {
    * @throws IllegalArgumentException if name of the image or kernel (even dimensions) is not valid.
    */
   void applyKernel(double[][] kernel, String name, String destName) throws IllegalArgumentException;
+
+  /**
+   * Applies the given filter to the pixels of the image.
+   * @param filter the filter that is applied.
+   * @param name the name of the image that processed.
+   * @param destName the new name of the processed image.
+   * @throws IllegalArgumentException if name of the image or filter (not 3x3) is not valid.
+   */
+  void applyFilter(Function<Color, double[][]> filterFunc, String name, String destName) throws IllegalArgumentException;
+
+
 }

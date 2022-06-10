@@ -9,6 +9,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
+import processes.Blue;
+import processes.Brighten;
+import processes.Green;
+import processes.Intensity;
+import processes.Luma;
+import processes.Process;
+import processes.Red;
+import processes.Value;
+import processes.ValueComponent;
 import util.ImageUtil;
 
 /**
@@ -93,7 +102,45 @@ public final class OperationsModelManager implements OperationsModel {
   @Override
   public void valueComponent(String component, String name, String destName)
           throws IllegalArgumentException {
-    if (!loaded.containsKey(name)) {
+
+    double[][] filter;
+    Process process;
+    switch (component.toLowerCase()) {
+      case "red":
+        process = new Red(name, destName);
+        process.start(this);
+
+        break;
+      case "green":
+        process = new Green(name, destName);
+        process.start(this);
+
+        break;
+      case "blue":
+        process = new Blue(name, destName);
+        process.start(this);
+
+        break;
+      case "value":
+        process = new Value(name, destName);
+        process.start(this);
+
+        break;
+      case "luma":
+        process = new Luma(name, destName);
+        process.start(this);
+
+        break;
+      case "intensity":
+        process = new Intensity(name, destName);
+        process.start(this);
+
+        break;
+      default:
+        throw new IllegalArgumentException("Not supported component.");
+    }
+
+    /*if (!loaded.containsKey(name)) {
       throw new IllegalArgumentException("Image not loaded.");
     }
 
@@ -140,7 +187,7 @@ public final class OperationsModelManager implements OperationsModel {
 
 
     max = img.getMaxValue();
-    loaded.put(destName, new RGBImage(pixels, max));
+    loaded.put(destName, new RGBImage(pixels, max));*/
   }
 
   @Override
@@ -194,7 +241,11 @@ public final class OperationsModelManager implements OperationsModel {
     }
 
     img = loaded.get(name);
-    width = img.getWidth();
+
+    Process process = new Brighten(increment,name,destName);
+    process.start(this);
+
+    /*width = img.getWidth();
     height = img.getHeight();
     pixels = new Color[width][height];
 
@@ -212,7 +263,7 @@ public final class OperationsModelManager implements OperationsModel {
     }
 
     max = img.getMaxValue();
-    loaded.put(destName, new RGBImage(pixels, max));
+    loaded.put(destName, new RGBImage(pixels, max));*/
   }
 
   @Override
@@ -273,6 +324,44 @@ public final class OperationsModelManager implements OperationsModel {
         pixels[x][y] = new Color(r, g, b);
       }
     }
+
+    max = img.getMaxValue();
+    loaded.put(destName, new RGBImage(pixels, max));
+  }
+
+  @Override
+  public void applyFilter(Function<Color, double[][]> filterFunc, String name, String destName)
+          throws IllegalArgumentException {
+    if (!loaded.containsKey(name)) {
+      throw new IllegalArgumentException("Image not loaded.");
+    }
+
+    img = loaded.get(name);
+    width = img.getWidth();
+    height = img.getHeight();
+    pixels = new Color[width][height];
+    int maxValue = img.getMaxValue();
+
+    for (int x = 0; x < width; x++) {
+      for (int y = 0; y < height; y++) {
+        newColor = img.getPixel(x, y);
+
+        double[][] filter = filterFunc.apply(newColor);
+        int[] rgb = {newColor.getRed(), newColor.getGreen(), newColor.getBlue()};
+        int[] newRGB = new int[3];
+
+        for (int c = 0; c < filter.length; c++) {
+
+          for (int j = 0; j < filter[c].length; j++) {
+            newRGB[c] += (rgb[j] * filter[c][j]);
+          }
+          newRGB[c] = Math.max(Math.min(newRGB[c], maxValue),0);
+        }
+
+        pixels[x][y] = new Color(newRGB[0], newRGB[1], newRGB[2]);
+      }
+    }
+
 
     max = img.getMaxValue();
     loaded.put(destName, new RGBImage(pixels, max));

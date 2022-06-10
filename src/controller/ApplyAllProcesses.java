@@ -11,6 +11,7 @@ import processes.Load;
 import processes.Process;
 import processes.RidgeDetection;
 import processes.Save;
+import processes.SepiaTone;
 import processes.Sharpen;
 import processes.ValueComponent;
 import processes.VerticalFlip;
@@ -161,6 +162,13 @@ public class ApplyAllProcesses {
 
     op = "emboss";
     p = new Emboss(base, base + op);
+    p.start(m);
+    p = new Save(path + op + ext, base + op);
+    p.start(m);
+    System.out.println("Done with " + op);
+
+    op = "sepia";
+    p = new SepiaTone(base, base + op);
     p.start(m);
     p = new Save(path + op + ext, base + op);
     p.start(m);

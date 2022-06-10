@@ -1,3 +1,6 @@
+import java.awt.*;
+import java.util.function.Function;
+
 import model.OperationsModel;
 
 /**
@@ -79,6 +82,13 @@ public class ModelMock implements OperationsModel {
           throws IllegalArgumentException {
     this.log.append("Attempt to apply kernel of size ")
             .append(kernel.length).append(" by ").append(kernel[0].length)
+            .append("\nTo image: ").append(name).append("\nTo output: ").append(destName);
+  }
+
+  @Override
+  public void applyFilter(Function<Color, double[][]> filterFunc, String name, String destName) throws IllegalArgumentException {
+    this.log.append("Attempt to apply filter of size ")
+            .append("3").append(" by ").append("3")
             .append("\nTo image: ").append(name).append("\nTo output: ").append(destName);
   }
 }

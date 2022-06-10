@@ -1,11 +1,13 @@
 package processes;
 
+import java.awt.*;
+
 import model.OperationsModel;
 
 /**
  * This class represents the brighten effect on an image.
  */
-public class Brighten implements Process {
+public class Brighten extends ApplyFilter {
 
   int increment;
   String name;
@@ -18,13 +20,17 @@ public class Brighten implements Process {
    * @param destName the name of the output image.
    */
   public Brighten(int increment, String name, String destName) {
+    super(name, destName);
     this.increment = increment;
-    this.name = name;
-    this.destName = destName;
   }
 
   @Override
-  public void start(OperationsModel m) {
-    m.brighten(this.increment, this.name, this.destName);
+  public double[][] initFilter(Color rgb) {
+    double[][] filter = new double[][]
+            {{(double) (rgb.getRed() + increment) / rgb.getRed(), 0, 0},
+                    {0, (double) (rgb.getGreen() + increment) / rgb.getGreen(), 0},
+                    {0, 0, (double) (rgb.getBlue() + increment) / rgb.getBlue()}};
+
+    return filter;
   }
 }

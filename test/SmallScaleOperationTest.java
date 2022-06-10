@@ -11,6 +11,7 @@ import java.awt.Color;
 import java.util.Random;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 /**
@@ -229,12 +230,12 @@ public class SmallScaleOperationTest {
     Image value = new RGBImage(new Color[][]{
             {Color.WHITE, Color.WHITE},
             {Color.WHITE, Color.WHITE}}, 255);
-    Image luma = new RGBImage(new Color[][]{
+    Image intensity = new RGBImage(new Color[][]{
             {new Color(85, 85, 85), new Color(85, 85, 85)},
             {new Color(85, 85, 85), new Color(255, 255,  255)}}, 255);
-    Image intensity = new RGBImage(new Color[][]{
-            {new Color(182, 182, 182), new Color(54, 54, 54)},
-            {new Color(18, 18, 18), new Color(254, 254, 254)}}, 255);
+    Image luma = new RGBImage(new Color[][]{
+            {new Color(54, 54, 54), new Color(18, 18, 18)},
+            {new Color(182, 182, 182), new Color(254, 254, 254)}}, 255);
 
     Image[] expected = new Image[]{red, green, blue, value, luma, intensity};
 
@@ -244,6 +245,11 @@ public class SmallScaleOperationTest {
 
       m.save(types[i] + ".ppm", types[i]);
       actual = ImageUtil.convertPPM(types[i] + ".ppm");
+      for (int x = 0; x < actual.getWidth(); x++) {
+        for (int y = 0; y < actual.getHeight(); y++) {
+          assertEquals(expected[i].getPixel(x,y), actual.getPixel(x,y));
+        }
+      }
       assertEquals(expected[i], actual);
     }
 
