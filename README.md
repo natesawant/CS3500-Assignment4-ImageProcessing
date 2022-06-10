@@ -204,7 +204,7 @@ _Disclaimer: This photo was taken by Nathaniel Sawant and is authorized for use 
 ###### Examples:
 > `value-component red igm igm-red`
 
-Gaussian Blur Kernel (3x3)
+Red Grayscale Filter (3x3)
 | 1	| 0	| 0	|
 |----	|----	|----	|
 | 1	| 0	| 0	|
@@ -215,25 +215,55 @@ Gaussian Blur Kernel (3x3)
 
 > `value-component green igm igm-green`
 
+Green Grayscale Filter (3x3)
+| 0	| 1	| 0	|
+|----	|----	|----	|
+| 0	| 1	| 0	|
+| 0	| 1	| 0	|
+
 ![igmgreen](https://user-images.githubusercontent.com/74106957/172697551-9f2a91c2-e785-4695-8b19-e5325671c1cd.jpg)
 
 
 > `value-component blue igm igm-blue`
+
+Blue Grayscale Filter (3x3)
+| 0	| 0	| 1	|
+|----	|----	|----	|
+| 0	| 0	| 1	|
+| 0	| 0	| 1	|
 
 ![igmblue](https://user-images.githubusercontent.com/74106957/172697579-fe1d7b16-1288-40bd-8f71-57c52905c459.jpg)
 
 
 > `value-component luma igm igm-luma`
 
+Luma Grayscale Filter (3x3)
+| 0.2126	| 0.7152	| 0.0722	|
+|-----	|-----	|-----	|
+| 0.2126	| 0.7152	| 0.0722	|
+| 0.2126	| 0.7152	| 0.0722	|
+
 ![igmluma](https://user-images.githubusercontent.com/74106957/172697594-ff1192d0-a7e2-4394-a5d5-2e0756a8e0e5.jpg)
 
 
-> `value-component luma igm igm-intensity`
+> `value-component intensity igm igm-intensity`
+
+Intensity Grayscale Filter (3x3)
+| 1/3	| 1/3	| 1/3	|
+|----	|----	|----	|
+| 1/3	| 1/3	| 1/3	|
+| 1/3	| 1/3	| 1/3	|
 
 ![igmintensity](https://user-images.githubusercontent.com/74106957/172697622-d458f8d9-c68e-4b7e-a140-ed2de4376466.jpg)
 
 
-> `value-component luma igm igm-value`
+> `value-component value igm igm-value`
+
+Value Grayscale Filter (3x3)
+| 1	| 0	| 0	|
+|----	|----	|----	|
+| 1	| 0	| 0	|
+| 1	| 0	| 0	|
 
 ![igmvalue](https://user-images.githubusercontent.com/74106957/172697654-7c771bf8-864c-4556-a798-6cda2294bca1.jpg)
 
