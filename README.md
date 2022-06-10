@@ -122,15 +122,16 @@ This project is a basic image processing program. Currently, the program is only
 
 1. [Load](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#load)
 2. [Save](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#save)
-3. [Brighten](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#brighten)
-4. [Vertical Flip](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#vertical-flip)
-5. [Horizontal Flip](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#horizontal-flip)
-6. [Value Component](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#value-component)
-7. [Box Blur](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#box-blur)
-8. [Gaussian Blur](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#gaussian-blur)
-9. [Emboss](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#emboss)
-10. [Sharpen](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#sharpen)
-11. [Ridge Detection](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#ridge-detection)
+3. [Vertical Flip](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#vertical-flip)
+4. [Horizontal Flip](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#horizontal-flip)
+5. [Brighten](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#brighten)
+6. [Sepia Tone](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#sepia-tone)
+7. [Value Component](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#value-component)
+8. [Box Blur](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#box-blur)
+9. [Gaussian Blur](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#gaussian-blur)
+10. [Emboss](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#emboss)
+11. [Sharpen](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#sharpen)
+12. [Ridge Detection](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#ridge-detection)
 13. [Quit](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#quitting-the-program)
 
 and more to come!
@@ -155,20 +156,6 @@ _Disclaimer: This photo was taken by Nathaniel Sawant and is authorized for use 
 
 ![igm-copy](https://user-images.githubusercontent.com/74106957/172696750-3896fffb-df8e-42a7-a8da-9114166c8fad.jpg)
 
-#### Brighten
-#### Brightens (or darkens if negative) the image _name_ by an _increment_ and stores it as _destName_.
-`brighten increment name destName`
-
-###### Examples:
-> `brighten 100 igm igm-bright`
-
-![igm-bright](https://user-images.githubusercontent.com/74106957/172696781-9da33406-1373-4019-b9b8-2e13a0e20a03.jpg)
-
-
-> `brighten -100 igm igm-dark`
-
- ![igm-dark](https://user-images.githubusercontent.com/74106957/172697312-55dfbd30-c2d9-43ce-bf1c-951ed5239f57.jpg)
-
 #### Vertical Flip
 #### Flips the image _name_ vertically and stores it as _destName_.
 `vertical-flip name destName`
@@ -186,6 +173,29 @@ _Disclaimer: This photo was taken by Nathaniel Sawant and is authorized for use 
 > `horizontal-flip igm igm-horizontal`
 
 ![igm-horizontal](https://user-images.githubusercontent.com/74106957/172696916-77377dca-8712-4dc1-ba05-262d996419d4.jpg)
+
+#### Brighten
+#### Brightens (or darkens if negative) the image _name_ by an _increment_ and stores it as _destName_.
+`brighten increment name destName`
+
+###### Examples:
+> `brighten 100 igm igm-bright`
+
+![igm-bright](https://user-images.githubusercontent.com/74106957/172696781-9da33406-1373-4019-b9b8-2e13a0e20a03.jpg)
+
+
+> `brighten -100 igm igm-dark`
+
+ ![igm-dark](https://user-images.githubusercontent.com/74106957/172697312-55dfbd30-c2d9-43ce-bf1c-951ed5239f57.jpg)
+
+#### Sepia Tone
+#### Creates a characteristic reddish brown tone to image _name_ by an _increment_ and stores it as _destName_.
+`sepia-tone name destName`
+
+###### Examples:
+> `sepia-tone igm igm-sepia`
+
+![igmsepia](https://user-images.githubusercontent.com/74106957/173144921-bf0f3649-e5d1-497c-a41c-f32093d44b4a.png)
 
 #### Value Component
 #### Isolates the _component_ (red, green, blue, value, luma, intensity) of the image _name_ and stores it as _destName_.
