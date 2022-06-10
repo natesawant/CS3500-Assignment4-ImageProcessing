@@ -195,6 +195,12 @@ _Disclaimer: This photo was taken by Nathaniel Sawant and is authorized for use 
 ###### Examples:
 > `sepia-tone igm igm-sepia`
 
+Sepia Tone Filter (3x3)
+| 0.393	| 0.769	| 0.189	|
+|-----	|-----	|-----	|
+| 0.349	| 0.686	| 0.168	|
+| 0.272	| 0.534	| 0.131	|
+
 ![igmsepia](https://user-images.githubusercontent.com/74106957/173144921-bf0f3649-e5d1-497c-a41c-f32093d44b4a.png)
 
 #### Value Component
