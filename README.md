@@ -125,14 +125,15 @@ This project is a basic image processing program. Currently, the program is only
 3. [Vertical Flip](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#vertical-flip)
 4. [Horizontal Flip](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#horizontal-flip)
 5. [Brighten](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#brighten)
-6. [Sepia Tone](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#sepia-tone)
-7. [Value Component](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#value-component)
-8. [Box Blur](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#box-blur)
-9. [Gaussian Blur](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#gaussian-blur)
-10. [Emboss](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#emboss)
-11. [Sharpen](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#sharpen)
-12. [Ridge Detection](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#ridge-detection)
-13. [Quit](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#quitting-the-program)
+6. [Invert Colors](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#invert-colors)
+7. [Sepia Tone](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#sepia-tone)
+8. [Value Component](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#value-component)
+9. [Box Blur](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#box-blur)
+10. [Gaussian Blur](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#gaussian-blur)
+11. [Emboss](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#emboss)
+12. [Sharpen](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#sharpen)
+13. [Ridge Detection](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#ridge-detection)
+14. [Quit](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#quitting-the-program)
 
 and more to come!
 
@@ -195,7 +196,7 @@ Brightness Filter (3x3)
  ![igm-dark](https://user-images.githubusercontent.com/74106957/172697312-55dfbd30-c2d9-43ce-bf1c-951ed5239f57.jpg)
 
 #### Invert Colors
-#### Inverts the colors of the image _name_ by an _increment_ and stores it as _destName_.
+#### Inverts the colors of the image _name_ and stores it as _destName_.
 `invert name destName`
 
 Invert Filter (3x3)
