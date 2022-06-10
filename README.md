@@ -178,6 +178,12 @@ _Disclaimer: This photo was taken by Nathaniel Sawant and is authorized for use 
 #### Brightens (or darkens if negative) the image _name_ by an _increment_ and stores it as _destName_.
 `brighten increment name destName`
 
+Brightness Filter (3x3)
+| (r+i)/r	| 0	| 0	|
+|-----	|-----	|-----	|
+| 0	| (g+i)/g	| 0	|
+| 0	| 0	| (b+i)/g	|
+
 ###### Examples:
 > `brighten 100 igm igm-bright`
 
