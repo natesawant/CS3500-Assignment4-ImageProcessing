@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Function;
 
 import util.ImageUtil;
 
@@ -36,9 +37,23 @@ public final class OperationsModelManager implements OperationsModel {
 
   @Override
   public void load(String path, String name) throws IllegalArgumentException {
+    String[] seperatedPath = path.split("\\.");
+    String ext = seperatedPath[seperatedPath.length - 1];
+
+    Map<String, Function<String, Image>> conversionMethod = new HashMap<>();
+    conversionMethod.put("ppm", p -> ImageUtil.convertPPM(p));
+    conversionMethod.put("png", p -> ImageUtil.convertPNGJPEG(p));
+    conversionMethod.put("jpeg", p -> ImageUtil.convertPNGJPEG(p));
+    conversionMethod.put("jpg", p -> ImageUtil.convertPNGJPEG(p));
+
     try {
-      img = ImageUtil.convertPPM(path);
-      loaded.put(name, img);
+      Function<String, Image> convert = conversionMethod.getOrDefault(ext, null);
+      if (convert != null) {
+        img = convert.apply(path);
+        loaded.put(name, img);
+      } else {
+        throw new IllegalArgumentException("Illegal file type.");
+      }
     } catch (IllegalArgumentException ex) {
       throw new IllegalArgumentException(ex.getMessage());
     }
@@ -46,44 +61,32 @@ public final class OperationsModelManager implements OperationsModel {
 
   @Override
   public void save(String path, String name) throws IllegalArgumentException {
-    Writer output;
     if (!loaded.containsKey(name)) {
       throw new IllegalArgumentException("Image not loaded.");
     }
     img = loaded.get(name);
-    width = img.getWidth();
-    height = img.getHeight();
-    max = img.getMaxValue();
+
+    String[] seperatedPath = path.split("\\.");
+    String ext = seperatedPath[seperatedPath.length - 1];
+
     try {
-      output = new FileWriter(path);
-      output.append("P3 ").append(System.lineSeparator());
-      output.append("# Created by an image processing program by Nathaniel Sawant "
-              + "and Aiden Cahill for CS3500 at Northeastern University.\n");
-      output.append(String.valueOf(width))
-              .append(" ")
-              .append(String.valueOf(height))
-              .append(" \n");
-      output.append(String.valueOf(max)).append(" \n");
-
-      for (int y = 0; y < height; y++) {
-        for (int x = 0; x < width; x++) {
-          r = img.getPixel(x, y).getRed();
-          g = img.getPixel(x, y).getGreen();
-          b = img.getPixel(x, y).getBlue();
-
-          output.append(String.valueOf(r))
-                  .append(" ").append(System.lineSeparator());
-          output.append(String.valueOf(g))
-                  .append(" ").append(System.lineSeparator());
-          output.append(String.valueOf(b))
-                  .append(" ").append(System.lineSeparator());
-        }
+      switch (ext) {
+        case "ppm":
+          ImageUtil.exportPPM(img, path);
+          break;
+        case "jpeg":
+        case "jpg":
+          ImageUtil.exportJPG(img, path);
+          break;
+        case "png":
+          ImageUtil.exportPNG(img, path);
+          break;
+        default:
+          throw new IllegalArgumentException("File extension is not currently supported.");
       }
-      output.close();
-    } catch (FileNotFoundException ex) {
-      throw new IllegalArgumentException("Filepath not valid.");
-    } catch (IOException ex) {
-      throw new IllegalArgumentException("Unable to write.");
+
+    } catch (IOException e) {
+      throw new IllegalArgumentException(e);
     }
   }
 

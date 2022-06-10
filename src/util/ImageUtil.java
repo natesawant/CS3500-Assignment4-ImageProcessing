@@ -1,9 +1,17 @@
 package util;
 
-import java.awt.Color;
-import java.util.Scanner;
-import java.io.FileNotFoundException;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.awt.image.WritableRaster;
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
+import java.util.Scanner;
+
+import javax.imageio.ImageIO;
 
 import model.Image;
 import model.RGBImage;
@@ -14,8 +22,103 @@ import model.RGBImage;
  * Feel free to change this method as required.
  */
 public class ImageUtil {
+  public static void exportPPM(Image img, String path) {
+    Writer output;
+    int width = img.getWidth();
+    int height = img.getHeight();
+    int max = img.getMaxValue();
+    int r, g, b;
+
+    try {
+      output = new FileWriter(path);
+      output.append("P3 ").append(System.lineSeparator());
+      output.append("# Created by an image processing program by Nathaniel Sawant "
+              + "and Aiden Cahill for CS3500 at Northeastern University.\n");
+      output.append(String.valueOf(width))
+              .append(" ")
+              .append(String.valueOf(height))
+              .append(" \n");
+      output.append(String.valueOf(max)).append(" \n");
+
+      for (int y = 0; y < height; y++) {
+        for (int x = 0; x < width; x++) {
+          r = img.getPixel(x, y).getRed();
+          g = img.getPixel(x, y).getGreen();
+          b = img.getPixel(x, y).getBlue();
+
+          output.append(String.valueOf(r))
+                  .append(" ").append(System.lineSeparator());
+          output.append(String.valueOf(g))
+                  .append(" ").append(System.lineSeparator());
+          output.append(String.valueOf(b))
+                  .append(" ").append(System.lineSeparator());
+        }
+      }
+      output.close();
+    } catch (FileNotFoundException ex) {
+      throw new IllegalArgumentException("Filepath not valid.");
+    } catch (IOException ex) {
+      throw new IllegalArgumentException("Unable to write.");
+    }
+  }
+
+  public static void exportPNG(Image img, String path) throws IOException {
+    exportJPG(img,path);
+  }
+
+  public static void exportJPG(Image img, String path) throws IOException {
+    String[] seperatedPath = path.split("\\.");
+    String ext = seperatedPath[seperatedPath.length - 1];
+
+    int width = img.getWidth();
+    int height = img.getHeight();
+    BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+    WritableRaster raster = bufferedImage.getRaster();
+
+    for (int x = 0; x < width; x++) {
+      for (int y = 0; y < height; y++) {
+        Color color = img.getPixel(x, y);
+        int[] rgb = {color.getRed(), color.getGreen(), color.getBlue()};
+        raster.setPixel(x, y, rgb);
+      }
+    }
+
+    ImageIO.write(bufferedImage, ext, new File(path));
+  }
+
+  public static Image convertPNGJPEG(String filename) throws IllegalArgumentException {
+    Image img;
+    Color[][] pixels;
+    BufferedImage bufferedImg;
+
+    try {
+      bufferedImg = ImageIO.read(new File(filename));
+    } catch (IOException e) {
+      throw new IllegalArgumentException(e);
+    }
+
+    int width = bufferedImg.getWidth();
+    int height = bufferedImg.getHeight();
+    int maxValue = 255;
+
+    pixels = new Color[width][height];
+
+    for (int x = 0; x < width; x++) {
+      for (int y = 0; y < height; y++) {
+        int rgb = bufferedImg.getRGB(x, y);
+        pixels[x][y] = new Color(rgb);
+      }
+    }
+
+    img = new RGBImage(pixels, maxValue);
+
+    return img;
+  }
+
+
   /**
    * Converts a .ppm file to an Image object.
+   *
    * @param filename the filepath of the .ppm file.
    * @return an Image object.
    * @throws IllegalArgumentException if the filepath is invalid.
@@ -28,8 +131,7 @@ public class ImageUtil {
 
     try {
       sc = new Scanner(new FileInputStream(filename));
-    }
-    catch (FileNotFoundException e) {
+    } catch (FileNotFoundException e) {
       throw new IllegalArgumentException("File " + filename + " not found!");
     }
     StringBuilder builder = new StringBuilder();
@@ -79,15 +181,14 @@ public class ImageUtil {
   /**
    * Read an image file in the PPM format and print the colors.
    *
-   * @param filename the path of the file. 
+   * @param filename the path of the file.
    */
   public static void readPPM(String filename) {
     Scanner sc;
-    
+
     try {
       sc = new Scanner(new FileInputStream(filename));
-    }
-    catch (FileNotFoundException e) {
+    } catch (FileNotFoundException e) {
       System.out.println("File " + filename + " not found!");
       return;
     }
@@ -99,11 +200,11 @@ public class ImageUtil {
         builder.append(s + System.lineSeparator());
       }
     }
-    
+
     //now set up the scanner to read from the string we just built
     sc = new Scanner(builder.toString());
 
-    String token; 
+    String token;
 
     token = sc.next();
     if (!token.equals("P3")) {
@@ -115,7 +216,7 @@ public class ImageUtil {
     System.out.println("Height of image: " + height);
     int maxValue = sc.nextInt();
     System.out.println("Maximum value of a color in this file (usually 255): " + maxValue);
-    
+
     for (int i = 0; i < height; i++) {
       for (int j = 0; j < width; j++) {
         int r = sc.nextInt();
@@ -128,15 +229,15 @@ public class ImageUtil {
 
   /**
    * Demo main.
+   *
    * @param args command line arguments.
    */
-  public static void main(String []args) {
+  public static void main(String[] args) {
     String filename;
 
     if (args.length > 0) {
       filename = args[0];
-    }
-    else {
+    } else {
       filename = "sample.ppm";
     }
 

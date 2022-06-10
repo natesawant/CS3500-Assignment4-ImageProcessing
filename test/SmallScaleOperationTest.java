@@ -30,6 +30,23 @@ public class SmallScaleOperationTest {
   }
 
   @Test
+  public void testLoadPNGSavePPM() {
+    m.load("images/TestImageOriginalExpected.png", "imgpng");
+    m.save("images/TestImageOriginalPNGToPPM.ppm","imgpng");
+  }
+
+  @Test
+  public void testLoadJPEGSavePPM() {
+    m.load("images/TestImageOriginalExpected.jpg", "imgjpg");
+    m.save("images/TestImageOriginalJPGToPPM.ppm","imgjpg");
+  }
+
+  @Test
+  public void testLoadPPMSaveJPG() {
+    m.save("images/TestImageOriginalPPMToJPG.jpg", "img");
+  }
+
+  @Test
   public void testVerticalFlip() {
     m.verticalFlip("img","img");
     m.save("images/TestImageVerticalActual.ppm","img");
