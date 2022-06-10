@@ -211,7 +211,7 @@ Invert Filter (3x3)
 ![igminverted](https://user-images.githubusercontent.com/74106957/173146965-570df912-c6d5-4979-8cb3-d6cfdb35ba92.png)
 
 #### Sepia Tone
-#### Creates a characteristic reddish brown tone to image _name_ by an _increment_ and stores it as _destName_.
+#### Creates a characteristic reddish brown tone to image _name_ and stores it as _destName_.
 `sepia-tone name destName`
 
 ###### Examples:
