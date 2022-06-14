@@ -254,11 +254,11 @@ Adjust Red Filter (3x1)
 #### Brightens (or darkens if negative) the image _name_ by an _increment_ and stores it as _destName_.
 `brighten increment name destName`
 
-Brightness Filter (3x3)
-| (r+i)/r	| 0	| 0	|
-|-----	|-----	|-----	|
-| 0	| (g+i)/g	| 0	|
-| 0	| 0	| (b+i)/g	|
+Brightness Filter (3x1)
+| i	|
+|----	|
+| i	|
+| i	|
 
 ###### Examples:
 > `brighten 100 igm igm-bright`
@@ -362,11 +362,11 @@ Intensity Grayscale Filter (3x3)
 
 > `value-component value igm igm-value`
 
-Value Grayscale Filter (3x3)
-| max(r,g,b)	| max(r,g,b)	| max(r,g,b)	|
-|-----------	|-----------	|-----------	|
-| max(r,g,b)	| max(r,g,b)	| max(r,g,b)	|
-| max(r,g,b)	| max(r,g,b)	| max(r,g,b)	|
+Value Grayscale Filter (3x1)
+| max(r,g,b) - r	|
+|--------------	|
+| max(r,g,b) - g	|
+| max(r,g,b) - g	|
 
 ![igmvalue](https://user-images.githubusercontent.com/74106957/172697654-7c771bf8-864c-4556-a798-6cda2294bca1.jpg)
 
