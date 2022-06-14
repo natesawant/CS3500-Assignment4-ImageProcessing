@@ -80,6 +80,7 @@ public final class OperationsModelManager implements OperationsModel {
           ImageUtil.exportPPM(img, path);
           break;
         case "jpeg":
+          ImageUtil.exportJPEG(img,path);
         case "jpg":
           ImageUtil.exportJPG(img, path);
           break;
@@ -135,55 +136,6 @@ public final class OperationsModelManager implements OperationsModel {
       default:
         throw new IllegalArgumentException("Not supported component.");
     }
-
-    /*if (!loaded.containsKey(name)) {
-      throw new IllegalArgumentException("Image not loaded.");
-    }
-
-    img = loaded.get(name);
-    width = img.getWidth();
-    height = img.getHeight();
-    pixels = new Color[width][height];
-
-    for (int x = 0; x < width; x++) {
-      for (int y = 0; y < height; y++) {
-        int val;
-        newColor = img.getPixel(x, y);
-        switch (component.toLowerCase()) {
-          case "red":
-            val = newColor.getRed();
-            break;
-          case "green":
-            val = newColor.getGreen();
-            break;
-          case "blue":
-            val = newColor.getBlue();
-            break;
-          case "value":
-            val = Math.max(newColor.getBlue(), Math.max(newColor.getRed(),
-                    newColor.getGreen()));
-            break;
-          case "luma":
-            val = (newColor.getBlue()
-                    + newColor.getRed()
-                    + newColor.getGreen()) / 3;
-            break;
-          case "intensity":
-            val = (int) (0.2126 * newColor.getBlue()
-                    + 0.7152 * newColor.getRed()
-                    + 0.0722 * newColor.getGreen());
-            break;
-          default:
-            throw new IllegalArgumentException("Not supported component.");
-        }
-
-        pixels[x][y] = new Color(val, val, val);
-      }
-    }
-
-
-    max = img.getMaxValue();
-    loaded.put(destName, new RGBImage(pixels, max));*/
   }
 
   @Override
@@ -240,26 +192,6 @@ public final class OperationsModelManager implements OperationsModel {
 
     Process process = new Brighten(increment,name,destName);
     process.start(this);
-
-    /*width = img.getWidth();
-    height = img.getHeight();
-    pixels = new Color[width][height];
-
-    for (int x = 0; x < width; x++) {
-      for (int y = 0; y < height; y++) {
-        newColor = img.getPixel(x, y);
-        max = img.getMaxValue();
-
-        r = Math.max(Math.min(newColor.getRed() + increment, max), 0);
-        g = Math.max(Math.min(newColor.getGreen() + increment, max), 0);
-        b = Math.max(Math.min(newColor.getBlue() + increment, max), 0);
-
-        pixels[x][y] = new Color(r, g, b);
-      }
-    }
-
-    max = img.getMaxValue();
-    loaded.put(destName, new RGBImage(pixels, max));*/
   }
 
   @Override
@@ -326,7 +258,7 @@ public final class OperationsModelManager implements OperationsModel {
   }
 
   @Override
-  public void applyFilter(Function<Color, double[][]> filterFunc, String name, String destName)
+  public void applyMultiplyFilter(Function<Color, double[][]> filterFunc, String name, String destName)
           throws IllegalArgumentException {
     if (!loaded.containsKey(name)) {
       throw new IllegalArgumentException("Image not loaded.");
@@ -351,6 +283,42 @@ public final class OperationsModelManager implements OperationsModel {
           for (int j = 0; j < filter[c].length; j++) {
             newRGB[c] += (rgb[j] * filter[c][j]);
           }
+          newRGB[c] = Math.max(Math.min(newRGB[c], maxValue),0);
+        }
+
+        pixels[x][y] = new Color(newRGB[0], newRGB[1], newRGB[2]);
+      }
+    }
+
+
+    max = img.getMaxValue();
+    loaded.put(destName, new RGBImage(pixels, max));
+  }
+
+  @Override
+  public void applyAdditionFilter(Function<Color, double[]> filterFunc, String name,
+                                String destName)
+          throws IllegalArgumentException {
+    if (!loaded.containsKey(name)) {
+      throw new IllegalArgumentException("Image not loaded.");
+    }
+
+    img = loaded.get(name);
+    width = img.getWidth();
+    height = img.getHeight();
+    pixels = new Color[width][height];
+    int maxValue = img.getMaxValue();
+
+    for (int x = 0; x < width; x++) {
+      for (int y = 0; y < height; y++) {
+        newColor = img.getPixel(x, y);
+
+        double[] filter = filterFunc.apply(newColor);
+        int[] rgb = {newColor.getRed(), newColor.getGreen(), newColor.getBlue()};
+        int[] newRGB = new int[3];
+
+        for (int c = 0; c < filter.length; c++) {
+            newRGB[c] += (rgb[c] + filter[c]);
           newRGB[c] = Math.max(Math.min(newRGB[c], maxValue),0);
         }
 

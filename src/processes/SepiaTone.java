@@ -2,7 +2,7 @@ package processes;
 
 import java.awt.*;
 
-public class SepiaTone extends ApplyFilter {
+public class SepiaTone extends ApplyMultiplyFilter {
 
   /**
    * Constructs a new filter to apply to an image.

@@ -2,7 +2,7 @@ package processes;
 
 import java.awt.*;
 
-public class LumaGrayscale extends ApplyFilter {
+public class LumaGrayscale extends ApplyMultiplyFilter {
 
   /**
    * Constructs a new filter to apply to an image.

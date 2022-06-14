@@ -2,7 +2,7 @@ package processes;
 
 import java.awt.*;
 
-public class ValueGrayscale extends ApplyFilter {
+public class ValueGrayscale extends ApplyAdditionFilter {
 
   /**
    * Constructs a new filter to apply to an image.
@@ -15,14 +15,9 @@ public class ValueGrayscale extends ApplyFilter {
   }
 
   @Override
-  public double[][] initFilter(Color rgb) {
+  public double[] initFilter(Color rgb) {
     int max = Math.max(Math.max(rgb.getRed(), rgb.getGreen()), rgb.getBlue());
-    double[][] filter = new double[3][3];
-    for (int i = 0; i < filter.length; i++) {
-      for (int j = 0; j < filter[0].length; j++) {
-        filter[i][j] = max;
-      }
-    }
+    double[] filter = {max - rgb.getRed(),max - rgb.getGreen(),max - rgb.getBlue()};
 
     return filter;
   }

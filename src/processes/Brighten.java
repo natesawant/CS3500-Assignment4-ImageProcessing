@@ -2,12 +2,10 @@ package processes;
 
 import java.awt.*;
 
-import model.OperationsModel;
-
 /**
  * This class represents the brighten effect on an image.
  */
-public class Brighten extends ApplyFilter {
+public class Brighten extends ApplyAdditionFilter {
 
   int increment;
   String name;
@@ -25,11 +23,9 @@ public class Brighten extends ApplyFilter {
   }
 
   @Override
-  public double[][] initFilter(Color rgb) {
-    double[][] filter = new double[][]
-            {{(double) (rgb.getRed() + increment) / rgb.getRed(), 0, 0},
-                    {0, (double) (rgb.getGreen() + increment) / rgb.getGreen(), 0},
-                    {0, 0, (double) (rgb.getBlue() + increment) / rgb.getBlue()}};
+  public double[] initFilter(Color rgb) {
+    double[] filter = new double[]{increment,
+            increment, increment};
 
     return filter;
   }

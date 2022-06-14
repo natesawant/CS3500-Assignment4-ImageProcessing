@@ -4,24 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Added color inversion.">
+    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Added all processes">
+      <change afterPath="$PROJECT_DIR$/applyall.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/processes/ApplyAdditionFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_6_2022_5_04_PM_[Changes]/koala-bigblur.ppm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_6_2022_5_04_PM_[Changes]/koala-smallblur.ppm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_6_2022_5_04_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_6_2022_5_04_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/igmbright.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/igmbright.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/res/igmdark.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/igmdark.ppm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/igmintensity.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/igmintensity.ppm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/igmluma.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/igmluma.ppm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/igmvalue.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/igmvalue.ppm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/ApplyAllProcesses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ApplyAllProcesses.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/ImageProcessingControllerImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ImageProcessingControllerImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/OperationsModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OperationsModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/OperationsModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OperationsModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/Blue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/BlueGrayscale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/Green.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/GreenGrayscale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/Intensity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/IntensityGrayscale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/Load.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/LoadFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/Luma.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/LumaGrayscale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/Red.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/RedGrayscale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/Save.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/SaveFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/Value.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/ValueGrayscale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/AdjustBlue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/AdjustBlue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/AdjustGreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/AdjustGreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/AdjustRed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/AdjustRed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/ApplyFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/ApplyMultiplyFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/BlueGrayscale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/BlueGrayscale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/Brighten.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/Brighten.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/GreenGrayscale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/GreenGrayscale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/IntensityGrayscale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/IntensityGrayscale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/InvertColors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/InvertColors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/LumaGrayscale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/LumaGrayscale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/RedGrayscale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/RedGrayscale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/SepiaTone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/SepiaTone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/ValueGrayscale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/ValueGrayscale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/ImageUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/ModelMock.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ModelMock.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,15 +64,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -170,7 +185,11 @@
       <workItem from="1654622567147" duration="594000" />
       <workItem from="1654706057781" duration="5332000" />
       <workItem from="1654747824236" duration="16229000" />
-      <workItem from="1654874037090" duration="14675000" />
+      <workItem from="1654874037090" duration="16915000" />
+      <workItem from="1655063338765" duration="548000" />
+      <workItem from="1655131704872" duration="1221000" />
+      <workItem from="1655143957791" duration="8553000" />
+      <workItem from="1655158386826" duration="3670000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1654458999042</created>
@@ -333,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654891495002</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Renamed some files and added some simple color transforms.">
+      <created>1654892172350</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1654892172350</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,6 +397,7 @@
     <MESSAGE value="Implemented reading and writing for .png, .jpg, .jpeg." />
     <MESSAGE value="Added applyFilter function and switched existing methods to use it." />
     <MESSAGE value="Added color inversion." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added color inversion." />
+    <MESSAGE value="Renamed some files and added some simple color transforms." />
+    <option name="LAST_COMMIT_MESSAGE" value="Renamed some files and added some simple color transforms." />
   </component>
 </project>

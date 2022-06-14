@@ -2,7 +2,7 @@ package processes;
 
 import java.awt.*;
 
-public class GreenGrayscale extends ApplyFilter {
+public class GreenGrayscale extends ApplyMultiplyFilter {
 
   /**
    * Constructs a new filter to apply to an image.

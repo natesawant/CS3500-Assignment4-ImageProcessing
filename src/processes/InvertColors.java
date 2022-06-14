@@ -2,7 +2,10 @@ package processes;
 
 import java.awt.*;
 
-public class InvertColors extends ApplyFilter {
+/**
+ * Inverts the colors of an image. Inverts by subtracting from the max value.
+ */
+public class InvertColors extends ApplyMultiplyFilter {
 
   /**
    * Constructs a new filter to apply to an image.

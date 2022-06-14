@@ -2,7 +2,10 @@ package processes;
 
 import java.awt.*;
 
-public class BlueGrayscale extends ApplyFilter {
+/**
+ * A filter that isolates the blue channel to make the image grayscale
+ */
+public class BlueGrayscale extends ApplyMultiplyFilter {
 
   /**
    * Constructs a new filter to apply to an image.

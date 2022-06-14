@@ -13,6 +13,7 @@ import processes.Brighten;
 import processes.Emboss;
 import processes.GaussianBlur;
 import processes.HorizontalFlip;
+import processes.InvertColors;
 import processes.LoadFile;
 import processes.Process;
 import processes.RidgeDetection;
@@ -62,8 +63,8 @@ public final class ImageProcessingControllerImplementation implements ImageProce
   private void initValidCommands() {
     validCommands = new HashMap<String, Function<Scanner, Process>>();
 
-    validCommands.put("load", s -> new LoadFile(directory + s.next(), s.next()));
-    validCommands.put("save", s -> new SaveFile(directory + s.next(), s.next()));
+    validCommands.put("load", s -> new LoadFile(directory + "/" + s.next(), s.next()));
+    validCommands.put("save", s -> new SaveFile(directory + "/" + s.next(), s.next()));
     validCommands.put("horizontal-flip", s -> new HorizontalFlip(s.next(), s.next()));
     validCommands.put("vertical-flip", s -> new VerticalFlip(s.next(), s.next()));
     validCommands.put("brighten", s -> new Brighten(s.nextInt(), s.next(), s.next()));
@@ -74,6 +75,7 @@ public final class ImageProcessingControllerImplementation implements ImageProce
     validCommands.put("ridge-detection", s -> new RidgeDetection(s.next(), s.next()));
     validCommands.put("sharpen", s -> new Sharpen(s.next(), s.next()));
     validCommands.put("sepia-tone", s -> new SepiaTone(s.next(), s.next()));
+    validCommands.put("invert", s -> new InvertColors(s.next(), s.next()));
   }
 
   /**
