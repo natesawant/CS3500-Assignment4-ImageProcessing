@@ -17,7 +17,7 @@
 
 ## About
 
-This project is a basic image processing program. Currently, the program is only able to work with P3 .ppm files, an ASCII based image file. The program is capable of loading and saving the files as this format, however, it will likely support other files in the future. The program can perform basic image manipulations, such as flipping the image, setting the image to greyscale, and applying kernels. 
+This project is a basic image processing program. At the moment, it is only text-based, with a GUI based program planned for a later date. Currently, the program is able to work with P3 .ppm, .bmp, .jpeg, .jpg, and .png files. The program is capable of loading and saving the files as these format. The program can perform basic image manipulations, such as flipping the image, and applying kernels (sharpen, blur, etc.) and filters (greyscale, sepia tone, etc). 
 
 ## Design
 
@@ -122,16 +122,18 @@ This project is a basic image processing program. Currently, the program is only
 
 1. [Load](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#load)
 2. [Save](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#save)
-3. [Brighten](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#brighten)
-4. [Vertical Flip](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#vertical-flip)
-5. [Horizontal Flip](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#horizontal-flip)
-6. [Value Component](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#value-component)
-7. [Box Blur](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#box-blur)
-8. [Gaussian Blur](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#gaussian-blur)
-9. [Emboss](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#emboss)
-10. [Sharpen](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#sharpen)
-11. [Ridge Detection](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#ridge-detection)
-13. [Quit](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#quitting-the-program)
+3. [Vertical Flip](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#vertical-flip)
+4. [Horizontal Flip](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#horizontal-flip)
+5. [Brighten](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#brighten)
+6. [Invert Colors](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#invert-colors)
+7. [Sepia Tone](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#sepia-tone)
+8. [Value Component](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#value-component)
+9. [Box Blur](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#box-blur)
+10. [Gaussian Blur](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#gaussian-blur)
+11. [Emboss](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#emboss)
+12. [Sharpen](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#sharpen)
+13. [Ridge Detection](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#ridge-detection)
+14. [Quit](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#quitting-the-program)
 
 and more to come!
 
@@ -155,20 +157,6 @@ _Disclaimer: This photo was taken by Nathaniel Sawant and is authorized for use 
 
 ![igm-copy](https://user-images.githubusercontent.com/74106957/172696750-3896fffb-df8e-42a7-a8da-9114166c8fad.jpg)
 
-#### Brighten
-#### Brightens (or darkens if negative) the image _name_ by an _increment_ and stores it as _destName_.
-`brighten increment name destName`
-
-###### Examples:
-> `brighten 100 igm igm-bright`
-
-![igm-bright](https://user-images.githubusercontent.com/74106957/172696781-9da33406-1373-4019-b9b8-2e13a0e20a03.jpg)
-
-
-> `brighten -100 igm igm-dark`
-
- ![igm-dark](https://user-images.githubusercontent.com/74106957/172697312-55dfbd30-c2d9-43ce-bf1c-951ed5239f57.jpg)
-
 #### Vertical Flip
 #### Flips the image _name_ vertically and stores it as _destName_.
 `vertical-flip name destName`
@@ -187,6 +175,56 @@ _Disclaimer: This photo was taken by Nathaniel Sawant and is authorized for use 
 
 ![igm-horizontal](https://user-images.githubusercontent.com/74106957/172696916-77377dca-8712-4dc1-ba05-262d996419d4.jpg)
 
+#### Brighten
+#### Brightens (or darkens if negative) the image _name_ by an _increment_ and stores it as _destName_.
+`brighten increment name destName`
+
+Brightness Filter (3x3)
+| (r+i)/r	| 0	| 0	|
+|-----	|-----	|-----	|
+| 0	| (g+i)/g	| 0	|
+| 0	| 0	| (b+i)/g	|
+
+###### Examples:
+> `brighten 100 igm igm-bright`
+
+![igm-bright](https://user-images.githubusercontent.com/74106957/172696781-9da33406-1373-4019-b9b8-2e13a0e20a03.jpg)
+
+
+> `brighten -100 igm igm-dark`
+
+ ![igm-dark](https://user-images.githubusercontent.com/74106957/172697312-55dfbd30-c2d9-43ce-bf1c-951ed5239f57.jpg)
+
+#### Invert Colors
+#### Inverts the colors of the image _name_ and stores it as _destName_.
+`invert name destName`
+
+Invert Filter (3x3)
+| (255-r)/r	| 0	| 0	|
+|-----	|-----	|-----	|
+| 0	| (255-g)/g	| 0	|
+| 0	| 0	| (255-b)/g	|
+
+###### Examples:
+> `invert igm igm-invert`
+
+![igminverted](https://user-images.githubusercontent.com/74106957/173146965-570df912-c6d5-4979-8cb3-d6cfdb35ba92.png)
+
+#### Sepia Tone
+#### Creates a characteristic reddish brown tone to image _name_ and stores it as _destName_.
+`sepia-tone name destName`
+
+###### Examples:
+> `sepia-tone igm igm-sepia`
+
+Sepia Tone Filter (3x3)
+| 0.393	| 0.769	| 0.189	|
+|-----	|-----	|-----	|
+| 0.349	| 0.686	| 0.168	|
+| 0.272	| 0.534	| 0.131	|
+
+![igmsepia](https://user-images.githubusercontent.com/74106957/173144921-bf0f3649-e5d1-497c-a41c-f32093d44b4a.png)
+
 #### Value Component
 #### Isolates the _component_ (red, green, blue, value, luma, intensity) of the image _name_ and stores it as _destName_.
 `value-component component name destName`
@@ -194,30 +232,66 @@ _Disclaimer: This photo was taken by Nathaniel Sawant and is authorized for use 
 ###### Examples:
 > `value-component red igm igm-red`
 
+Red Grayscale Filter (3x3)
+| 1	| 0	| 0	|
+|----	|----	|----	|
+| 1	| 0	| 0	|
+| 1	| 0	| 0	|
+
 ![igmred](https://user-images.githubusercontent.com/74106957/172696985-f3d0ad02-3016-4b71-9a85-ac0d3966051a.jpg)
 
 
 > `value-component green igm igm-green`
+
+Green Grayscale Filter (3x3)
+| 0	| 1	| 0	|
+|----	|----	|----	|
+| 0	| 1	| 0	|
+| 0	| 1	| 0	|
 
 ![igmgreen](https://user-images.githubusercontent.com/74106957/172697551-9f2a91c2-e785-4695-8b19-e5325671c1cd.jpg)
 
 
 > `value-component blue igm igm-blue`
 
+Blue Grayscale Filter (3x3)
+| 0	| 0	| 1	|
+|----	|----	|----	|
+| 0	| 0	| 1	|
+| 0	| 0	| 1	|
+
 ![igmblue](https://user-images.githubusercontent.com/74106957/172697579-fe1d7b16-1288-40bd-8f71-57c52905c459.jpg)
 
 
 > `value-component luma igm igm-luma`
 
+Luma Grayscale Filter (3x3)
+| 0.2126	| 0.7152	| 0.0722	|
+|-----	|-----	|-----	|
+| 0.2126	| 0.7152	| 0.0722	|
+| 0.2126	| 0.7152	| 0.0722	|
+
 ![igmluma](https://user-images.githubusercontent.com/74106957/172697594-ff1192d0-a7e2-4394-a5d5-2e0756a8e0e5.jpg)
 
 
-> `value-component luma igm igm-intensity`
+> `value-component intensity igm igm-intensity`
+
+Intensity Grayscale Filter (3x3)
+| 1/3	| 1/3	| 1/3	|
+|----	|----	|----	|
+| 1/3	| 1/3	| 1/3	|
+| 1/3	| 1/3	| 1/3	|
 
 ![igmintensity](https://user-images.githubusercontent.com/74106957/172697622-d458f8d9-c68e-4b7e-a140-ed2de4376466.jpg)
 
 
-> `value-component luma igm igm-value`
+> `value-component value igm igm-value`
+
+Value Grayscale Filter (3x3)
+| max(r,g,b)	| max(r,g,b)	| max(r,g,b)	|
+|-----------	|-----------	|-----------	|
+| max(r,g,b)	| max(r,g,b)	| max(r,g,b)	|
+| max(r,g,b)	| max(r,g,b)	| max(r,g,b)	|
 
 ![igmvalue](https://user-images.githubusercontent.com/74106957/172697654-7c771bf8-864c-4556-a798-6cda2294bca1.jpg)
 
