@@ -91,4 +91,9 @@ public class ModelMock implements OperationsModel {
             .append("3").append(" by ").append("3")
             .append("\nTo image: ").append(name).append("\nTo output: ").append(destName);
   }
+
+  @Override
+  public void applyAdditionFilter(Function<Color, double[]> filterFunc, String name, String destName) throws IllegalArgumentException {
+    this.log.append("Attempt to apply addition filter from ").append(name).append(" to ").append(destName);
+  }
 }

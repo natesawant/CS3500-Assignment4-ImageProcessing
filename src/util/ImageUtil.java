@@ -63,14 +63,14 @@ public class ImageUtil {
   }
 
   public static void exportPNG(Image img, String path) throws IOException {
-    exportJPG(img,path);
+    exportImage(img,path);
   }
 
   public static void exportJPEG(Image img, String path) throws IOException {
-    exportJPG(img,path);
+    exportImage(img,path);
   }
 
-  public static void exportJPG(Image img, String path) throws IOException {
+  public static void exportImage(Image img, String path) throws IOException {
     String[] seperatedPath = path.split("\\.");
     String ext = seperatedPath[seperatedPath.length - 1];
 

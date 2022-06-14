@@ -82,7 +82,7 @@ public final class OperationsModelManager implements OperationsModel {
         case "jpeg":
           ImageUtil.exportJPEG(img,path);
         case "jpg":
-          ImageUtil.exportJPG(img, path);
+          ImageUtil.exportImage(img, path);
           break;
         case "png":
           ImageUtil.exportPNG(img, path);
