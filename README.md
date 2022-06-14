@@ -143,7 +143,7 @@ and more to come!
 
 _Disclaimer: This photo was taken by Nathaniel Sawant and is authorized for use in this project._
 
-#### General Commands
+#### **General Commands**
 
 #### Load
 ##### Loads an image from _filepath_ into memory, which can be accessed with _name_.
@@ -163,7 +163,12 @@ _Disclaimer: This photo was taken by Nathaniel Sawant and is authorized for use 
 
 ![igm-copy](https://user-images.githubusercontent.com/74106957/172696750-3896fffb-df8e-42a7-a8da-9114166c8fad.jpg)
 
-#### Image Transforms
+#### Quitting the program
+#### Terminates the program. Any unsaved work will be lost. Cannot be done whilst in the middle of inputting a command.
+
+`q` or `quit`
+
+#### **Image Transforms**
 
 #### Vertical Flip
 #### Flips the image _name_ vertically and stores it as _destName_.
@@ -183,7 +188,7 @@ _Disclaimer: This photo was taken by Nathaniel Sawant and is authorized for use 
 
 ![igm-horizontal](https://user-images.githubusercontent.com/74106957/172696916-77377dca-8712-4dc1-ba05-262d996419d4.jpg)
 
-#### Color Filters
+#### **Color Filters**
 
 #### Brighten
 #### Brightens (or darkens if negative) the image _name_ by an _increment_ and stores it as _destName_.
@@ -305,7 +310,7 @@ Value Grayscale Filter (3x3)
 
 ![igmvalue](https://user-images.githubusercontent.com/74106957/172697654-7c771bf8-864c-4556-a798-6cda2294bca1.jpg)
 
-#### Image Filters
+#### **Image Filters**
 
 #### Box Blur
 #### Blurs all the adjacent pixels of the image _name_ in a square method and stores it as _destName_.
@@ -385,9 +390,4 @@ Ridge Detection Kernel (3x3)
 
 > `ridge-detection igm igm-ridge`
 
-![igmridge](https://user-images.githubusercontent.com/74106957/172895394-b63f6578-dcbe-414d-91a5-79fc8267f87f.jpg)
-
-#### Quitting the program
-#### Terminates the program. Any unsaved work will be lost. Cannot be done whilst in the middle of inputting a command.
-
-`q` or `quit`
+![igmridge](https://user-images.githubusercontent.com/74106957/172895394-b63f6578-dcbe-414d-91a5-79fc8267f87f.jpg
