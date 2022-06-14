@@ -450,4 +450,4 @@ Ridge Detection Kernel (3x3)
 
 > `ridge-detection igm igm-ridge`
 
-![igmridge](https://user-images.githubusercontent.com/74106957/172895394-b63f6578-dcbe-414d-91a5-79fc8267f87f.jpg
+![igmridge](https://user-images.githubusercontent.com/74106957/172895394-b63f6578-dcbe-414d-91a5-79fc8267f87f.jpg)
