@@ -120,20 +120,24 @@ This project is a basic image processing program. At the moment, it is only text
 
 ### Valid Commands
 
-1. [Load](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#load)
-2. [Save](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#save)
-3. [Vertical Flip](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#vertical-flip)
-4. [Horizontal Flip](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#horizontal-flip)
-5. [Brighten](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#brighten)
-6. [Invert Colors](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#invert-colors)
-7. [Sepia Tone](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#sepia-tone)
-8. [Value Component](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#value-component)
-9. [Box Blur](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#box-blur)
-10. [Gaussian Blur](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#gaussian-blur)
-11. [Emboss](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#emboss)
-12. [Sharpen](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#sharpen)
-13. [Ridge Detection](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#ridge-detection)
-14. [Quit](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#quitting-the-program)
+1. General Commands
+   - [Load](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#load)
+   - [Save](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#save)
+   - [Quit](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#quitting-the-program)
+2. Image Transforms
+   - [Vertical Flip](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#vertical-flip)
+   - [Horizontal Flip](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#horizontal-flip)
+3. Color Filters
+   - [Brighten](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#brighten)
+   - [Invert Colors](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#invert-colors)
+   - [Sepia Tone](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#sepia-tone)
+   - [Value Component](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#value-component)
+4. Image Filters
+   - [Box Blur](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#box-blur)
+   - [Gaussian Blur](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#gaussian-blur)
+   - [Emboss](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#emboss)
+   - [Sharpen](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#sharpen)
+   - [Ridge Detection](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#ridge-detection)
 
 and more to come!
 
