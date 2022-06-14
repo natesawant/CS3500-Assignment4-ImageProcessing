@@ -125,17 +125,20 @@ This project is a basic image processing program. At the moment, it is only text
    - [Save](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#save)
    - [Quit](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#quitting-the-program)
 2. Image Transforms
-   - [Vertical Flip](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#vertical-flip)
    - [Horizontal Flip](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#horizontal-flip)
+   - [Vertical Flip](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#vertical-flip)
 3. Color Filters
+   - [Adjust Blue](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#adjust-blue)
+   - [Adjust Green](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#adjust-green)
+   - [Adjust Red](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#adjust-red)
    - [Brighten](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#brighten)
    - [Invert Colors](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#invert-colors)
    - [Sepia Tone](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#sepia-tone)
    - [Value Component](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#value-component)
 4. Image Filters
    - [Box Blur](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#box-blur)
-   - [Gaussian Blur](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#gaussian-blur)
    - [Emboss](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#emboss)
+   - [Gaussian Blur](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#gaussian-blur)
    - [Sharpen](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#sharpen)
    - [Ridge Detection](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#ridge-detection)
 
@@ -189,6 +192,63 @@ _Disclaimer: This photo was taken by Nathaniel Sawant and is authorized for use 
 ![igm-horizontal](https://user-images.githubusercontent.com/74106957/172696916-77377dca-8712-4dc1-ba05-262d996419d4.jpg)
 
 #### **Color Filters**
+
+#### Adjust Blue
+#### Increase (or decreases if negative) the blue channel of the image _name_ by an _increment_ and stores it as _destName_.
+`adjust-blue increment name destName`
+
+Adjust Blue Filter (3x1)
+| 0	|
+|----	|
+| 0	|
+| i	|
+
+###### Examples:
+> `adjust-blue 100 igm igm-more-blue`
+
+![igm-more-blue](https://user-images.githubusercontent.com/74106957/173624563-543c8937-7d39-45f6-9cfd-40302bab3a84.jpg)
+
+> `adjust-blue -100 igm igm-less-blue`
+
+![igm-less-blue](https://user-images.githubusercontent.com/74106957/173624621-5ee5cec6-828b-4f7d-b8fa-6701f1b6d440.jpg)
+
+#### Adjust Green
+#### Increase (or decreases if negative) the green channel of the image _name_ by an _increment_ and stores it as _destName_.
+`adjust-green increment name destName`
+
+Adjust Green Filter (3x1)
+| 0	|
+|----	|
+| i	|
+| 0	|
+
+###### Examples:
+> `adjust-green 100 igm igm-more-green`
+
+![igm-more-green](https://user-images.githubusercontent.com/74106957/173624997-3236bfae-de72-4c25-963b-8d7308de4f3b.jpg)
+
+> `adjust-green -100 igm igm-less-green`
+
+![igm-less-green](https://user-images.githubusercontent.com/74106957/173624973-d692817b-69ec-4872-a0cf-26783655c04d.jpg)
+
+#### Adjust Red
+#### Increase (or decreases if negative) the red channel of the image _name_ by an _increment_ and stores it as _destName_.
+`adjust-red increment name destName`
+
+Adjust Red Filter (3x1)
+| i	|
+|----	|
+| 0	|
+| 0	|
+
+###### Examples:
+> `adjust-red 100 igm igm-more-red`
+
+![igm-more-red](https://user-images.githubusercontent.com/74106957/173625098-be10e458-7a72-4f94-a15c-495e7451262e.jpg)
+
+> `adjust-red -100 igm igm-less-red`
+
+![igm-less-red](https://user-images.githubusercontent.com/74106957/173625114-eac5c6e7-0201-4c4b-8adf-3479795edab6.jpg)
 
 #### Brighten
 #### Brightens (or darkens if negative) the image _name_ by an _increment_ and stores it as _destName_.
