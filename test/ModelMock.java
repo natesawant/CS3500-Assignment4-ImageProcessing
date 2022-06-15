@@ -87,9 +87,7 @@ public class ModelMock implements OperationsModel {
 
   @Override
   public void applyMultiplyFilter(Function<Color, double[][]> filterFunc, String name, String destName) throws IllegalArgumentException {
-    this.log.append("Attempt to apply filter of size ")
-            .append("3").append(" by ").append("3")
-            .append("\nTo image: ").append(name).append("\nTo output: ").append(destName);
+    this.log.append("Attempt to apply multiplication filter from ").append(name).append(" to ").append(destName);
   }
 
   @Override
