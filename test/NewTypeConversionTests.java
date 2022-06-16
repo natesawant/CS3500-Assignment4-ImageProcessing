@@ -19,6 +19,7 @@ public class NewTypeConversionTests {
   To test:
   exportPNG
   exportJPEG
+  exportBmp
   convertPNGJPEG
    */
 

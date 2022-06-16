@@ -8,6 +8,9 @@ import java.util.function.Function;
 
 import model.OperationsModel;
 import model.OperationsModelManager;
+import processes.AdjustBlue;
+import processes.AdjustGreen;
+import processes.AdjustRed;
 import processes.BoxBlur;
 import processes.Brighten;
 import processes.Emboss;
@@ -76,6 +79,9 @@ public final class ImageProcessingControllerImplementation implements ImageProce
     validCommands.put("sharpen", s -> new Sharpen(s.next(), s.next()));
     validCommands.put("sepia-tone", s -> new SepiaTone(s.next(), s.next()));
     validCommands.put("invert", s -> new InvertColors(s.next(), s.next()));
+    validCommands.put("adjust-red", s -> new AdjustRed(s.nextInt(), s.next(), s.next()));
+    validCommands.put("adjust-blue", s -> new AdjustBlue(s.nextInt(), s.next(), s.next()));
+    validCommands.put("adjust-green", s -> new AdjustGreen(s.nextInt(), s.next(), s.next()));
   }
 
   /**

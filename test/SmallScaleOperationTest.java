@@ -1,13 +1,17 @@
+import controller.ImageProcessingController;
+import controller.ImageProcessingControllerImplementation;
 import model.Image;
 import model.OperationsModel;
 import model.OperationsModelManager;
 import model.RGBImage;
 import util.ImageUtil;
+import view.ImageProcessingTextView;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import java.awt.Color;
+import java.io.StringReader;
 import java.util.Random;
 
 import static org.junit.Assert.assertEquals;
@@ -391,6 +395,140 @@ public class SmallScaleOperationTest {
             {new Color(255, 255, 255), new Color(0, 0, 0), new Color(255, 255, 255)}}, 255);
 
     assertEquals(expected, actual);
+  }
+
+
+  // new tests for part 2
+
+  /*
+  need:
+  sepia
+  adjustBlue
+  adjustGreen
+  adjustRed
+  valueGrayScale
+  sharpen
+   */
+
+  @Test
+  public void testSepia() {
+
+    ImageProcessingController c = new ImageProcessingControllerImplementation(
+            "images",
+            new ImageProcessingTextView(m),
+            m,
+            new StringReader("load test2x2.ppm test\n"
+                    + "sepia-tone test sepia-test\nsave sepia-test.ppm sepia-test\nq"));
+
+    c.initializeProgram();
+    actual = ImageUtil.convertPPM("images/sepia-test.ppm");
+
+     assertEquals(new Color(255, 255, 255), actual.getPixel(1, 1));
+     assertEquals(new Color(44, 38, 30), actual.getPixel(0, 0));
+  }
+
+  @Test
+  public void testAdjustBlue() {
+    m.load("images/test1x1Black.ppm", "test");
+
+    // adjusts blue by value of 100 using same kernel that adjustBlue class does
+    m.applyAdditionFilter(c->new double[]{0, 0, c.getBlue() + 100}, "test", "blue-test");
+    m.save("images/blue-test.ppm", "blue-test");
+
+    actual = ImageUtil.convertPPM("images/blue-test.ppm");
+
+    // should just be one pixel of (0, 0, 100)
+    expected = new RGBImage(new Color[][]{{new Color(0, 0, 100)}}, 255);
+
+    assertEquals(expected, actual);
+  }
+
+  @Test
+  public void testAdjustRed() {
+    m.load("images/test1x1Black.ppm", "test");
+
+    // adjusts blue by value of 100 using same kernel that adjustBlue class does
+    m.applyAdditionFilter(c->new double[]{c.getRed() + 100, 0, 0}, "test", "red-test");
+    m.save("images/red-test.ppm", "red-test");
+
+    actual = ImageUtil.convertPPM("images/red-test.ppm");
+
+    // should just be one pixel of (0, 0, 100)
+    expected = new RGBImage(new Color[][]{{new Color(100, 0, 0)}}, 255);
+
+    assertEquals(expected, actual);
+
+  }
+
+  @Test
+  public void testAdjustGreen() {
+    m.load("images/test1x1Black.ppm", "test");
+
+    // adjusts blue by value of 100 using same kernel that adjustBlue class does
+    m.applyAdditionFilter(c->new double[]{0, c.getGreen() + 100, 0}, "test", "green-test");
+    m.save("images/green-test.ppm", "green-test");
+
+    actual = ImageUtil.convertPPM("images/green-test.ppm");
+
+    // should just be one pixel of (0, 0, 100)
+    expected = new RGBImage(new Color[][]{{new Color(0, 100, 0)}}, 255);
+
+    assertEquals(expected, actual);
+
+  }
+
+  @Test
+  public void testGreyScale() {
+
+    ImageProcessingController c = new ImageProcessingControllerImplementation(
+            "images",
+            new ImageProcessingTextView(m),
+            m,
+            new StringReader("load test2x2.ppm test\n"
+                    + "value-component value test test-greyscale\n"
+                    + "save test-greyscale.ppm test-greyscale\nq"));
+    c.initializeProgram();
+    actual = ImageUtil.convertPPM("images/test-greyscale.ppm");
+
+    // since the image is already greyscale, actual should == expected
+
+    assertEquals(ImageUtil.convertPPM("test2x2.ppm"), actual);
+
+  }
+
+  @Test
+  public void testGreyScaleNotGrey() {
+
+    ImageProcessingController c = new ImageProcessingControllerImplementation(
+            "images",
+            new ImageProcessingTextView(m),
+            m,
+            new StringReader("load test-red.ppm test\n"
+                    + "value-component value test test-greyscale\n"
+                    + "save test-greyscale.ppm test-greyscale\nq"));
+    c.initializeProgram();
+    actual = ImageUtil.convertPPM("images/test-greyscale.ppm");
+    expected = new RGBImage(new Color[][]{{new Color(255, 255, 255)}}, 255);
+    assertEquals(expected, actual);
+
+  }
+
+  @Test
+  public void testSharpen() {
+    ImageProcessingController c = new ImageProcessingControllerImplementation(
+            "images",
+            new ImageProcessingTextView(m),
+            m,
+            new StringReader("load test2x2.ppm test"
+                    + "\nsharpen test test-sharpen\nsave test-sharpen.ppm test-sharpen\nq")
+    );
+    c.initializeProgram();
+    actual = ImageUtil.convertPPM("images/test-sharpen.ppm");
+
+    assertEquals(new Color(0, 0, 0), actual.getPixel(0, 0));
+    assertEquals(new Color(255, 255, 255), actual.getPixel(1, 0));
+    assertEquals(new Color(255, 255, 255), actual.getPixel(1, 1));
+    assertEquals(new Color(0, 0, 0), actual.getPixel(0, 1));
   }
 
 }
