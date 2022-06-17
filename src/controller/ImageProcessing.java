@@ -38,6 +38,14 @@ public class ImageProcessing {
       } catch (FileNotFoundException e) {
         throw new IllegalArgumentException("File not found");
       }
+    } else if (args.length == 3) {
+      directory = args[0];
+      String location = args[1];
+      try {
+        readable = new FileReader(location);
+      } catch (FileNotFoundException e) {
+        throw new IllegalArgumentException("File not found");
+      }
     } else {
       directory = "";
     }

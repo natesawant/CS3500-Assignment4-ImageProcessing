@@ -19,6 +19,10 @@
 
 This project is a basic image processing program. At the moment, it is only text-based, with a GUI based program planned for a later date. Currently, the program is able to work with P3 .ppm, .bmp, .jpeg, .jpg, and .png files. The program is capable of loading and saving the files as these format. The program can perform basic image manipulations, such as flipping the image, and applying kernels (sharpen, blur, etc.) and filters (greyscale, sepia tone, etc). 
 
+## Updates in Part 2
+
+We did not make any design changes in this assignment besides adding two new ways of manipulating images via filters.
+
 ## Design
 
 ### Class diagram
