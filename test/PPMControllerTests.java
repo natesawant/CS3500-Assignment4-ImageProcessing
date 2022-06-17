@@ -226,28 +226,5 @@ public class PPMControllerTests {
     assertEquals("To output: gaussian", output[2]);
   }
 
-  @Test
-  public void multiplyFilterSendsCorrectArguments() {
-    // green grayscale utilizes multiply filter
-    ImageProcessingController c
-            = new ImageProcessingControllerImplementation("image",
-            mockView, mockModel, new StringReader("value-component green images/testPicture greenMultiply\nq"));
-    c.initializeProgram();
-
-    String[] output = mockLog.toString().split("\n");
-    assertEquals("Attempt to get component: green", output[0]);
-  }
-
-  @Test
-  public void additionFilterSendsCorrectArguments() {
-    // adjust red utilizes addition filter
-    ImageProcessingController c
-            = new ImageProcessingControllerImplementation("image",
-            mockView, mockModel, new StringReader("more-red 20 images/testPicture redIncreased\nq"));
-    c.initializeProgram();
-
-    String[] output = mockLog.toString().split("\n");
-    assertEquals("Attempt to apply addition filter from images/testPicture to redIncreased", output[0]);
-  }
 
 }
