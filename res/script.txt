@@ -1,0 +1,34 @@
+load igm.ppm test
+vertical-flip test test-process
+save test-vflip.jpg test-process
+horizontal-flip test test-process
+save test-hflip.jpg test-process
+brighten 100 test test-process
+save test-bright.jpg test-process
+brighten -100 test test-process
+save test-dark.jpg test-process
+adjust-blue 100 test test-process
+save test-moreblue.jpg test-process
+adjust-green 100 test test-process 
+save test-moregreen.jpg test-process
+adjust-red 100 test test-process
+save test-morered.jpg test-process
+value-component value test test-process
+save test-valuegreyscale.jpg test-process
+sepia-tone test test-process
+save test-sepia.jpg test-process
+gaussian-blur test test-process
+save test-blur.jpg test-process
+sharpen test test-process
+save test-sharpen.jpg test-process
+value-component red test test-process
+save test-redgreyscale.jpg test-process
+value-component blue test test-process
+save test-bluegreyscale.jpg test-process
+value-component green test test-process
+save test-greengreyscale.jpg test-process
+value-component luma test test-process
+save test-lumagreyscale.jpg test-process
+value-component intensity test test-process
+save test-intensitygreyscale.jpg test-process
+q

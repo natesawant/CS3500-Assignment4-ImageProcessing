@@ -1,5 +1,7 @@
 package controller;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.InputStreamReader;
 
 import model.OperationsModelManager;
@@ -26,8 +28,16 @@ public class ImageProcessing {
     appendable = System.out;
     view = new ImageProcessingTextView(new OperationsModelManager(), appendable);
 
-    if (args.length > 0) {
+    if (args.length == 1) {
       directory = args[0];
+    } else if ((args.length == 2) && (args[0].equals("-file"))) {
+      directory = "../res/";
+      String location = args[1];
+      try {
+        readable = new FileReader(location);
+      } catch (FileNotFoundException e) {
+        throw new IllegalArgumentException("File not found");
+      }
     } else {
       directory = "";
     }
