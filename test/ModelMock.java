@@ -1,4 +1,4 @@
-import java.awt.*;
+import java.awt.Color;
 import java.util.function.Function;
 
 import model.OperationsModel;
@@ -59,24 +59,6 @@ public class ModelMock implements OperationsModel {
             .append("\nTo output: ").append(destName);
   }
 
-  public void boxBlur(int radius, String name, String destName) throws IllegalArgumentException {
-    this.log.append("Attempt to apply box blur of radius: ").append(radius)
-            .append("\nTo image: ").append(name)
-            .append("\nTo output: ").append(destName);
-  }
-
-  public void sharpen(String name, String destName) throws IllegalArgumentException {
-    this.log.append("Attempt to apply sharpen.")
-            .append("\nTo image: ").append(name)
-            .append("\nTo output: ").append(destName);
-  }
-
-  public void ridgeDetection(String name, String destName) throws IllegalArgumentException {
-    this.log.append("Attempt to apply ridge-detection.")
-            .append("\nTo image: ").append(name)
-            .append("\nTo output: ").append(destName);
-  }
-
   @Override
   public void applyKernel(double[][] kernel, String name, String destName)
           throws IllegalArgumentException {
@@ -86,12 +68,16 @@ public class ModelMock implements OperationsModel {
   }
 
   @Override
-  public void applyMultiplyFilter(Function<Color, double[][]> filterFunc, String name, String destName) throws IllegalArgumentException {
-    this.log.append("Attempt to apply multiplication filter from ").append(name).append(" to ").append(destName);
+  public void applyMultiplyFilter(Function<Color, double[][]> filterFunc,
+                                  String name, String destName) throws IllegalArgumentException {
+    this.log.append("Attempt to apply multiplication filter from ")
+            .append(name).append(" to ").append(destName);
   }
 
   @Override
-  public void applyAdditionFilter(Function<Color, double[]> filterFunc, String name, String destName) throws IllegalArgumentException {
-    this.log.append("Attempt to apply addition filter from ").append(name).append(" to ").append(destName);
+  public void applyAdditionFilter(Function<Color, double[]> filterFunc,
+                                  String name, String destName) throws IllegalArgumentException {
+    this.log.append("Attempt to apply addition filter from ")
+            .append(name).append(" to ").append(destName);
   }
 }

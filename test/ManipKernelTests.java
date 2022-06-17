@@ -1,7 +1,7 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import java.awt.*;
+import java.awt.Color;
 
 import model.Image;
 import model.OperationsModel;
@@ -43,7 +43,8 @@ public class ManipKernelTests {
   @Test
   public void testApplyMultiplyFilterPPM() {
     m.load("images/test2x2.ppm", "test");
-    m.applyMultiplyFilter((color -> (new double[][]{{1.0, 0.0, 0.0}, {0,0,0}, {0,0,0}})), "test", "test-mult");
+    m.applyMultiplyFilter((color ->
+        (new double[][]{{1.0, 0.0, 0.0}, {0,0,0}, {0,0,0}})), "test", "test-mult");
     m.save("images/test-mult.ppm", "test-mult");
 
     // not really "actual" , just original to show how color values relate

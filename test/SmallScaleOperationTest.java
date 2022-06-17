@@ -434,8 +434,8 @@ public class SmallScaleOperationTest {
     c.initializeProgram();
     actual = ImageUtil.convertPPM("images/sepia-test.ppm");
 
-     assertEquals(new Color(255, 255, 255), actual.getPixel(1, 1));
-     assertEquals(new Color(44, 38, 30), actual.getPixel(0, 0));
+    assertEquals(new Color(255, 255, 255), actual.getPixel(1, 1));
+    assertEquals(new Color(44, 38, 30), actual.getPixel(0, 0));
   }
 
   @Test
@@ -443,7 +443,7 @@ public class SmallScaleOperationTest {
     m.load("images/test1x1Black.ppm", "test");
 
     // adjusts blue by value of 100 using same kernel that adjustBlue class does
-    m.applyAdditionFilter(c->new double[]{0, 0, c.getBlue() + 100}, "test", "blue-test");
+    m.applyAdditionFilter(c -> new double[]{0, 0, c.getBlue() + 100}, "test", "blue-test");
     m.save("images/blue-test.ppm", "blue-test");
 
     actual = ImageUtil.convertPPM("images/blue-test.ppm");
@@ -459,7 +459,7 @@ public class SmallScaleOperationTest {
     m.load("images/test1x1Black.ppm", "test");
 
     // adjusts blue by value of 100 using same kernel that adjustBlue class does
-    m.applyAdditionFilter(c->new double[]{c.getRed() + 100, 0, 0}, "test", "red-test");
+    m.applyAdditionFilter(c -> new double[]{c.getRed() + 100, 0, 0}, "test", "red-test");
     m.save("images/red-test.ppm", "red-test");
 
     actual = ImageUtil.convertPPM("images/red-test.ppm");
@@ -476,7 +476,7 @@ public class SmallScaleOperationTest {
     m.load("images/test1x1Black.ppm", "test");
 
     // adjusts blue by value of 100 using same kernel that adjustBlue class does
-    m.applyAdditionFilter(c->new double[]{0, c.getGreen() + 100, 0}, "test", "green-test");
+    m.applyAdditionFilter(c -> new double[]{0, c.getGreen() + 100, 0}, "test", "green-test");
     m.save("images/green-test.ppm", "green-test");
 
     actual = ImageUtil.convertPPM("images/green-test.ppm");
