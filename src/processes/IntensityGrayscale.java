@@ -2,6 +2,9 @@ package processes;
 
 import java.awt.Color;
 
+/**
+ * Applies a greyscale filter based off of the intensity values of each pixel.
+ */
 public class IntensityGrayscale extends ApplyMultiplyFilter {
 
   /**

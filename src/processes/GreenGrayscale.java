@@ -2,6 +2,9 @@ package processes;
 
 import java.awt.Color;
 
+/**
+ * Applies a greyscale filter based off of the green values of each pixel.
+ */
 public class GreenGrayscale extends ApplyMultiplyFilter {
 
   /**

@@ -82,7 +82,7 @@ public class ImageUtil {
    * Exports an image object to a given filetype.
    * @param img the desired image to export.
    * @param path the desired path of the image relative to this program's directory.
-   * @throws IOException
+   * @throws IOException if the file is unable to be written to.
    */
   public static void exportImage(Image img, String path) throws IOException {
     String[] seperatedPath = path.split("\\.");

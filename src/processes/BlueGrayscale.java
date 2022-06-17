@@ -3,7 +3,7 @@ package processes;
 import java.awt.Color;
 
 /**
- * A filter that isolates the blue channel to make the image grayscale
+ * A filter that isolates the blue channel to make the image grayscale.
  */
 public class BlueGrayscale extends ApplyMultiplyFilter {
 
