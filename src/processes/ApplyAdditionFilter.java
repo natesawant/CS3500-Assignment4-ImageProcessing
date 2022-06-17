@@ -1,6 +1,6 @@
 package processes;
 
-import java.awt.*;
+import java.awt.Color;
 
 import model.OperationsModel;
 

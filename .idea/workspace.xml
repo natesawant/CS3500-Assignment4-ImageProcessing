@@ -4,8 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="tests">
+    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="added required image files for tests">
+      <change afterPath="$PROJECT_DIR$/images/test2x2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ApplyAllProcesses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ApplyAllProcesses.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/OperationsModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OperationsModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/OperationsModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OperationsModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/AdjustBlue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/AdjustBlue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/AdjustGreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/AdjustGreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/AdjustRed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/AdjustRed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/ApplyAdditionFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/ApplyAdditionFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/ApplyMultiplyFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/ApplyMultiplyFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/BlueGrayscale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/BlueGrayscale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/Brighten.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/Brighten.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/GreenGrayscale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/GreenGrayscale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/IntensityGrayscale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/IntensityGrayscale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/InvertColors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/InvertColors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/LumaGrayscale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/LumaGrayscale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/RedGrayscale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/RedGrayscale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/SepiaTone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/SepiaTone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/ValueComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/ValueComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/ValueGrayscale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/ValueGrayscale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/ImageUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/ManipKernelTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ManipKernelTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/ModelMock.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ModelMock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/NewTypeConversionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/NewTypeConversionTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/SmallScaleOperationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/SmallScaleOperationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +78,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SmallScaleOperationTest.testSharpen">
+  <component name="RunManager" selected="JUnit.SmallScaleOperationTest.testLoadPNGSavePPM">
     <configuration name="controller.ImageProcessing" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="controller.ImageProcessing" />
       <module name="Assignment4-ImageProcessing" />
@@ -79,16 +103,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SmallScaleOperationTest.testAdjustRed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Assignment4-ImageProcessing" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SmallScaleOperationTest" />
-      <option name="METHOD_NAME" value="testAdjustRed" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SmallScaleOperationTest.testGreyScale" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment4-ImageProcessing" />
       <option name="PACKAGE_NAME" value="" />
@@ -104,6 +118,16 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SmallScaleOperationTest" />
       <option name="METHOD_NAME" value="testGreyScaleNotGrey" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SmallScaleOperationTest.testLoadPNGSavePPM" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assignment4-ImageProcessing" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SmallScaleOperationTest" />
+      <option name="METHOD_NAME" value="testLoadPNGSavePPM" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -133,18 +157,18 @@
       <item itemvalue="Application.controller.ImageProcessing" />
       <item itemvalue="JUnit.TestFolder" />
       <item itemvalue="JUnit.SmallScaleOperationTest.testGreyScale" />
-      <item itemvalue="JUnit.SmallScaleOperationTest.testAdjustRed" />
       <item itemvalue="JUnit.SmallScaleOperationTest.testAdjustGreen" />
       <item itemvalue="JUnit.SmallScaleOperationTest.testGreyScaleNotGrey" />
       <item itemvalue="JUnit.SmallScaleOperationTest.testSharpen" />
+      <item itemvalue="JUnit.SmallScaleOperationTest.testLoadPNGSavePPM" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SmallScaleOperationTest.testLoadPNGSavePPM" />
         <item itemvalue="JUnit.SmallScaleOperationTest.testSharpen" />
         <item itemvalue="JUnit.SmallScaleOperationTest.testGreyScaleNotGrey" />
         <item itemvalue="JUnit.SmallScaleOperationTest.testGreyScale" />
         <item itemvalue="JUnit.SmallScaleOperationTest.testAdjustGreen" />
-        <item itemvalue="JUnit.SmallScaleOperationTest.testAdjustRed" />
       </list>
     </recent_temporary>
   </component>
@@ -170,7 +194,7 @@
       <workItem from="1655321021428" duration="4940000" />
       <workItem from="1655388617375" duration="4274000" />
       <workItem from="1655408946979" duration="227000" />
-      <workItem from="1655477191718" duration="282000" />
+      <workItem from="1655477191718" duration="1998000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1654458999042</created>
@@ -333,7 +357,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655477222202</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="added required image files for tests">
+      <created>1655477705928</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1655477705928</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,6 +402,7 @@
     <MESSAGE value="new imageUtil tests for jpg jpeg and png" />
     <MESSAGE value="more tests for applyFilter stuff" />
     <MESSAGE value="tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="tests" />
+    <MESSAGE value="added required image files for tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="added required image files for tests" />
   </component>
 </project>

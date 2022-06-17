@@ -1,6 +1,6 @@
 package processes;
 
-import java.awt.*;
+import java.awt.Color;
 
 /**
  * This class represents the brighten effect on an image.
@@ -24,8 +24,7 @@ public class AdjustGreen extends ApplyAdditionFilter {
 
   @Override
   public double[] initFilter(Color rgb) {
-    double[] filter = new double[]
-                    {0, increment, 0};
+    double[] filter = new double[]{0, increment, 0};
 
     return filter;
   }

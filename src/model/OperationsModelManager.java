@@ -25,9 +25,6 @@ public final class OperationsModelManager implements OperationsModel {
   private Image img;
   private int width;
   private int height;
-  private int r;
-  private int g;
-  private int b;
   private int max;
   private Color[][] pixels;
   private Color newColor;
@@ -81,6 +78,7 @@ public final class OperationsModelManager implements OperationsModel {
           break;
         case "jpeg":
           ImageUtil.exportJPEG(img,path);
+          break;
         case "jpg":
           ImageUtil.exportImage(img, path);
           break;
@@ -231,9 +229,9 @@ public final class OperationsModelManager implements OperationsModel {
           }
         }
 
-        r = 0;
-        g = 0;
-        b = 0;
+        int r = 0;
+        int g = 0;
+        int b = 0;
 
         for (int i = 0; i < sample.length; i++) {
           for (int j = 0; j < sample[0].length; j++) {
@@ -258,8 +256,8 @@ public final class OperationsModelManager implements OperationsModel {
   }
 
   @Override
-  public void applyMultiplyFilter(Function<Color, double[][]> filterFunc, String name, String destName)
-          throws IllegalArgumentException {
+  public void applyMultiplyFilter(Function<Color,
+          double[][]> filterFunc, String name, String destName) throws IllegalArgumentException {
     if (!loaded.containsKey(name)) {
       throw new IllegalArgumentException("Image not loaded.");
     }
@@ -318,7 +316,7 @@ public final class OperationsModelManager implements OperationsModel {
         int[] newRGB = new int[3];
 
         for (int c = 0; c < filter.length; c++) {
-            newRGB[c] += (rgb[c] + filter[c]);
+          newRGB[c] += (rgb[c] + filter[c]);
           newRGB[c] = Math.max(Math.min(newRGB[c], maxValue),0);
         }
 

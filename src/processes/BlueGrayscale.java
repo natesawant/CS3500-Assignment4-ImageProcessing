@@ -1,6 +1,6 @@
 package processes;
 
-import java.awt.*;
+import java.awt.Color;
 
 /**
  * A filter that isolates the blue channel to make the image grayscale
@@ -20,9 +20,9 @@ public class BlueGrayscale extends ApplyMultiplyFilter {
   @Override
   public double[][] initFilter(Color rgb) {
     double[][] filter = new double[][]
-            {{0.0, 0.0, 1.0},
-                    {0.0, 0.0, 1.0},
-                    {0.0, 0.0, 1.0}};
+        {{0.0, 0.0, 1.0},
+                {0.0, 0.0, 1.0},
+                {0.0, 0.0, 1.0}};
 
     return filter;
   }

@@ -1,7 +1,10 @@
 package processes;
 
-import java.awt.*;
+import java.awt.Color;
 
+/**
+ * Applies a greyscale filter to a given image based on the maximum color value of each pixel.
+ */
 public class ValueGrayscale extends ApplyAdditionFilter {
 
   /**

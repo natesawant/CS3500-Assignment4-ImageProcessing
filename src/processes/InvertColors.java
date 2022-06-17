@@ -1,6 +1,6 @@
 package processes;
 
-import java.awt.*;
+import java.awt.Color;
 
 /**
  * Inverts the colors of an image. Inverts by subtracting from the max value.

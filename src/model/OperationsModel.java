@@ -1,6 +1,6 @@
 package model;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.function.Function;
 
 /**
@@ -81,7 +81,8 @@ public interface OperationsModel {
    * @param destName the new name of the processed image.
    * @throws IllegalArgumentException if name of the image or filter (not 3x3) is not valid.
    */
-  void applyMultiplyFilter(Function<Color, double[][]> filterFunc, String name, String destName) throws IllegalArgumentException;
+  void applyMultiplyFilter(Function<Color, double[][]> filterFunc, String name, String destName)
+          throws IllegalArgumentException;
 
   /**
    * Applies the given filter to the pixels of the image.
@@ -90,5 +91,6 @@ public interface OperationsModel {
    * @param destName the new name of the processed image.
    * @throws IllegalArgumentException if name of the image or filter (not 3x3) is not valid.
    */
-  void applyAdditionFilter(Function<Color, double[]> filterFunc, String name, String destName) throws IllegalArgumentException;
+  void applyAdditionFilter(Function<Color, double[]> filterFunc, String name, String destName)
+          throws IllegalArgumentException;
 }

@@ -26,7 +26,6 @@ import processes.RidgeDetection;
 import processes.SaveFile;
 import processes.SepiaTone;
 import processes.Sharpen;
-import processes.ValueComponent;
 import processes.ValueGrayscale;
 import processes.VerticalFlip;
 
@@ -135,7 +134,8 @@ public class ApplyAllProcesses {
       time = System.currentTimeMillis();
       processes.get(processKey).apply("copy").start(m);
       processes.get("save").apply(processKey).start(m);
-      System.out.println("Completed and saved process '" + processKey + "' at " + dir + "/" + name + "-" + processKey + "." + exportExt);
+      System.out.println("Completed and saved process '"
+              + processKey + "' at " + dir + "/" + name + "-" + processKey + "." + exportExt);
       System.out.println("Time to process: " + (System.currentTimeMillis() - time) + " ms.");
       System.out.println();
     }

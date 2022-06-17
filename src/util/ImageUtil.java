@@ -1,6 +1,6 @@
 package util;
 
-import java.awt.*;
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.awt.image.WritableRaster;
 import java.io.File;
@@ -22,12 +22,20 @@ import model.RGBImage;
  * Feel free to change this method as required.
  */
 public class ImageUtil {
+
+  /**
+   * Exports an Image object to a .ppm file format.
+   * @param img the desired image to convert
+   * @param path the desired path of the new image relative to this program's directory
+   */
   public static void exportPPM(Image img, String path) {
     Writer output;
     int width = img.getWidth();
     int height = img.getHeight();
     int max = img.getMaxValue();
-    int r, g, b;
+    int r;
+    int g;
+    int b;
 
     try {
       output = new FileWriter(path);
@@ -70,6 +78,12 @@ public class ImageUtil {
     exportImage(img,path);
   }
 
+  /**
+   * Exports an image object to a given filetype.
+   * @param img the desired image to export.
+   * @param path the desired path of the image relative to this program's directory.
+   * @throws IOException
+   */
   public static void exportImage(Image img, String path) throws IOException {
     String[] seperatedPath = path.split("\\.");
     String ext = seperatedPath[seperatedPath.length - 1];
@@ -90,6 +104,12 @@ public class ImageUtil {
     ImageIO.write(bufferedImage, ext, new File(path));
   }
 
+  /**
+   * Converts a PNG or JPEG (JPG) image file to an Image object.
+   * @param filename the name of the desired file.
+   * @return The Image object equivalent of the provided file.
+   * @throws IllegalArgumentException if there is an error reading the image file.
+   */
   public static Image convertPNGJPEG(String filename) throws IllegalArgumentException {
     Image img;
     Color[][] pixels;

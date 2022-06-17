@@ -1,6 +1,6 @@
 package processes;
 
-import java.awt.*;
+import java.awt.Color;
 
 public class GreenGrayscale extends ApplyMultiplyFilter {
 
@@ -17,9 +17,9 @@ public class GreenGrayscale extends ApplyMultiplyFilter {
   @Override
   public double[][] initFilter(Color rgb) {
     double[][] filter = new double[][]
-            {{0.0, 1.0, 0.0},
-                    {0.0, 1.0, 0.0},
-                    {0.0, 1.0, 0.0}};
+        {{0.0, 1.0, 0.0},
+                {0.0, 1.0, 0.0},
+                {0.0, 1.0, 0.0}};
 
     return filter;
   }

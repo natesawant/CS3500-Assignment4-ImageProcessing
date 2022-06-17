@@ -1,7 +1,10 @@
 package processes;
 
-import java.awt.*;
+import java.awt.Color;
 
+/**
+ * Applies a greyscale filter to a given image based off of the red values of each pixel.
+ */
 public class RedGrayscale extends ApplyMultiplyFilter {
 
   /**
@@ -17,9 +20,9 @@ public class RedGrayscale extends ApplyMultiplyFilter {
   @Override
   public double[][] initFilter(Color rgb) {
     double[][] filter = new double[][]
-            {{1.0, 0.0, 0.0},
-                    {1.0, 0.0, 0.0},
-                    {1.0, 0.0, 0.0}};
+        {{1.0, 0.0, 0.0},
+                {1.0, 0.0, 0.0},
+                {1.0, 0.0, 0.0}};
 
     return filter;
   }

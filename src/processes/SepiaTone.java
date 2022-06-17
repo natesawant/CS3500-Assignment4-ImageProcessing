@@ -1,7 +1,10 @@
 package processes;
 
-import java.awt.*;
+import java.awt.Color;
 
+/**
+ * Applies a sepia filter to a given image.
+ */
 public class SepiaTone extends ApplyMultiplyFilter {
 
   /**
@@ -17,9 +20,9 @@ public class SepiaTone extends ApplyMultiplyFilter {
   @Override
   public double[][] initFilter(Color rgb) {
     double[][] filter = new double[][]
-            {{0.393, 0.769, 0.189},
-                    {0.349, 0.686, 0.168},
-                    {0.272, 0.534, 0.131}};
+        {{0.393, 0.769, 0.189},
+                {0.349, 0.686, 0.168},
+                {0.272, 0.534, 0.131}};
 
     return filter;
   }
