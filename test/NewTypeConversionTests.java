@@ -70,6 +70,17 @@ public class NewTypeConversionTests {
   }
 
   @Test
+  public void testExportBMP() {
+    m.load("images/test2x2.ppm", "test");
+    m.save("images/test2x2.bmp", "test");
+
+    expected = ImageUtil.convertPPM("images/test2x2.ppm");
+    actual = ImageUtil.convertPNGJPEG("images/test2x2.bmp");
+
+    assertEquals(expected, actual);
+  }
+
+  @Test
   public void testConvertJPEGToImage() {
     // tests both JPEG and JPG since they are the same file type
     expected = ImageUtil.convertPNGJPEG("images/test1x1BlackJPG.jpg");

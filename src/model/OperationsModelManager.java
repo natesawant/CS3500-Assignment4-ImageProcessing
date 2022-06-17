@@ -85,6 +85,9 @@ public final class OperationsModelManager implements OperationsModel {
         case "png":
           ImageUtil.exportPNG(img, path);
           break;
+        case "bmp":
+          ImageUtil.exportBmp(img, path);
+          break;
         default:
           throw new IllegalArgumentException("File extension is not currently supported.");
       }

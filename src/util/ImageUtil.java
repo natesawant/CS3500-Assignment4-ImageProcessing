@@ -201,6 +201,16 @@ public class ImageUtil {
     return img;
   }
 
+  /**
+   * Exports a provided image as a .bpm format.
+   * @param img the desired image to export.
+   * @param filePath the desired filepath of the exported image.
+   * @throws IOException if the file cannot be written.
+   */
+  public static void exportBmp(Image img, String filePath) throws IOException {
+    exportImage(img, filePath);
+  }
+
 
   /**
    * Read an image file in the PPM format and print the colors.
