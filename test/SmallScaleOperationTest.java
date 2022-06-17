@@ -15,7 +15,6 @@ import java.io.StringReader;
 import java.util.Random;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 /**
@@ -36,19 +35,31 @@ public class SmallScaleOperationTest {
 
   @Test
   public void testLoadPNGSavePPM() {
-    m.load("images/TestImageOriginalExpected.png", "imgpng");
-    m.save("images/TestImageOriginalPNGToPPM.ppm","imgpng");
+    m.load("images/test2x2.png", "imgpng");
+    m.save("images/test2x2-actual.ppm","imgpng");
+
+    assertEquals(ImageUtil.convertPNGJPEG("images/test2x2.png"),
+            ImageUtil.convertPPM("images/test2x2-actual.ppm"));
   }
 
   @Test
   public void testLoadJPEGSavePPM() {
-    m.load("images/TestImageOriginalExpected.jpg", "imgjpg");
-    m.save("images/TestImageOriginalJPGToPPM.ppm","imgjpg");
+    m.load("images/test2x2.jpg", "imgjpg");
+    m.save("images/test2x2-actual.ppm","imgjpg");
+
+    assertEquals(ImageUtil.convertPNGJPEG("images/test2x2.jpg"),
+            ImageUtil.convertPPM("images/test2x2-actual.ppm"));
   }
 
   @Test
   public void testLoadPPMSaveJPG() {
-    m.save("images/TestImageOriginalPPMToJPG.jpg", "img");
+    try {
+      m.load("images/test2x2.ppm", "img");
+      m.save("images/TestImageOriginalPPMToJPG.jpg", "img");
+    } catch (IllegalArgumentException e) {
+      fail();
+    }
+
   }
 
   @Test
