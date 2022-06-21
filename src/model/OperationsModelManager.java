@@ -331,4 +331,63 @@ public final class OperationsModelManager implements OperationsModel {
     max = img.getMaxValue();
     loaded.put(destName, new RGBImage(pixels, max));
   }
+
+  @Override
+  public void applyDownscaling(int toWidth, int toHeight, String name, String destName) throws IllegalArgumentException {
+    if (!loaded.containsKey(name)) {
+      throw new IllegalArgumentException("Image not loaded.");
+    }
+
+    img = loaded.get(name);
+    pixels = new Color[toWidth][toHeight];
+    int maxValue = img.getMaxValue();
+
+    for (int x = 0; x < img.getWidth(); x++) {
+      for (int y = 0; y < img.getHeight(); y++) {
+        int xPrime = x * toWidth / img.getWidth();
+        int yPrime = y * toHeight / img.getHeight();
+
+        Color[] surround = new Color[]{
+                img.getPixel((int)Math.floor(xPrime), (int)Math.floor(yPrime)),
+                img.getPixel((int)Math.ceil(xPrime), (int)Math.floor(yPrime)),
+                img.getPixel((int)Math.floor(xPrime), (int)Math.ceil(yPrime)),
+                img.getPixel((int)Math.ceil(xPrime), (int)Math.ceil(yPrime))};
+
+        int redValue = computeDownscaleValue(surround, "red", xPrime, yPrime);
+        Color newColor = new Color(
+                computeDownscaleValue(surround, "red", xPrime, yPrime),
+                computeDownscaleValue(surround, "green", xPrime, yPrime),
+                computeDownscaleValue(surround, "blue", xPrime, yPrime));
+        pixels[xPrime][yPrime] = newColor;
+      }
+    }
+    loaded.put(destName, new RGBImage(pixels, img.getMaxValue()));
+
+  }
+
+  private int computeDownscaleValue(Color[] surrounding, String value, double x, double y) {
+   int finalVal = 0;
+   int m = 0;
+   int n = 0;
+    switch (value) {
+      case "red":
+        m =  surrounding[1].getRed() * (int)(x - Math.floor(x)) +  surrounding[0].getRed() * (int)(Math.ceil(x) - x);
+        n = surrounding[3].getRed() * (int)(x - Math.floor(x)) + surrounding[3].getRed() * (int)(Math.ceil(x) - x);
+        break;
+      case "blue":
+        m =  surrounding[1].getBlue() * (int)(x - Math.floor(x)) +  surrounding[0].getBlue() * (int)(Math.ceil(x) - x);
+        n = surrounding[3].getBlue() * (int)(x - Math.floor(x)) + surrounding[3].getBlue() * (int)(Math.ceil(x) - x);
+        break;
+      case "green":
+        m =  surrounding[1].getGreen() * (int)(x - Math.floor(x)) +  surrounding[0].getGreen() * (int)(Math.ceil(x) - x);
+        n = surrounding[3].getGreen() * (int)(x - Math.floor(x)) + surrounding[3].getGreen() * (int)(Math.ceil(x) - x);
+        break;
+      default:
+        // wont happen
+
+    }
+
+    finalVal = n * (int)(y - Math.floor(y)) + m * (int)(Math.ceil(y) - y);
+    return finalVal;
+  }
 }
