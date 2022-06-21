@@ -342,10 +342,11 @@ public final class OperationsModelManager implements OperationsModel {
     pixels = new Color[toWidth][toHeight];
     int maxValue = img.getMaxValue();
 
-    for (int x = 0; x < img.getWidth(); x++) {
-      for (int y = 0; y < img.getHeight(); y++) {
-        int xPrime = x * toWidth / img.getWidth();
-        int yPrime = y * toHeight / img.getHeight();
+    for (int x = 0; x < toWidth; x++) {
+      for (int y = 0; y < toHeight; y++) {
+
+       double xPrime = (double)x * (double)img.getWidth() / toWidth + toWidth / (double)img.getWidth();
+       double yPrime = (double)y * (double)img.getHeight() / toHeight + toHeight / (double)img.getHeight();
 
         Color[] surround = new Color[]{
                 img.getPixel((int)Math.floor(xPrime), (int)Math.floor(yPrime)),
@@ -353,14 +354,33 @@ public final class OperationsModelManager implements OperationsModel {
                 img.getPixel((int)Math.floor(xPrime), (int)Math.ceil(yPrime)),
                 img.getPixel((int)Math.ceil(xPrime), (int)Math.ceil(yPrime))};
 
-        int redValue = computeDownscaleValue(surround, "red", xPrime, yPrime);
         Color newColor = new Color(
                 computeDownscaleValue(surround, "red", xPrime, yPrime),
                 computeDownscaleValue(surround, "green", xPrime, yPrime),
                 computeDownscaleValue(surround, "blue", xPrime, yPrime));
-        pixels[xPrime][yPrime] = newColor;
+
+        pixels[x][y] = newColor;
       }
     }
+
+//    for (int x = 0; x < img.getWidth(); x++) {
+//      for (int y = 0; y < img.getHeight(); y++) {
+//        double xPrime = (double)x * toWidth / img.getWidth();
+//        double yPrime = (double)y * toHeight / img.getHeight();
+//
+//        Color[] surround = new Color[]{
+//                img.getPixel((int)Math.floor(xPrime), (int)Math.floor(yPrime)),
+//                img.getPixel((int)Math.ceil(xPrime), (int)Math.floor(yPrime)),
+//                img.getPixel((int)Math.floor(xPrime), (int)Math.ceil(yPrime)),
+//                img.getPixel((int)Math.ceil(xPrime), (int)Math.ceil(yPrime))};
+//
+//        Color newColor = new Color(
+//                computeDownscaleValue(surround, "red", xPrime, yPrime),
+//                computeDownscaleValue(surround, "green", xPrime, yPrime),
+//                computeDownscaleValue(surround, "blue", xPrime, yPrime));
+//        pixels[(int)xPrime][(int)yPrime] = newColor;
+//      }
+//    }
     loaded.put(destName, new RGBImage(pixels, img.getMaxValue()));
 
   }
@@ -371,23 +391,23 @@ public final class OperationsModelManager implements OperationsModel {
    int n = 0;
     switch (value) {
       case "red":
-        m =  surrounding[1].getRed() * (int)(x - Math.floor(x)) +  surrounding[0].getRed() * (int)(Math.ceil(x) - x);
-        n = surrounding[3].getRed() * (int)(x - Math.floor(x)) + surrounding[3].getRed() * (int)(Math.ceil(x) - x);
+        m =  (int)(surrounding[1].getRed() * (x - Math.floor(x)) +  surrounding[0].getRed() * (Math.ceil(x) - x));
+        n = (int)(surrounding[3].getRed() * (x - Math.floor(x)) + surrounding[2].getRed() * (Math.ceil(x) - x));
         break;
       case "blue":
-        m =  surrounding[1].getBlue() * (int)(x - Math.floor(x)) +  surrounding[0].getBlue() * (int)(Math.ceil(x) - x);
-        n = surrounding[3].getBlue() * (int)(x - Math.floor(x)) + surrounding[3].getBlue() * (int)(Math.ceil(x) - x);
+        m =  (int)(surrounding[1].getBlue() * (x - Math.floor(x)) +  surrounding[0].getBlue() * (Math.ceil(x) - x));
+        n = (int)(surrounding[3].getBlue() * (x - Math.floor(x)) + surrounding[2].getBlue() * (Math.ceil(x) - x));
         break;
       case "green":
-        m =  surrounding[1].getGreen() * (int)(x - Math.floor(x)) +  surrounding[0].getGreen() * (int)(Math.ceil(x) - x);
-        n = surrounding[3].getGreen() * (int)(x - Math.floor(x)) + surrounding[3].getGreen() * (int)(Math.ceil(x) - x);
+        m =  (int)(surrounding[1].getGreen() * (x - Math.floor(x)) +  surrounding[0].getGreen() * (Math.ceil(x) - x));
+        n = (int)(surrounding[3].getGreen() * (x - Math.floor(x)) + surrounding[2].getGreen() * (Math.ceil(x) - x));
         break;
       default:
         // wont happen
 
     }
 
-    finalVal = n * (int)(y - Math.floor(y)) + m * (int)(Math.ceil(y) - y);
+    finalVal = (int)(n * (y - Math.floor(y)) + m * (Math.ceil(y) - y));
     return finalVal;
   }
 }
