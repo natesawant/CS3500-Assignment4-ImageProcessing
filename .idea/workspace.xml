@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Added run scripts, fixed ValueGrayscale">
-      <change afterPath="$PROJECT_DIR$/src/controller/ImageProcessingGUIController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/ImageProcessingGUIView.java" afterDir="false" />
+    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Added GUI, without histograms">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment4-ImageProcessing.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment4-ImageProcessing.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/Assignment4-ImageProcessing.jar" beforeDir="false" afterPath="$PROJECT_DIR$/res/Assignment4-ImageProcessing.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/ImageProcessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ImageProcessing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/ImageUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ImageProcessingGUIView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ImageProcessingGUIView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +174,7 @@
       <workItem from="1655388617375" duration="4274000" />
       <workItem from="1655408946979" duration="227000" />
       <workItem from="1655477191718" duration="1998000" />
-      <workItem from="1655775764757" duration="17627000" />
+      <workItem from="1655775764757" duration="19041000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1654458999042</created>
@@ -348,7 +344,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655477705928</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Added GUI, without histograms">
+      <created>1655832352643</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1655832352643</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,6 +390,7 @@
     <MESSAGE value="more tests for applyFilter stuff" />
     <MESSAGE value="tests" />
     <MESSAGE value="added required image files for tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="added required image files for tests" />
+    <MESSAGE value="Added GUI, without histograms" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added GUI, without histograms" />
   </component>
 </project>

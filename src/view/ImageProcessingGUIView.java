@@ -18,6 +18,13 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingVie
 
   public ImageProcessingGUIView() {
     super("Image Processing");
+
+    try {
+      UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+
     setBackground(new Color(51,51,51));
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -74,6 +81,8 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingVie
   }
 
   public void setImage(Image img) {
+    img = img.getScaledInstance((int)(picture.getWidth()), (int)(picture.getHeight()),
+            Image.SCALE_SMOOTH);
     picture.setIcon(new ImageIcon(img));
   }
 
