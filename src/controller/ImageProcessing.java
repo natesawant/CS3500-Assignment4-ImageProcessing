@@ -29,6 +29,7 @@ public class ImageProcessing {
     view = new ImageProcessingTextView(new OperationsModelManager(), appendable);
 
     if (args.length == 1) {
+
       directory = args[0];
     } else if ((args.length == 2) && (args[0].equals("-file"))) {
       directory = "../res/";
@@ -49,8 +50,13 @@ public class ImageProcessing {
     } else {
       directory = "";
     }
-
     controller = new ImageProcessingControllerImplementation(directory, view, readable);
+
+
+    if (args.length == 1 && args[0].equals("-gui")) {
+      controller = new ImageProcessingGUIController();
+    }
+
     controller.initializeProgram();
   }
 }

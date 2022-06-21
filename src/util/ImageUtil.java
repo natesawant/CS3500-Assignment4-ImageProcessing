@@ -70,6 +70,23 @@ public class ImageUtil {
     }
   }
 
+  public static BufferedImage convertOurImageToJavaImage(Image img) {
+    int width = img.getWidth();
+    int height = img.getHeight();
+    BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+    WritableRaster raster = bufferedImage.getRaster();
+
+    for (int x = 0; x < width; x++) {
+      for (int y = 0; y < height; y++) {
+        Color color = img.getPixel(x, y);
+        int[] rgb = {color.getRed(), color.getGreen(), color.getBlue()};
+        raster.setPixel(x, y, rgb);
+      }
+    }
+
+    return bufferedImage;
+  }
+
   public static void exportPNG(Image img, String path) throws IOException {
     exportImage(img,path);
   }
@@ -88,18 +105,7 @@ public class ImageUtil {
     String[] seperatedPath = path.split("\\.");
     String ext = seperatedPath[seperatedPath.length - 1];
 
-    int width = img.getWidth();
-    int height = img.getHeight();
-    BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
-    WritableRaster raster = bufferedImage.getRaster();
-
-    for (int x = 0; x < width; x++) {
-      for (int y = 0; y < height; y++) {
-        Color color = img.getPixel(x, y);
-        int[] rgb = {color.getRed(), color.getGreen(), color.getBlue()};
-        raster.setPixel(x, y, rgb);
-      }
-    }
+BufferedImage bufferedImage = convertOurImageToJavaImage(img);
 
     ImageIO.write(bufferedImage, ext, new File(path));
   }
