@@ -2,7 +2,7 @@ package view;
 
 import java.awt.Image;
 
-import javax.swing.JMenuItem;
+import javax.swing.*;
 
 /**
  * This interface represents a GUI view of the image processing program.

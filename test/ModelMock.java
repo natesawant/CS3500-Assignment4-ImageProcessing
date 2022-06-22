@@ -83,6 +83,6 @@ public class ModelMock implements OperationsModel {
 
   @Override
   public void applyDownscaling(int toWidth, int toHeight, String name, String destName) throws IllegalArgumentException {
-
+    this.log.append("Apply downscaling");
   }
 }

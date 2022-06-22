@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment=".">
+    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="trying to fix vc issues">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Assignment4-ImageProcessing.jar" beforeDir="false" afterPath="$PROJECT_DIR$/res/Assignment4-ImageProcessing.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ImageProcessingGUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ImageProcessingGUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/OperationsModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OperationsModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ImageProcessingGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ImageProcessingGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/ImageProcessingGUIView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ImageProcessingGUIView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/ECTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ECTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/ModelMock.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ModelMock.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +57,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.controller.ImageProcessing">
+  <component name="RunManager" selected="JUnit.ECTest.testDiffWidthHeight">
     <configuration name="ImageProcessingGUIController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="controller.ImageProcessingGUIController" />
       <module name="Assignment4-ImageProcessing" />
@@ -86,31 +92,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SmallScaleOperationTest.testGreyScaleNotGrey" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ECTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment4-ImageProcessing" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SmallScaleOperationTest" />
-      <option name="METHOD_NAME" value="testGreyScaleNotGrey" />
+      <option name="MAIN_CLASS_NAME" value="ECTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ECTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assignment4-ImageProcessing" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ECTest" />
+      <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SmallScaleOperationTest.testLoadPNGSavePPM" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ECTest.testDiffWidthHeight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment4-ImageProcessing" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SmallScaleOperationTest" />
-      <option name="METHOD_NAME" value="testLoadPNGSavePPM" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SmallScaleOperationTest.testSharpen" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Assignment4-ImageProcessing" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SmallScaleOperationTest" />
-      <option name="METHOD_NAME" value="testSharpen" />
+      <option name="MAIN_CLASS_NAME" value="ECTest" />
+      <option name="METHOD_NAME" value="testDiffWidthHeight" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -131,17 +136,17 @@
       <item itemvalue="Application.ImageProcessingGUIController" />
       <item itemvalue="Application.SwingFeatures" />
       <item itemvalue="JUnit.TestFolder" />
-      <item itemvalue="JUnit.SmallScaleOperationTest.testGreyScaleNotGrey" />
-      <item itemvalue="JUnit.SmallScaleOperationTest.testSharpen" />
-      <item itemvalue="JUnit.SmallScaleOperationTest.testLoadPNGSavePPM" />
+      <item itemvalue="JUnit.ECTest.test" />
+      <item itemvalue="JUnit.ECTest" />
+      <item itemvalue="JUnit.ECTest.testDiffWidthHeight" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ECTest.testDiffWidthHeight" />
+        <item itemvalue="JUnit.ECTest" />
+        <item itemvalue="JUnit.ECTest.test" />
         <item itemvalue="Application.ImageProcessingGUIController" />
         <item itemvalue="Application.SwingFeatures" />
-        <item itemvalue="JUnit.SmallScaleOperationTest.testLoadPNGSavePPM" />
-        <item itemvalue="JUnit.SmallScaleOperationTest.testSharpen" />
-        <item itemvalue="JUnit.SmallScaleOperationTest.testGreyScaleNotGrey" />
       </list>
     </recent_temporary>
   </component>
@@ -366,7 +371,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655917207931</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="trying to fix vc issues">
+      <created>1655917827458</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1655917827458</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -407,6 +419,23 @@
     <MESSAGE value="added required image files for tests" />
     <MESSAGE value="Added GUI, without histograms" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="trying to fix vc issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="trying to fix vc issues" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/ECTest.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/ECTest.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

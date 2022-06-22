@@ -38,6 +38,7 @@ import processes.SepiaTone;
 import processes.Sharpen;
 import processes.ValueGrayscale;
 import processes.VerticalFlip;
+import view.ImageProcessingGUI;
 import view.ImageProcessingGUIView;
 
 public class ImageProcessingGUIController implements ImageProcessingController {

@@ -352,10 +352,13 @@ public final class OperationsModelManager implements OperationsModel {
         double xPrime;
         double yPrime;
 
-        xPrime = (img.getWidth() % toWidth == 0) ? (double)x * img.getWidth() / toWidth + toWidth / (double)img.getWidth() :
-                (double)x * toWidth / img.getWidth() + toWidth / (double)img.getWidth();
-        yPrime = (img.getHeight() % toHeight == 0) ? (double)y * img.getHeight() / toHeight + toHeight / (double)img.getHeight() :
-                (double)y * toHeight / img.getHeight() + toHeight / (double)img.getHeight();
+        double s = (double)x / (double) toWidth;
+        xPrime = s * (double) img.getWidth() + (double) toWidth / (double)img.getWidth();
+        s = (double) y / (double) toHeight;
+        yPrime = s * (double)img.getHeight() + (double) toHeight / (double)img.getHeight();
+
+        xPrime = Math.min(xPrime, img.getWidth() - 1);
+        yPrime = Math.min(yPrime, img.getHeight() - 1);
 
         Color[] surround = new Color[]{
                 img.getPixel((int)Math.floor(xPrime), (int)Math.floor(yPrime)),

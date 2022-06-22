@@ -30,13 +30,12 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
       e.printStackTrace();
     }
 
-    setPreferredSize(new Dimension(1280, 720));
     setBackground(new Color(51,51,51));
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setExtendedState(JFrame.MAXIMIZED_BOTH);
     setVisible(true);
 
-    // Creating Menu Section
+    //Creating the MenuBar and adding components
     menu = new JMenuBar();
     menu.setBackground(new Color(132, 132, 132));
     fileMenu = new JMenu("File");
@@ -52,16 +51,15 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
     menu.add(processMenu);
 
 
-    // Create Histogram Section
-    histogramPanel = new JPanel();
-    histogramPanel.setPreferredSize(new Dimension(300, 576));
+    //Creating the panel at bottom and adding components
+    histogramPanel = new JPanel(); // the panel is not visible in output
     histogramPanel.setBackground(new Color(51,51,51));
     histogramPanel.setBorder(BorderFactory.createTitledBorder("Histograms"));
-    JLabel rgbHistogram = new JLabel(new ImageIcon("images/blackhistogram.png", "RGB Histogram"));
-    JLabel redHistogram = new JLabel(new ImageIcon("images/redhistogram.png", "Red Histogram"));
-    JLabel greenHistogram = new JLabel(new ImageIcon("images/greenhistogram.png", "Green " +
+    JLabel rgbHistogram = new JLabel(new ImageIcon("images/blackhistogramPanel.png", "RGB Histogram"));
+    JLabel redHistogram = new JLabel(new ImageIcon("images/redhistogramPanel.png", "Red Histogram"));
+    JLabel greenHistogram = new JLabel(new ImageIcon("images/greenhistogramPanel.png", "Green " +
             "Histogram"));
-    JLabel blueHistogram = new JLabel(new ImageIcon("images/bluehistogram.png", "Blue Histogram"));
+    JLabel blueHistogram = new JLabel(new ImageIcon("images/bluehistogramPanel.png", "Blue Histogram"));
     histogramPanel.setLayout(new BoxLayout(histogramPanel, BoxLayout.PAGE_AXIS));
     histogramPanel.add(rgbHistogram);
     histogramPanel.add(redHistogram);
@@ -71,7 +69,7 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
     histogram = new Histogram();
     histogramPanel.add(histogram);
 
-    // Create Workspace Section
+    // Add Workspace Section
     picture = new JLabel();
     picture.setOpaque(true);
     picture.setBackground(new Color(51,51,51));
@@ -80,6 +78,7 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
     workspace = new JScrollPane(picture);
     workspace.setBackground(new Color(51,51,51));
     workspace.setPreferredSize(new Dimension(1024, 576));
+    //workspace = new JScrollPane(new JLabel(new ImageIcon("images/ship-copy.jpg")));
 
     //Combine all sections into the frame.
     add(BorderLayout.EAST, histogramPanel);
@@ -91,14 +90,22 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
   public void setImage(String filename) {
     Image img;
     try {
-      histogram.setImg(ImageUtil.convertPNGJPEG(filename));
-      histogram.repaint();
+      histogram = new Histogram(ImageUtil.convertPNGJPEG(filename));
 
       img = ImageIO.read(new File(filename));
-      int scale = img.getHeight(null) / picture.getHeight();
-      //img = img.getScaledInstance((int) (picture.getWidth() * scale),
-      //        (int) (picture.getHeight() * scale), Image.SCALE_SMOOTH);
+//      img = img.getScaledInstance((int) (picture.getWidth()), (int) (picture.getHeight()),
+//              Image.SCALE_SMOOTH);
+      double wScale = img.getWidth(this) / (double)workspace.getWidth();
+      double hScale = img.getHeight(this) / (double)workspace.getHeight();
+
+//      if (wScale >= hScale) {
+//        img = img.getScaledInstance(workspace.getWidth(), img.getHeight(this) * (workspace.getHeight() / img.getHeight(this)), Image.SCALE_SMOOTH);
+//      } else {
+//        img = img.getScaledInstance(img.getWidth(this) * (workspace.getWidth() / img.getWidth(this)), workspace.getHeight(), Image.SCALE_SMOOTH);
+//      }
+
       picture.setIcon(new ImageIcon(img));
+
 
     } catch (IOException ex) {
       throw new IllegalArgumentException("Image not found");
