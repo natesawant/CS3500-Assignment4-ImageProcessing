@@ -93,4 +93,14 @@ public interface OperationsModel {
    */
   void applyAdditionFilter(Function<Color, double[]> filterFunc, String name, String destName)
           throws IllegalArgumentException;
+
+  /**
+   * Downscales an image to a provided width and height.
+   * @param toWidth the desired width of the image.
+   * @param toHeight the desired height of the image.
+   * @param name the name of the image that is processed.
+   * @param destName the new name of the processed image.
+   * @throws IllegalArgumentException if either of the dimensions are zero or the name of the image is invalid.
+   */
+  void applyDownscaling(int toWidth, int toHeight, String name, String destName) throws IllegalArgumentException;
 }

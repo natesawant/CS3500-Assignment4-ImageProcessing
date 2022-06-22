@@ -26,12 +26,15 @@ public class ImageProcessing {
 
     readable = new InputStreamReader(System.in);
     appendable = System.out;
-    view = new ImageProcessingTextView(new OperationsModelManager(), appendable);
 
-    if (args.length == 1) {
+    if (args.length == 1 && args[0].equals("-text")) {
+      // user wants text view
+      directory = "";
+      view = new ImageProcessingTextView(new OperationsModelManager(), appendable);
+      controller = new ImageProcessingControllerImplementation(directory, view, readable);
 
-      directory = args[0];
-    } else if ((args.length == 2) && (args[0].equals("-file"))) {
+    } else if (args.length == 2 && args[0].equals("-file")) {
+
       directory = "../res/";
       String location = args[1];
       try {
@@ -39,23 +42,16 @@ public class ImageProcessing {
       } catch (FileNotFoundException e) {
         throw new IllegalArgumentException("File not found");
       }
-    } else if (args.length == 3) {
-      directory = args[0];
-      String location = args[1];
-      try {
-        readable = new FileReader(location);
-      } catch (FileNotFoundException e) {
-        throw new IllegalArgumentException("File not found");
-      }
+      view = new ImageProcessingTextView(new OperationsModelManager(), appendable);
+      controller = new ImageProcessingControllerImplementation(directory, view, readable);
+
     } else {
-      directory = "";
-    }
-    controller = new ImageProcessingControllerImplementation(directory, view, readable);
-
-
-    if (args.length == 1 && args[0].equals("-gui")) {
       controller = new ImageProcessingGUIController();
     }
+
+
+//    controller = new ImageProcessingControllerImplementation(directory, view, readable);
+
 
     controller.initializeProgram();
   }
