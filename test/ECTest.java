@@ -25,12 +25,12 @@ public class ECTest {
   }
 
   @Test
-  public void test() {
+  public void testDownSameWidthHeight() {
     m.load("images/test4x4.ppm", "test");
-    m.applyDownscaling(3, 2, "test", "testDown");
-    m.save("testDown.ppm", "testDown");
+    m.applyDownscaling(2, 2, "test", "testDown");
+    m.save("images/testDown.ppm", "testDown");
 
-    actual = ImageUtil.convertPPM("testDown.ppm");
+    actual = ImageUtil.convertPPM("images/testDown.ppm");
     assertEquals(2, actual.getHeight());
     assertEquals(2, actual.getWidth());
     expected = new RGBImage(new Color[][]{
@@ -38,6 +38,24 @@ public class ECTest {
             {new Color(173, 79, 72), new Color(130, 81, 79)}}, 255);
 
     assertEquals(expected, actual);
+  }
+
+  @Test
+  public void testDiffWidthHeight() {
+    m.load("images/test4x4.ppm", "test");
+    m.applyDownscaling(3, 2, "test", "testDown");
+    m.save("images/testDown32.ppm", "testDown");
+
+    actual = ImageUtil.convertPPM("images/testDown32.ppm");
+    assertEquals(2, actual.getHeight());
+    assertEquals(3, actual.getWidth());
+    expected = new RGBImage(new Color[][]{
+            {new Color(102, 91, 80), new Color(52, 47, 34)},
+            {new Color(167, 109, 102), new Color(83, 93, 90)},
+            {new Color(210, 111, 108), new Color(135, 114, 110)}}, 255);
+
+    assertEquals(expected, actual);
+
   }
 
   @Test (expected = IllegalArgumentException.class)
@@ -56,5 +74,41 @@ public class ECTest {
   public void biggerWidthAndHeightThrows() {
     m.load("images/test4x4.ppm", "test");
     m.applyDownscaling(5, 8, "test", "testDown");
+  }
+
+  @Test (expected = IllegalArgumentException.class)
+  public void zeroWidthThrows() {
+    m.load("images/test4x4.ppm", "test");
+    m.applyDownscaling(0, 2, "test", "testDown");
+  }
+
+  @Test (expected = IllegalArgumentException.class)
+  public void zeroHeightThrows() {
+    m.load("images/test4x4.ppm", "test");
+    m.applyDownscaling(2, 0, "test", "testDown");
+  }
+
+  @Test (expected = IllegalArgumentException.class)
+  public void zeroWidthHeightThrows() {
+    m.load("images/test4x4.ppm", "test");
+    m.applyDownscaling(0, 0, "test", "testDown");
+  }
+
+  @Test (expected = IllegalArgumentException.class)
+  public void negWidthThrows() {
+    m.load("images/test4x4.ppm", "test");
+    m.applyDownscaling(-2, 2, "test", "testDown");
+  }
+
+  @Test (expected = IllegalArgumentException.class)
+  public void negHeightThrows() {
+    m.load("images/test4x4.ppm", "test");
+    m.applyDownscaling(3, -2, "test", "testDown");
+  }
+
+  @Test (expected = IllegalArgumentException.class)
+  public void negWidthHeightThrows() {
+    m.load("images/test4x4.ppm", "test");
+    m.applyDownscaling(-2, -2, "test", "testDown");
   }
 }
