@@ -96,8 +96,8 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
 
       img = ImageIO.read(new File(filename));
       int scale = img.getHeight(null) / picture.getHeight();
-      img = img.getScaledInstance((int) (picture.getWidth() * scale), (int) (picture.getHeight() * scale),
-              Image.SCALE_SMOOTH);
+      //img = img.getScaledInstance((int) (picture.getWidth() * scale),
+      //        (int) (picture.getHeight() * scale), Image.SCALE_SMOOTH);
       picture.setIcon(new ImageIcon(img));
 
     } catch (IOException ex) {

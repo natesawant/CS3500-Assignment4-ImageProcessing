@@ -37,8 +37,9 @@ public class Histogram extends JComponent {
     redValueCount = new HashMap<>();
     greenValueCount = new HashMap<>();
     blueValueCount = new HashMap<>();
+    min = Integer.MAX_VALUE;
+    max = Integer.MIN_VALUE;
 
-    System.out.println(img.toString());
     if (img != null) {
       int value;
       for (int x = 0; x < img.getWidth(); x++) {

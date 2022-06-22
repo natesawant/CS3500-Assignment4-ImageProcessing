@@ -147,7 +147,9 @@ public class ImageProcessingGUIController implements ImageProcessingController {
           view.setImage(saveName + "-" + "temp" + extension);
         } catch (Exception ex) {
           try {
-            view.renderMessage("Error: " + ex);
+            view.renderMessage("Error: " + ex.getMessage());
+            for (StackTraceElement element : ex.getStackTrace())
+            System.out.println(element.toString());
           } catch (IOException exception) {
             throw new RuntimeException(exception);
           }
