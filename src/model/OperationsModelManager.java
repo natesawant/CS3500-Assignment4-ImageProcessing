@@ -349,8 +349,13 @@ public final class OperationsModelManager implements OperationsModel {
     for (int x = 0; x < toWidth; x++) {
       for (int y = 0; y < toHeight; y++) {
 
-       double xPrime = (double)x * (double)toWidth / img.getWidth() + toWidth / (double)img.getWidth();
-       double yPrime = (double)y * (double)toHeight / img.getHeight() + toHeight / (double)img.getHeight();
+        double xPrime;
+        double yPrime;
+
+        xPrime = (img.getWidth() % toWidth == 0) ? (double)x * img.getWidth() / toWidth + toWidth / (double)img.getWidth() :
+                (double)x * toWidth / img.getWidth() + toWidth / (double)img.getWidth();
+        yPrime = (img.getHeight() % toHeight == 0) ? (double)y * img.getHeight() / toHeight + toHeight / (double)img.getHeight() :
+                (double)y * toHeight / img.getHeight() + toHeight / (double)img.getHeight();
 
         Color[] surround = new Color[]{
                 img.getPixel((int)Math.floor(xPrime), (int)Math.floor(yPrime)),
@@ -367,24 +372,6 @@ public final class OperationsModelManager implements OperationsModel {
       }
     }
 
-//    for (int x = 0; x < img.getWidth(); x++) {
-//      for (int y = 0; y < img.getHeight(); y++) {
-//        double xPrime = (double)x * toWidth / img.getWidth();
-//        double yPrime = (double)y * toHeight / img.getHeight();
-//
-//        Color[] surround = new Color[]{
-//                img.getPixel((int)Math.floor(xPrime), (int)Math.floor(yPrime)),
-//                img.getPixel((int)Math.ceil(xPrime), (int)Math.floor(yPrime)),
-//                img.getPixel((int)Math.floor(xPrime), (int)Math.ceil(yPrime)),
-//                img.getPixel((int)Math.ceil(xPrime), (int)Math.ceil(yPrime))};
-//
-//        Color newColor = new Color(
-//                computeDownscaleValue(surround, "red", xPrime, yPrime),
-//                computeDownscaleValue(surround, "green", xPrime, yPrime),
-//                computeDownscaleValue(surround, "blue", xPrime, yPrime));
-//        pixels[(int)xPrime][(int)yPrime] = newColor;
-//      }
-//    }
     loaded.put(destName, new RGBImage(pixels, img.getMaxValue()));
 
   }

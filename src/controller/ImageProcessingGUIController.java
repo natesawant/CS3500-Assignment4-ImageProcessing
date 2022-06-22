@@ -8,7 +8,10 @@ import java.util.Map;
 import java.util.function.Function;
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JFrame;
+import javax.swing.AbstractAction;
 
 import model.OperationsModel;
 import model.OperationsModelManager;
@@ -55,7 +58,8 @@ public class ImageProcessingGUIController implements ImageProcessingController {
 
     Map<String, Function<JFrame, Process>> programCommands = new HashMap<>();
     // Program commands
-    programCommands.put("Open", v -> new LoadFile(JOptionPane.showInputDialog(v, "Enter filename."), saveName));
+    programCommands.put("Open", v -> new LoadFile(
+            JOptionPane.showInputDialog(v, "Enter filename."), saveName));
     programCommands.put("Save", v -> new SaveFile(saveName + extension,
             saveName));
     programCommands.put("Save As", v -> new SaveFile(JOptionPane.showInputDialog(v, "Enter " +
@@ -66,7 +70,9 @@ public class ImageProcessingGUIController implements ImageProcessingController {
     // Image Transforms
     imageTransforms.put("Flip (Horizontal)", v -> new HorizontalFlip(saveName, saveName));
     imageTransforms.put("Flip (Vertical)", v -> new VerticalFlip(saveName, saveName));
-    imageTransforms.put("Downscale", v -> new Downscale(Integer.parseInt(JOptionPane.showInputDialog(v, "Width")), Integer.parseInt(JOptionPane.showInputDialog(v, "Height")), saveName, saveName));
+    imageTransforms.put("Downscale", v -> new Downscale(
+            Integer.parseInt(JOptionPane.showInputDialog(v, "Width")),
+            Integer.parseInt(JOptionPane.showInputDialog(v, "Height")), saveName, saveName));
 
     Map<String, Function<JFrame, Process>> colorFilters = new HashMap<>();
     // Color Filters
@@ -124,7 +130,8 @@ public class ImageProcessingGUIController implements ImageProcessingController {
     }
   }
 
-  private JMenuItem addFunctionButton(String name, Function<JFrame, Process> func) throws IllegalArgumentException {
+  private JMenuItem addFunctionButton(String name, Function<JFrame, Process> func)
+          throws IllegalArgumentException {
     if (func == null) {
       throw new IllegalArgumentException("Function cannot be null");
     }

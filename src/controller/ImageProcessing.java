@@ -5,7 +5,6 @@ import java.io.FileReader;
 import java.io.InputStreamReader;
 
 import model.OperationsModelManager;
-import view.ImageProcessingGUIView;
 import view.ImageProcessingTextView;
 import view.ImageProcessingView;
 
