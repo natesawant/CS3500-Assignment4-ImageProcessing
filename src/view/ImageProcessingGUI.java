@@ -11,9 +11,9 @@ public interface ImageProcessingGUI extends ImageProcessingView {
 
   /**
    * Sets the current program's image focus to a given image.
-   * @param img the desired image to add.
+   * @param filename the desired image to add.
    */
-  void setImage(Image img);
+  void setImage(String filename);
 
   /**
    * Adds a given JMenuItem to the 'File' dropdown menu.
