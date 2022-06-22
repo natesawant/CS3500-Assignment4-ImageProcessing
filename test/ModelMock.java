@@ -80,9 +80,4 @@ public class ModelMock implements OperationsModel {
     this.log.append("Attempt to apply addition filter from ")
             .append(name).append(" to ").append(destName);
   }
-
-  @Override
-  public void applyDownscaling(int toWidth, int toHeight, String name, String destName) throws IllegalArgumentException {
-    this.log.append("Attempted to scale image to dimensions: ").append(toWidth).append(" by ").append(toHeight);
-  }
 }

@@ -13,7 +13,6 @@ import processes.AdjustGreen;
 import processes.AdjustRed;
 import processes.BoxBlur;
 import processes.Brighten;
-import processes.Downscale;
 import processes.Emboss;
 import processes.GaussianBlur;
 import processes.HorizontalFlip;
@@ -83,7 +82,6 @@ public final class ImageProcessingControllerImplementation implements ImageProce
     validCommands.put("adjust-red", s -> new AdjustRed(s.nextInt(), s.next(), s.next()));
     validCommands.put("adjust-blue", s -> new AdjustBlue(s.nextInt(), s.next(), s.next()));
     validCommands.put("adjust-green", s -> new AdjustGreen(s.nextInt(), s.next(), s.next()));
-    validCommands.put("downscale", s -> new Downscale(s.nextInt(), s.nextInt(), s.next(), s.next()));
   }
 
   /**

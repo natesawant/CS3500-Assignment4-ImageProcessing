@@ -1,20 +1,25 @@
 package view;
 
 import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
-public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI {
-  private final JMenuBar menu;
-  private final JMenu fileMenu;
-  private final JMenu processMenu;
-  private final JMenu imageTransforms;
-  private final JMenu colorFilters;
-  private final JMenu imageFilters;
-  private final JPanel histogram;
-  private final JScrollPane workspace;
-  private final JLabel picture;
+import util.ImageUtil;
+
+public class ImageProcessingGUIView extends JFrame implements ImageProcessingView {
+  private JMenuBar menu;
+  private JMenu fileMenu;
+  private JMenu processMenu;
+  private JMenu imageTransforms;
+  private JMenu colorFilters;
+  private JMenu imageFilters;
+  private JPanel histogramPanel;
+  private Histogram histogram;
+  private JScrollPane workspace;
+  private JLabel picture;
 
   public ImageProcessingGUIView() {
     super("Image Processing");
@@ -25,7 +30,7 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
       e.printStackTrace();
     }
 
-    setBackground(new Color(51,51,51));
+    setBackground(new Color(51, 51, 51));
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setExtendedState(JFrame.MAXIMIZED_BOTH);
     setVisible(true);
@@ -47,43 +52,55 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
 
 
     //Creating the panel at bottom and adding components
-    histogram = new JPanel(); // the panel is not visible in output
-    histogram.setBackground(new Color(51,51,51));
-    histogram.setBorder(BorderFactory.createTitledBorder("Histograms"));
+    histogramPanel = new JPanel(); // the panel is not visible in output
+    histogramPanel.setBackground(new Color(51, 51, 51));
+    histogramPanel.setBorder(BorderFactory.createTitledBorder("Histograms"));
     JLabel rgbHistogram = new JLabel(new ImageIcon("images/blackhistogram.png", "RGB Histogram"));
     JLabel redHistogram = new JLabel(new ImageIcon("images/redhistogram.png", "Red Histogram"));
     JLabel greenHistogram = new JLabel(new ImageIcon("images/greenhistogram.png", "Green " +
             "Histogram"));
     JLabel blueHistogram = new JLabel(new ImageIcon("images/bluehistogram.png", "Blue Histogram"));
-    histogram.setLayout(new BoxLayout(histogram, BoxLayout.PAGE_AXIS));
-    histogram.add(rgbHistogram);
-    histogram.add(redHistogram);
-    histogram.add(greenHistogram);
-    histogram.add(blueHistogram);
+    histogramPanel.setLayout(new BoxLayout(histogramPanel, BoxLayout.PAGE_AXIS));
+    histogramPanel.add(rgbHistogram);
+    histogramPanel.add(redHistogram);
+    histogramPanel.add(greenHistogram);
+    histogramPanel.add(blueHistogram);
 
+
+    histogram = new Histogram(ImageUtil.convertPNGJPEG("images/ship.jpg"));
+    histogramPanel.add(histogram);
 
     // Add Workspace Section
     picture = new JLabel();
     picture.setOpaque(true);
-    picture.setBackground(new Color(51,51,51));
+    picture.setBackground(new Color(51, 51, 51));
     picture.setAlignmentX(Component.CENTER_ALIGNMENT);
     picture.setAlignmentY(Component.CENTER_ALIGNMENT);
     workspace = new JScrollPane(picture);
-    workspace.setBackground(new Color(51,51,51));
+    workspace.setBackground(new Color(51, 51, 51));
     workspace.setPreferredSize(new Dimension(1024, 576));
-    //workspace = new JScrollPane(new JLabel(new ImageIcon("images/ship-copy.jpg")));
 
     //Combine all sections into the frame.
-    add(BorderLayout.EAST, histogram);
+    add(BorderLayout.EAST, histogramPanel);
     add(BorderLayout.NORTH, menu);
     add(BorderLayout.CENTER, workspace);
     setVisible(true);
   }
 
-  public void setImage(Image img) {
-    img = img.getScaledInstance((int)(picture.getWidth()), (int)(picture.getHeight()),
-            Image.SCALE_SMOOTH);
-    picture.setIcon(new ImageIcon(img));
+  public void setImage(String filename) {
+    Image img;
+    try {
+      histogram = new Histogram(ImageUtil.convertPNGJPEG(filename));
+
+      img = ImageIO.read(new File(filename));
+      img = img.getScaledInstance((int) (picture.getWidth()), (int) (picture.getHeight()),
+              Image.SCALE_SMOOTH);
+      picture.setIcon(new ImageIcon(img));
+
+
+    } catch (IOException ex) {
+      throw new IllegalArgumentException("Image not found");
+    }
   }
 
   public void addToFileMenu(JMenuItem item) {

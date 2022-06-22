@@ -8,5 +8,5 @@ public interface ImageProcessingController {
    * Initializes the image processing program. Allows for the user to input commands to perform
    * operations on specific images.
    */
-  void initializeProgram() throws IllegalStateException;
+  public void initializeProgram() throws IllegalStateException;
 }
