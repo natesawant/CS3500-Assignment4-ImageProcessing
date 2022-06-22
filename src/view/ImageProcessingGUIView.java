@@ -30,12 +30,13 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
       e.printStackTrace();
     }
 
+    setPreferredSize(new Dimension(1280, 720));
     setBackground(new Color(51,51,51));
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setExtendedState(JFrame.MAXIMIZED_BOTH);
     setVisible(true);
 
-    //Creating the MenuBar and adding components
+    // Creating Menu Section
     menu = new JMenuBar();
     menu.setBackground(new Color(132, 132, 132));
     fileMenu = new JMenu("File");
@@ -51,25 +52,26 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
     menu.add(processMenu);
 
 
-    //Creating the panel at bottom and adding components
-    histogramPanel = new JPanel(); // the panel is not visible in output
+    // Create Histogram Section
+    histogramPanel = new JPanel();
+    histogramPanel.setPreferredSize(new Dimension(300, 576));
     histogramPanel.setBackground(new Color(51,51,51));
     histogramPanel.setBorder(BorderFactory.createTitledBorder("Histograms"));
-    JLabel rgbHistogram = new JLabel(new ImageIcon("images/blackhistogramPanel.png", "RGB Histogram"));
-    JLabel redHistogram = new JLabel(new ImageIcon("images/redhistogramPanel.png", "Red Histogram"));
-    JLabel greenHistogram = new JLabel(new ImageIcon("images/greenhistogramPanel.png", "Green " +
+    JLabel rgbHistogram = new JLabel(new ImageIcon("images/blackhistogram.png", "RGB Histogram"));
+    JLabel redHistogram = new JLabel(new ImageIcon("images/redhistogram.png", "Red Histogram"));
+    JLabel greenHistogram = new JLabel(new ImageIcon("images/greenhistogram.png", "Green " +
             "Histogram"));
-    JLabel blueHistogram = new JLabel(new ImageIcon("images/bluehistogramPanel.png", "Blue Histogram"));
+    JLabel blueHistogram = new JLabel(new ImageIcon("images/bluehistogram.png", "Blue Histogram"));
     histogramPanel.setLayout(new BoxLayout(histogramPanel, BoxLayout.PAGE_AXIS));
     histogramPanel.add(rgbHistogram);
     histogramPanel.add(redHistogram);
     histogramPanel.add(greenHistogram);
     histogramPanel.add(blueHistogram);
 
-    histogram = new Histogram(ImageUtil.convertPNGJPEG("images/ship.jpg"));
+    histogram = new Histogram();
     histogramPanel.add(histogram);
 
-    // Add Workspace Section
+    // Create Workspace Section
     picture = new JLabel();
     picture.setOpaque(true);
     picture.setBackground(new Color(51,51,51));
@@ -78,7 +80,6 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
     workspace = new JScrollPane(picture);
     workspace.setBackground(new Color(51,51,51));
     workspace.setPreferredSize(new Dimension(1024, 576));
-    //workspace = new JScrollPane(new JLabel(new ImageIcon("images/ship-copy.jpg")));
 
     //Combine all sections into the frame.
     add(BorderLayout.EAST, histogramPanel);
@@ -90,13 +91,14 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
   public void setImage(String filename) {
     Image img;
     try {
-      histogram = new Histogram(ImageUtil.convertPNGJPEG(filename));
+      histogram.setImg(ImageUtil.convertPNGJPEG(filename));
+      histogram.repaint();
 
       img = ImageIO.read(new File(filename));
-      img = img.getScaledInstance((int) (picture.getWidth()), (int) (picture.getHeight()),
+      int scale = img.getHeight(null) / picture.getHeight();
+      img = img.getScaledInstance((int) (picture.getWidth() * scale), (int) (picture.getHeight() * scale),
               Image.SCALE_SMOOTH);
       picture.setIcon(new ImageIcon(img));
-
 
     } catch (IOException ex) {
       throw new IllegalArgumentException("Image not found");

@@ -144,7 +144,7 @@ public class ImageProcessingGUIController implements ImageProcessingController {
           p.start(manager);
           p = new SaveFile(saveName + "-" + "temp" + extension, saveName);
           p.start(manager);
-          view.setImage(ImageIO.read(new File(saveName + "-" + "temp" + extension)));
+          view.setImage(saveName + "-" + "temp" + extension);
         } catch (Exception ex) {
           try {
             view.renderMessage("Error: " + ex);
@@ -157,6 +157,4 @@ public class ImageProcessingGUIController implements ImageProcessingController {
 
     return item;
   }
-
-
 }

@@ -18,21 +18,10 @@ public class Histogram extends JComponent {
   Map<Integer, Integer> blueValueCount;
   int min;
   int max;
+  Image img;
   public Histogram(Image img) {
     this();
-
-
-    int value;
-    for (int x = 0; x < img.getWidth(); x++) {
-      for (int y = 0; y < img.getHeight(); y++) {
-        value = img.getPixel(x,y).getRed();
-        redValueCount.put(value, 1 + redValueCount.getOrDefault(value, 0));
-        value = img.getPixel(x,y).getGreen();
-        greenValueCount.put(value, 1 + greenValueCount.getOrDefault(value, 0));
-        value = img.getPixel(x,y).getBlue();
-        blueValueCount.put(value, 1 + blueValueCount.getOrDefault(value, 0));
-      }
-    }
+    this.img = img;
   }
 
   public Histogram() {
@@ -44,10 +33,37 @@ public class Histogram extends JComponent {
     max = Integer.MIN_VALUE;
   }
 
+  private void getValues() {
+    redValueCount = new HashMap<>();
+    greenValueCount = new HashMap<>();
+    blueValueCount = new HashMap<>();
+
+    System.out.println(img.toString());
+    if (img != null) {
+      int value;
+      for (int x = 0; x < img.getWidth(); x++) {
+        for (int y = 0; y < img.getHeight(); y++) {
+          value = img.getPixel(x,y).getRed();
+          redValueCount.put(value, 1 + redValueCount.getOrDefault(value, 0));
+          value = img.getPixel(x,y).getGreen();
+          greenValueCount.put(value, 1 + greenValueCount.getOrDefault(value, 0));
+          value = img.getPixel(x,y).getBlue();
+          blueValueCount.put(value, 1 + blueValueCount.getOrDefault(value, 0));
+        }
+      }
+    }
+  }
+
+  public void setImg(Image img) {
+    this.img = img;
+  }
+
   @Override
   public void paintComponent(Graphics g) {
     super.paintComponent(g);
     gr = (Graphics2D) g;
+
+    getValues();
 
     for (Integer key : redValueCount.keySet()) {
       int val = redValueCount.get(key);
@@ -65,8 +81,8 @@ public class Histogram extends JComponent {
       min = Math.min(val, min);
     }
 
-    System.out.println("Max:"+max);
-    System.out.println("Min:"+min);
+    //System.out.println("Max:"+max);
+    //System.out.println("Min:"+min);
 
     drawList(redValueCount, Color.red);
     drawList(greenValueCount, Color.green);
@@ -95,7 +111,7 @@ public class Histogram extends JComponent {
 
       y2 = (int)((y2 - min) / (double)(max - min) * 100);
 
-      System.out.println(x1 + ","+ y1 + " " + x2 + "," + y2);
+      //System.out.println(x1 + ","+ y1 + " " + x2 + "," + y2);
 
       gr.drawLine(x1, 100-y1, x2, 100-y2);
     }
