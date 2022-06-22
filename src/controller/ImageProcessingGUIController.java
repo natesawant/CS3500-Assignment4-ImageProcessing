@@ -18,6 +18,7 @@ import processes.AdjustRed;
 import processes.BlueGrayscale;
 import processes.BoxBlur;
 import processes.Brighten;
+import processes.Downscale;
 import processes.Emboss;
 import processes.GaussianBlur;
 import processes.GreenGrayscale;
@@ -65,6 +66,7 @@ public class ImageProcessingGUIController implements ImageProcessingController {
     // Image Transforms
     imageTransforms.put("Flip (Horizontal)", v -> new HorizontalFlip(saveName, saveName));
     imageTransforms.put("Flip (Vertical)", v -> new VerticalFlip(saveName, saveName));
+    imageTransforms.put("Downscale", v -> new Downscale(Integer.parseInt(JOptionPane.showInputDialog(v, "Width")), Integer.parseInt(JOptionPane.showInputDialog(v, "Height")), saveName, saveName));
 
     Map<String, Function<JFrame, Process>> colorFilters = new HashMap<>();
     // Color Filters

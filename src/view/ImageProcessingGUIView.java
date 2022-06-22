@@ -5,16 +5,16 @@ import java.io.IOException;
 
 import javax.swing.*;
 
-public class ImageProcessingGUIView extends JFrame implements ImageProcessingView {
-  private JMenuBar menu;
-  private JMenu fileMenu;
-  private JMenu processMenu;
-  private JMenu imageTransforms;
-  private JMenu colorFilters;
-  private JMenu imageFilters;
-  private JPanel histogram;
-  private JScrollPane workspace;
-  private JLabel picture;
+public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI {
+  private final JMenuBar menu;
+  private final JMenu fileMenu;
+  private final JMenu processMenu;
+  private final JMenu imageTransforms;
+  private final JMenu colorFilters;
+  private final JMenu imageFilters;
+  private final JPanel histogram;
+  private final JScrollPane workspace;
+  private final JLabel picture;
 
   public ImageProcessingGUIView() {
     super("Image Processing");

@@ -339,14 +339,18 @@ public final class OperationsModelManager implements OperationsModel {
     }
 
     img = loaded.get(name);
+
+    if (toWidth >= img.getWidth() || toHeight >= img.getHeight() || toWidth < 0 || toHeight < 0) {
+      throw new IllegalArgumentException("New width and height must be less than the current dimensions and greater than zero!");
+    }
+
     pixels = new Color[toWidth][toHeight];
-    int maxValue = img.getMaxValue();
 
     for (int x = 0; x < toWidth; x++) {
       for (int y = 0; y < toHeight; y++) {
 
-       double xPrime = (double)x * (double)img.getWidth() / toWidth + toWidth / (double)img.getWidth();
-       double yPrime = (double)y * (double)img.getHeight() / toHeight + toHeight / (double)img.getHeight();
+       double xPrime = (double)x * (double)toWidth / img.getWidth() + toWidth / (double)img.getWidth();
+       double yPrime = (double)y * (double)toHeight / img.getHeight() + toHeight / (double)img.getHeight();
 
         Color[] surround = new Color[]{
                 img.getPixel((int)Math.floor(xPrime), (int)Math.floor(yPrime)),
