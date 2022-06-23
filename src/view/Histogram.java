@@ -22,9 +22,11 @@ public class Histogram extends JComponent {
   public Histogram(Image img) {
     this();
     this.img = img;
+    repaint();
   }
 
   public Histogram() {
+    setOpaque(true);
     setBackground(Color.WHITE);
     redValueCount = new HashMap<>();
     greenValueCount = new HashMap<>();
@@ -57,6 +59,7 @@ public class Histogram extends JComponent {
 
   public void setImg(Image img) {
     this.img = img;
+    repaint();
   }
 
   @Override
@@ -81,9 +84,6 @@ public class Histogram extends JComponent {
       max = Math.max(val, max);
       min = Math.min(val, min);
     }
-
-    //System.out.println("Max:"+max);
-    //System.out.println("Min:"+min);
 
     drawList(redValueCount, Color.red);
     drawList(greenValueCount, Color.green);

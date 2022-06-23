@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="trying to fix vc issues">
+    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="Fixed histogram updating after new image.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/Assignment4-ImageProcessing.jar" beforeDir="false" afterPath="$PROJECT_DIR$/res/Assignment4-ImageProcessing.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/OperationsModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OperationsModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/Histogram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Histogram.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/ImageProcessingGUIView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ImageProcessingGUIView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,16 +45,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ECTest.testDiffWidthHeight">
+  <component name="RunManager" selected="Application.controller.ImageProcessing">
     <configuration name="ImageProcessingGUIController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="controller.ImageProcessingGUIController" />
       <module name="Assignment4-ImageProcessing" />
@@ -89,30 +93,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ECTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SmallScaleOperationTest.testGreyScaleNotGrey" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment4-ImageProcessing" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ECTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ECTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Assignment4-ImageProcessing" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ECTest" />
-      <option name="METHOD_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="SmallScaleOperationTest" />
+      <option name="METHOD_NAME" value="testGreyScaleNotGrey" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ECTest.testDiffWidthHeight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SmallScaleOperationTest.testLoadPNGSavePPM" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment4-ImageProcessing" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ECTest" />
-      <option name="METHOD_NAME" value="testDiffWidthHeight" />
+      <option name="MAIN_CLASS_NAME" value="SmallScaleOperationTest" />
+      <option name="METHOD_NAME" value="testLoadPNGSavePPM" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SmallScaleOperationTest.testSharpen" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assignment4-ImageProcessing" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SmallScaleOperationTest" />
+      <option name="METHOD_NAME" value="testSharpen" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -133,17 +138,17 @@
       <item itemvalue="Application.ImageProcessingGUIController" />
       <item itemvalue="Application.SwingFeatures" />
       <item itemvalue="JUnit.TestFolder" />
-      <item itemvalue="JUnit.ECTest.test" />
-      <item itemvalue="JUnit.ECTest" />
-      <item itemvalue="JUnit.ECTest.testDiffWidthHeight" />
+      <item itemvalue="JUnit.SmallScaleOperationTest.testGreyScaleNotGrey" />
+      <item itemvalue="JUnit.SmallScaleOperationTest.testSharpen" />
+      <item itemvalue="JUnit.SmallScaleOperationTest.testLoadPNGSavePPM" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ECTest.testDiffWidthHeight" />
-        <item itemvalue="JUnit.ECTest" />
-        <item itemvalue="JUnit.ECTest.test" />
         <item itemvalue="Application.ImageProcessingGUIController" />
         <item itemvalue="Application.SwingFeatures" />
+        <item itemvalue="JUnit.SmallScaleOperationTest.testLoadPNGSavePPM" />
+        <item itemvalue="JUnit.SmallScaleOperationTest.testSharpen" />
+        <item itemvalue="JUnit.SmallScaleOperationTest.testGreyScaleNotGrey" />
       </list>
     </recent_temporary>
   </component>
@@ -171,7 +176,8 @@
       <workItem from="1655408946979" duration="227000" />
       <workItem from="1655477191718" duration="1998000" />
       <workItem from="1655775764757" duration="19041000" />
-      <workItem from="1655995367794" duration="754000" />
+      <workItem from="1655922995892" duration="1196000" />
+      <workItem from="1655924433468" duration="1449000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1654458999042</created>
@@ -369,19 +375,19 @@
       <option name="project" value="LOCAL" />
       <updated>1655917207931</updated>
     </task>
-    <task id="LOCAL-00029" summary="trying to fix vc issues">
-      <created>1655917827458</created>
+    <task id="LOCAL-00029" summary="Histogram now updates.">
+      <created>1655922024920</created>
       <option name="number" value="00029" />
       <option name="presentableId" value="LOCAL-00029" />
       <option name="project" value="LOCAL" />
-      <updated>1655917827458</updated>
+      <updated>1655922024920</updated>
     </task>
-    <task id="LOCAL-00030" summary="trying to fix vc issues">
-      <created>1655929724563</created>
+    <task id="LOCAL-00030" summary="Fixed histogram updating after new image.">
+      <created>1655924193061</created>
       <option name="number" value="00030" />
       <option name="presentableId" value="LOCAL-00030" />
       <option name="project" value="LOCAL" />
-      <updated>1655929724563</updated>
+      <updated>1655924193062</updated>
     </task>
     <option name="localTasksCounter" value="31" />
     <servers />
@@ -424,18 +430,8 @@
     <MESSAGE value="added required image files for tests" />
     <MESSAGE value="Added GUI, without histograms" />
     <MESSAGE value="." />
-    <MESSAGE value="trying to fix vc issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="trying to fix vc issues" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/test/ECTest.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Histogram now updates." />
+    <MESSAGE value="Fixed histogram updating after new image." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed histogram updating after new image." />
   </component>
 </project>
