@@ -51,8 +51,8 @@ public class ECTest {
     assertEquals(3, actual.getWidth());
     expected = new RGBImage(new Color[][]{
             {new Color(102, 91, 80), new Color(52, 47, 34)},
-            {new Color(234, 132, 131), new Color(137, 135, 131)},
-            {new Color(210, 111, 108), new Color(135, 114, 110)}}, 255);
+            {new Color(207, 126, 122), new Color(111, 120, 116)},
+            {new Color(136, 46, 37), new Color(126, 49, 47)}}, 255);
 
     assertEquals(expected, actual);
 

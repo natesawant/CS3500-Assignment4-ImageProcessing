@@ -93,8 +93,8 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
       histogram = new Histogram(ImageUtil.convertPNGJPEG(filename));
 
       img = ImageIO.read(new File(filename));
-//      img = img.getScaledInstance((int) (picture.getWidth()), (int) (picture.getHeight()),
-//              Image.SCALE_SMOOTH);
+      img = img.getScaledInstance((int) (picture.getWidth()), (int) (picture.getHeight()),
+              Image.SCALE_SMOOTH);
       double wScale = img.getWidth(this) / (double)workspace.getWidth();
       double hScale = img.getHeight(this) / (double)workspace.getHeight();
 

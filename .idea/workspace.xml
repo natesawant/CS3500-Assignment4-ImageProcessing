@@ -7,12 +7,8 @@
     <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="trying to fix vc issues">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/Assignment4-ImageProcessing.jar" beforeDir="false" afterPath="$PROJECT_DIR$/res/Assignment4-ImageProcessing.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/ImageProcessingGUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ImageProcessingGUIController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/OperationsModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OperationsModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ImageProcessingGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ImageProcessingGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/ImageProcessingGUIView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ImageProcessingGUIView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/ECTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ECTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/ModelMock.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ModelMock.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +46,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
@@ -174,6 +171,7 @@
       <workItem from="1655408946979" duration="227000" />
       <workItem from="1655477191718" duration="1998000" />
       <workItem from="1655775764757" duration="19041000" />
+      <workItem from="1655995367794" duration="754000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1654458999042</created>
@@ -378,7 +376,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655917827458</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="trying to fix vc issues">
+      <created>1655929724563</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1655929724563</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,11 +434,6 @@
           <url>file://$PROJECT_DIR$/test/ECTest.java</url>
           <line>56</line>
           <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/test/ECTest.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

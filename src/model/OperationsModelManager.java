@@ -340,7 +340,7 @@ public final class OperationsModelManager implements OperationsModel {
 
     img = loaded.get(name);
 
-    if (toWidth >= img.getWidth() || toHeight >= img.getHeight() || toWidth < 0 || toHeight < 0) {
+    if (toWidth >= img.getWidth() || toHeight >= img.getHeight() || toWidth <= 0 || toHeight <= 0) {
       throw new IllegalArgumentException("New width and height must be less than the current dimensions and greater than zero!");
     }
 
@@ -352,13 +352,10 @@ public final class OperationsModelManager implements OperationsModel {
         double xPrime;
         double yPrime;
 
-        double s = (double)x / (double) toWidth;
+        double s = (img.getWidth() % toWidth == 0) ? (double)x / (double) toWidth : (double) x / (double) (toWidth + 1);
         xPrime = s * (double) img.getWidth() + (double) toWidth / (double)img.getWidth();
-        s = (double) y / (double) toHeight;
+        s = (img.getHeight() % toHeight == 0) ? (double) y / (double) toHeight : (double) y / (double) (toHeight + 1);
         yPrime = s * (double)img.getHeight() + (double) toHeight / (double)img.getHeight();
-
-        xPrime = Math.min(xPrime, img.getWidth() - 1);
-        yPrime = Math.min(yPrime, img.getHeight() - 1);
 
         Color[] surround = new Color[]{
                 img.getPixel((int)Math.floor(xPrime), (int)Math.floor(yPrime)),
