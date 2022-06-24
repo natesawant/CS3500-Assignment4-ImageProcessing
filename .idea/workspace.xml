@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="style stuff">
-      <change beforePath="$PROJECT_DIR$/src/processes/AdjustBlue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/AdjustBlue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/AdjustGreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/AdjustGreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/AdjustRed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/AdjustRed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/ApplyAdditionFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/ApplyAdditionFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/ApplyKernel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/ApplyKernel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/ApplyMultiplyFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/ApplyMultiplyFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/Downscale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/Downscale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/HorizontalFlip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/HorizontalFlip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/LoadFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/LoadFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/SaveFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/SaveFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/ValueComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/ValueComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processes/VerticalFlip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/VerticalFlip.java" afterDir="false" />
+    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="fixed access modifiers in process classees">
+      <change beforePath="$PROJECT_DIR$/src/util/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/ImageUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ImageProcessingGUIView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ImageProcessingGUIView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +45,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
@@ -391,7 +383,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655929724563</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="fixed access modifiers in process classees">
+      <created>1656078911009</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1656078911009</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,7 +408,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Init" />
     <MESSAGE value="Starter code" />
     <MESSAGE value="Added basic interfaces and classes." />
     <MESSAGE value="deleted tests folder" />
@@ -434,7 +432,8 @@
     <MESSAGE value="." />
     <MESSAGE value="trying to fix vc issues" />
     <MESSAGE value="style stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="style stuff" />
+    <MESSAGE value="fixed access modifiers in process classees" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed access modifiers in process classees" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

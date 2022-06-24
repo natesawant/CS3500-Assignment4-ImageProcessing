@@ -1,14 +1,32 @@
 package view;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JScrollPane;
+import javax.swing.JLabel;
+import javax.swing.UIManager;
+import javax.swing.BoxLayout;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 
 import util.ImageUtil;
 
+/**
+ * This class represents a GUI view of this image processing program.
+ */
 public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI {
   private final JMenuBar menu;
   private final JMenu fileMenu;
@@ -21,6 +39,9 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
   private final JScrollPane workspace;
   private final JLabel picture;
 
+  /**
+   * Constructs a new GUI View.
+   */
   public ImageProcessingGUIView() {
     super("Image Processing");
 
@@ -68,7 +89,6 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
     histogramPanel.add(blueHistogram);
 
     histogram = new Histogram();
-//    histogramPanel.setPreferredSize(new Dimension(300, 600));
     histogramPanel.add(histogram);
     pack();
 
@@ -105,18 +125,22 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
     }
   }
 
+  @Override
   public void addToFileMenu(JMenuItem item) {
     fileMenu.add(item);
   }
 
+  @Override
   public void addToImageTransforms(JMenuItem item) {
     imageTransforms.add(item);
   }
 
+  @Override
   public void addToColorFilters(JMenuItem item) {
     colorFilters.add(item);
   }
 
+  @Override
   public void addToImageFilters(JMenuItem item) {
     imageFilters.add(item);
   }

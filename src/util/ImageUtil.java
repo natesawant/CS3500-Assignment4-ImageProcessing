@@ -262,7 +262,6 @@ BufferedImage bufferedImage = convertOurImageToJavaImage(img);
         int r = sc.nextInt();
         int g = sc.nextInt();
         int b = sc.nextInt();
-        System.out.println("Color of pixel (" + j + "," + i + "): " + r + "," + g + "," + b);
       }
     }
   }
