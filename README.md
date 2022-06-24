@@ -23,6 +23,12 @@ This project is a basic image processing program. At the moment, it is only text
 
 We did not make any design changes in this assignment besides adding two new ways of manipulating images via filters.
 
+## Updates in Part 3
+
+Added a new GUI View interface and class that handles displaying the image editing program to the user.
+Added a new Controller that implements the same ImageProcessingController interface that is able to better control the GUI view.
+Added a new process that is able to downscale images.
+
 ## Design
 
 ### Class diagram
