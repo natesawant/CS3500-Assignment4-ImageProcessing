@@ -31,6 +31,7 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
     }
 
     setBackground(new Color(51,51,51));
+    setPreferredSize(new Dimension(1280, 720));
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setExtendedState(JFrame.MAXIMIZED_BOTH);
     setVisible(true);
@@ -69,6 +70,7 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
     histogram = new Histogram();
 //    histogramPanel.setPreferredSize(new Dimension(300, 600));
     histogramPanel.add(histogram);
+    pack();
 
     // Add Workspace Section
     picture = new JLabel();
@@ -79,7 +81,6 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
     workspace = new JScrollPane(picture);
     workspace.setBackground(new Color(51,51,51));
     workspace.setPreferredSize(new Dimension(1024, 576));
-    //workspace = new JScrollPane(new JLabel(new ImageIcon("images/ship-copy.jpg")));
 
     //Combine all sections into the frame.
     add(BorderLayout.EAST, histogramPanel);
@@ -91,19 +92,9 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
   public void setImage(String filename) {
     Image img;
     try {
-      histogram = new Histogram(ImageUtil.convertPNGJPEG(filename));
+      histogram.setImg(ImageUtil.convertPNGJPEG(filename));
 
       img = ImageIO.read(new File(filename));
-      img = img.getScaledInstance((int) (picture.getWidth()), (int) (picture.getHeight()),
-              Image.SCALE_SMOOTH);
-      double wScale = img.getWidth(this) / (double)workspace.getWidth();
-      double hScale = img.getHeight(this) / (double)workspace.getHeight();
-
-//      if (wScale >= hScale) {
-//        img = img.getScaledInstance(workspace.getWidth(), img.getHeight(this) * (workspace.getHeight() / img.getHeight(this)), Image.SCALE_SMOOTH);
-//      } else {
-//        img = img.getScaledInstance(img.getWidth(this) * (workspace.getWidth() / img.getWidth(this)), workspace.getHeight(), Image.SCALE_SMOOTH);
-//      }
 
       picture.setIcon(new ImageIcon(img));
       histogramPanel.add(histogram);
