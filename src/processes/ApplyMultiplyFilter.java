@@ -8,8 +8,8 @@ import model.OperationsModel;
  * Applies a 3x3 matrix filter to an image.
  */
 public abstract class ApplyMultiplyFilter implements Process {
-  String name;
-  String destName;
+  private String name;
+  private String destName;
 
   /**
    * Constructs a new filter to apply to an image.

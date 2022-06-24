@@ -6,8 +6,8 @@ import model.OperationsModel;
  * This class represents the vertical flip effect on an image.
  */
 public class VerticalFlip implements Process {
-  String name;
-  String destName;
+  private String name;
+  private String destName;
 
   /**
    * Constructs an object that will vertically flip a given image.

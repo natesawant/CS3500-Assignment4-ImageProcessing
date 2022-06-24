@@ -6,8 +6,8 @@ import model.OperationsModel;
  * This class allows the user to load an image into the program.
  */
 public class LoadFile implements Process {
-  String path;
-  String destName;
+  private String path;
+  private String destName;
 
   /**
    * Constructs an object that will load a desired image.

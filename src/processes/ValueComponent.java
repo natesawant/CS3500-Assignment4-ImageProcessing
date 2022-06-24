@@ -6,9 +6,9 @@ import model.OperationsModel;
  * This class allows the user to create an image based on different values of each pixel.
  */
 public class ValueComponent implements Process {
-  String value;
-  String name;
-  String destName;
+  private String value;
+  private String name;
+  private String destName;
 
   /**
    * Constructs an object that will generate a new image based on different pixel values.

@@ -6,9 +6,9 @@ import model.OperationsModel;
  * This class applies a given kernel matrix to an image.
  */
 public abstract class ApplyKernel implements Process {
-  double[][] kernel;
-  String name;
-  String destName;
+  protected double[][] kernel;
+  private String name;
+  private String destName;
 
   /**
    * Constructs a new kernel to apply to an image.

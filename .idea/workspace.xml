@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="trying to fix vc issues">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/Assignment4-ImageProcessing.jar" beforeDir="false" afterPath="$PROJECT_DIR$/res/Assignment4-ImageProcessing.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/OperationsModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OperationsModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ImageProcessingGUIView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ImageProcessingGUIView.java" afterDir="false" />
+    <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="style stuff">
+      <change beforePath="$PROJECT_DIR$/src/processes/AdjustBlue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/AdjustBlue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/AdjustGreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/AdjustGreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/AdjustRed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/AdjustRed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/ApplyAdditionFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/ApplyAdditionFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/ApplyKernel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/ApplyKernel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/ApplyMultiplyFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/ApplyMultiplyFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/Downscale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/Downscale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/HorizontalFlip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/HorizontalFlip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/LoadFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/LoadFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/SaveFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/SaveFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/ValueComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/ValueComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processes/VerticalFlip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processes/VerticalFlip.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -425,7 +433,8 @@
     <MESSAGE value="Added GUI, without histograms" />
     <MESSAGE value="." />
     <MESSAGE value="trying to fix vc issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="trying to fix vc issues" />
+    <MESSAGE value="style stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="style stuff" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

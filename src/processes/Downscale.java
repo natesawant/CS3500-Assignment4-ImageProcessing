@@ -6,10 +6,10 @@ import model.OperationsModel;
  * This class represents an object that can downscale an image by a given increment.
  */
 public class Downscale implements Process {
-  String path;
-  String destName;
-  int toWidth;
-  int toHeight;
+  private String path;
+  private String destName;
+  private int toWidth;
+  private int toHeight;
 
   /**
    * Constructs an object that will downscale a given image.

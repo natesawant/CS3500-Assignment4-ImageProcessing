@@ -6,8 +6,8 @@ import model.OperationsModel;
  * This class allows the user to save an image into the program's filesystem.
  */
 public class SaveFile implements Process {
-  String path;
-  String destName;
+  private String path;
+  private String destName;
 
   /**
    * Constructs an object that will save a desired image.

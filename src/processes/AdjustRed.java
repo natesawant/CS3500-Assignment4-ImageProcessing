@@ -7,9 +7,9 @@ import java.awt.Color;
  */
 public class AdjustRed extends ApplyAdditionFilter {
 
-  int increment;
-  String name;
-  String destName;
+  private int increment;
+  private String name;
+  private String destName;
 
   /**
    * Constructs a Kernel that will apply the brightening effect.

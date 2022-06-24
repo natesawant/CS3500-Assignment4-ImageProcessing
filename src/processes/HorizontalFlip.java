@@ -6,8 +6,8 @@ import model.OperationsModel;
  * This class represents the horizontal flip effect on an image.
  */
 public class HorizontalFlip implements Process {
-  String name;
-  String destName;
+  private String name;
+  private String destName;
 
   /**
    * Constructs an object that will flip a given image.
