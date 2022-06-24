@@ -55,11 +55,11 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
     histogramPanel = new JPanel(); // the panel is not visible in output
     histogramPanel.setBackground(new Color(51,51,51));
     histogramPanel.setBorder(BorderFactory.createTitledBorder("Histograms"));
-    JLabel rgbHistogram = new JLabel(new ImageIcon("images/blackhistogramPanel.png", "RGB Histogram"));
-    JLabel redHistogram = new JLabel(new ImageIcon("images/redhistogramPanel.png", "Red Histogram"));
-    JLabel greenHistogram = new JLabel(new ImageIcon("images/greenhistogramPanel.png", "Green " +
+    JLabel rgbHistogram = new JLabel(new ImageIcon("images/blackhistogram.png", "RGB Histogram"));
+    JLabel redHistogram = new JLabel(new ImageIcon("images/redhistogram.png", "Red Histogram"));
+    JLabel greenHistogram = new JLabel(new ImageIcon("images/greenhistogram.png", "Green " +
             "Histogram"));
-    JLabel blueHistogram = new JLabel(new ImageIcon("images/bluehistogramPanel.png", "Blue Histogram"));
+    JLabel blueHistogram = new JLabel(new ImageIcon("images/bluehistogram.png", "Blue Histogram"));
     histogramPanel.setLayout(new BoxLayout(histogramPanel, BoxLayout.PAGE_AXIS));
     histogramPanel.add(rgbHistogram);
     histogramPanel.add(redHistogram);
@@ -67,6 +67,7 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
     histogramPanel.add(blueHistogram);
 
     histogram = new Histogram();
+//    histogramPanel.setPreferredSize(new Dimension(300, 600));
     histogramPanel.add(histogram);
 
     // Add Workspace Section
@@ -105,6 +106,7 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
 //      }
 
       picture.setIcon(new ImageIcon(img));
+      histogramPanel.add(histogram);
 
 
     } catch (IOException ex) {

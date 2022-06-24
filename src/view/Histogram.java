@@ -13,12 +13,12 @@ import model.Image;
 
 public class Histogram extends JComponent {
   private Graphics2D gr;
-  Map<Integer, Integer> redValueCount;
-  Map<Integer, Integer> greenValueCount;
-  Map<Integer, Integer> blueValueCount;
-  int min;
-  int max;
-  Image img;
+  private Map<Integer, Integer> redValueCount;
+  private Map<Integer, Integer> greenValueCount;
+  private Map<Integer, Integer> blueValueCount;
+  private int min;
+  private int max;
+  private Image img;
   public Histogram(Image img) {
     this();
     this.img = img;
