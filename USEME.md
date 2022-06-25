@@ -2,13 +2,18 @@
 ### Aiden Cahill and Nate Sawant
 
 ## How to run via .jar file
-To run this program via the jar file, first navigate to the root directory of this program, then run the command:
-`java ./res/Assignment4-ImageProcessing.jar [optional specified directory] -file [optional specified .txt file providing desired commands]`
+To run this program via the jar file, first navigate to the res folder, then run the command:
+`java Assignment4-ImageProcessing.jar [optional specified directory] -file [optional specified .txt file providing desired commands]`
+Options:
+-text : runs the text version of the program
+-file [file] : runs the program based off of a file script
+No options will launch the GUI
 
 ### Examples:
-`java ./res/Assignment4-ImageProcessing.jar /images`
-`java ./res/Assignment4-ImageProcessing.jar -file script.txt`
-`java ./res/Assignment4-ImageProcessing.jar /res -file script.txt`
+`java Assignment4-ImageProcessing.jar /images`
+`java Assignment4-ImageProcessing.jar -file script.txt`
+`java Assignment4-ImageProcessing.jar /res -file script.txt`
+`java Assignment4-ImageProcessing.jar -text`
 
 ## Available operations:
 Note: Before you are able to use any of the following operations on an image, you must first
@@ -357,3 +362,30 @@ Ridge Detection Kernel (3x3)
 > `ridge-detection igm igm-ridge`
 
 ![igmridge](https://user-images.githubusercontent.com/74106957/172895394-b63f6578-dcbe-414d-91a5-79fc8267f87f.jpg)
+
+#GUI - How to use
+
+## A color-value histogram of the current image is shown on the right side of the screen
+
+## File tab
+Available operations:
+Open - opens a specified image file
+Save - saves the changes to the current image
+Save As - saves the changes to a new image
+
+##Processes Tab
+Sub tabs:
+- Image Transforms:
+-   Flip the image horizontally or vertically
+-   Downscale the image to specified dimensions that conform to the following boundaries: [0 , width_of_image) and [0 , height_of_image)
+- Color filters:
+-   Adjust specific RGB values
+-   Apply a sepia filter
+-   Invert colors
+-   Apply varying forms of greyscale filters
+- Image filters:
+-   Box blur effect
+-   Gaussian blur effect
+-   Emboss
+-   Sharpen Ridge detection
+
