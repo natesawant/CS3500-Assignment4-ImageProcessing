@@ -49,10 +49,6 @@ public class ImageProcessing {
       controller = new ImageProcessingGUIControllerImplementation();
     }
 
-
-//    controller = new ImageProcessingControllerImplementation(directory, view, readable);
-
-
     controller.initializeProgram();
   }
 }

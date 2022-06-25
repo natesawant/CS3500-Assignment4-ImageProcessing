@@ -70,6 +70,11 @@ public class ImageUtil {
     }
   }
 
+  /**
+   * Converts an awt image type to a Buffered image.
+   * @param img the desired image to convert.
+   * @return the given image as a BufferedImage.
+   */
   public static BufferedImage convertOurImageToJavaImage(Image img) {
     int width = img.getWidth();
     int height = img.getHeight();
@@ -105,7 +110,7 @@ public class ImageUtil {
     String[] seperatedPath = path.split("\\.");
     String ext = seperatedPath[seperatedPath.length - 1];
 
-BufferedImage bufferedImage = convertOurImageToJavaImage(img);
+    BufferedImage bufferedImage = convertOurImageToJavaImage(img);
 
     ImageIO.write(bufferedImage, ext, new File(path));
   }

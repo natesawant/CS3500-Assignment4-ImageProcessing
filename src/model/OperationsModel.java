@@ -100,7 +100,9 @@ public interface OperationsModel {
    * @param toHeight the desired height of the image.
    * @param name the name of the image that is processed.
    * @param destName the new name of the processed image.
-   * @throws IllegalArgumentException if either of the dimensions are zero or the name of the image is invalid.
+   * @throws IllegalArgumentException if either of the dimensions are zero or the
+   *          name of the image is invalid.
    */
-  void applyDownscaling(int toWidth, int toHeight, String name, String destName) throws IllegalArgumentException;
+  void applyDownscaling(int toWidth, int toHeight, String name, String destName)
+          throws IllegalArgumentException;
 }

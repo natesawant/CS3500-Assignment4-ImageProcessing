@@ -81,33 +81,33 @@ public class ImageProcessingGUIControllerImplementation implements ImageProcessi
 
     // Color Filters
     programCommands.put("Adjust Red",
-            v -> new AdjustRed(Integer.parseInt(JOptionPane.showInputDialog(v, "Increment")),
-                    saveName, saveName));
+        v -> new AdjustRed(Integer.parseInt(JOptionPane.showInputDialog(v, "Increment")),
+                saveName, saveName));
     programCommands.put("Adjust Green",
-            v -> new AdjustGreen(Integer.parseInt(JOptionPane.showInputDialog(v, "Increment")),
-                    saveName, saveName));
+        v -> new AdjustGreen(Integer.parseInt(JOptionPane.showInputDialog(v, "Increment")),
+                saveName, saveName));
     programCommands.put("Adjust Blue",
-            v -> new AdjustBlue(Integer.parseInt(JOptionPane.showInputDialog(v, "Increment")),
-                    saveName, saveName));
+        v -> new AdjustBlue(Integer.parseInt(JOptionPane.showInputDialog(v, "Increment")),
+                saveName, saveName));
     programCommands.put("Adjust Brightness",
-            v -> new Brighten(Integer.parseInt(JOptionPane.showInputDialog(v, "Increment")),
-                    saveName, saveName));
+        v -> new Brighten(Integer.parseInt(JOptionPane.showInputDialog(v, "Increment")),
+                saveName, saveName));
     programCommands.put("Invert Colors",
-            v -> new InvertColors(saveName, saveName));
+        v -> new InvertColors(saveName, saveName));
     programCommands.put("Sepia Tone",
-            v -> new SepiaTone(saveName, saveName));
+        v -> new SepiaTone(saveName, saveName));
     programCommands.put("Greyscale (Red)",
-            v -> new RedGrayscale(saveName, saveName));
+        v -> new RedGrayscale(saveName, saveName));
     programCommands.put("Greyscale (Green)",
-            v -> new GreenGrayscale(saveName, saveName));
+        v -> new GreenGrayscale(saveName, saveName));
     programCommands.put("Greyscale (Blue)",
-            v -> new BlueGrayscale(saveName, saveName));
+        v -> new BlueGrayscale(saveName, saveName));
     programCommands.put("Greyscale (Value)",
-            v -> new ValueGrayscale(saveName, saveName));
+        v -> new ValueGrayscale(saveName, saveName));
     programCommands.put("Greyscale (Intensity)",
-            v -> new IntensityGrayscale(saveName, saveName));
+        v -> new IntensityGrayscale(saveName, saveName));
     programCommands.put("Greyscale (Luma)",
-            v -> new LumaGrayscale(saveName, saveName));
+        v -> new LumaGrayscale(saveName, saveName));
 
     // Image Filters
     programCommands.put("Box Blur", v -> new BoxBlur(saveName, saveName));
@@ -129,8 +129,9 @@ public class ImageProcessingGUIControllerImplementation implements ImageProcessi
     } catch (Exception ex) {
       try {
         view.renderMessage("Error: " + ex.getMessage());
-        for (StackTraceElement element : ex.getStackTrace())
+        for (StackTraceElement element : ex.getStackTrace()) {
           System.out.println(element.toString());
+        }
       } catch (IOException exception) {
         throw new RuntimeException(exception);
       }

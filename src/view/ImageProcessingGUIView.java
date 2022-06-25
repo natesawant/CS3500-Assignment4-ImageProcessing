@@ -31,15 +31,12 @@ import util.ImageUtil;
  * This class represents a GUI view of this image processing program.
  */
 public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI  {
-  private final JMenuBar menu;
   private final JMenu fileMenu;
-  private final JMenu processMenu;
   private final JMenu imageTransforms;
   private final JMenu colorFilters;
   private final JMenu imageFilters;
   private final JPanel histogramPanel;
   private Histogram histogram;
-  private final JScrollPane workspace;
   private final JLabel picture;
   private List<JMenuItem> fileItems;
   private List<JMenuItem> transformItems;
@@ -96,10 +93,10 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
     setVisible(true);
 
     //Creating the MenuBar and adding components
-    menu = new JMenuBar();
+    JMenuBar menu = new JMenuBar();
     menu.setBackground(new Color(132, 132, 132));
     fileMenu = new JMenu("File");
-    processMenu = new JMenu("Processes");
+    JMenu processMenu = new JMenu("Processes");
     imageTransforms = new JMenu("Image Transforms");
     colorFilters = new JMenu("Color Filters");
     imageFilters = new JMenu("Image Filters");
@@ -137,7 +134,7 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
     picture.setBackground(new Color(51,51,51));
     picture.setAlignmentX(Component.CENTER_ALIGNMENT);
     picture.setAlignmentY(Component.CENTER_ALIGNMENT);
-    workspace = new JScrollPane(picture);
+    JScrollPane workspace = new JScrollPane(picture);
     workspace.setBackground(new Color(51,51,51));
     workspace.setPreferredSize(new Dimension(1024, 576));
 

@@ -333,7 +333,8 @@ public final class OperationsModelManager implements OperationsModel {
   }
 
   @Override
-  public void applyDownscaling(int toWidth, int toHeight, String name, String destName) throws IllegalArgumentException {
+  public void applyDownscaling(int toWidth, int toHeight, String name, String destName)
+          throws IllegalArgumentException {
     if (!loaded.containsKey(name)) {
       throw new IllegalArgumentException("Image not loaded.");
     }
@@ -341,7 +342,9 @@ public final class OperationsModelManager implements OperationsModel {
     img = loaded.get(name);
 
     if (toWidth >= img.getWidth() || toHeight >= img.getHeight() || toWidth <= 0 || toHeight <= 0) {
-      throw new IllegalArgumentException("New width and height must be less than the current dimensions and greater than zero!");
+      throw new IllegalArgumentException("New width and height must be " +
+              "less than the current dimensions and greater than zero!");
+
     }
 
     pixels = new Color[toWidth][toHeight];
@@ -352,9 +355,11 @@ public final class OperationsModelManager implements OperationsModel {
         double xPrime;
         double yPrime;
 
-        double s = (img.getWidth() % toWidth == 0) ? (double)x / (double) toWidth : (double) x / (double) (toWidth + 1);
+        double s = (img.getWidth() % toWidth == 0) ? (double)x / (double) toWidth
+                : (double) x / (double) (toWidth + 1);
         xPrime = s * (double) img.getWidth() + (double) toWidth / (double)img.getWidth();
-        s = (img.getHeight() % toHeight == 0) ? (double) y / (double) toHeight : (double) y / (double) (toHeight + 1);
+        s = (img.getHeight() % toHeight == 0) ? (double) y / (double) toHeight
+                : (double) y / (double) (toHeight + 1);
         yPrime = s * (double)img.getHeight() + (double) toHeight / (double)img.getHeight();
 
         Color[] surround = new Color[]{
@@ -377,21 +382,27 @@ public final class OperationsModelManager implements OperationsModel {
   }
 
   private int computeDownscaleValue(Color[] surrounding, String value, double x, double y) {
-   int finalVal = 0;
-   int m = 0;
-   int n = 0;
+    int finalVal = 0;
+    int m = 0;
+    int n = 0;
     switch (value) {
       case "red":
-        m =  (int)(surrounding[1].getRed() * (x - Math.floor(x)) +  surrounding[0].getRed() * (Math.ceil(x) - x));
-        n = (int)(surrounding[3].getRed() * (x - Math.floor(x)) + surrounding[2].getRed() * (Math.ceil(x) - x));
+        m =  (int)(surrounding[1].getRed()
+                * (x - Math.floor(x)) +  surrounding[0].getRed() * (Math.ceil(x) - x));
+        n = (int)(surrounding[3].getRed()
+                * (x - Math.floor(x)) + surrounding[2].getRed() * (Math.ceil(x) - x));
         break;
       case "blue":
-        m =  (int)(surrounding[1].getBlue() * (x - Math.floor(x)) +  surrounding[0].getBlue() * (Math.ceil(x) - x));
-        n = (int)(surrounding[3].getBlue() * (x - Math.floor(x)) + surrounding[2].getBlue() * (Math.ceil(x) - x));
+        m =  (int)(surrounding[1].getBlue()
+                * (x - Math.floor(x)) +  surrounding[0].getBlue() * (Math.ceil(x) - x));
+        n = (int)(surrounding[3].getBlue()
+                * (x - Math.floor(x)) + surrounding[2].getBlue() * (Math.ceil(x) - x));
         break;
       case "green":
-        m =  (int)(surrounding[1].getGreen() * (x - Math.floor(x)) +  surrounding[0].getGreen() * (Math.ceil(x) - x));
-        n = (int)(surrounding[3].getGreen() * (x - Math.floor(x)) + surrounding[2].getGreen() * (Math.ceil(x) - x));
+        m =  (int)(surrounding[1].getGreen()
+                * (x - Math.floor(x)) +  surrounding[0].getGreen() * (Math.ceil(x) - x));
+        n = (int)(surrounding[3].getGreen()
+                * (x - Math.floor(x)) + surrounding[2].getGreen() * (Math.ceil(x) - x));
         break;
       default:
         // wont happen

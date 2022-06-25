@@ -59,7 +59,9 @@ public class Histogram extends JComponent {
           greenValueCount.put(value, 1 + greenValueCount.getOrDefault(value, 0));
           value = img.getPixel(x,y).getBlue();
           blueValueCount.put(value, 1 + blueValueCount.getOrDefault(value, 0));
-          int intensity = (img.getPixel(x, y).getRed() + img.getPixel(x, y).getGreen() + img.getPixel(x, y).getBlue()) / 3;
+          int intensity = (img.getPixel(x, y).getRed()
+                  + img.getPixel(x, y).getGreen()
+                  + img.getPixel(x, y).getBlue()) / 3;
           intensityCount.put(intensity, 1 + intensityCount.getOrDefault(intensity, 0));
 
         }
@@ -138,7 +140,7 @@ public class Histogram extends JComponent {
 
       y2 = (int)((y2 - min) / (double)(max - min) * 100);
 
-      gr.drawLine(x1, 100-y1, x2, 100-y2);
+      gr.drawLine(x1, 100 - y1, x2, 100 - y2);
     }
   }
 }

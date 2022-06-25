@@ -2,8 +2,6 @@ package view;
 
 import java.awt.event.ActionListener;
 
-import javax.swing.*;
-
 /**
  * This interface represents a GUI view of the image processing program.
  */
