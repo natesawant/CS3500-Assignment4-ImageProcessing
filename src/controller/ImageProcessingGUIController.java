@@ -1,17 +1,13 @@
 package controller;
 
 import java.awt.event.ActionEvent;
-import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
-import javax.imageio.ImageIO;
-import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JFrame;
-import javax.swing.AbstractAction;
 
 import model.OperationsModel;
 import model.OperationsModelManager;
@@ -38,26 +34,29 @@ import processes.SepiaTone;
 import processes.Sharpen;
 import processes.ValueGrayscale;
 import processes.VerticalFlip;
-import view.ImageProcessingGUI;
 import view.ImageProcessingGUIView;
 
-public class ImageProcessingGUIController implements ImageProcessingController {
+public class ImageProcessingGUIController implements ImageGUI {
   private ImageProcessingGUIView view;
   private OperationsModel manager;
   private String saveName;
   private String extension;
+  private Map<String, Function<JFrame, Process>> programCommands;
 
   public ImageProcessingGUIController() {
+
+    manager = new OperationsModelManager();
+    view = new ImageProcessingGUIView();
     saveName = "saved";
     extension = ".png";
+    view.setListener(this);
+
   }
 
   @Override
   public void initializeProgram() throws IllegalStateException {
-    manager = new OperationsModelManager();
-    view = new ImageProcessingGUIView();
 
-    Map<String, Function<JFrame, Process>> programCommands = new HashMap<>();
+    programCommands = new HashMap<>();
     // Program commands
     programCommands.put("Open", v -> new LoadFile(
             JOptionPane.showInputDialog(v, "Enter filename."), saveName));
@@ -67,97 +66,68 @@ public class ImageProcessingGUIController implements ImageProcessingController {
             "savename."),
             saveName));
 
-    Map<String, Function<JFrame, Process>> imageTransforms = new HashMap<>();
     // Image Transforms
-    imageTransforms.put("Flip (Horizontal)", v -> new HorizontalFlip(saveName, saveName));
-    imageTransforms.put("Flip (Vertical)", v -> new VerticalFlip(saveName, saveName));
-    imageTransforms.put("Downscale", v -> new Downscale(
+    programCommands.put("Flip (Horizontal)", v -> new HorizontalFlip(saveName, saveName));
+    programCommands.put("Flip (Vertical)", v -> new VerticalFlip(saveName, saveName));
+    programCommands.put("Downscale", v -> new Downscale(
             Integer.parseInt(JOptionPane.showInputDialog(v, "Width")),
             Integer.parseInt(JOptionPane.showInputDialog(v, "Height")), saveName, saveName));
 
-    Map<String, Function<JFrame, Process>> colorFilters = new HashMap<>();
     // Color Filters
-    colorFilters.put("Adjust Red",
+    programCommands.put("Adjust Red",
             v -> new AdjustRed(Integer.parseInt(JOptionPane.showInputDialog(v, "Increment")),
                     saveName, saveName));
-    colorFilters.put("Adjust Green",
+    programCommands.put("Adjust Green",
             v -> new AdjustGreen(Integer.parseInt(JOptionPane.showInputDialog(v, "Increment")),
                     saveName, saveName));
-    colorFilters.put("Adjust Blue",
+    programCommands.put("Adjust Blue",
             v -> new AdjustBlue(Integer.parseInt(JOptionPane.showInputDialog(v, "Increment")),
                     saveName, saveName));
-    colorFilters.put("Adjust Brightness",
+    programCommands.put("Adjust Brightness",
             v -> new Brighten(Integer.parseInt(JOptionPane.showInputDialog(v, "Increment")),
                     saveName, saveName));
-    colorFilters.put("Invert Colors",
+    programCommands.put("Invert Colors",
             v -> new InvertColors(saveName, saveName));
-    colorFilters.put("Sepia Tone",
+    programCommands.put("Sepia Tone",
             v -> new SepiaTone(saveName, saveName));
-    colorFilters.put("Greyscale (Red)",
+    programCommands.put("Greyscale (Red)",
             v -> new RedGrayscale(saveName, saveName));
-    colorFilters.put("Greyscale (Green)",
+    programCommands.put("Greyscale (Green)",
             v -> new GreenGrayscale(saveName, saveName));
-    colorFilters.put("Greyscale (Blue)",
+    programCommands.put("Greyscale (Blue)",
             v -> new BlueGrayscale(saveName, saveName));
-    colorFilters.put("Greyscale (Value)",
+    programCommands.put("Greyscale (Value)",
             v -> new ValueGrayscale(saveName, saveName));
-    colorFilters.put("Greyscale (Intensity)",
+    programCommands.put("Greyscale (Intensity)",
             v -> new IntensityGrayscale(saveName, saveName));
-    colorFilters.put("Greyscale (Luma)",
+    programCommands.put("Greyscale (Luma)",
             v -> new LumaGrayscale(saveName, saveName));
 
-    Map<String, Function<JFrame, Process>> imageFilters = new HashMap<>();
     // Image Filters
-    imageFilters.put("Box Blur", v -> new BoxBlur(saveName, saveName));
-    imageFilters.put("Gaussian Blur", v -> new GaussianBlur(saveName, saveName));
-    imageFilters.put("Emboss", v -> new Emboss(saveName, saveName));
-    imageFilters.put("Sharpen", v -> new Sharpen(saveName, saveName));
-    imageFilters.put("Ridge Detection", v -> new RidgeDetection(saveName, saveName));
+    programCommands.put("Box Blur", v -> new BoxBlur(saveName, saveName));
+    programCommands.put("Gaussian Blur", v -> new GaussianBlur(saveName, saveName));
+    programCommands.put("Emboss", v -> new Emboss(saveName, saveName));
+    programCommands.put("Sharpen", v -> new Sharpen(saveName, saveName));
+    programCommands.put("Ridge Detection", v -> new RidgeDetection(saveName, saveName));
 
-    for (String name : programCommands.keySet()) {
-      view.addToFileMenu(addFunctionButton(name, programCommands.get(name)));
-    }
-
-    for (String name : imageTransforms.keySet()) {
-      view.addToImageTransforms(addFunctionButton(name, imageTransforms.get(name)));
-    }
-
-    for (String name : colorFilters.keySet()) {
-      view.addToColorFilters(addFunctionButton(name, colorFilters.get(name)));
-    }
-
-    for (String name : imageFilters.keySet()) {
-      view.addToImageFilters(addFunctionButton(name, imageFilters.get(name)));
-    }
   }
 
-  private JMenuItem addFunctionButton(String name, Function<JFrame, Process> func)
-          throws IllegalArgumentException {
-    if (func == null) {
-      throw new IllegalArgumentException("Function cannot be null");
-    }
-
-    JMenuItem item = new JMenuItem(new AbstractAction(name) {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        try {
-          Process p = func.apply(view);
-          p.start(manager);
-          p = new SaveFile(saveName + "-" + "temp" + extension, saveName);
-          p.start(manager);
-          view.setImage(saveName + "-" + "temp" + extension);
-        } catch (Exception ex) {
-          try {
-            view.renderMessage("Error: " + ex.getMessage());
-            for (StackTraceElement element : ex.getStackTrace())
-            System.out.println(element.toString());
-          } catch (IOException exception) {
-            throw new RuntimeException(exception);
-          }
-        }
+  @Override
+  public void actionPerformed(ActionEvent e) {
+    try {
+      Process p = programCommands.get(e.getActionCommand()).apply(view);
+      p.start(manager);
+      p = new SaveFile(saveName + "-" + "temp" + extension, saveName);
+      p.start(manager);
+      view.setImage(saveName + "-" + "temp" + extension);
+    } catch (Exception ex) {
+      try {
+        view.renderMessage("Error: " + ex.getMessage());
+        for (StackTraceElement element : ex.getStackTrace())
+          System.out.println(element.toString());
+      } catch (IOException exception) {
+        throw new RuntimeException(exception);
       }
-    });
-
-    return item;
+    }
   }
 }

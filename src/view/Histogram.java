@@ -16,6 +16,7 @@ public class Histogram extends JComponent {
   private Map<Integer, Integer> redValueCount;
   private Map<Integer, Integer> greenValueCount;
   private Map<Integer, Integer> blueValueCount;
+  private Map<Integer, Integer> intensityCount;
   private int min;
   private int max;
   private Image img;
@@ -31,6 +32,7 @@ public class Histogram extends JComponent {
     redValueCount = new HashMap<>();
     greenValueCount = new HashMap<>();
     blueValueCount = new HashMap<>();
+    intensityCount = new HashMap<>();
     min = Integer.MAX_VALUE;
     max = Integer.MIN_VALUE;
   }
@@ -52,6 +54,9 @@ public class Histogram extends JComponent {
           greenValueCount.put(value, 1 + greenValueCount.getOrDefault(value, 0));
           value = img.getPixel(x,y).getBlue();
           blueValueCount.put(value, 1 + blueValueCount.getOrDefault(value, 0));
+          int intensity = (img.getPixel(x, y).getRed() + img.getPixel(x, y).getGreen() + img.getPixel(x, y).getBlue()) / 3;
+          intensityCount.put(intensity, 1 + intensityCount.getOrDefault(intensity, 0));
+
         }
       }
     }
@@ -66,7 +71,7 @@ public class Histogram extends JComponent {
   public void paintComponent(Graphics g) {
     super.paintComponent(g);
     gr = (Graphics2D) g;
-
+    gr.scale(2, 2);
     getValues();
 
     for (Integer key : redValueCount.keySet()) {
@@ -84,10 +89,17 @@ public class Histogram extends JComponent {
       max = Math.max(val, max);
       min = Math.min(val, min);
     }
+    for (Integer key : intensityCount.keySet()) {
+      int val = intensityCount.get(key);
+      max = Math.max(val, max);
+      min = Math.min(val, min);
+    }
+
 
     drawList(redValueCount, Color.red);
     drawList(greenValueCount, Color.green);
     drawList(blueValueCount, Color.blue);
+    drawList(intensityCount, Color.black);
   }
 
   private void drawList(Map<Integer, Integer> list, Color color) {

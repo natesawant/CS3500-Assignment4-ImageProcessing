@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.Image;
+import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
@@ -15,28 +16,5 @@ public interface ImageProcessingGUI extends ImageProcessingView {
    */
   void setImage(String filename);
 
-  /**
-   * Adds a given JMenuItem to the 'File' dropdown menu.
-   * @param item the desired item to add.
-   */
-  void addToFileMenu(JMenuItem item);
-
-  /**
-   * Adds a given JMenuItem to the 'Image Transform' dropdown menu.
-   * @param item the desired item to add.
-   */
-  void addToImageTransforms(JMenuItem item);
-
-  /**
-   * Adds a given JMenuItem to the 'Color Filter' dropdown menu.
-   * @param item the desired item to add.
-   */
-  void addToColorFilters(JMenuItem item);
-
-  /**
-   * Adds a given JMenuItem to the 'Image Filter' dropdown menu.
-   * @param item the desired item to add.
-   */
-  void addToImageFilters(JMenuItem item);
-
+  void setListener(ActionListener listener);
 }

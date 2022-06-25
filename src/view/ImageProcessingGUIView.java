@@ -5,8 +5,11 @@ import java.awt.Dimension;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Image;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
@@ -27,7 +30,7 @@ import util.ImageUtil;
 /**
  * This class represents a GUI view of this image processing program.
  */
-public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI {
+public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI  {
   private final JMenuBar menu;
   private final JMenu fileMenu;
   private final JMenu processMenu;
@@ -38,6 +41,11 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
   private Histogram histogram;
   private final JScrollPane workspace;
   private final JLabel picture;
+  private List<JMenuItem> fileItems;
+  private List<JMenuItem> transformItems;
+  private List<JMenuItem> colorFilterItems;
+  private List<JMenuItem> imageFilterItems;
+  private List<JMenuItem> allMenuItems;
 
   /**
    * Constructs a new GUI View.
@@ -50,6 +58,36 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
     } catch (Exception e) {
       e.printStackTrace();
     }
+    fileItems = new ArrayList<>();
+    transformItems = new ArrayList<>();
+    colorFilterItems = new ArrayList<>();
+    imageFilterItems = new ArrayList<>();
+    allMenuItems = new ArrayList<>();
+
+    fileItems.add(new JMenuItem("Open"));
+    fileItems.add(new JMenuItem("Save"));
+    fileItems.add(new JMenuItem("Save As"));
+    transformItems.add(new JMenuItem("Flip (Horizontal)"));
+    transformItems.add(new JMenuItem("Flip (Vertical)"));
+    transformItems.add(new JMenuItem("Downscale"));
+    colorFilterItems.add(new JMenuItem("Adjust Red"));
+    colorFilterItems.add(new JMenuItem("Adjust Green"));
+    colorFilterItems.add(new JMenuItem("Adjust Blue"));
+    colorFilterItems.add(new JMenuItem("Adjust Brightness"));
+    colorFilterItems.add(new JMenuItem("Invert Colors"));
+    colorFilterItems.add(new JMenuItem("Sepia Tone"));
+    colorFilterItems.add(new JMenuItem("Greyscale (Red)"));
+    colorFilterItems.add(new JMenuItem("Greyscale (Green)"));
+    colorFilterItems.add(new JMenuItem("Greyscale (Blue)"));
+    colorFilterItems.add(new JMenuItem("Greyscale (Value)"));
+    colorFilterItems.add(new JMenuItem("Greyscale (Intensity)"));
+    colorFilterItems.add(new JMenuItem("Greyscale (Luma)"));
+    imageFilterItems.add(new JMenuItem("Box Blur"));
+    imageFilterItems.add(new JMenuItem("Gaussian Blur"));
+    imageFilterItems.add(new JMenuItem("Emboss"));
+    imageFilterItems.add(new JMenuItem("Sharpen"));
+    imageFilterItems.add(new JMenuItem("Ridge Detection"));
+
 
     setBackground(new Color(51,51,51));
     setPreferredSize(new Dimension(1280, 720));
@@ -73,21 +111,22 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
     menu.add(processMenu);
 
 
+    allMenuItems.addAll(fileItems);
+    allMenuItems.addAll(transformItems);
+    allMenuItems.addAll(colorFilterItems);
+    allMenuItems.addAll(imageFilterItems);
+    for (JMenuItem i : allMenuItems) {
+      i.setActionCommand(i.getName());
+    }
+
+    addItemsToBar();
+
     //Creating the panel at bottom and adding components
     histogramPanel = new JPanel(); // the panel is not visible in output
     histogramPanel.setBackground(new Color(51,51,51));
+    histogramPanel.setPreferredSize(new Dimension(500, 500));
     histogramPanel.setBorder(BorderFactory.createTitledBorder("Histograms"));
-    JLabel rgbHistogram = new JLabel(new ImageIcon("images/blackhistogram.png", "RGB Histogram"));
-    JLabel redHistogram = new JLabel(new ImageIcon("images/redhistogram.png", "Red Histogram"));
-    JLabel greenHistogram = new JLabel(new ImageIcon("images/greenhistogram.png", "Green " +
-            "Histogram"));
-    JLabel blueHistogram = new JLabel(new ImageIcon("images/bluehistogram.png", "Blue Histogram"));
     histogramPanel.setLayout(new BoxLayout(histogramPanel, BoxLayout.PAGE_AXIS));
-    histogramPanel.add(rgbHistogram);
-    histogramPanel.add(redHistogram);
-    histogramPanel.add(greenHistogram);
-    histogramPanel.add(blueHistogram);
-
     histogram = new Histogram();
     histogramPanel.add(histogram);
     pack();
@@ -125,28 +164,32 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
     }
   }
 
-  @Override
-  public void addToFileMenu(JMenuItem item) {
-    fileMenu.add(item);
-  }
+  private void addItemsToBar() {
+    for (JMenuItem i : this.imageFilterItems) {
+      imageFilters.add(i);
+    }
 
-  @Override
-  public void addToImageTransforms(JMenuItem item) {
-    imageTransforms.add(item);
-  }
+    for (JMenuItem i : this.transformItems) {
+      imageTransforms.add(i);
+    }
 
-  @Override
-  public void addToColorFilters(JMenuItem item) {
-    colorFilters.add(item);
-  }
+    for (JMenuItem i : this.fileItems) {
+      fileMenu.add(i);
+    }
 
-  @Override
-  public void addToImageFilters(JMenuItem item) {
-    imageFilters.add(item);
+    for (JMenuItem i : this.colorFilterItems) {
+      colorFilters.add(i);
+    }
   }
 
   @Override
   public void renderMessage(String message) throws IOException {
     JOptionPane.showMessageDialog(this, message);
+  }
+
+  public void setListener(ActionListener listener) {
+    for (JMenuItem i : this.allMenuItems) {
+      i.addActionListener(listener);
+    }
   }
 }
