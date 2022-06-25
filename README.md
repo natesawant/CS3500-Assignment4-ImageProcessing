@@ -210,6 +210,17 @@ _Disclaimer: This photo was taken by Nathaniel Sawant and is authorized for use 
 
 ![igm-horizontal](https://user-images.githubusercontent.com/74106957/172696916-77377dca-8712-4dc1-ba05-262d996419d4.jpg)
 
+#### Downscale
+#### Downscales an image to the given dimensions and stores it as _destName_.
+`downscale width height name destName`
+
+###### Examples:
+> `downscale 300 10 igm igm-diff-ratio`
+![igm-downscaled-diff-ratio](https://raw.githubusercontent.com/natesawant/CS3500-Assignment4-ImageProcessing/master/res/igm-downscaled-diff-ratio.png?token=GHSAT0AAAAAABVGXE7TQ5JX6MV5XWA5M3VQYVXSH5A)
+
+> `downscale 200 200 igm igm-diff-ratio`
+![igm-downscaled](https://raw.githubusercontent.com/natesawant/CS3500-Assignment4-ImageProcessing/master/res/igm-downscaled.png?token=GHSAT0AAAAAABVGXE7SQ4EPGMYGNNTN5ZHQYVXSKUA)
+
 #### **Color Filters**
 
 #### Adjust Blue
