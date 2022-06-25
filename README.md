@@ -29,6 +29,8 @@ Added a new GUI View interface and class that handles displaying the image editi
 Added a new Controller that implements the same ImageProcessingController interface that is able to better control the GUI view.
 Added a new process that is able to downscale images.
 
+We didn't have to change the fundamental design for the program, only adding the new method to the interface and Process for the downscale function.
+
 ## Design
 
 ### Class diagram
@@ -41,6 +43,8 @@ Added a new process that is able to downscale images.
 
 1. ImageProcessingController
    1. Provides the `initializeProgram()` method, which serves as a starting point to the program.
+2. ImageProcessingGUIController
+   1. Serves as an extended interface that uses the methods from the ImageProcessingController and ActionListener interfaces 
 
 #### Classes
 
@@ -49,6 +53,8 @@ Added a new process that is able to downscale images.
       outputting the results to the view.
 2. Image Processing
    1. Provides a `main(String[] args)` method to serve as the entry point to the program.
+3. ImageProcessingGUIControllerImplementation
+   1. Serves as the intermediate step between the view and the actual processing, receiving Actions from the GUI that correspond to the different processes.
 
 ### Models
 
@@ -98,10 +104,13 @@ Added a new process that is able to downscale images.
 
 1. ImageProcessingView
    1. Represents a general text view that can render String messages.
+2. ImageProcessingGUI | extends ImageProcessingView
+   1. Represents a GUI view that allows setting the listener and current image
 
 #### Classes
 
 1. ImageProcessingTextView | implements ImageProcessingView
+2. ImageProcessingGUIView | Implements ImageProcessingGUI
 
 ### Utils
 
@@ -110,7 +119,7 @@ Added a new process that is able to downscale images.
 #### Classes
 
 1. ImageUtil
-   1. Allows for the conversion and reading of .ppm image files in the program's current filesystem.
+   1. Allows for the loading and exporting of image files in the program's current filesystem.
 
 ## Instructions
 
