@@ -216,9 +216,11 @@ _Disclaimer: This photo was taken by Nathaniel Sawant and is authorized for use 
 
 ###### Examples:
 > `downscale 300 10 igm igm-diff-ratio`
+
 ![igm-downscaled-diff-ratio](https://raw.githubusercontent.com/natesawant/CS3500-Assignment4-ImageProcessing/master/res/igm-downscaled-diff-ratio.png?token=GHSAT0AAAAAABVGXE7TQ5JX6MV5XWA5M3VQYVXSH5A)
 
 > `downscale 200 200 igm igm-diff-ratio`
+
 ![igm-downscaled](https://raw.githubusercontent.com/natesawant/CS3500-Assignment4-ImageProcessing/master/res/igm-downscaled.png?token=GHSAT0AAAAAABVGXE7SQ4EPGMYGNNTN5ZHQYVXSKUA)
 
 #### **Color Filters**
