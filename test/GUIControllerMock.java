@@ -1,15 +1,28 @@
 import java.awt.event.ActionEvent;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
-import javax.swing.*;
+import javax.swing.JFrame;
 
 import controller.ImageProcessingGUIController;
 
+/**
+ * Mocks how the controller sends information to the view, by sending the actions to a log to be
+ * queried and tested.
+ */
 public class GUIControllerMock implements ImageProcessingGUIController {
-  StringBuilder log;
+  private Appendable log;
   private Map<String, Function<JFrame, String>> programCommands;
+
+  /**
+   * Constructs a new mock controller.
+   * @param log the log to append to.
+   */
+  public GUIControllerMock(Appendable log) {
+    this.log = log;
+  }
 
   @Override
   public void initializeProgram() throws IllegalStateException {
@@ -60,7 +73,10 @@ public class GUIControllerMock implements ImageProcessingGUIController {
 
   @Override
   public void actionPerformed(ActionEvent e) {
-    Process p = programCommands.get(e.getActionCommand()).apply();
-    log.append("Action performed: ").append(e.getActionCommand());
+    try {
+      log.append("Action performed: ").append(e.getActionCommand());
+    } catch (IOException s) {
+      //
+    }
   }
 }

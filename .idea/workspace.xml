@@ -6,11 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="3d0ae5c3-6a18-467d-a571-f64d42108d57" name="Changes" comment="style">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Assignment4-ImageProcessing.jar" beforeDir="false" afterPath="$PROJECT_DIR$/res/Assignment4-ImageProcessing.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/test-hflip.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/ImageProcessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ImageProcessing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/ImageProcessingControllerImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ImageProcessingControllerImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/ImageProcessingGUIControllerImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ImageProcessingGUIControllerImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/OperationsModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OperationsModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/GUIControllerMock.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/GUIControllerMock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/GUITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/GUITest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +57,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.controller.ImageProcessing">
+  <component name="RunManager" selected="JUnit.GUITest.test">
     <configuration name="ImageProcessing" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="controller.ImageProcessing" />
       <module name="Assignment4-ImageProcessing" />
@@ -82,13 +81,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SwingFeatures" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="SwingFeatures" />
-      <module name="Assignment4-ImageProcessing" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -122,6 +114,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GUITest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assignment4-ImageProcessing" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GUITest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestFolder" type="JUnit" factoryName="JUnit">
       <module name="Assignment4-ImageProcessing" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -134,20 +136,20 @@
     </configuration>
     <list>
       <item itemvalue="Application.controller.ImageProcessing" />
-      <item itemvalue="Application.SwingFeatures" />
       <item itemvalue="JUnit.TestFolder" />
       <item itemvalue="JUnit.ECTest.test" />
       <item itemvalue="JUnit.ECTest" />
       <item itemvalue="JUnit.ECTest.testDiffWidthHeight" />
       <item itemvalue="Application.ImageProcessingGUIControllerImplementation" />
+      <item itemvalue="JUnit.GUITest.test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GUITest.test" />
         <item itemvalue="JUnit.ECTest.testDiffWidthHeight" />
         <item itemvalue="JUnit.ECTest" />
         <item itemvalue="JUnit.ECTest.test" />
         <item itemvalue="Application.ImageProcessingGUIControllerImplementation" />
-        <item itemvalue="Application.SwingFeatures" />
       </list>
     </recent_temporary>
   </component>
@@ -176,7 +178,7 @@
       <workItem from="1655477191718" duration="1998000" />
       <workItem from="1655775764757" duration="19041000" />
       <workItem from="1655995367794" duration="754000" />
-      <workItem from="1656176031267" duration="1371000" />
+      <workItem from="1656176031267" duration="3528000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1654458999042</created>
@@ -423,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656176855981</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="style">
+      <created>1656177784226</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1656177784227</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,16 +476,5 @@
     <MESSAGE value="changed how actions are processed" />
     <MESSAGE value="style" />
     <option name="LAST_COMMIT_MESSAGE" value="style" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/test/ECTest.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
