@@ -369,11 +369,11 @@ Ridge Detection Kernel (3x3)
 
 ## File tab
 Available operations:
-Open - opens a specified image file
-Save - saves the changes to the current image
-Save As - saves the changes to a new image
+- Open - opens a specified image file
+- Save - saves the changes to the current image
+- Save As - saves the changes to a new image
 
-##Processes Tab
+## Processes Tab
 Sub tabs:
 - Image Transforms:
 -   Flip the image horizontally or vertically
