@@ -363,9 +363,9 @@ Ridge Detection Kernel (3x3)
 
 ![igmridge](https://user-images.githubusercontent.com/74106957/172895394-b63f6578-dcbe-414d-91a5-79fc8267f87f.jpg)
 
-#GUI - How to use
+# GUI - How to use
 
-## A color-value histogram of the current image is shown on the right side of the screen
+### A color-value histogram of the current image is shown on the right side of the screen
 
 ## File tab
 Available operations:
