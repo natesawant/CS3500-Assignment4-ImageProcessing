@@ -15,7 +15,7 @@ Note: Before you are able to use any of the following operations on an image, yo
     load an image into the program using the following command:
        `load [filename] [name]`
         where `[filename]` is the location of the image to be loaded, and `[name]` is name that
-        the image will be referred to in the program.
+        the image will be referred to in the program.`
 
 
 1. General Commands
@@ -25,6 +25,7 @@ Note: Before you are able to use any of the following operations on an image, yo
 2. Image Transforms
     - [Horizontal Flip](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#horizontal-flip)
     - [Vertical Flip](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#vertical-flip)
+    - [Downscale]
 3. Color Filters
     - [Adjust Blue](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#adjust-blue)
     - [Adjust Green](https://github.com/natesawant/CS3500-Assignment4-ImageProcessing#adjust-green)
@@ -88,6 +89,13 @@ _Disclaimer: This photo was taken by Nathaniel Sawant and is authorized for use 
 > `horizontal-flip igm igm-horizontal`
 
 ![igm-horizontal](https://user-images.githubusercontent.com/74106957/172696916-77377dca-8712-4dc1-ba05-262d996419d4.jpg)
+
+#### Downscale
+#### Downscales the image _name_ to a desired _width_ and _height_
+`downscale width height name destName`
+
+###### Example:
+> `downscale 100 100 igm igm-downscale`
 
 #### **Color Filters**
 

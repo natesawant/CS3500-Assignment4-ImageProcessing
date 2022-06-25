@@ -65,8 +65,8 @@ public class ImageProcessingGUIControllerImplementation implements ImageProcessi
     programCommands = new HashMap<>();
     // Program commands
     programCommands.put("Open", v -> new LoadFile(
-            JOptionPane.showInputDialog(v, "Enter filename."), saveName));
-    programCommands.put("Save", v -> new SaveFile(saveName + extension,
+            "../" + JOptionPane.showInputDialog(v, "Enter filename."), saveName));
+    programCommands.put("Save", v -> new SaveFile("../" + saveName + extension,
             saveName));
     programCommands.put("Save As", v -> new SaveFile(JOptionPane.showInputDialog(v, "Enter " +
             "savename."),
