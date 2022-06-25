@@ -31,4 +31,6 @@ value-component luma test test-process
 save test-lumagreyscale.jpg test-process
 value-component intensity test test-process
 save test-intensitygreyscale.jpg test-process
+downscale 50 50 test test-downscale
+save test-downscale.jpg test-downscale
 q
