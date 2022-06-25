@@ -5,32 +5,9 @@ import java.util.function.Function;
 
 import javax.swing.*;
 
-import controller.ImageGUI;
-import processes.AdjustBlue;
-import processes.AdjustGreen;
-import processes.AdjustRed;
-import processes.BlueGrayscale;
-import processes.BoxBlur;
-import processes.Brighten;
-import processes.Downscale;
-import processes.Emboss;
-import processes.GaussianBlur;
-import processes.GreenGrayscale;
-import processes.HorizontalFlip;
-import processes.IntensityGrayscale;
-import processes.InvertColors;
-import processes.LoadFile;
-import processes.LumaGrayscale;
-import processes.RedGrayscale;
-import processes.RidgeDetection;
-import processes.SaveFile;
-import processes.SepiaTone;
-import processes.Sharpen;
-import processes.ValueGrayscale;
-import processes.VerticalFlip;
-import view.ImageProcessingGUI;
+import controller.ImageProcessingGUIController;
 
-public class GUIControllerMock implements ImageGUI {
+public class GUIControllerMock implements ImageProcessingGUIController {
   StringBuilder log;
   private Map<String, Function<JFrame, String>> programCommands;
 

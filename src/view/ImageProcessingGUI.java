@@ -1,6 +1,5 @@
 package view;
 
-import java.awt.Image;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
@@ -16,5 +15,9 @@ public interface ImageProcessingGUI extends ImageProcessingView {
    */
   void setImage(String filename);
 
+  /**
+   * Sets the listener of the current view's actions.
+   * @param listener the desired listener.
+   */
   void setListener(ActionListener listener);
 }

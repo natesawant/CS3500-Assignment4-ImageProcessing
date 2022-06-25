@@ -148,6 +148,7 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
     setVisible(true);
   }
 
+  @Override
   public void setImage(String filename) {
     Image img;
     try {
@@ -164,6 +165,9 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
     }
   }
 
+  /**
+   * Adds all items in the current lists to the menu bars.
+   */
   private void addItemsToBar() {
     for (JMenuItem i : this.imageFilterItems) {
       imageFilters.add(i);
@@ -187,6 +191,7 @@ public class ImageProcessingGUIView extends JFrame implements ImageProcessingGUI
     JOptionPane.showMessageDialog(this, message);
   }
 
+  @Override
   public void setListener(ActionListener listener) {
     for (JMenuItem i : this.allMenuItems) {
       i.addActionListener(listener);

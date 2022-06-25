@@ -1,6 +1,6 @@
 import org.junit.Test;
 
-import controller.ImageGUI;
+import controller.ImageProcessingGUIController;
 import view.ImageProcessingGUI;
 
 /**
@@ -12,7 +12,7 @@ public class GUITest {
 
   @Test
   public void test() {
-    ImageGUI c = new GUIControllerMock();
+    ImageProcessingGUIController c = new GUIControllerMock();
     c.initializeProgram();
 
   }

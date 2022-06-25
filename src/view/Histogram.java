@@ -1,17 +1,21 @@
 package view;
 
-import java.awt.*;
-import java.util.ArrayList;
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.Graphics;
+import java.awt.BasicStroke;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.Random;
 
-import javax.swing.*;
+import javax.swing.JComponent;
 
 import model.Image;
 
+/**
+ * This class represents a histogram that can be used in a JFrame object.
+ */
 public class Histogram extends JComponent {
+
   private Graphics2D gr;
   private Map<Integer, Integer> redValueCount;
   private Map<Integer, Integer> greenValueCount;
@@ -20,12 +24,10 @@ public class Histogram extends JComponent {
   private int min;
   private int max;
   private Image img;
-  public Histogram(Image img) {
-    this();
-    this.img = img;
-    repaint();
-  }
 
+  /**
+   * Constructs a new, empty histogram.
+   */
   public Histogram() {
     setOpaque(true);
     setBackground(Color.WHITE);
@@ -37,6 +39,9 @@ public class Histogram extends JComponent {
     max = Integer.MIN_VALUE;
   }
 
+  /**
+   * Assigns the correct RGB values to this instance's hashmaps.
+   */
   private void getValues() {
     redValueCount = new HashMap<>();
     greenValueCount = new HashMap<>();
@@ -62,6 +67,10 @@ public class Histogram extends JComponent {
     }
   }
 
+  /**
+   * Sets the current image of this histogram.
+   * @param img the desired image.
+   */
   public void setImg(Image img) {
     this.img = img;
     repaint();
@@ -102,6 +111,11 @@ public class Histogram extends JComponent {
     drawList(intensityCount, Color.black);
   }
 
+  /**
+   * Draws a given list of values as a histogram.
+   * @param list the list of values to draw.
+   * @param color the color to draw.
+   */
   private void drawList(Map<Integer, Integer> list, Color color) {
     int y1;
     int x1;
@@ -123,8 +137,6 @@ public class Histogram extends JComponent {
       y2 = (list.getOrDefault(x2, 0));
 
       y2 = (int)((y2 - min) / (double)(max - min) * 100);
-
-      //System.out.println(x1 + ","+ y1 + " " + x2 + "," + y2);
 
       gr.drawLine(x1, 100-y1, x2, 100-y2);
     }

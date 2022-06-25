@@ -46,7 +46,7 @@ public class ImageProcessing {
       controller = new ImageProcessingControllerImplementation(directory, view, readable);
 
     } else {
-      controller = new ImageProcessingGUIController();
+      controller = new ImageProcessingGUIControllerImplementation();
     }
 
 
