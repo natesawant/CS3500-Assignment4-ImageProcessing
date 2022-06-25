@@ -29,7 +29,7 @@ Added a new GUI View interface and class that handles displaying the image editi
 Added a new Controller that implements the same ImageProcessingController interface that is able to better control the GUI view.
 Added a new process that is able to downscale images.
 
-We didn't have to change the fundamental design for the program, only adding the new method to the interface and Process for the downscale function.
+We didn't have to change the fundamental design for the program, only adding the new method to the interface and Process for the downscale function. This change was made because it didn't affect the current users of the interface and just adds for an easier way to add the downscale functionality.
 
 ## Design
 
